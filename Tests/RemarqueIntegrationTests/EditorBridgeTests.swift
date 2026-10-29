@@ -66,7 +66,7 @@ import RemarqueCore
         XCTAssertEqual(try doc.data(ofType:"net.daringfireball.markdown"),bytes)
         XCTAssertEqual(Bundle.main.bundleIdentifier,"ca.forensicintelligence.remarque")
         XCTAssertGreaterThanOrEqual(Int(BuildInfo.build) ?? 0,734)
-        XCTAssertEqual(BuildInfo.version,"3.0.1")
+        XCTAssertEqual(BuildInfo.version,"3.0.2")
     }
     func testScrollPreferencePersistsAndRoutesBothModesWithoutBlockingSelection()throws{
         XCTAssertTrue(PreferenceValues().scrollSync)

@@ -59,38 +59,41 @@ struct EditorWorkspace:View{
 struct RightToolbar:View{
     @ObservedObject var session:DocumentSession
     var body:some View{
-        VStack(spacing:0){
-            HStack(spacing:4){ForEach(["markdown","Mermaid","LaTeX"],id:\.self){tab in
-                Button{session.activeTab=tab;session.command("tab",value:tab)}label:{Text(tab).font(.system(size:12,weight:session.activeTab==tab ? .semibold:.regular)).padding(.horizontal,15).padding(.vertical,7).background(session.activeTab==tab ? Color.accentColor.opacity(0.13):Color.clear,in:RoundedRectangle(cornerRadius:6))}.buttonStyle(.plain).accessibilityAddTraits(session.activeTab==tab ? .isSelected:[])
-            };Spacer()}.padding(.horizontal,10).padding(.top,7)
+        HStack(spacing:8){
             ScrollView(.horizontal,showsIndicators:false){HStack(spacing:3){
                 tool("Undo","arrow.uturn.backward","undo");tool("Redo","arrow.uturn.forward","redo");Divider().frame(height:20)
-                if session.activeTab=="markdown"{
-                    Menu("Style"){
-                        Button("Body"){session.command("heading",value:0)}
-                        ForEach(1...6,id:\.self){level in Button("Heading \(level)"){session.command("heading",value:level)}}
-                        Button("Quote"){session.command("quote")}
-                    }.fixedSize()
-                    tool("Bold (⌘B)","bold","bold");tool("Italic (⌘I)","italic","italic");tool("Strikethrough","strikethrough","strike");tool("Highlight","highlighter","highlight");tool("Inline code","chevron.left.forwardslash.chevron.right","code")
-                    Divider().frame(height:20)
-                    tool("Bullet list","list.bullet","bullet");tool("Numbered list","list.number","ordered");tool("Task list","checklist","task")
-                    Menu{Button("Link…"){session.command("link")};Button("Image…"){session.command("image")};Button("Table"){session.command("table")};Button("Code Block"){session.command("codeBlock")};Button("Horizontal Rule"){session.command("rule")};Button("Callout"){session.command("callout")};Button("Footnote"){session.command("footnote")};Button("Details"){session.command("details")}}label:{Image(systemName:"plus.square")}.fixedSize().help("Insert")
-                    Menu("Table"){
-                        Button("Table Editor…"){session.command("tableEditor")};Button("Add Row"){session.command("addRow")};Button("Add Column"){session.command("addColumn")};Button("Delete Row"){session.command("deleteRow")};Button("Delete Column"){session.command("deleteColumn")}
-                        Divider();ForEach(["left","center","right"],id:\.self){alignment in Button("Align column "+alignment){session.command("align:"+alignment)};Button("Place table "+alignment){session.command("tablePlacement:"+alignment)}}
-                    }.fixedSize()
-                }else if session.activeTab=="Mermaid"{
-                    Button("Insert Diagram…"){session.command("gallery")}.font(.caption)
-                    Button("Edit Source"){session.command("editObject")}.font(.caption).disabled(session.selectedKind != "mermaid")
-                    Button("Visual Editor"){session.command("visualDiagram")}.font(.caption).disabled(session.selectedKind != "mermaid" || !Preferences.shared.values.visualEditing)
-                    Button("Copy SVG"){session.command("copySVG")}.font(.caption).disabled(session.selectedKind != "mermaid")
-                }else{
-                    Button("Insert Equation"){session.command("equation")}.font(.caption)
-                    Button("Edit LaTeX"){session.command("editObject")}.font(.caption).disabled(!session.selectedKind.contains("math"))
-                    Button("Inline / Display"){session.command("mathMode")}.font(.caption).disabled(!session.selectedKind.contains("math"))
-                }
-            }.buttonStyle(.borderless).padding(.horizontal,10).frame(height:38)}
-        }.background(.bar)
+                Menu("Style"){
+                    Button("Body"){session.command("heading",value:0)}
+                    ForEach(1...6,id:\.self){level in Button("Heading \(level)"){session.command("heading",value:level)}}
+                    Button("Quote"){session.command("quote")}
+                }.fixedSize()
+                tool("Bold (⌘B)","bold","bold");tool("Italic (⌘I)","italic","italic");tool("Strikethrough","strikethrough","strike");tool("Highlight","highlighter","highlight");tool("Inline code","chevron.left.forwardslash.chevron.right","code")
+                Divider().frame(height:20)
+                tool("Bullet list","list.bullet","bullet");tool("Numbered list","list.number","ordered");tool("Task list","checklist","task")
+                Menu{Button("Link…"){session.command("link")};Button("Image…"){session.command("image")};Button("Table"){session.command("table")};Button("Code Block"){session.command("codeBlock")};Button("Horizontal Rule"){session.command("rule")};Button("Callout"){session.command("callout")};Button("Footnote"){session.command("footnote")};Button("Details"){session.command("details")}}label:{Image(systemName:"plus.square")}.fixedSize().help("Insert")
+            }}
+            Divider().frame(height:20)
+            // Keep these entry points visible when the formatting group scrolls.
+            Menu("Table"){
+                Button("Table Editor…"){session.command("tableEditor")};Button("Add Row"){session.command("addRow")};Button("Add Column"){session.command("addColumn")};Button("Delete Row"){session.command("deleteRow")};Button("Delete Column"){session.command("deleteColumn")}
+                Divider();ForEach(["left","center","right"],id:\.self){alignment in Button("Align column "+alignment){session.command("align:"+alignment)};Button("Place table "+alignment){session.command("tablePlacement:"+alignment)}}
+            }.fixedSize()
+            Menu("Mermaid"){
+                Button("Insert Diagram…"){session.command("gallery")}.disabled(session.readOnly)
+                Divider()
+                Button("Edit Source"){session.command("editObject")}.disabled(session.readOnly || session.selectedKind != "mermaid")
+                Button("Visual Editor"){session.command("visualDiagram")}.disabled(session.readOnly || session.selectedKind != "mermaid" || !Preferences.shared.values.visualEditing)
+                Button("Copy SVG"){session.command("copySVG")}.disabled(session.selectedKind != "mermaid")
+            }primaryAction:{session.command("gallery")}
+                .fixedSize().help("Insert a Mermaid diagram. Open the menu for diagram actions.")
+            Menu("LaTeX"){
+                Button("Insert Equation"){session.command("equation")}
+                Divider()
+                Button("Edit LaTeX"){session.command("editObject")}.disabled(!session.selectedKind.contains("math"))
+                Button("Inline / Display"){session.command("mathMode")}.disabled(!session.selectedKind.contains("math"))
+            }primaryAction:{session.command("equation")}
+                .fixedSize().disabled(session.readOnly).help("Insert an equation. Open the menu to edit a selected equation or change its mode.")
+        }.buttonStyle(.borderless).padding(.horizontal,10).frame(height:38).background(.bar)
     }
     func tool(_ title:String,_ symbol:String,_ command:String)->some View{Button{session.command(command)}label:{Image(systemName:symbol).frame(width:25,height:26).background(session.activeMarks.contains(["bold":"strong","italic":"em"][command] ?? command) ? Color.accentColor.opacity(0.18):Color.clear,in:RoundedRectangle(cornerRadius:4))}.disabled(command=="undo" ? !session.engine.canUndo:command=="redo" ? !session.engine.canRedo:session.readOnly).help(title).accessibilityLabel(title)}
 }

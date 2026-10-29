@@ -1,12 +1,16 @@
-# Remarque 3.0.1 development build 737
+# Remarque 3.0.2 development build 738
 
 29 October 2026. Bundle identifier: `ca.forensicintelligence.remarque`. The original installed Remarque 2.1 application uses a different identifier and was not replaced.
 
 ## Delivered implementation
 
-The native macOS application has a shared Markdown source and undo history, an AppKit source editor, an editable rendered pane, source reveal from rendered selections, and the exact `markdown`, `Mermaid`, `LaTeX` toolbar tabs. It includes the restored writing tools, outline, workspace/search/backlinks, local history/recovery, templates/help, snippets, media insertion, table/equation editors, document imports/exports, printing, presentations, and settings.
+The native macOS application has a shared Markdown source and undo history, an AppKit source editor, an editable rendered pane, source reveal from rendered selections, and one formatting toolbar with Mermaid and LaTeX insertion buttons immediately after Table. It includes the restored writing tools, outline, workspace/search/backlinks, local history/recovery, templates/help, snippets, media insertion, table/equation editors, document imports/exports, printing, presentations, and settings.
 
 Mermaid 12.2.0, ZenUML, ELK, and tidy-tree are pinned and bundled. The gallery has 33 families and 41 starters. Flowchart, sequence, and simple state diagrams have a visual editor; other families and unsupported constructs retain source editing. See [the generated support report](SHIPPED_MERMAID_SUPPORT.md).
+
+## Changes in 3.0.2
+
+The right toolbar is a single row. Mermaid and LaTeX open insertion tools directly; adjacent arrows preserve source editing, visual editing, SVG copying, and equation mode changes. Selecting an object keeps the formatting controls in place. Table, Mermaid, and LaTeX remain visible when the formatting group scrolls in a narrow pane. The illustrated guides and current specification reflect this arrangement. See [update notes](UPDATE_3.0.2.md).
 
 ## Changes in 3.0.1
 

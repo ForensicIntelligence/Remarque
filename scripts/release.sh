@@ -6,7 +6,7 @@ identity="${REMARQUE_SIGNING_IDENTITY:-Developer ID Application: FI Forensic Int
 derived="${REMARQUE_RELEASE_DERIVED_DATA:-/tmp/remarque-build/release}"
 ./scripts/test.sh
 node scripts/licenses.mjs
-xcodebuild -project RemarqueRebuild.xcodeproj -scheme RemarqueRebuild -configuration Release -destination 'generic/platform=macOS' -derivedDataPath "$derived" ARCHS='arm64 x86_64' ONLY_ACTIVE_ARCH=NO CODE_SIGN_IDENTITY="$identity" OTHER_CODE_SIGN_FLAGS='--timestamp' build
+xcodebuild -project RemarqueRebuild.xcodeproj -scheme RemarqueRebuild -configuration Release -destination 'generic/platform=macOS' -derivedDataPath "$derived" ARCHS='arm64 x86_64' ONLY_ACTIVE_ARCH=NO CODE_SIGN_STYLE=Manual CODE_SIGN_IDENTITY="$identity" OTHER_CODE_SIGN_FLAGS='--timestamp' build
 app="$derived/Build/Products/Release/Remarque.app"
 codesign --verify --deep --strict --verbose=2 "$app"
 version="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$app/Contents/Info.plist")"

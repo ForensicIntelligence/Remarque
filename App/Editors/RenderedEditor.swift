@@ -65,7 +65,6 @@ struct RenderedEditor: NSViewRepresentable {
             case "selection":
                 guard body["revision"] as? Int == session.revision,let start=body["start"] as? Int,let end=body["end"] as? Int else{return}
                 session.select(.init(start,end),surface:mode=="liveSource" ? "source":"rendered")
-                if let kind=body["kind"] as? String {if kind=="mermaid" {session.activeTab="Mermaid"} else if kind.contains("math"){session.activeTab="LaTeX"}}
             case "formatState":
                 guard body["revision"] as? Int==session.revision else{return};session.activeMarks=Set(body["marks"] as? [String] ?? []);session.selectedKind=body["kind"] as? String ?? "text";session.selectionInTable=body["table"] as? Bool ?? false
             case "outline":

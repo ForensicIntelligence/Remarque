@@ -22,13 +22,15 @@ Write in Markdown. Edit the finished page. Remarque keeps both views connected t
 > [!TIP]
 > **Synchronize scrolling** is on by default. Turn it off in [Settings → Preview](#settings:Preview) to browse each pane independently. Clicking rendered content still reveals its source.
 
-## A toolbar for each kind of writing
+## One toolbar for every kind of writing
 
-| Tab | Use it for |
+| Control | Use it for |
 | --- | --- |
-| **markdown** | Headings, emphasis, lists, links, and tables. |
+| **Style and formatting buttons** | Headings, emphasis, lists, links, and tables. |
 | **Mermaid** | Diagram templates, source, layout, and supported visual editors. |
 | **LaTeX** | Equations and seven palettes of mathematical symbols. |
+
+The right pane has one toolbar. **Mermaid** and **LaTeX** sit immediately after **Table**. Click their names to insert a diagram or equation; use the adjacent arrows for actions on a selected object. On narrow panes, scroll the formatting controls sideways; these three controls stay visible.
 
 Save with **⌘S**. Local history and recovery add protection; keep an independent backup of your files.
 

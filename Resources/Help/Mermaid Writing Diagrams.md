@@ -11,7 +11,7 @@ flowchart LR
 ```
 ````
 
-Copy the example into the source pane, or choose **Mermaid → Gallery** to start from a template.
+Copy the example into the source pane, or click **Mermaid** in the right toolbar to start from a template.
 
 ## Edit the rendered diagram
 

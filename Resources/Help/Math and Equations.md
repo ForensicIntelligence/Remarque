@@ -1,4 +1,4 @@
-Write TeX directly or build equations with the LaTeX toolbar. The examples below are rendered by the same bundled MathJax engine as your documents.
+Write TeX directly or build equations with the **LaTeX** button. The examples below are rendered by the same bundled MathJax engine as your documents.
 
 ## Math inside a sentence
 
@@ -16,7 +16,7 @@ $$
 
 ## Build an equation with the toolbar
 
-1. Choose the **LaTeX** tab, then open the equation editor.
+1. Click **LaTeX** in the right toolbar, beside **Mermaid** and **Table**.
 2. Type TeX or choose a symbol from a palette.
 3. Choose inline or display mode.
 4. For a new equation, choose **Insert** to add it to the document.
@@ -36,4 +36,4 @@ $$
 
 ## Change an existing equation
 
-Select the rendered equation and edit its source. Changes appear in the left pane immediately. Closing a new equation dialog before **Insert** discards that uninserted draft.
+Select the rendered equation, then open the arrow beside **LaTeX** and choose **Edit LaTeX**. Choose **Inline / Display** in that same menu to switch modes. Changes appear in the left pane immediately. Closing a new equation dialog before **Insert** discards that uninserted draft.

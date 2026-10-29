@@ -19,7 +19,6 @@ struct OutlineEntry: Identifiable, Codable {
     @Published var selection = EditorSelection()
     @Published var outline: [OutlineEntry] = []
     @Published var error: String?
-    @Published var activeTab = "markdown"
     @Published var activeMarks:Set<String>=[]
     @Published var selectedKind="text"
     @Published var selectionInTable=false

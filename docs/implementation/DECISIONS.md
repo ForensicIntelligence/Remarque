@@ -11,3 +11,7 @@ Developer ID Application signing uses FI Forensic Intelligence, Ltd., team PATM9
 The workspace previously inherited an unrelated Git repository rooted on Desktop. Remarque gets an independent repository rooted here. No operations modify the parent repository.
 
 The original app archive stays local and is excluded from Git. The synthetic probes, recovered documentation, specification and implementation source belong in the private repository. Do not commit credentials, private signing material or build products.
+
+## 2026-10-29: one right-pane toolbar
+
+The user replaced the three-tab design with one row. Mermaid and LaTeX insertion buttons follow Table. Their menu arrows retain actions for the selected object; selecting a diagram or equation no longer swaps formatting controls. At narrow pane widths, only the formatting group scrolls; Table, Mermaid and LaTeX stay visible. This supersedes the original tab requirements.

@@ -1,6 +1,6 @@
 # Remarque rebuild specification
 
-Prepared 29 October 2026 for review before implementation. Baseline: Remarque 2.1 build 733. **No rebuilt application has been implemented in this phase.** The baseline feature scope is [FEATURE_INVENTORY.md](FEATURE_INVENTORY.md); exact controls are in [CONTROL_REFERENCE.md](CONTROL_REFERENCE.md).
+Prepared 29 October 2026 for review before implementation. Baseline: Remarque 2.1 build 733. Toolbar requirements updated to the user’s single-row decision; see the current implementation build report for delivery status. The baseline feature scope is [FEATURE_INVENTORY.md](FEATURE_INVENTORY.md); exact controls are in [CONTROL_REFERENCE.md](CONTROL_REFERENCE.md).
 
 ## Required outcome
 
@@ -8,10 +8,10 @@ Rebuild Remarque as a native macOS Markdown application that preserves its disco
 
 1. Selecting content in the **right rendered pane** reveals the equivalent Markdown section in the **left source pane**.
 2. Both panes are editable. Right-pane changes update the left source in real time; left-source changes update the right rendered view.
-3. Put a simple Word-like toolbar above the right pane, with the exact tabs **`markdown`**, **`Mermaid`**, and **`LaTeX`**.
+3. Put a simple Word-like toolbar above the right pane, with one formatting row and **Mermaid** and **LaTeX** insertion buttons immediately to the right of **Table**.
 4. Expand Mermaid to the full 33-family catalogue, with at least 41 starter templates, source editing, offline rendering, supported styles/layouts, and format-by-format tests. See [comprehensive support](MERMAID_COMPREHENSIVE_SUPPORT.md).
 
-“Left pane” means the Markdown source editor; the optional outline remains an additional sidebar to its left. “LaTeX” means mathematical authoring within the Markdown document in this specification. These tabs change editing tools/context; they do not change the document's file type or convert the whole document.
+“Left pane” means the Markdown source editor; the optional outline remains an additional sidebar to its left. “LaTeX” means mathematical authoring within the Markdown document in this specification. These controls act on the current selection or insertion point; they do not change the document's file type or convert the whole document.
 
 The existing single-pane Live Editing Mode, vertical Markdown palette, menu commands and source formatting ribbon remain available. The new right-pane editor is an additional capability; baseline export/presentation views remain faithful rendered outputs.
 
@@ -20,8 +20,8 @@ The existing single-pane Live Editing Mode, vertical Markdown palette, menu comm
 ```text
 App toolbar: document / layout / outline / find / export / settings
 ┌────────────────┬─────────────────────────┬──────────────────────────────────┐
-│ Optional       │ Markdown source         │ markdown | Mermaid | LaTeX       │
-│ outline        │ Existing source tools   │ Contextual Word-like toolbar     │
+│ Optional       │ Markdown source         │ Style B I … Table Mermaid LaTeX   │
+│ outline        │ Existing source tools   │ One compact formatting toolbar   │
 │                │                         ├──────────────────────────────────┤
 │ Headings       │ # Current section       │ Current section                  │
 │ Diagrams       │                         │ Rendered, editable document      │
@@ -30,7 +30,7 @@ App toolbar: document / layout / outline / find / export / settings
 Status: words / reading time / diagrams / line and column / save state
 ```
 
-The right toolbar stays pinned while the document scrolls. The three tab labels stay visible at narrow widths; individual command groups may move into an overflow menu. Preserve pane widths and layout choices. The new toolbar must not consume so much vertical space that it prevents normal writing.
+The right toolbar stays pinned while the document scrolls. Table, Mermaid and LaTeX stay visible at narrow widths; the formatting group may scroll horizontally or overflow. Preserve pane widths and layout choices. The new toolbar must not consume so much vertical space that it prevents normal writing.
 
 ## Right selection to source navigation
 
@@ -70,7 +70,7 @@ Markdown is the persisted source of truth. Both views apply operations to one do
 | EDITNEW-09 | Rapid alternation between panes must not overwrite recent input with a late render or stale selection. Document-scoped revision numbers are mandatory. |
 | EDITNEW-10 | Persist the same canonical text from either pane. Dirty indicators, save, autosave, versions, search and export all use the latest committed revision. |
 | EDITNEW-11 | Incomplete Markdown, math or Mermaid remains editable. Store the user's source, show an inline diagnostic, and clearly mark any last-successful render as stale. |
-| EDITNEW-12 | Cancel in the existing modal editors retains its existing meaning. New inline/right-tab editing is immediate; its changes are reversed through shared Undo. Do not present a misleading Cancel button after committing live edits. |
+| EDITNEW-12 | Cancel in the existing modal editors retains its existing meaning. New inline/source-inspector editing is immediate; its changes are reversed through shared Undo. Do not present a misleading Cancel button after committing live edits. |
 | EDITNEW-13 | Unknown or unsupported constructs appear as bounded source blocks/objects that can be edited as source. Switching panes must never delete them. |
 | EDITNEW-14 | Rich paste converts to supported Markdown after sanitization. Offer plain-text paste; do not preserve arbitrary browser formatting without a defined source representation. |
 | EDITNEW-15 | Delete/Backspace at block boundaries has defined behavior for merging paragraphs, leaving lists, removing empty headings, and deleting selected objects. Test each operation. |
@@ -88,18 +88,18 @@ Markdown is the persisted source of truth. Both views apply operations to one do
 | Quotes and callouts | Direct body editing; change callout type/title through tools | Preserve quoting prefixes and callout marker. |
 | Tables | Direct cell editing and keyboard cell navigation; structural commands | Patch affected cell/row/table, retain escaped pipes and extra data. |
 | Code block | Literal code editing and language selector | Preserve fence length adequate for contents; no rich-text substitutions inside code. |
-| Math | Click selects formula; LaTeX tab opens source/templates and live preview | Patch inline or display formula with correct delimiters. |
-| Mermaid | Click selects diagram; Mermaid tab opens source/canvas/tools | Patch that fence and its associated metadata, preserving unsupported lines. |
+| Math | Click selects formula; LaTeX button inserts; its menu edits source and display mode | Patch inline or display formula with correct delimiters. |
+| Mermaid | Click selects diagram; Mermaid button opens the gallery; its menu opens source/canvas tools | Patch that fence and its associated metadata, preserving unsupported lines. |
 | Image | Select object; edit alt text/path and replace image | Change image token/reference and authorized local asset handling. |
 | Details section | Toggle disclosure; edit summary/body | Preserve details/summary structure and hidden contents. |
 | Footnotes/references | Edit body/definition through source-aware UI | Patch the correct definition or reference occurrence. |
 | Front matter/raw HTML/unknown extension | Source-block editor/fallback | Retain original bytes outside the explicit edit. |
 
-## Toolbar tabs and commands
+## Unified toolbar and commands
 
-The exact tab labels are **`markdown`**, **`Mermaid`**, and **`LaTeX`**. The `markdown` tab is the default. Tabs affect the current selection or insertion point in the same Markdown file. Choosing a tab does not rewrite content, switch files, lose selection, save the document, or launch a separate app.
+Use one persistent formatting row. Place **Mermaid**, then **LaTeX**, immediately after **Table**. Clicking a button opens its insertion tool. Each adjacent arrow opens a menu with the insertion action and context-sensitive editing actions. Retain the document selection when opening tools. Opening a tool alone never changes source or dirty state.
 
-### The markdown tab
+### Markdown formatting controls
 
 Keep the default row simple. Use familiar text-formatting icons with tooltips and accessible names; put less frequent commands in Insert or overflow menus.
 
@@ -116,7 +116,7 @@ Keep the default row simple. Use familiar text-formatting icons with tooltips an
 
 Do not imply arbitrary Word document formatting that plain Markdown cannot represent. Arbitrary font-family/color, text-box placement, paragraph justification, page margins and manual pagination are outside the initial right-toolbar scope unless a separately approved Markdown extension is defined. Existing export page settings remain in Export preferences.
 
-### The Mermaid tab
+### The Mermaid button and tools
 
 | Group | Commands and behavior |
 | --- | --- |
@@ -130,9 +130,9 @@ Do not imply arbitrary Word document formatting that plain Markdown cannot repre
 
 Supported visual manipulations update source as transactions. One drag is one undo unit; it may broadcast intermediate positions for live feedback. Preserve source statements the canvas cannot understand. Any operation that would remove unsupported constructs must be explicitly disclosed before it runs. Source editing and rendering remain available for every supported renderer type.
 
-When switching from a diagram to prose, retain a valid insertion anchor and update toolbar target state. Do not silently edit the previous diagram after the selection has moved elsewhere. The legacy full-window/modal visual editor may remain with Apply/Cancel; the inline Mermaid tab must clearly use live editing.
+When switching from a diagram to prose, retain a valid insertion anchor and update toolbar target state. Do not silently edit the previous diagram after the selection has moved elsewhere. The legacy full-window/modal visual editor may remain with Apply/Cancel; the Mermaid source inspector must clearly use live editing.
 
-### The LaTeX tab
+### The LaTeX button and tools
 
 | Group | Commands and behavior |
 | --- | --- |
@@ -143,16 +143,16 @@ When switching from a diagram to prose, retain a valid insertion anchor and upda
 | Source/preview | Editable LaTeX field plus immediate rendered preview and accessible diagnostics. |
 | Navigation | Template insertion puts caret into the first slot; keyboard traversal must work without a mouse. |
 
-The tab edits the selected equation source in the left pane as the user types, including temporary invalid LaTeX. It does not convert a Markdown document to a standalone `.tex` document. Existing File Export LaTeX remains a separate export command.
+The equation source inspector edits the selected equation source in the left pane as the user types, including temporary invalid LaTeX. It does not convert a Markdown document to a standalone `.tex` document. Existing File Export LaTeX remains a separate export command.
 
 ### Toolbar interaction rules
 
 1. Remember the document selection when a toolbar control takes focus. Apply to that selection, never the accidental toolbar focus target.
 2. Enable commands only where meaningful. Use mixed states for selections with mixed formatting; disable destructive table/diagram actions when no valid target exists.
 3. Keyboard shortcuts keep the existing bindings. Commands act on the active editing pane but share source semantics and undo.
-4. Selecting a diagram or equation may activate its contextual tab; an explicit user tab choice remains stable while its tool field has focus. Avoid tab flicker during passive selection mirroring.
+4. Selecting a diagram or equation updates enabled menu actions without replacing the formatting toolbar. Its buttons remain in the same order for every selection.
 5. Esc returns focus to the document without discarding edits already committed through the live interface.
-6. Buttons, tabs, overflow menus, fields and canvas objects must be reachable and named for VoiceOver. Tab changes and validation messages must be understandable without sight.
+6. Buttons, menus, fields and canvas objects must be reachable and named for VoiceOver. Selected-object state and validation messages must be understandable without sight.
 
 ## Document architecture
 
@@ -262,12 +262,12 @@ The implementation is not complete until the complete baseline inventory is acco
 | A07 | Type incomplete Markdown/math/Mermaid on the left | Source retained; right reports pending/error without blocking. |
 | A08 | Alternate rapidly between panes | No lost edit, duplicate edit, caret jump or stale overwrite. |
 | A09 | Undo/redo interleaved source, toolbar, table, math and diagram edits | One chronological history and exact source restoration. |
-| A10 | IME, dead keys, dictation and emoji insertion | Composition survives rendering and tab focus changes. |
+| A10 | IME, dead keys, dictation and emoji insertion | Composition survives rendering and toolbar focus changes. |
 | A11 | Paste formatted text or plain source in each pane | Supported Markdown conversion; safe links and preserved selection. |
 | A12 | Format nested bold/italic/code/highlight/super/sub spans | Correct toggle semantics; no stacked or orphan delimiters. |
 | A13 | Modify a table containing escaped pipes, math and extra cells | No truncated data, neighbor changes or malformed delimiter row. |
 | A14 | Toggle task checkboxes and continue/indent lists | Exact Markdown markers and numbering; shared undo. |
-| A15 | Open `markdown`, Mermaid and LaTeX tabs with and without a target | Tools act at the correct retained anchor; switching never mutates content. |
+| A15 | Use the unified toolbar and both insertion buttons with and without a target | Table, Mermaid, LaTeX remain visible in order; tools retain the anchor; opening or cancelling a tool never mutates content. |
 | A16 | Edit a diagram through source and supported canvas actions | Left fence updates live; unsupported directives preserved or explicitly protected. |
 | A17 | Edit simple state, flowchart and sequence; inspect unsupported class | Correct target and type; safe source fallback. |
 | A18 | Edit an equation using templates and raw LaTeX | Source updates live; delimiters/mode/caret slots correct. |
@@ -276,7 +276,7 @@ The implementation is not complete until the complete baseline inventory is acco
 | A21 | Save/reopen/export after right-side edits | All consumers see latest canonical Markdown. |
 | A22 | External write while dirty, crash, autosave/history/restore | Explicit conflict handling and recoverable current text. |
 | A23 | Long mixed document with hundreds of graphics | Measured typing responsiveness; bounded cache/memory behavior. |
-| A24 | Keyboard-only and VoiceOver use of every toolbar tab | All actions named/reachable; selection context understandable. |
+| A24 | Keyboard-only and VoiceOver use of every toolbar control | All actions named/reachable; selection context understandable. |
 | A25 | Open documents from the original app without editing and save | Byte-for-byte source stability; safe media and metadata handling. |
 | A26 | Repeat all discrepancies in verification ledger | Fix or explicitly resolve each behavior; don't copy accidental bugs. |
 | A27 | Export all nine formats, plus diagram PNG/SVG and print variants | Structural validation, visual review and appropriate downstream opening; compare preserved samples. |
@@ -288,7 +288,7 @@ For losslessness, build fixtures with both expected semantic behavior and exact 
 
 1. **Recover and protect:** retain this evidence archive; establish a source repository and independently recoverable backup. The current archive is on this same machine and is not an off-device backup.
 2. **Prove the document core:** parser/source mappings, transactions, undo, left editor and minimal right editor. Pass A01–A12 and unknown-syntax round trips before expanding UI.
-3. **Build the requested toolbar:** exact three tabs, contextual commands, accessibility and selection retention. Add tables, math and Mermaid with their preservation tests.
+3. **Build the requested toolbar:** one formatting row, Mermaid/LaTeX insertion buttons and contextual menus, accessibility and selection retention. Add tables, math and Mermaid with their preservation tests.
 4. **Restore baseline product scope:** native document lifecycle, workspace/backlinks, snippets/history, modes/themes, media, import/export/print, guides/Services/Shortcuts.
 5. **Verify parity and safety:** complete the feature matrix, downstream export checks, migration, performance, crash/offline tests, signing and packaging. Review discrepancies as intentional fixes.
 
