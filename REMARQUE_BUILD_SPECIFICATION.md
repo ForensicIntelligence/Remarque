@@ -1,6 +1,6 @@
 # Remarque: complete Codex build specification
 
-Specification revision **1.3**, 29 October 2026. Baseline: **Remarque 2.1 (733)** for macOS. The user’s latest toolbar decision supersedes the three-tab design: one formatting row, with **Mermaid** and **LaTeX** buttons immediately after **Table**. Markdown document extensions remain `.md`, `.markdown`, and `.mdown`.
+Specification revision **1.4**, 29 October 2026. Baseline: **Remarque 2.1 (733)** for macOS. The user’s latest toolbar decision supersedes the three-tab design: one formatting row, with **Mermaid** and **LaTeX** buttons immediately after **Table**. Markdown document extensions remain `.md`, `.markdown`, and `.mdown`.
 
 This is the implementation brief for rebuilding the surviving product and adding synchronized editing in both panes. It contains the complete **226-record feature inventory**, exact observed controls, new interaction requirements, engineering contracts, implementation milestones, acceptance criteria, original verification limits, and embedded fixtures. The supporting dossier provides additional evidence; no essential requirement is intentionally delegated to a link.
 
@@ -50,7 +50,7 @@ The user's requested changes and this section take precedence over descriptions 
 | Topic | Rebuild decision |
 | --- | --- |
 | Platform | Native macOS, minimum deployment target macOS 14; support Apple Silicon and Intel. Use current installed Xcode while checking availability of newer APIs against the deployment target. |
-| Application identity | Display name Remarque. Use development bundle ID `ca.forensicintelligence.remarque.rebuild` so testing cannot overwrite the original app's settings/history. The old ID is `ca.forensicintelligence.remarkable`. Do not change the installed app's file associations during automated tests. |
+| Application identity | Product and display name **Remarque**. Bundle/signing identifier **`ca.forensicintelligence.remarkable`**, matching the original application identity per the user’s correction. Use FI Forensic Intelligence, Ltd. Developer ID Application signing (team PATM9DNCLA). Preserve the installed original binary and do not change file associations during automated tests. |
 | Primary editor | AppKit source editor on the left; a locally bundled structured WebKit editor on the right; SwiftUI/AppKit shell and tools. The first implementation milestone must prove the editing core before building the remaining UI around it. |
 | Native preview | Preserve a separate Native Preview proofreading mode and its diagram actions. Default right pane is the editable structured view. Selecting Edit in a read-only preview returns to the structured editor at the same source anchor. Label the mode clearly; do not call a read-only view editable. |
 | Source Live Editing Mode | Preserve the original optional marker-hiding/tile behavior in the left pane, labelled **Source Live Editing** where needed to remove ambiguity. It is distinct from right-pane editing. |

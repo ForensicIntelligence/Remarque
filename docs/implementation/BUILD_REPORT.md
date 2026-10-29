@@ -1,12 +1,16 @@
-# Remarque 3.0.2 development build 738
+# Remarque 3.0.3 development build 739
 
-29 October 2026. Bundle identifier: `ca.forensicintelligence.remarque`. The original installed Remarque 2.1 application uses a different identifier and was not replaced.
+29 October 2026. Product name: **Remarque**. Bundle/signing identifier: `ca.forensicintelligence.remarkable`. This intentionally matches the original application identity, as corrected by the user. The installed Remarque 2.1 application binary was not replaced.
 
 ## Delivered implementation
 
 The native macOS application has a shared Markdown source and undo history, an AppKit source editor, an editable rendered pane, source reveal from rendered selections, and one formatting toolbar with Mermaid and LaTeX insertion buttons immediately after Table. It includes the restored writing tools, outline, workspace/search/backlinks, local history/recovery, templates/help, snippets, media insertion, table/equation editors, document imports/exports, printing, presentations, and settings.
 
 Mermaid 12.2.0, ZenUML, ELK, and tidy-tree are pinned and bundled. The gallery has 33 families and 41 starters. Flowchart, sequence, and simple state diagrams have a visual editor; other families and unsupported constructs retain source editing. See [the generated support report](SHIPPED_MERMAID_SUPPORT.md).
+
+## Changes in 3.0.3
+
+The product name remains Remarque. The version authority, application and test bundle identifiers, Xcode project, and identity checks now use `ca.forensicintelligence.remarkable`. Version validation checks identifier consistency across both project descriptions. See [identity update](UPDATE_3.0.3.md).
 
 ## Changes in 3.0.2
 

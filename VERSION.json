@@ -1,7 +1,7 @@
 {
-  "version": "3.0.2",
-  "build": 738,
+  "version": "3.0.3",
+  "build": 739,
   "channel": "development",
-  "bundleIdentifier": "ca.forensicintelligence.remarque",
+  "bundleIdentifier": "ca.forensicintelligence.remarkable",
   "developmentTeam": "PATM9DNCLA"
 }

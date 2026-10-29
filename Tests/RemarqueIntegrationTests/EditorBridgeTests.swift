@@ -64,9 +64,11 @@ import RemarqueCore
         let bytes=Data([0xEF,0xBB,0xBF])+Data("# Title\r\n\r\ntext\n".utf8)
         let doc=RemarqueDocument();try doc.read(from:bytes,ofType:"net.daringfireball.markdown")
         XCTAssertEqual(try doc.data(ofType:"net.daringfireball.markdown"),bytes)
-        XCTAssertEqual(Bundle.main.bundleIdentifier,"ca.forensicintelligence.remarque")
+        XCTAssertEqual(Bundle.main.bundleIdentifier,"ca.forensicintelligence.remarkable")
+        XCTAssertEqual(Bundle.main.object(forInfoDictionaryKey:"CFBundleName") as? String,"Remarque")
+        XCTAssertEqual(Bundle.main.object(forInfoDictionaryKey:"CFBundleDisplayName") as? String,"Remarque")
         XCTAssertGreaterThanOrEqual(Int(BuildInfo.build) ?? 0,734)
-        XCTAssertEqual(BuildInfo.version,"3.0.2")
+        XCTAssertEqual(BuildInfo.version,"3.0.3")
     }
     func testScrollPreferencePersistsAndRoutesBothModesWithoutBlockingSelection()throws{
         XCTAssertTrue(PreferenceValues().scrollSync)

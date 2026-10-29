@@ -15,3 +15,7 @@ The original app archive stays local and is excluded from Git. The synthetic pro
 ## 2026-10-29: one right-pane toolbar
 
 The user replaced the three-tab design with one row. Mermaid and LaTeX insertion buttons follow Table. Their menu arrows retain actions for the selected object; selecting a diagram or equation no longer swaps formatting controls. At narrow pane widths, only the formatting group scrolls; Table, Mermaid and LaTeX stay visible. This supersedes the original tab requirements.
+
+## 2026-10-29: corrected product and signing identity
+
+The user corrected the application identity to product name **Remarque** and bundle/signing identifier **ca.forensicintelligence.remarkable**. This supersedes the earlier `ca.forensicintelligence.remarque` choice and the temporary `.rebuild` identifier. The corrected identity intentionally matches the surviving application. Developer ID signing still uses FI Forensic Intelligence, Ltd. (PATM9DNCLA). Keep earlier signed archives and the installed original binary intact. Build 739 / version 3.0.3 carries the correction.

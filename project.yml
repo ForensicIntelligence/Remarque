@@ -7,9 +7,9 @@ settings:
   base:
     SWIFT_VERSION: '6.0'
     MACOSX_DEPLOYMENT_TARGET: '14.0'
-    PRODUCT_BUNDLE_IDENTIFIER: ca.forensicintelligence.remarque
-    MARKETING_VERSION: '3.0.2'
-    CURRENT_PROJECT_VERSION: '738'
+    PRODUCT_BUNDLE_IDENTIFIER: ca.forensicintelligence.remarkable
+    MARKETING_VERSION: '3.0.3'
+    CURRENT_PROJECT_VERSION: '739'
     CODE_SIGN_STYLE: Manual
     CODE_SIGN_IDENTITY: '-'
     DEVELOPMENT_TEAM: PATM9DNCLA
@@ -42,6 +42,8 @@ targets:
     settings:
       base:
         PRODUCT_NAME: Remarque
+        PRODUCT_BUNDLE_IDENTIFIER: ca.forensicintelligence.remarkable
+        INFOPLIST_KEY_CFBundleDisplayName: Remarque
         INFOPLIST_FILE: App/Info.plist
         CODE_SIGN_ENTITLEMENTS: App/Remarque.entitlements
         GENERATE_INFOPLIST_FILE: NO
@@ -60,7 +62,7 @@ targets:
       - package: RemarqueCore
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: ca.forensicintelligence.remarque.tests
+        PRODUCT_BUNDLE_IDENTIFIER: ca.forensicintelligence.remarkable.tests
         GENERATE_INFOPLIST_FILE: YES
 schemes:
   RemarqueRebuild:

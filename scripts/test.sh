@@ -2,6 +2,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 node scripts/version.mjs --check
+identity="${REMARQUE_TEST_SIGNING_IDENTITY:--}"
 swift test --package-path Packages/RemarqueCore --scratch-path /tmp/remarque-build/core
 (cd Web && npm test && npm run build && npx playwright test)
-xcodebuild -project RemarqueRebuild.xcodeproj -scheme RemarqueRebuild -configuration Debug -destination 'platform=macOS' -derivedDataPath /tmp/remarque-build/app CODE_SIGN_STYLE=Manual CODE_SIGN_IDENTITY=- test
+xcodebuild -project RemarqueRebuild.xcodeproj -scheme RemarqueRebuild -configuration Debug -destination 'platform=macOS' -derivedDataPath /tmp/remarque-build/app CODE_SIGN_STYLE=Manual CODE_SIGN_IDENTITY="$identity" test
