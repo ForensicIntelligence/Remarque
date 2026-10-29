@@ -42,7 +42,10 @@ public struct SourceBuffer: Sendable {
     public init(data: Data) throws {
         // Decode scalars without Foundation's OS-dependent BOM handling. Every
         // leading/interior BOM is source trivia and must survive byte-for-byte.
-        guard let decoded = String(validating: data, as: UTF8.self) else { throw DocumentError.invalidUTF8 }
+        let decoded = String(decoding: data, as: UTF8.self)
+        // The decoding initializer replaces malformed sequences. An exact byte
+        // check rejects those repairs while supporting the macOS 14 baseline.
+        guard decoded.utf8.elementsEqual(data) else { throw DocumentError.invalidUTF8 }
         self.init(decoded)
     }
     public var text: String { pieces.joined() }
