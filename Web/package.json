@@ -1,0 +1,43 @@
+{
+  "name": "remarque-editor",
+  "version": "3.0.0-dev.734",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "@mermaid-js/layout-elk": "1.0.1",
+    "@mermaid-js/layout-tidy-tree": "1.0.1",
+    "@mermaid-js/mermaid-zenuml": "1.0.1",
+    "dompurify": "3.4.17",
+    "emoji-dictionary": "1.0.12",
+    "highlight.js": "11.12.0",
+    "mdast-util-from-markdown": "2.1.0",
+    "mdast-util-frontmatter": "2.0.1",
+    "mdast-util-gfm": "3.1.0",
+    "mdast-util-math": "3.0.0",
+    "mdast-util-to-markdown": "2.2.1",
+    "mermaid": "12.2.0",
+    "micromark-extension-frontmatter": "2.0.0",
+    "micromark-extension-gfm": "3.0.0",
+    "micromark-extension-math": "3.1.0",
+    "micromark-util-decode-string": "2.0.1",
+    "prosemirror-commands": "1.7.2",
+    "prosemirror-keymap": "1.2.3",
+    "prosemirror-model": "1.25.12",
+    "prosemirror-schema-list": "1.5.1",
+    "prosemirror-state": "1.4.4",
+    "prosemirror-tables": "1.8.5",
+    "prosemirror-view": "1.42.8",
+    "turndown": "7.2.4",
+    "turndown-plugin-gfm": "1.0.2",
+    "yaml": "2.9.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "esbuild": "0.28.2",
+    "jsdom": "30.1.3"
+  }
+}

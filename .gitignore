@@ -17,3 +17,6 @@ artifacts/
 *.xcarchive
 *.dSYM/
 recovery/*.zip
+**/.build/
+Web/test-results/
+Web/playwright-report/
