@@ -1,0 +1,63 @@
+Window: "Remarque Documentation", App: Remarque.
+0 standard window Remarque Documentation, ID: documentation, Secondary Actions: Raise
+	1 split group documentation, SidebarNavigationSplitView
+		2 scroll area Secondary Actions: Scroll Up, Scroll Down
+			3 list Sidebar
+				4 row (selectable) Remarque Documentation
+				5 row (selected) Getting Started
+				6 row (selectable) The Editor
+				7 row (selectable) Workspace & Linking
+				8 row (selectable) Versions, Snippets & Automation
+				9 row (selectable) Outline & Navigation
+				10 row (selectable) Live Preview
+				11 row (selectable) Math & Equations
+				12 row (selectable) Mermaid: Writing Diagrams
+				13 row (selectable) Mermaid: Visual Editor
+				14 row (selectable) Mermaid: Importing
+				15 row (selectable) Mermaid: Move, Resize & Align
+				16 row (selectable) Mermaid: Templates & Types
+				17 row (selectable) Exporting
+				18 row (selectable) Themes & Appearance
+				19 row (selectable) Command Palette & Search
+				20 row (selectable) Keyboard Shortcuts
+				21 row (selectable) Settings Reference
+				22 row (selectable) Privacy & Local-First
+				23 row (selectable) Markdown Reference
+			24 scroll bar (settable, float) 0
+				25 value indicator (settable, float) 0
+				26 increment arrow button
+				27 decrement arrow button
+				28 increment page button
+				29 decrement page button
+		30 search text field (settable) Search documentation
+			31 button Search
+		32 splitter (disabled, settable, float) 250
+		33 scroll area Secondary Actions: Scroll Up, Scroll Down
+			34 image Description: Sparkle, ID: sparkles
+			35 text Getting Started Create your first document and learn the lay of the land in two minutes. Remarque is a native macOS editor for serious Markdown — technical specs, product docs, research notes, and long prompts. Your work always stays in a plain .md file you fully own. The window at a glance • Outline (left) — a live map of your headings and diagrams. • Editor (center) — a fast, native writing surface. • Preview (right) — your document, beautifully typeset. • Status bar (bottom) — word count, reading time, diagrams, save state, and cursor position. Your first document 1 Press ⌘N to create a new document. 2 Type a heading with #, then start writing below it. 3 Watch the Outline and Preview update as you type. 4 Press ⌘S to save it anywhere as a normal .md file.
+			36 image Description: Lightbulb, ID: lightbulb.fill
+			37 text Press ⇧⌘P at any time to open the Command Palette and run any action by name — the fastest way to learn what Remarque can do. Switching layouts Use the layout control in the toolbar, or the View menu, to show just the editor, editor + preview, the full three-pane view, or preview only. Your choice is remembered between launches.
+			38 scroll bar (settable, float) 0
+				39 value indicator (settable, float) 0
+				40 increment arrow button
+				41 decrement arrow button
+				42 increment page button
+				43 decrement page button
+	44 toolbar
+		45 button Description: Hide Sidebar, Secondary Actions: Increment, Decrement, Delete, Cancel
+	46 close button
+	47 zoom button
+	48 minimize button
+	49 text Remarque Documentation
+50 menu bar
+	51 Remarque
+	52 File
+	53 Edit
+	54 View
+	55 Format
+	56 Diagram
+	57 Tools
+	58 Window
+	59 Help
+
+The focused UI element is 0 standard window Remarque Documentation, ID: documentation, Secondary Actions: Raise

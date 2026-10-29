@@ -1,0 +1,20 @@
+Window: "", App: Remarque.
+0 sheet Secondary Actions: Raise
+	1 container
+		2 image Description: Clock With A Circular Arrow, ID: clock.arrow.circlepath
+		3 text Version History
+		4 button Snapshot Now
+		5 button Done
+		6 text No versions yet Versions are captured automatically as you edit, or use Snapshot Now.
+7 menu bar
+	8 Remarque
+	9 File
+	10 Edit
+	11 View
+	12 Format
+	13 Diagram
+	14 Tools
+	15 Window
+	16 Help
+
+The focused UI element is 0 sheet Secondary Actions: Raise

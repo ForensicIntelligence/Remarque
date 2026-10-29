@@ -1,0 +1,152 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage[normalem]{ulem}
+\usepackage{xcolor}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=black]{hyperref}
+\usepackage[margin=1in]{geometry}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+\begin{document}
+% Front matter:
+% title: Remarque Feature Probe
+% author: Local inventory
+\section{Remarque Feature Probe}
+Disposable document for the rebuild inventory. UNIQUE\_TOP\_ANCHOR
+\subsection{Inline formatting}
+Plain \textbf{bold}, \textit{italic}, \textbf{\textit{both}}, \sout{strike}, \texttt{inline\_code}, \colorbox{yellow!40}{highlight}, H\textsubscript{2}O, x\textsuperscript{2}, 🚀 and snake\_case.
+An inline equation $E=mc^2$ and literal prices \$5 and \$10.
+\href{https://example.com}{Inline link} and \href{https://example.com}{reference link}. \textbf{Other Note}
+\subsection{Lists and callouts}
+\begin{itemize}
+  \item Parent
+\begin{itemize}
+  \item Child
+\begin{enumerate}
+  \item Nested ordered child
+\end{enumerate}
+\end{itemize}
+  \item [$\square$] Unchecked task
+  \item [$\boxtimes$] Checked task
+\end{itemize}
+\begin{enumerate}
+  \item Third
+  \item Fourth
+\end{enumerate}
+\begin{quote}
+Ordinary quote
+
+Continued paragraph.
+\end{quote}
+\begingroup\color[rgb]{0.13,0.45,0.85}\textbf{Custom note title}\endgroup\\
+\begin{quote}
+A note with \textbf{bold}.
+\end{quote}
+\begingroup\color[rgb]{0.13,0.63,0.39}\textbf{Tip}\endgroup\\
+\begin{quote}
+A tip.
+\end{quote}
+\begingroup\color[rgb]{0.55,0.30,0.78}\textbf{Important}\endgroup\\
+\begin{quote}
+Important.
+\end{quote}
+\begingroup\color[rgb]{0.80,0.56,0.10}\textbf{Warning}\endgroup\\
+\begin{quote}
+Warning.
+\end{quote}
+\begingroup\color[rgb]{0.83,0.24,0.24}\textbf{Caution}\endgroup\\
+\begin{quote}
+Caution.
+\end{quote}
+\begingroup\color[rgb]{0.42,0.45,0.52}\textbf{Custom box}\endgroup\\
+\begin{quote}
+A custom callout.
+\end{quote}
+\subsection{Tables}
+\begin{center}
+\begin{center}
+\begin{tabular}{|l|c|r|}
+\hline
+\textbf{Left} & \textbf{Center} & \textbf{Right} \\
+\hline
+\textbf{bold} & escaped | pipe & 42 \\
+\hline
+\href{https://example.com}{link} & \texttt{code} & $x^2$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{center}
+\subsection{Code and equations}
+\begin{Verbatim}[fontsize=\small,frame=single]
+let greeting = "Hello"
+// A comment
+print(greeting)
+\end{Verbatim}
+\begin{Verbatim}[fontsize=\small,frame=single]
+```nested fence```
+\end{Verbatim}
+\[
+\int_0^\infty e^{-x^2}\,dx = \frac{\sqrt{\pi}}{2}
+\]
+\subsection{Extended structure}
+A footnote reference.\textsuperscript{1}
+\begin{description}
+\item[{Term}] First definition \par Second definition
+\end{description}
+\textbf{Expandable section}\par
+Hidden \textbf{Markdown} and $x^2$.
+\section{Setext heading}
+Hard break follows.
+Second line.
+\begin{center}\rule{0.9\linewidth}{0.4pt}\end{center}
+\subsection{Diagrams}
+% Mermaid diagram (render separately)
+\begin{Verbatim}[fontsize=\small]
+flowchart LR
+    A[Start] --> B{Decision}
+    B -->|Yes| C[End]
+    B -->|No| A
+\end{Verbatim}
+% Mermaid diagram (render separately)
+\begin{Verbatim}[fontsize=\small]
+sequenceDiagram
+    participant User
+    participant App
+    User->>App: Edit
+    App-->>User: Preview
+\end{Verbatim}
+% Mermaid diagram (render separately)
+\begin{Verbatim}[fontsize=\small]
+stateDiagram-v2
+    [*] --> Editing
+    Editing --> Saved: save
+    Saved --> Editing: edit
+    Saved --> [*]
+\end{Verbatim}
+% Mermaid diagram (render separately)
+\begin{Verbatim}[fontsize=\small]
+classDiagram
+    class Document {
+        +String text
+        +save()
+    }
+\end{Verbatim}
+% Mermaid diagram (render separately)
+\begin{Verbatim}[fontsize=\small]
+pie title Feature coverage
+    "Editor" : 50
+    "Preview" : 50
+\end{Verbatim}
+\subsection{Repeated heading}
+First duplicate. UNIQUE\_MIDDLE\_ANCHOR
+\subsection{Repeated heading}
+Second duplicate. Unicode: café, 日本語, 👩🏽‍💻.
+\subsection{End marker}
+UNIQUE\_BOTTOM\_ANCHOR. Selecting this rendered sentence should identify this source paragraph in the rebuilt editor.
+% [^one]: Footnote \textbf{content}.
+
+\end{document}

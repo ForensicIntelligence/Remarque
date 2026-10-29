@@ -1,0 +1,111 @@
+Window: "Remarque Documentation", App: Remarque.
+0 standard window Remarque Documentation, ID: documentation, Secondary Actions: Raise
+	1 split group documentation, SidebarNavigationSplitView
+		2 scroll area Secondary Actions: Scroll Up, Scroll Down
+			3 list Sidebar
+				4 row (selectable) Remarque Documentation
+				5 row (selectable) Getting Started
+				6 row (selectable) The Editor
+				7 row (selectable) Workspace & Linking
+				8 row (selectable) Versions, Snippets & Automation
+				9 row (selectable) Outline & Navigation
+				10 row (selectable) Live Preview
+				11 row (selectable) Math & Equations
+				12 row (selectable) Mermaid: Writing Diagrams
+				13 row (selectable) Mermaid: Visual Editor
+				14 row (selectable) Mermaid: Importing
+				15 row (selectable) Mermaid: Move, Resize & Align
+				16 row (selectable) Mermaid: Templates & Types
+				17 row (selectable) Exporting
+				18 row (selectable) Themes & Appearance
+				19 row (selectable) Command Palette & Search
+				20 row (selectable) Keyboard Shortcuts
+				21 row (selectable) Settings Reference
+				22 row (selectable) Privacy & Local-First
+				23 row (selected) Markdown Reference
+			24 scroll bar (settable, float) 1
+				25 value indicator (settable, float) 1
+				26 increment arrow button
+				27 decrement arrow button
+				28 increment page button
+				29 decrement page button
+		30 search text field (settable) Search documentation
+			31 button Search
+		32 splitter (disabled, settable, float) 250
+		33 scroll area Secondary Actions: Scroll Up, Scroll Down
+			34 image Description: Justify, ID: text.justify
+			35 text Markdown Reference A quick cheat sheet for the syntax Remarque supports. Headings & emphasis # H1
+## H2
+### H3
+
+**bold**  *italic*  ***both***  ~~strike~~  `code` Lists - Bullet
+- Bullet
+  - Nested
+
+1. First
+2. Second
+
+- [ ] Todo
+- [x] Done Links, images & quotes [Inline link](https://example.com)
+<https://autolink.com>
+![Alt text](image.png)  ← inline & block images
+
+> A blockquote Reference links, images & footnotes Define links/images once and reference them anywhere — including inside tables — and footnotes are collected into a section at the end. Use [the editor][ed] and ![logo][lg] and a note.[^1]
+
+[ed]: https://example.com "Remarque"
+[lg]: logo.png
+[^1]: This becomes a numbered footnote. Nested lists - Parent item
+  - Child item
+    1. Deeply nested
+    2. Ordered child
+- [ ] Task
+- [x] Done Code & tables Fenced code is syntax-highlighted for many languages (Swift, JS/TS, Python, Go, Rust, and more) in the preview and every export. Set column alignment with : in the divider row — left, center, or right. ```swift
+let x = 1
+```
+
+| Left | Center | Right |
+| :--- | :----: | ----: |
+| a | b | c | Callouts GitHub/Obsidian-style admonitions render as styled boxes: NOTE, TIP, IMPORTANT, WARNING, CAUTION (with synonyms like info, danger). > [!NOTE]
+> Useful information.
+
+> [!WARNING] Custom title
+> Be careful here. Highlight, super/subscript & emoji ==Highlighted text==, H~2~O, e = mc^2^, and :rocket: :tada: shortcodes. Definition lists Term
+: The definition of the term
+: A second definition Collapsible sections <details>
+<summary>Click to expand</summary>
+
+Hidden content — supports **Markdown**, math, and diagrams. Nestable, too.
+</details> Math Inline $a^2 + b^2 = c^2$ and display:
+
+$$\sum_{i=1}^{n} i = \frac{n(n+1)}{2}$$ Diagrams & front matter ---
+title: My Doc
+---
+
+```mermaid
+flowchart TD
+    A --> B
+```
+			36 scroll bar (settable, float) 0
+				37 value indicator (settable, float) 0
+				38 increment arrow button
+				39 decrement arrow button
+				40 increment page button
+				41 decrement page button
+	42 toolbar
+		43 button Description: Hide Sidebar, Secondary Actions: Increment, Decrement, Delete, Cancel
+	44 close button
+	45 zoom button
+	46 minimize button
+	47 text Remarque Documentation
+48 menu bar
+	49 Remarque
+	50 File
+	51 Edit
+	52 View
+	53 Format
+	54 Diagram
+	55 Tools
+	56 Window
+	57 Help
+
+The focused UI element is 0 standard window Remarque Documentation, ID: documentation, Secondary Actions: Raise

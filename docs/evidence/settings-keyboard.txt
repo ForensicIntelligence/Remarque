@@ -1,0 +1,34 @@
+Window: "Keyboard", App: Remarque.
+0 standard window Keyboard, ID: com_apple_SwiftUI_Settings_window, Secondary Actions: Raise
+	1 scroll area Secondary Actions: Scroll Up, Scroll Down
+		2 text DOCUMENTS New ⌘N Open ⌘O Save ⌘S Save As ⇧⌘S Save Version ⌃⌘S Print ⌘P Import Document ⇧⌘I Import Mermaid ⌥⌘I Export DOCX ⇧⌘D Show Start Window ⌥⇧⌘N Workspace ⇧⌘0 FORMATTING Bold ⌘B Italic ⌘I Insert Link ⌘K Code Block ⌥⌘C Insert Equation ⌃⌘E Mermaid Diagram ⌥⌘M Format Document ⌥⌘L Emoji & Symbols ⌃⌘Space VIEW Command Palette ⇧⌘P Find ⌘F Toggle Preview ⌥⌘P Toggle Outline ⌥⌘O Focus Mode ⌥⌘F Typewriter Mode ⌥⌘T Smart Editing Mode ⌥⌘S Live Editing Mode ⌥⌘W Formatting Ribbon ⌃⌘R Start Presentation ⌥⌘↩ Mermaid Visual Editor ⇧⌘M HELP Documentation ⌘?
+		3 scroll bar (settable, float) 0
+			4 value indicator (settable, float) 0
+			5 increment arrow button
+			6 decrement arrow button
+			7 increment page button
+			8 decrement page button
+	9 toolbar
+		10 button Appearance, Secondary Actions: Move next, Remove from toolbar
+		11 button Editing, Secondary Actions: Move previous, Move next, Remove from toolbar
+		12 button Preview, Secondary Actions: Move previous, Move next, Remove from toolbar
+		13 button Mermaid, Secondary Actions: Move previous, Move next, Remove from toolbar
+		14 button Export, Secondary Actions: Move previous, Move next, Remove from toolbar
+		15 button Snippets, Secondary Actions: Move previous, Move next, Remove from toolbar
+		16 button Keyboard, Secondary Actions: Move previous, Move next, Remove from toolbar
+		17 pop up button more toolbar items
+	18 close button
+	19 zoom button (disabled)
+	20 text Keyboard
+21 menu bar
+	22 Remarque
+	23 File
+	24 Edit
+	25 View
+	26 Format
+	27 Diagram
+	28 Tools
+	29 Window
+	30 Help
+
+The focused UI element is 0 standard window Keyboard, ID: com_apple_SwiftUI_Settings_window, Secondary Actions: Raise

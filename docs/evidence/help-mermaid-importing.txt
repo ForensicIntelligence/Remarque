@@ -1,0 +1,55 @@
+Window: "Remarque Documentation", App: Remarque.
+0 standard window Remarque Documentation, ID: documentation, Secondary Actions: Raise
+	1 split group documentation, SidebarNavigationSplitView
+		2 scroll area Secondary Actions: Scroll Up, Scroll Down
+			3 list Sidebar
+				4 row (selectable) Remarque Documentation
+				5 row (selectable) Getting Started
+				6 row (selectable) The Editor
+				7 row (selectable) Workspace & Linking
+				8 row (selectable) Versions, Snippets & Automation
+				9 row (selectable) Outline & Navigation
+				10 row (selectable) Live Preview
+				11 row (selectable) Math & Equations
+				12 row (selectable) Mermaid: Writing Diagrams
+				13 row (selectable) Mermaid: Visual Editor
+				14 row (selected) Mermaid: Importing
+				15 row (selectable) Mermaid: Move, Resize & Align
+				16 row (selectable) Mermaid: Templates & Types
+				17 row (selectable) Exporting
+				18 row (selectable) Themes & Appearance
+				19 row (selectable) Command Palette & Search
+				20 row (selectable) Keyboard Shortcuts
+				21 row (selectable) Settings Reference
+				22 row (selectable) Privacy & Local-First
+				23 row (selectable) Markdown Reference
+			24 scroll bar (settable, float) 0
+				25 value indicator (settable, float) 0
+				26 increment arrow button
+				27 decrement arrow button
+				28 increment page button
+				29 decrement page button
+		30 search text field (settable) Search documentation
+			31 button Search
+		32 splitter (disabled, settable, float) 250
+		33 scroll area
+			34 image Description: Download, ID: square.and.arrow.down
+			35 text Mermaid: Importing Bring diagrams in from .mmd, .mermaid, or Markdown files. Choose File ▸ Import Mermaid Diagram… (⌥⌘I) to pull a diagram in from disk. 1 Pick a .mmd, .mermaid, .md, or .txt file. 2 Preview the source and the rendered diagram side by side. 3 Set a title, size, and alignment. 4 Choose where it goes: at the cursor, appended to the end, or replacing your selection. 5 Click Import Diagram — it appears immediately in the preview. If a file contains raw Mermaid, it is wrapped in a fenced block automatically. If it already contains one or more mermaid blocks, you can choose which to import.
+	36 toolbar
+		37 button Description: Hide Sidebar, Secondary Actions: Increment, Decrement, Delete, Cancel
+	38 close button
+	39 zoom button
+	40 minimize button
+	41 text Remarque Documentation
+42 menu bar
+	43 Remarque
+	44 File
+	45 Edit
+	46 View
+	47 Format
+	48 Diagram
+	49 Tools
+	50 Window
+	51 Help
+
+The focused UI element is 0 standard window Remarque Documentation, ID: documentation, Secondary Actions: Raise

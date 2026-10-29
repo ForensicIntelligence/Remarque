@@ -1,0 +1,64 @@
+Window: "Snippets", App: Remarque.
+0 standard window Snippets, ID: com_apple_SwiftUI_Settings_window, Secondary Actions: Raise
+	1 split group
+		2 container
+			3 scroll area
+				4 list
+					5 row (selectable) Note callout
+note ⇥
+					6 row (selectable) Warning callout
+warn ⇥
+					7 row (selectable) Fenced code
+code ⇥
+					8 row (selected) Table 2×2
+table ⇥
+					9 row (selectable) Link
+link ⇥
+					10 row (selectable) Details
+details ⇥
+					11 row (selectable) Front matter
+fm ⇥
+			12 button Add
+			13 button Remove
+		14 splitter (disabled, settable, float) 407
+		15 scroll area Secondary Actions: Scroll Up, Scroll Down
+			16 container
+				17 text field (settable) Name, Value: Table 2×2
+				18 text field (settable) Trigger (type + Tab to expand), Value: table
+				19 text Body
+				20 scroll area Secondary Actions: Scroll Up, Scroll Down
+					21 text entry area (settable) | $0 | Header |
+| --- | --- |
+| Cell | Cell |
+					22 scroll bar (disabled, settable, float) 0
+				23 text Use $0 to place the cursor after insertion.
+			24 scroll bar (settable, float) 0
+				25 value indicator (settable, float) 0
+				26 increment arrow button
+				27 decrement arrow button
+				28 increment page button
+				29 decrement page button
+	30 toolbar
+		31 button Appearance, Secondary Actions: Move next, Remove from toolbar
+		32 button Editing, Secondary Actions: Move previous, Move next, Remove from toolbar
+		33 button Preview, Secondary Actions: Move previous, Move next, Remove from toolbar
+		34 button Mermaid, Secondary Actions: Move previous, Move next, Remove from toolbar
+		35 button Export, Secondary Actions: Move previous, Move next, Remove from toolbar
+		36 button Snippets, Secondary Actions: Move previous, Move next, Remove from toolbar
+		37 button Keyboard, Secondary Actions: Move previous, Move next, Remove from toolbar
+		38 pop up button Description: more toolbar items, Value: About Remarque
+	39 close button
+	40 zoom button (disabled)
+	41 text Snippets
+42 menu bar
+	43 Remarque
+	44 File
+	45 Edit
+	46 View
+	47 Format
+	48 Diagram
+	49 Tools
+	50 Window
+	51 Help
+
+The focused UI element is 0 standard window Snippets, ID: com_apple_SwiftUI_Settings_window, Secondary Actions: Raise

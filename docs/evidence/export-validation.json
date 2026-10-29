@@ -1,0 +1,81 @@
+{
+  "Flow probe.png": {
+    "bytes": 20220,
+    "sha256": "516dfa4ea2a3165a6131d5fce103ca56833cfbcd875fa78cfe2eb030ddd57e06"
+  },
+  "feature-probe-embedded.md": {
+    "bytes": 2410,
+    "sha256": "7c8939fe3cde91ddb6d6202328daaf7f9d207ee014e231c4d215d39b29163c2a"
+  },
+  "feature-probe-slides.html": {
+    "bytes": 106486,
+    "sha256": "0dd129f5063b180257fb7d07f9d5fe9084e5a76144e4e5d7e5fa6c989452f989"
+  },
+  "feature-probe.docx": {
+    "bytes": 214383,
+    "sha256": "03e367e703b72a049adffb8a55f19f089b298e2eabe7e3badee48e79a5aefc69",
+    "entries": [
+      "[Content_Types].xml",
+      "_rels/.rels",
+      "word/document.xml",
+      "word/styles.xml",
+      "word/numbering.xml",
+      "word/settings.xml",
+      "word/_rels/document.xml.rels",
+      "docProps/core.xml",
+      "docProps/app.xml",
+      "word/media/image1.png",
+      "word/media/image2.png",
+      "word/media/image3.png",
+      "word/media/image4.png",
+      "word/media/image5.png",
+      "word/media/image6.png",
+      "word/media/image7.png",
+      "word/media/image8.png",
+      "word/media/image9.png"
+    ],
+    "bad_crc_member": null,
+    "xml_errors": []
+  },
+  "feature-probe.epub": {
+    "bytes": 107666,
+    "sha256": "c2b1cd249f85914f7fa205b7250144dd8df34f7909c784695732d505add85fca",
+    "entries": [
+      "mimetype",
+      "META-INF/container.xml",
+      "OEBPS/styles.css",
+      "OEBPS/chapter1.xhtml",
+      "OEBPS/chapter2.xhtml",
+      "OEBPS/chapter3.xhtml",
+      "OEBPS/nav.xhtml",
+      "OEBPS/content.opf"
+    ],
+    "bad_crc_member": null,
+    "xml_errors": []
+  },
+  "feature-probe.html": {
+    "bytes": 107977,
+    "sha256": "6a0c95fac1f0df55940466c9e3e980139b11be8a3b31a39aad54258633549e56"
+  },
+  "feature-probe.pdf": {
+    "bytes": 327426,
+    "sha256": "ecd10fbeaf3a2f512d7a0376c7fe25eac90fa451ee6d518762ccae586c676538"
+  },
+  "feature-probe.remarque": {
+    "bytes": 2540,
+    "sha256": "2816dd5e27025440574afa49593816be3160e91bd5796735aca9dcb97d6db7ee",
+    "entries": [
+      "feature-probe.md"
+    ],
+    "bad_crc_member": null,
+    "xml_errors": []
+  },
+  "feature-probe.rtf": {
+    "bytes": 406709,
+    "sha256": "e29a64b553ce8af096a2360d1b8a6e90cba26a66ecd60da43220f3aaafab406d"
+  },
+  "feature-probe.tex.txt": {
+    "bytes": 4167,
+    "sha256": "67e29f82f01ac56aafc0a92880b51de35d6181c37c15e1d16b5e341da13b64ea"
+  }
+}

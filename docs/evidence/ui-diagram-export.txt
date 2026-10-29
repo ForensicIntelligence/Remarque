@@ -1,0 +1,205 @@
+Window: "Export Diagram", App: Remarque.
+0 standard window Export Diagram, ID: save-panel, Secondary Actions: Raise
+	1 split group
+		2 scroll area Secondary Actions: Scroll Up, Scroll Down
+			3 outline sidebar
+				4 row (selectable) Description: Two people, Value: Shared
+				5 row (selectable, expanded) Value: Favorites, Secondary Actions: Collapse
+				6 row (selectable) Description: App Store letter A icon, Value: Applications
+				7 row (selectable) Description: Arrow Down Circle, Value: Downloads
+				8 row (selectable) Description: movie, Value: Movies
+				9 row (selectable) Description: Music note, Value: Music
+				10 row (selectable) Description: photo, Value: Pictures
+				11 row (selectable) Description: Menu bar with dock on a rectangle, Value: Desktop
+				12 row (selectable) Description: Document page, Value: Documents
+				13 row (selectable, expanded) Value: Locations, Secondary Actions: Collapse
+				14 row (selectable) Description: iCloud, Value: iCloud Drive
+0.9547974467277527
+				15 row (selectable) Description: move, Value: OneDrive
+				16 row (selectable) Description: home, Value: johnczlonka
+				17 row (selectable) Description: Mac Studio, Value: Big Stinky
+				18 row (selectable) Eject, Value: 4TB of Love, Description: External hard drive
+eject
+				19 row (selectable) Description: Internal hard drive, Value: Macintosh HD
+				20 row (selectable) Eject, Value: Feynman, Description: External hard drive
+eject
+				21 row (selectable) Description: Mac, Value: FI-NAS
+				22 row (selectable) Description: Network nodes connected by lines, Value: Network
+				23 row (selectable, expanded) Value: Tags, Secondary Actions: Collapse
+				24 row (selectable) Description: Small circle badge, filled, Value: Red
+				25 row (selectable) Description: Small circle badge, filled, Value: Orange
+				26 row (selectable) Description: Small circle badge, filled, Value: Yellow
+				27 row (selectable) Description: Small circle badge, filled, Value: Green
+				28 row (selectable) Description: Small circle badge, filled, Value: Blue
+				29 row (selectable) Description: Small circle badge, filled, Value: Purple
+				30 row (selectable) Description: Small circle badge, filled, Value: Gray
+				31 row (selectable) Description: Two small circle badges, Value: All Tags…
+			32 scroll bar (settable, float) 0
+				33 value indicator (settable, float) 0
+				34 increment arrow button
+				35 decrement arrow button
+				36 increment page button
+				37 decrement page button
+		38 splitter (disabled, settable, float) 159
+		39 scroll area Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down
+			40 outline Description: list view, ID: ListView
+				41 row (selectable)
+					42 cell Secondary Actions: Open Finder item
+						43 image
+						44 text field (settable) URL: file:///Users/johnczlonka/Desktop/remarquerebuild/docs/evidence/exports/feature-probe-embedded.md, Value: feature-probe-embedded.md, Secondary Actions: Open Finder item
+					45 cell
+						46 text Today at 12:07 PM
+					47 cell
+						48 text 2 KB
+					49 cell
+						50 text Markdown Document
+					51 cell
+						52 text Today at 12:07 PM
+				53 row (selectable)
+					54 cell Secondary Actions: Open Finder item
+						55 image
+						56 text field (settable) URL: file:///Users/johnczlonka/Desktop/remarquerebuild/docs/evidence/exports/feature-probe.remarque, Value: feature-probe.remarque, Secondary Actions: Open Finder item
+					57 cell
+						58 text Today at 12:07 PM
+					59 cell
+						60 text 3 KB
+					61 cell
+						62 text Document
+					63 cell
+						64 text Today at 12:07 PM
+				65 row (selectable)
+					66 cell Secondary Actions: Open Finder item
+						67 image
+						68 text field (settable) URL: file:///Users/johnczlonka/Desktop/remarquerebuild/docs/evidence/exports/feature-probe.tex.txt, Value: feature-probe.tex.txt, Secondary Actions: Open Finder item
+					69 cell
+						70 text Today at 12:07 PM
+					71 cell
+						72 text 4 KB
+					73 cell
+						74 text Plain Text
+					75 cell
+						76 text Today at 12:07 PM
+				77 row (selectable)
+					78 cell Secondary Actions: Open Finder item
+						79 image
+						80 text field (settable) URL: file:///Users/johnczlonka/Desktop/remarquerebuild/docs/evidence/exports/feature-probe.epub, Value: feature-probe.epub, Secondary Actions: Open Finder item
+					81 cell
+						82 text Today at 12:07 PM
+					83 cell
+						84 text 108 KB
+					85 cell
+						86 text EPUB
+					87 cell
+						88 text Today at 12:07 PM
+				89 row (selectable)
+					90 cell Secondary Actions: Open Finder item
+						91 image
+						92 text field (settable) URL: file:///Users/johnczlonka/Desktop/remarquerebuild/docs/evidence/exports/feature-probe-slides.html, Value: feature-probe-slides.html, Secondary Actions: Open Finder item
+					93 cell
+						94 text Today at 12:06 PM
+					95 cell
+						96 text 106 KB
+					97 cell
+						98 text HTML text
+					99 cell
+						100 text Today at 12:06 PM
+				101 row (selectable)
+					102 cell Secondary Actions: Open Finder item
+						103 image
+						104 text field (settable) URL: file:///Users/johnczlonka/Desktop/remarquerebuild/docs/evidence/exports/feature-probe.rtf, Value: feature-probe.rtf, Secondary Actions: Open Finder item
+					105 cell
+						106 text Today at 12:06 PM
+					107 cell
+						108 text 407 KB
+					109 cell
+						110 text RTF Document
+					111 cell
+						112 text Today at 12:06 PM
+				113 row (selectable)
+					114 cell Secondary Actions: Open Finder item
+						115 image
+						116 text field (settable) URL: file:///Users/johnczlonka/Desktop/remarquerebuild/docs/evidence/exports/feature-probe.docx, Value: feature-probe.docx, Secondary Actions: Open Finder item
+					117 cell
+						118 text Today at 12:06 PM
+					119 cell
+						120 text 214 KB
+					121 cell
+						122 text Microsoft Word document (.docx)
+					123 cell
+						124 text Today at 12:06 PM
+				125 row (selectable)
+					126 cell Secondary Actions: Open Finder item
+						127 image
+						128 text field (settable) URL: file:///Users/johnczlonka/Desktop/remarquerebuild/docs/evidence/exports/feature-probe.pdf, Value: feature-probe.pdf, Secondary Actions: Open Finder item
+					129 cell
+						130 text Today at 12:06 PM
+					131 cell
+						132 text 327 KB
+					133 cell
+						134 text PDF Document
+					135 cell
+						136 text Today at 12:06 PM
+				137 row (selectable)
+					138 cell Secondary Actions: Open Finder item
+						139 image
+						140 text field (settable) URL: file:///Users/johnczlonka/Desktop/remarquerebuild/docs/evidence/exports/feature-probe.html, Value: feature-probe.html, Secondary Actions: Open Finder item
+					141 cell
+						142 text Today at 12:05 PM
+					143 cell
+						144 text 108 KB
+					145 cell
+						146 text HTML text
+					147 cell
+						148 text Today at 12:05 PM
+				149 container ListViewHeader
+					150 button Description: Name, ID: name
+					151 button Description: Date Modified, Value: AXDescendingSortDirection, ID: dateModified
+					152 button Description: Size, ID: size
+					153 button Description: Kind, ID: kind
+					154 button Description: Date Added, ID: dateAdded
+			155 scroll bar (settable, float) 0
+				156 value indicator (settable, float) 0
+				157 increment arrow button
+				158 decrement arrow button
+				159 increment page button
+				160 decrement page button
+			161 scroll bar (settable, float) 0
+				162 value indicator (settable, float) 0
+				163 increment arrow button
+				164 decrement arrow button
+				165 increment page button
+				166 decrement page button
+		167 container
+			168 button (disabled) back
+			169 button (disabled) forward
+		170 menu button Description: List, Help: Show as Icons, List, or Columns, and hide/show the sidebar, ID: View Options
+		171 menu button Description: Three-by-one square grid below a one-by-two line grid, Help: Change the item grouping (hold down Option to change the sort), ID: Group or Sort By
+		172 pop up button Where:, Value: exports, ID: where popup
+		173 disclosure triangle Description: show less options, Value: 1
+		174 search text field Search
+			175 button search
+		176 text Value: Save As:, ID: nameFieldLabel
+		177 text field (settable) Value: Flow probe.png, ID: saveAsNameTextField
+		178 text Value: Tags:, ID: tagsLabel
+		179 text field (settable) tag editor
+		180 button New Folder, ID: NewFolderButton
+		181 button Cancel, ID: CancelButton
+		182 button Save, ID: OKButton
+	183 zoom button
+	184 text Export Diagram
+185 menu bar
+	186 Remarque
+	187 File
+	188 Edit
+	189 View
+	190 Format
+	191 Diagram
+	192 Tools
+	193 Window
+	194 Help
+
+Selected text: ```
+Flow probe
+```
+
+Note: Pay special attention to the content selected by the user. If the user asks a question or refers to the content they are looking at on-screen, they might be referring to the selected content (but they might be referring to something else that's visible, too).

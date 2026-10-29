@@ -1,0 +1,17 @@
+Window: "feature-probe.md", App: Remarque.
+0 View, Secondary Actions: Cancel, Pick
+	1 menu Secondary Actions: Cancel
+		2 Show Tab Bar, ID: toggleTabBar:
+		3 Show All Tabs, ID: toggleTabOverview:
+		4 Toggle Preview, ID: menuAction:
+		5 Toggle Outline, ID: menuAction:
+		6 Focus Mode, ID: menuAction:
+		7 Typewriter Mode, ID: menuAction:
+		8 Smart Editing Mode ✓, ID: menuAction:
+		9 Live Editing Mode (WYSIWYG), ID: menuAction:
+		10 Start Presentation, ID: menuAction:
+		11 Hide Markdown Tools, ID: menuAction:
+		12 Hide Formatting Ribbon, ID: menuAction:
+		13 Use Native Preview, ID: menuAction:
+		14 Mermaid Visual Editor, ID: menuAction:
+		15 Enter Full Screen, ID: toggleFullScreen:

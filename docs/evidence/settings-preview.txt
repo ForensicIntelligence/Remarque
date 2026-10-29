@@ -1,0 +1,33 @@
+Window: "Preview", App: Remarque.
+0 standard window Preview, ID: com_apple_SwiftUI_Settings_window, Secondary Actions: Raise
+	1 scroll area
+		2 container
+			3 switch Live preview, Value: on
+			4 slider (settable, float) Preview debounce: 150 ms, Value: 0.15
+			5 switch Scroll sync, Value: on
+			6 switch Hide front matter in preview, Value: on
+			7 switch Open links in default browser, Value: on
+	8 toolbar
+		9 button Appearance, Secondary Actions: Move next, Remove from toolbar
+		10 button Editing, Secondary Actions: Move previous, Move next, Remove from toolbar
+		11 button Preview, Secondary Actions: Move previous, Move next, Remove from toolbar
+		12 button Mermaid, Secondary Actions: Move previous, Move next, Remove from toolbar
+		13 button Export, Secondary Actions: Move previous, Move next, Remove from toolbar
+		14 button Snippets, Secondary Actions: Move previous, Move next, Remove from toolbar
+		15 button Keyboard, Secondary Actions: Move previous, Move next, Remove from toolbar
+		16 pop up button more toolbar items
+	17 close button
+	18 zoom button (disabled)
+	19 text Preview
+20 menu bar
+	21 Remarque
+	22 File
+	23 Edit
+	24 View
+	25 Format
+	26 Diagram
+	27 Tools
+	28 Window
+	29 Help
+
+The focused UI element is 0 standard window Preview, ID: com_apple_SwiftUI_Settings_window, Secondary Actions: Raise

@@ -1,0 +1,74 @@
+Window: "Untitled", App: Remarque.
+0 standard window Untitled, Secondary Actions: Raise
+	1 container
+		2 text Flowchart
+		3 button Description: Auto Layout, ID: rectangle.3.offgrid
+		4 button Description: Zoom Out, ID: minus.magnifyingglass
+		5 text 100%
+		6 button Description: Zoom In, ID: plus.magnifyingglass
+		7 button Description: Fit, ID: arrow.up.left.and.arrow.down.right
+		8 button (selected) Description: Toggle Source, ID: sidebar.left
+		9 button (selected) Description: Toggle Inspector, ID: sidebar.right
+		10 button Cancel
+		11 button Apply
+		12 button (selected) Description: Select & Move (V), ID: cursorarrow
+		13 button Description: Add Node — click the canvas (N), ID: plus.rectangle
+		14 button Description: Connect — click source, then target (E), ID: arrow.triangle.branch
+		15 button Description: Delete Selection, ID: trash
+		16 button Description: Snap to Grid, ID: squareshape.split.3x3
+		17 split group
+			18 container
+				19 text Generated Mermaid
+				20 button Description: Copy, ID: doc.on.doc
+				21 scroll area
+					22 text flowchart LR
+    Write[Write Markdown] --> Preview[Live Preview]
+    Preview[Live Preview] --> Diagram{Edit Diagram?}
+    Diagram{Edit Diagram?} -->|Visually| Canvas[Visual Editor]
+    Diagram{Edit Diagram?} -->|As source| Source[Raw Mermaid]
+    Canvas[Visual Editor] --> Export[Export]
+    Source[Raw Mermaid] --> Export[Export]
+			23 splitter (disabled, settable, float) 210
+			24 scroll area
+				25 button Description: Write Markdown, node, Help: Activate to select, Value: Selected
+				26 button Description: Live Preview, node, Help: Activate to select
+				27 button Description: Edit Diagram?, node, Help: Activate to select
+				28 button Description: Visual Editor, node, Help: Activate to select
+				29 button Description: Export, node, Help: Activate to select
+				30 button Description: Raw Mermaid, node, Help: Activate to select
+			31 splitter (disabled, settable, float) 1359
+			32 container
+				33 text Inspector
+				34 scroll area
+					35 text DIAGRAM Direction
+					36 pop up button Left → Right
+					37 text NODE WRITE Label
+					38 text field (settable) Value: Write Markdown, Placeholder: Label
+					39 text Shape
+					40 pop up button Rectangle
+					41 button Delete Node
+		42 text Node: Write Zoom 100% 176 words · 1 min read · 1 diagram Line 24, Col 1 · Mermaid Visual Editor · Saved
+	43 toolbar
+		44 menu button Layout, Help: Layout — Mermaid Visual Editor, Value: Mermaid Visual Editor, ID: point.topleft.down.curvedto.point.bottomright.up
+		45 button Description: Mermaid Visual Editor, ID: point.topleft.down.curvedto.point.bottomright.up, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		46 button Description: Toggle Outline, ID: sidebar.left, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		47 button Description: Focus Mode, ID: moon.stars, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		48 button Description: Find, ID: magnifyingglass, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		49 menu button Export, ID: square.and.arrow.up
+		50 button Description: Settings, ID: gearshape, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Remove from toolbar
+	51 close button
+	52 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	53 minimize button
+	54 text Untitled
+55 menu bar
+	56 Remarque
+	57 File
+	58 Edit
+	59 View
+	60 Format
+	61 Diagram
+	62 Tools
+	63 Window
+	64 Help
+
+The focused UI element is 0 standard window Untitled, Secondary Actions: Raise

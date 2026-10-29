@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-29",
+  "specification_revision": "1.2",
+  "note": "Current handoff artifacts. Original forensic evidence remains covered by recovery/preservation-manifest.json.",
+  "files": [
+    {
+      "path": "REMARQUE_BUILD_SPECIFICATION.md",
+      "bytes": 194424,
+      "sha256": "d3de845a654ebe243f7b388301cce088122c3ad0621a8ddc18bd5f62925fc620"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2261,
+      "sha256": "4033f1755f17338c6411e70eb8f53d157a0f001d57c248f9127d46478a783040"
+    },
+    {
+      "path": "docs/REBUILD_SPECIFICATION.md",
+      "bytes": 31336,
+      "sha256": "5e528ddbb2539f06e3d22f11a9e9c2d9a52935d75c39cef6f77d839d3dd5bfc2"
+    },
+    {
+      "path": "docs/MERMAID_COMPREHENSIVE_SUPPORT.md",
+      "bytes": 16536,
+      "sha256": "1501b73f76866402883413b58d2d7a7f331fce3559f54fb8893dcf48b668abbe"
+    },
+    {
+      "path": "docs/mermaid-research/catalogue-sources.json",
+      "bytes": 9290,
+      "sha256": "b14e5f816c1254a9fbb4086e1ff988c1aa886915a560fa4cfd48b19a6789f68d"
+    },
+    {
+      "path": "docs/specification-validation.json",
+      "bytes": 1120,
+      "sha256": "394d8e25887b6ce5f620a4ea4b5261efbff5846eaf15c5d32632585afe8719fc"
+    }
+  ]
+}

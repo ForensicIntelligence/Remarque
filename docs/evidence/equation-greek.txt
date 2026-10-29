@@ -1,0 +1,65 @@
+Window: "", App: Remarque.
+0 sheet Secondary Actions: Raise
+	1 container
+		2 image Description: Function, ID: function
+		3 text Equation Editor
+		4 radio button Description: Inline, Value: 1
+		5 radio button Description: Display, Value: 0
+		6 text Your equation appears here
+		7 scroll area Secondary Actions: Scroll Up, Scroll Down
+			8 text entry area (settable)
+			9 scroll bar (disabled, settable, float) 0
+		10 radio button Description: Structures, Value: 0
+		11 radio button Description: Greek, Value: 1
+		12 radio button Description: Operators, Value: 0
+		13 radio button Description: Relations, Value: 0
+		14 radio button Description: Arrows, Value: 0
+		15 radio button Description: Symbols, Value: 0
+		16 radio button Description: Functions, Value: 0
+		17 scroll area
+			18 collection Secondary Actions: AXScrollToTop, AXScrollToBottom
+				19 button Description: α, Help: \alpha
+				20 button Description: β, Help: \beta
+				21 button Description: γ, Help: \gamma
+				22 button Description: δ, Help: \delta
+				23 button Description: ε, Help: \varepsilon
+				24 button Description: ζ, Help: \zeta
+				25 button Description: η, Help: \eta
+				26 button Description: θ, Help: \theta
+				27 button Description: κ, Help: \kappa
+				28 button Description: λ, Help: \lambda
+				29 button Description: μ, Help: \mu
+				30 button Description: ν, Help: \nu
+				31 button Description: ξ, Help: \xi
+				32 button Description: π, Help: \pi
+				33 button Description: ρ, Help: \rho
+				34 button Description: σ, Help: \sigma
+				35 button Description: τ, Help: \tau
+				36 button Description: φ, Help: \phi
+				37 button Description: χ, Help: \chi
+				38 button Description: ψ, Help: \psi
+				39 button Description: ω, Help: \omega
+				40 button Description: Γ, Help: \Gamma
+				41 button Description: Δ, Help: \Delta
+				42 button Description: Θ, Help: \Theta
+				43 button Description: Λ, Help: \Lambda
+				44 button Description: Π, Help: \Pi
+				45 button Description: Σ, Help: \Sigma
+				46 button Description: Φ, Help: \Phi
+				47 button Description: Ψ, Help: \Psi
+				48 button Description: Ω, Help: \Omega
+		49 text Tip: click a template, then fill the slots.
+		50 button Cancel
+		51 button (disabled) Insert
+52 menu bar
+	53 Remarque
+	54 File
+	55 Edit
+	56 View
+	57 Format
+	58 Diagram
+	59 Tools
+	60 Window
+	61 Help
+
+The focused UI element is 8 text entry area (settable)

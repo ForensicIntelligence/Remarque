@@ -1,0 +1,63 @@
+Window: "Remarque Documentation", App: Remarque.
+0 standard window Remarque Documentation, ID: documentation, Secondary Actions: Raise
+	1 split group documentation, SidebarNavigationSplitView
+		2 scroll area Secondary Actions: Scroll Up, Scroll Down
+			3 list Sidebar
+				4 row (selectable) Remarque Documentation
+				5 row (selectable) Getting Started
+				6 row (selected) The Editor
+				7 row (selectable) Workspace & Linking
+				8 row (selectable) Versions, Snippets & Automation
+				9 row (selectable) Outline & Navigation
+				10 row (selectable) Live Preview
+				11 row (selectable) Math & Equations
+				12 row (selectable) Mermaid: Writing Diagrams
+				13 row (selectable) Mermaid: Visual Editor
+				14 row (selectable) Mermaid: Importing
+				15 row (selectable) Mermaid: Move, Resize & Align
+				16 row (selectable) Mermaid: Templates & Types
+				17 row (selectable) Exporting
+				18 row (selectable) Themes & Appearance
+				19 row (selectable) Command Palette & Search
+				20 row (selectable) Keyboard Shortcuts
+				21 row (selectable) Settings Reference
+				22 row (selectable) Privacy & Local-First
+				23 row (selectable) Markdown Reference
+			24 scroll bar (settable, float) 0
+				25 value indicator (settable, float) 0
+				26 increment arrow button
+				27 decrement arrow button
+				28 increment page button
+				29 decrement page button
+		30 search text field (settable) Search documentation
+			31 button Search
+		32 splitter (disabled, settable, float) 250
+		33 scroll area Secondary Actions: Scroll Up, Scroll Down
+			34 image Description: Annotate, ID: pencil.and.outline
+			35 text The Editor A native AppKit text engine tuned for comfortable, fast writing. The editor is built on the same text engine as the rest of macOS, so selection, undo, spellcheck, and keyboard navigation all feel exactly as you expect. Formatting helpers Select text and apply formatting, or insert a placeholder when nothing is selected. Everything is undoable and never mangles surrounding content. Bold ⌘B Italic ⌘I Insert link ⌘K Code block ⌥⌘C Insert Mermaid diagram ⌥⌘M The full set of helpers — headings, lists, task lists, tables, blockquotes, and rules — lives in the Format menu, the Command Palette, and the Markdown tool palette docked at the editor's left edge (a Photoshop-style strip you can toggle from the View menu). Layouts: editor, preview, and outline Work the way that suits the moment. View ▸ Toggle Preview (⌥⌘P) shows a live preview beside the editor — math, Mermaid, callouts, and code all render as you type, kept in sync with the source. View ▸ Toggle Outline (⌥⌘O) reveals a navigable document outline, and Focus Mode (⌥⌘F) clears the chrome for distraction-free writing. The layout you choose is remembered per launch, and every pane is driven by the same plain-Markdown source underneath. Live editing (WYSIWYG) For a single-pane, render-in-place experience, turn on View ▸ Live Editing Mode (⌥⌘W) or the toggle in Settings ▸ Editing. Syntax markers are concealed — you see bold, headings, and links styled rather than their */# characters — and $$…$$ math and mermaid fences render as inline tiles right in the text. Click into any block and it reverts to editable source instantly; click away and it re-renders. Your document is always plain Markdown underneath, so nothing about the file changes. Syntax highlighting Markdown structure is gently emphasized: headings stand out, markers are subdued, links are accented, and fenced mermaid blocks get their own diagram color. Highlighting is incremental — only the line you edit is re-styled — so it stays instant even in very large documents. Smart Editing Mode Smart Editing Mode (⌥⌘S, on by default) gathers the editor's intelligence into one switch. Turn it off and Remarque behaves like a plain text editor; leave it on for the behaviors below. The fine-grained options live in Settings ▸ Editing. • Style toggles are render-aware: clicking any wrap style — Bold, Italic, Code, Strikethrough, Highlight, super/subscript (or their shortcuts) — toggles the whole styled span the caret sits in, using the same grammar the preview renders, so applying a style a second time removes it instead of stacking **** markers (even italic inside bold-italic). With no selection it styles the current word. • Smart Headings: with the caret at the start of a line, Tab cycles its heading level — none → # → ## → ### → none. • Press Return in a list and the next item's marker — bullet, number, or task box — is created for you; numbers renumber automatically. Return on an empty item ends the list. • Tab / Shift-Tab indent and outdent list lines; snippet triggers expand on Tab. • Brackets, parentheses, and quotes auto-pair around your selection. Images: insert, paste & drop Click the Image button (the photo icon in the tool palette, or Format ▸ Image) to choose a PNG, JPEG, GIF, or SVG from an open dialog — any selected text becomes the alt text. You can also paste an image from the clipboard or drag one in from Finder. However it arrives, Remarque copies it into a sibling assets/ folder and inserts the Markdown for you. Drop a web URL onto selected text to turn it into a link. Because Remarque is sandboxed, opening a document grants access to that file only — not to images sitting next to it. The moment a document referencing local images opens, Remarque asks to approve the document's folder; grant it once and the images appear immediately and stay readable across launches. If you cancel, a quiet Grant Access… banner above the preview lets you approve later. The same grant lets exports (HTML, DOCX, EPUB, bundles) embed those images. Find & Replace Press ⌘F to find, and expand the panel for replace. Searches can be case-sensitive, whole-word, or full regular expressions with $1 capture-group templates in the replacement. Smart paste Paste from a web page or Word and Remarque converts the rich text to clean Markdown — headings, bold/italic, links, code, and lists — instead of dumping raw HTML. Toggle it in Settings ▸ Editing. Visual table editor Choose Format ▸ Table… or the table button in the tool palette to build a table in a grid: set headers and cells, pick per-column alignment, add or remove rows and columns. Select an existing table first to edit it in place — the text around the table is preserved, and rows with extra cells are never trimmed. Tidy up Format ▸ Format Document (⌥⌘L) normalizes whitespace, list markers, and table column alignment in one undoable pass — never touching the inside of code or math blocks, horizontal rules, #hashtags, or trailing-space line breaks. Always in sync If a document changes on disk in another app, Remarque reloads it automatically — and asks first if you have unsaved edits, so your work is never lost. Focus & Typewriter modes • Focus Mode (⌥⌘F) hides the chrome and centers a readable writing column. • Typewriter Mode (⌥⌘T) keeps the current line vertically centered as you write. • Optional line numbers and current-line highlight are in Settings ▸ Appearance.
+			36 image Description: Lightbulb, ID: lightbulb.fill
+			37 text Turn on soft wrap, smart quotes, and spellcheck in Settings ▸ Editing to match how you like to write.
+			38 scroll bar (settable, float) 0
+				39 value indicator (settable, float) 0
+				40 increment arrow button
+				41 decrement arrow button
+				42 increment page button
+				43 decrement page button
+	44 toolbar
+		45 button Description: Hide Sidebar, Secondary Actions: Increment, Decrement, Delete, Cancel
+	46 close button
+	47 zoom button
+	48 minimize button
+	49 text Remarque Documentation
+50 menu bar
+	51 Remarque
+	52 File
+	53 Edit
+	54 View
+	55 Format
+	56 Diagram
+	57 Tools
+	58 Window
+	59 Help
+
+The focused UI element is 0 standard window Remarque Documentation, ID: documentation, Secondary Actions: Raise

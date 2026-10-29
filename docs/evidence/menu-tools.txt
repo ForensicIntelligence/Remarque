@@ -1,0 +1,8 @@
+Window: "Remarque", App: Remarque.
+0 Tools, Secondary Actions: Cancel, Pick
+	1 menu Secondary Actions: Cancel
+		2 Command Palette, ID: menuAction:
+		3 Find, ID: menuAction:
+		4 Documentation, ID: menuAction:
+		5 Markdown Guide, ID: menuAction:
+		6 Mermaid Guide, ID: menuAction:

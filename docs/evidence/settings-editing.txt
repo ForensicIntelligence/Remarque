@@ -1,0 +1,50 @@
+Window: "Editing", App: Remarque.
+0 standard window Editing, ID: com_apple_SwiftUI_Settings_window, Secondary Actions: Raise
+	1 scroll area Secondary Actions: Scroll Up, Scroll Down
+		2 container
+			3 switch Smart editing mode (⌥⌘S), Value: on
+			4 switch Smart headings (Tab at line start cycles #, ##, ###), Value: on
+			5 switch Smart quotes, Value: off
+			6 switch Smart dashes, Value: off
+			7 switch Auto-pair brackets, Value: on
+			8 switch Smart paste (convert HTML/Word to Markdown), Value: on
+		9 text Render-aware style toggles, list & quote continuation, snippet expansion, and the options above. Turn off for a plain text editor.
+		10 container
+			11 switch Live editing mode — WYSIWYG (⌥⌘W), Value: off
+			12 switch Soft wrap, Value: on
+			13 switch Typewriter mode, Value: off
+			14 switch Spellcheck, Value: on
+			15 switch Dim inactive paragraphs in Focus Mode, Value: on
+			16 switch Show Markdown tool palette, Value: on
+			17 switch Show formatting ribbon, Value: on
+			18 switch WYSIWYG preview & matching print (HTML engine), Value: on
+		19 scroll bar (settable, float) 0
+			20 value indicator (settable, float) 0
+			21 increment arrow button
+			22 decrement arrow button
+			23 increment page button
+			24 decrement page button
+	25 toolbar
+		26 button Appearance, Secondary Actions: Move next, Remove from toolbar
+		27 button Editing, Secondary Actions: Move previous, Move next, Remove from toolbar
+		28 button Preview, Secondary Actions: Move previous, Move next, Remove from toolbar
+		29 button Mermaid, Secondary Actions: Move previous, Move next, Remove from toolbar
+		30 button Export, Secondary Actions: Move previous, Move next, Remove from toolbar
+		31 button Snippets, Secondary Actions: Move previous, Move next, Remove from toolbar
+		32 button Keyboard, Secondary Actions: Move previous, Move next, Remove from toolbar
+		33 pop up button more toolbar items
+	34 close button
+	35 zoom button (disabled)
+	36 text Editing
+37 menu bar
+	38 Remarque
+	39 File
+	40 Edit
+	41 View
+	42 Format
+	43 Diagram
+	44 Tools
+	45 Window
+	46 Help
+
+The focused UI element is 0 standard window Editing, ID: com_apple_SwiftUI_Settings_window, Secondary Actions: Raise

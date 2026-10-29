@@ -1,0 +1,40 @@
+Window: "feature-probe.md", App: Remarque.
+0 standard window feature-probe.md, URL: file:///Users/johnczlonka/Desktop/remarquerebuild/docs/fixtures/feature-probe.md, Secondary Actions: Raise
+	1 container
+		2 text Diagram
+		3 button Description: Zoom Out, ID: minus.magnifyingglass
+		4 text 100%
+		5 button Description: Zoom In, ID: plus.magnifyingglass
+		6 button Description: Fit, ID: arrow.up.left.and.arrow.down.right
+		7 button (selected) Description: Toggle Source, ID: sidebar.left
+		8 button (selected) Description: Toggle Inspector, ID: sidebar.right
+		9 button Cancel
+		10 button Apply
+		11 image Description: Variable-Width Scribble Line, ID: scribble.variable
+		12 text Visual editing isn’t available for this diagram type yet. You can still render and edit it as Mermaid source.
+		13 button Edit as Source
+		14 text No selection Zoom 100% 206 words · 2 min read · 5 diagrams Line 129, Col 1 · Mermaid Visual Editor · Saved
+	15 toolbar
+		16 menu button Layout, Help: Layout — Mermaid Visual Editor, Value: Mermaid Visual Editor, ID: point.topleft.down.curvedto.point.bottomright.up
+		17 button Description: Mermaid Visual Editor, ID: point.topleft.down.curvedto.point.bottomright.up, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		18 button Description: Toggle Outline, ID: sidebar.left, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		19 button Description: Focus Mode, ID: moon.stars, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		20 button Description: Find, ID: magnifyingglass, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		21 menu button Export, ID: square.and.arrow.up
+		22 button Description: Settings, ID: gearshape, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Remove from toolbar
+	23 close button
+	24 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	25 minimize button
+	26 text feature-probe.md
+27 menu bar
+	28 Remarque
+	29 File
+	30 Edit
+	31 View
+	32 Format
+	33 Diagram
+	34 Tools
+	35 Window
+	36 Help
+
+The focused UI element is 0 standard window feature-probe.md, URL: file:///Users/johnczlonka/Desktop/remarquerebuild/docs/fixtures/feature-probe.md, Secondary Actions: Raise

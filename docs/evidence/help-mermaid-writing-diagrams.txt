@@ -1,0 +1,68 @@
+Window: "Remarque Documentation", App: Remarque.
+0 standard window Remarque Documentation, ID: documentation, Secondary Actions: Raise
+	1 split group documentation, SidebarNavigationSplitView
+		2 scroll area Secondary Actions: Scroll Up, Scroll Down
+			3 list Sidebar
+				4 row (selectable) Remarque Documentation
+				5 row (selectable) Getting Started
+				6 row (selectable) The Editor
+				7 row (selectable) Workspace & Linking
+				8 row (selectable) Versions, Snippets & Automation
+				9 row (selectable) Outline & Navigation
+				10 row (selectable) Live Preview
+				11 row (selectable) Math & Equations
+				12 row (selected) Mermaid: Writing Diagrams
+				13 row (selectable) Mermaid: Visual Editor
+				14 row (selectable) Mermaid: Importing
+				15 row (selectable) Mermaid: Move, Resize & Align
+				16 row (selectable) Mermaid: Templates & Types
+				17 row (selectable) Exporting
+				18 row (selectable) Themes & Appearance
+				19 row (selectable) Command Palette & Search
+				20 row (selectable) Keyboard Shortcuts
+				21 row (selectable) Settings Reference
+				22 row (selectable) Privacy & Local-First
+				23 row (selectable) Markdown Reference
+			24 scroll bar (settable, float) 0
+				25 value indicator (settable, float) 0
+				26 increment arrow button
+				27 decrement arrow button
+				28 increment page button
+				29 decrement page button
+		30 search text field (settable) Search documentation
+			31 button Search
+		32 splitter (disabled, settable, float) 250
+		33 scroll area Secondary Actions: Scroll Up, Scroll Down
+			34 image Description: Xy Axis With A Trend Line, ID: chart.xyaxis.line
+			35 text Mermaid: Writing Diagrams Diagrams are just fenced code blocks — and they render locally. Write a diagram in a fenced block with the mermaid language. Remarque treats it as a first-class diagram, rendering it live in the preview — entirely on your Mac, with no network access. ```mermaid
+flowchart TD
+    A[Start] --> B{Decision}
+    B -->|Yes| C[Continue]
+    B -->|No| D[Stop]
+``` Flowcharts and sequence diagrams render natively and can be edited visually. Other Mermaid types render as a graceful card and remain fully editable as source. From a card you can • Open the Visual Editor • Copy the Mermaid source or the rendered SVG • Toggle an inline source view • Select it to reveal resize handles and alignment controls
+			36 image Description: Lightbulb, ID: lightbulb.fill
+			37 text Insert a ready-made diagram from Diagram ▸ Insert Mermaid…, the Command Palette, or the Mermaid Guide.
+			38 scroll bar (settable, float) 0
+				39 value indicator (settable, float) 0
+				40 increment arrow button
+				41 decrement arrow button
+				42 increment page button
+				43 decrement page button
+	44 toolbar
+		45 button Description: Hide Sidebar, Secondary Actions: Increment, Decrement, Delete, Cancel
+	46 close button
+	47 zoom button
+	48 minimize button
+	49 text Remarque Documentation
+50 menu bar
+	51 Remarque
+	52 File
+	53 Edit
+	54 View
+	55 Format
+	56 Diagram
+	57 Tools
+	58 Window
+	59 Help
+
+The focused UI element is 0 standard window Remarque Documentation, ID: documentation, Secondary Actions: Raise

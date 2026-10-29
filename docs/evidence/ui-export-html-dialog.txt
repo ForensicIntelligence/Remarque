@@ -1,0 +1,110 @@
+Window: "Export HTML", App: Remarque.
+0 standard window Export HTML, ID: save-panel, Secondary Actions: Raise
+	1 split group
+		2 scroll area Secondary Actions: Scroll Up, Scroll Down
+			3 outline sidebar
+				4 row (selectable) Description: Two people, Value: Shared
+				5 row (selectable, expanded) Value: Favorites, Secondary Actions: Collapse
+				6 row (selectable) Description: App Store letter A icon, Value: Applications
+				7 row (selectable) Description: Arrow Down Circle, Value: Downloads
+				8 row (selectable) Description: movie, Value: Movies
+				9 row (selectable) Description: Music note, Value: Music
+				10 row (selectable) Description: photo, Value: Pictures
+				11 row (selectable) Description: Menu bar with dock on a rectangle, Value: Desktop
+				12 row (selectable) Description: Document page, Value: Documents
+				13 row (selectable, expanded) Value: Locations, Secondary Actions: Collapse
+				14 row (selectable) Description: iCloud, Value: iCloud Drive
+0.9548002481460571
+				15 row (selectable) Description: move, Value: OneDrive
+				16 row (selectable) Description: home, Value: johnczlonka
+				17 row (selectable) Description: Mac Studio, Value: Big Stinky
+				18 row
+					19 cell
+						20 text 4TB of Love
+						21 image External hard drive
+						22 button Eject, Description: eject
+				23 row
+					24 cell
+						25 text Macintosh HD
+						26 image Internal hard drive
+				27 row
+					28 cell
+						29 text Feynman
+						30 image External hard drive
+						31 button Eject, Description: eject
+				32 row (selectable, expanded) Value: Tags, Secondary Actions: Collapse
+				33 row (selectable) Description: Small circle badge, filled, Value: Red
+				34 row (selectable) Description: Small circle badge, filled, Value: Orange
+				35 row (selectable) Description: Small circle badge, filled, Value: Yellow
+				36 row (selectable) Description: Small circle badge, filled, Value: Green
+				37 row (selectable) Description: Small circle badge, filled, Value: Blue
+				38 row (selectable) Description: Small circle badge, filled, Value: Purple
+				39 row (selectable) Description: Small circle badge, filled, Value: Gray
+				40 row (selectable) Description: Two small circle badges, Value: All Tags…
+			41 scroll bar (settable, float) 0
+				42 value indicator (settable, float) 0
+				43 increment arrow button
+				44 decrement arrow button
+				45 increment page button
+				46 decrement page button
+		47 splitter (disabled, settable, float) 159
+		48 scroll area Secondary Actions: Scroll Left, Scroll Right
+			49 outline Description: list view, ID: ListView
+				50 row (selectable)
+					51 cell Secondary Actions: Open Finder item
+						52 image
+						53 text field (settable) URL: file:///Users/johnczlonka/Desktop/remarquerebuild/docs/fixtures/feature-probe.md, Value: feature-probe.md, Secondary Actions: Open Finder item
+					54 cell
+						55 text Today at 12:02 PM
+					56 cell
+						57 text 2 KB
+					58 cell
+						59 text Markdown Document
+					60 cell
+						61 text Today at 12:02 PM
+				62 container ListViewHeader
+					63 button Description: Name, ID: name
+					64 button Description: Date Modified, Value: AXDescendingSortDirection, ID: dateModified
+					65 button Description: Size, ID: size
+					66 button Description: Kind, ID: kind
+					67 button Description: Date Added, ID: dateAdded
+			68 scroll bar (settable, float) 0
+				69 value indicator (settable, float) 0
+				70 increment arrow button
+				71 decrement arrow button
+				72 increment page button
+				73 decrement page button
+		74 container
+			75 button (disabled) back
+			76 button (disabled) forward
+		77 menu button Description: List, Help: Show as Icons, List, or Columns, and hide/show the sidebar, ID: View Options
+		78 menu button Description: Three-by-one square grid below a one-by-two line grid, Help: Change the item grouping (hold down Option to change the sort), ID: Group or Sort By
+		79 pop up button Where:, Value: fixtures, ID: where popup
+		80 disclosure triangle Description: show less options, Value: 1
+		81 search text field Search
+			82 button search
+		83 text Value: Save As:, ID: nameFieldLabel
+		84 text field (settable) Value: feature-probe.html, ID: saveAsNameTextField
+		85 text Value: Tags:, ID: tagsLabel
+		86 text field (settable) tag editor
+		87 button (disabled) New Folder, ID: NewFolderButton
+		88 button Cancel, ID: CancelButton
+		89 button (disabled) Save, ID: OKButton
+	90 zoom button
+	91 text Export HTML
+92 menu bar
+	93 Remarque
+	94 File
+	95 Edit
+	96 View
+	97 Format
+	98 Diagram
+	99 Tools
+	100 Window
+	101 Help
+
+Selected text: ```
+feature-probe
+```
+
+Note: Pay special attention to the content selected by the user. If the user asks a question or refers to the content they are looking at on-screen, they might be referring to the selected content (but they might be referring to something else that's visible, too).

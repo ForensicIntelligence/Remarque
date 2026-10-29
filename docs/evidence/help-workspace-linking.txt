@@ -1,0 +1,61 @@
+Window: "Remarque Documentation", App: Remarque.
+0 standard window Remarque Documentation, ID: documentation, Secondary Actions: Raise
+	1 split group documentation, SidebarNavigationSplitView
+		2 scroll area Secondary Actions: Scroll Up, Scroll Down
+			3 list Sidebar
+				4 row (selectable) Remarque Documentation
+				5 row (selectable) Getting Started
+				6 row (selectable) The Editor
+				7 row (selected) Workspace & Linking
+				8 row (selectable) Versions, Snippets & Automation
+				9 row (selectable) Outline & Navigation
+				10 row (selectable) Live Preview
+				11 row (selectable) Math & Equations
+				12 row (selectable) Mermaid: Writing Diagrams
+				13 row (selectable) Mermaid: Visual Editor
+				14 row (selectable) Mermaid: Importing
+				15 row (selectable) Mermaid: Move, Resize & Align
+				16 row (selectable) Mermaid: Templates & Types
+				17 row (selectable) Exporting
+				18 row (selectable) Themes & Appearance
+				19 row (selectable) Command Palette & Search
+				20 row (selectable) Keyboard Shortcuts
+				21 row (selectable) Settings Reference
+				22 row (selectable) Privacy & Local-First
+				23 row (selectable) Markdown Reference
+			24 scroll bar (settable, float) 0
+				25 value indicator (settable, float) 0
+				26 increment arrow button
+				27 decrement arrow button
+				28 increment page button
+				29 decrement page button
+		30 search text field (settable) Search documentation
+			31 button Search
+		32 splitter (disabled, settable, float) 250
+		33 scroll area Secondary Actions: Scroll Up, Scroll Down
+			34 image Description: Move, ID: folder
+			35 text Workspace & Linking Open a folder of notes, jump between them, search everything, and link notes together. Open a folder as a workspace to browse, search, and link all your notes. Choose File ▸ Workspace (⇧⌘0) or Open Folder as Workspace…. The folder reopens automatically on your next launch. Browse & Quick Open The Workspace window lists every Markdown file in the folder. Use the Quick Open field to fuzzy-find a note by name and press Return to open it. Search across files Switch to Search to find a phrase across the whole project; results show the file and line, and clicking one opens it. Wiki-links & backlinks • Link to another note with [[Note name]] — or [[Note name|shown text]]. • Click a wiki-link in the preview to open that note (resolved within the workspace folder). • The Backlinks tab lists every note that links to the one you're editing. See the [[Architecture]] note and the [[Roadmap|project roadmap]].
+			36 scroll bar (settable, float) 0
+				37 value indicator (settable, float) 0
+				38 increment arrow button
+				39 decrement arrow button
+				40 increment page button
+				41 decrement page button
+	42 toolbar
+		43 button Description: Hide Sidebar, Secondary Actions: Increment, Decrement, Delete, Cancel
+	44 close button
+	45 zoom button
+	46 minimize button
+	47 text Remarque Documentation
+48 menu bar
+	49 Remarque
+	50 File
+	51 Edit
+	52 View
+	53 Format
+	54 Diagram
+	55 Tools
+	56 Window
+	57 Help
+
+The focused UI element is 0 standard window Remarque Documentation, ID: documentation, Secondary Actions: Raise

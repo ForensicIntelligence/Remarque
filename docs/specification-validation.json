@@ -1,0 +1,28 @@
+{
+  "specification_revision": "1.2",
+  "date": "2026-10-29",
+  "document": "REMARQUE_BUILD_SPECIFICATION.md",
+  "bytes": 194424,
+  "lines": 2327,
+  "words": 26363,
+  "checks": {
+    "baseline_feature_records": 226,
+    "baseline_ids_match_index": true,
+    "mermaid_families": 33,
+    "required_mermaid_starter_templates": 41,
+    "core_acceptance_scenarios": 28,
+    "mermaid_acceptance_scenarios": 10,
+    "sync_requirements": 14,
+    "editing_requirements": 18,
+    "additional_release_checks": 16,
+    "mermaid_requirements": 16,
+    "local_links_and_anchors_checked": 189,
+    "broken_local_links": 0,
+    "markdown_fences_balanced": true,
+    "markdown_table_columns_consistent": true,
+    "assembly_placeholders_remaining": 0,
+    "protected_original_files_hash_verified": 138
+  },
+  "scope": "Documentation validation only. No rebuilt app or Mermaid templates were implemented or runtime-tested in this delivery.",
+  "external_references": "Official Mermaid documentation, 12.2.0 release and tagged source registry checked. The 33-family scope includes Agentflow and Railroad plus the 31 navigation families."
+}

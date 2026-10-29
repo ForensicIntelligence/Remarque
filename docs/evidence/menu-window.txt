@@ -1,0 +1,44 @@
+Window: "Remarque", App: Remarque.
+0 Window, Secondary Actions: Cancel, Pick
+	1 menu Secondary Actions: Cancel
+		2 Minimize, ID: performMiniaturize:
+		3 Minimize All, ID: miniaturizeAll:
+		4 Zoom, ID: performZoom:
+		5 Zoom All, ID: zoomAll:
+		6 (disabled) Fill
+		7 (disabled) Center
+		8 Move & Resize
+			9 menu Secondary Actions: Cancel
+				10 (disabled) Halves
+				11 Left
+				12 Right
+				13 (disabled) Top
+				14 (disabled) Bottom
+				15 (disabled) Quarters
+				16 (disabled) Top Left
+				17 (disabled) Top Right
+				18 (disabled) Bottom Left
+				19 (disabled) Bottom Right
+				20 (disabled) Arrange
+				21 (disabled) Left & Right
+				22 (disabled) Left & Quarters
+				23 (disabled) Right & Left
+				24 (disabled) Right & Quarters
+				25 (disabled) Top & Bottom
+				26 (disabled) Top & Quarters
+				27 (disabled) Bottom & Top
+				28 (disabled) Bottom & Quarters
+				29 (disabled) Quarters
+				30 Return to Previous Size
+		31 (disabled) Full Screen Tile
+		32 Remarque, ID: menuAction:
+		33 Workspace, ID: menuAction:
+		34 Welcome to Remarque, ID: menuAction:
+		35 What's New, ID: menuAction:
+		36 Remarque Documentation, ID: menuAction:
+		37 Markdown Guide, ID: menuAction:
+		38 Mermaid Guide, ID: menuAction:
+		39 Keyboard Shortcuts, ID: menuAction:
+		40 Bring All to Front, ID: arrangeInFront:
+		41 Arrange in Front, ID: alternateArrangeInFront:
+		42 (disabled) Remove Window from Set

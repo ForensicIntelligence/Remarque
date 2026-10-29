@@ -1,0 +1,287 @@
+{
+  "checked": "2026-10-29",
+  "reference_version": "12.2.0",
+  "pages": [
+    {
+      "path": "/syntax/flowchart.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/flowchart.md",
+      "bytes": 36827,
+      "first_keywords": [
+        "flowchart LR",
+        "flowchart TD",
+        "flowchart RL",
+        "flowchart TB"
+      ]
+    },
+    {
+      "path": "/syntax/swimlanes.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/swimlanes.md",
+      "bytes": 9115,
+      "first_keywords": [
+        "swimlane-beta LR",
+        "swimlane-beta",
+        "swimlane-beta TB"
+      ]
+    },
+    {
+      "path": "/syntax/sequenceDiagram.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/sequenceDiagram.md",
+      "bytes": 27254,
+      "first_keywords": [
+        "sequenceDiagram"
+      ]
+    },
+    {
+      "path": "/syntax/classDiagram.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/classDiagram.md",
+      "bytes": 22986,
+      "first_keywords": [
+        "classDiagram"
+      ]
+    },
+    {
+      "path": "/syntax/stateDiagram.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/stateDiagram.md",
+      "bytes": 13227,
+      "first_keywords": [
+        "stateDiagram",
+        "stateDiagram-v2"
+      ]
+    },
+    {
+      "path": "/syntax/entityRelationshipDiagram.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/entityRelationshipDiagram.md",
+      "bytes": 20360,
+      "first_keywords": [
+        "erDiagram"
+      ]
+    },
+    {
+      "path": "/syntax/userJourney.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/userJourney.md",
+      "bytes": 804,
+      "first_keywords": [
+        "journey"
+      ]
+    },
+    {
+      "path": "/syntax/gantt.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/gantt.md",
+      "bytes": 26385,
+      "first_keywords": [
+        "gantt"
+      ]
+    },
+    {
+      "path": "/syntax/pie.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/pie.md",
+      "bytes": 3249,
+      "first_keywords": [
+        "pie title Pets adopted by volunteers"
+      ]
+    },
+    {
+      "path": "/syntax/quadrantChart.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/quadrantChart.md",
+      "bytes": 10543,
+      "first_keywords": [
+        "quadrantChart"
+      ]
+    },
+    {
+      "path": "/syntax/requirementDiagram.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/requirementDiagram.md",
+      "bytes": 9394,
+      "first_keywords": [
+        "requirementDiagram"
+      ]
+    },
+    {
+      "path": "/syntax/usecase.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/usecase.md",
+      "bytes": 26025,
+      "first_keywords": [
+        "usecase-beta"
+      ]
+    },
+    {
+      "path": "/syntax/gitgraph.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/gitgraph.md",
+      "bytes": 36351,
+      "first_keywords": [
+        "gitGraph",
+        "gitGraph LR:",
+        "gitGraph TB:",
+        "gitGraph BT:"
+      ]
+    },
+    {
+      "path": "/syntax/c4.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/c4.md",
+      "bytes": 19612,
+      "first_keywords": [
+        "C4Context",
+        "C4Container",
+        "C4Component",
+        "C4Dynamic",
+        "C4Deployment"
+      ]
+    },
+    {
+      "path": "/syntax/mindmap.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/mindmap.md",
+      "bytes": 10422,
+      "first_keywords": [
+        "mindmap"
+      ]
+    },
+    {
+      "path": "/syntax/timeline.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/timeline.md",
+      "bytes": 11710,
+      "first_keywords": [
+        "timeline",
+        "timeline TD"
+      ]
+    },
+    {
+      "path": "/syntax/zenuml.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/zenuml.md",
+      "bytes": 6149,
+      "first_keywords": [
+        "zenuml"
+      ]
+    },
+    {
+      "path": "/syntax/sankey.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/sankey.md",
+      "bytes": 6580,
+      "first_keywords": [
+        "sankey"
+      ]
+    },
+    {
+      "path": "/syntax/xyChart.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/xyChart.md",
+      "bytes": 11389,
+      "first_keywords": [
+        "xychart",
+        "xychart-beta"
+      ]
+    },
+    {
+      "path": "/syntax/block.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/block.md",
+      "bytes": 21709,
+      "first_keywords": [
+        "block"
+      ]
+    },
+    {
+      "path": "/syntax/packet.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/packet.md",
+      "bytes": 4237,
+      "first_keywords": [
+        "packet"
+      ]
+    },
+    {
+      "path": "/syntax/kanban.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/kanban.md",
+      "bytes": 4802,
+      "first_keywords": [
+        "kanban"
+      ]
+    },
+    {
+      "path": "/syntax/architecture.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/architecture.md",
+      "bytes": 13485,
+      "first_keywords": [
+        "architecture-beta"
+      ]
+    },
+    {
+      "path": "/syntax/radar.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/radar.md",
+      "bytes": 6620,
+      "first_keywords": [
+        "radar-beta"
+      ]
+    },
+    {
+      "path": "/syntax/eventmodeling.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/eventmodeling.md",
+      "bytes": 8837,
+      "first_keywords": [
+        "eventmodeling"
+      ]
+    },
+    {
+      "path": "/syntax/treemap.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/treemap.md",
+      "bytes": 7379,
+      "first_keywords": [
+        "treemap-beta"
+      ]
+    },
+    {
+      "path": "/syntax/venn.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/venn.md",
+      "bytes": 3501,
+      "first_keywords": [
+        "venn-beta"
+      ]
+    },
+    {
+      "path": "/syntax/ishikawa.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/ishikawa.md",
+      "bytes": 1041,
+      "first_keywords": [
+        "ishikawa-beta"
+      ]
+    },
+    {
+      "path": "/syntax/wardley.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/wardley.md",
+      "bytes": 11109,
+      "first_keywords": [
+        "wardley-beta"
+      ]
+    },
+    {
+      "path": "/syntax/cynefin.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/cynefin.md",
+      "bytes": 9917,
+      "first_keywords": [
+        "cynefin-beta"
+      ]
+    },
+    {
+      "path": "/syntax/treeView.html",
+      "source_url": "https://raw.githubusercontent.com/mermaid-js/mermaid/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/treeView.md",
+      "bytes": 8550,
+      "first_keywords": [
+        "treeView-beta"
+      ]
+    }
+  ],
+  "additional_families": [
+    {
+      "family": "Agentflow",
+      "reference": "https://mermaid.js.org/syntax/agentflow.html",
+      "keyword": "agentflow-beta"
+    },
+    {
+      "family": "Railroad",
+      "reference": "https://github.com/mermaid-js/mermaid/blob/mermaid%4012.2.0/packages/mermaid/src/docs/syntax/railroad.md",
+      "keywords": [
+        "railroad-beta",
+        "railroad-ebnf-beta",
+        "railroad-abnf-beta",
+        "railroad-peg-beta"
+      ]
+    }
+  ],
+  "family_count": 33
+}

@@ -1,0 +1,9 @@
+Window: "Remarque", App: Remarque.
+0 Diagram, Secondary Actions: Cancel, Pick
+	1 menu Secondary Actions: Cancel
+		2 (disabled) Open Mermaid Visual Editor
+		3 Insert Mermaid Diagram, ID: menuAction:
+		4 Insert Mermaid Flowchart, ID: menuAction:
+		5 Insert Mermaid Sequence Diagram, ID: menuAction:
+		6 Insert Mermaid ER Diagram, ID: menuAction:
+		7 Import Mermaid Diagram…, ID: menuAction:

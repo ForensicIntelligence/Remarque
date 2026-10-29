@@ -1,0 +1,57 @@
+Window: "Remarque Documentation", App: Remarque.
+0 standard window Remarque Documentation, ID: documentation, Secondary Actions: Raise
+	1 split group documentation, SidebarNavigationSplitView
+		2 scroll area Secondary Actions: Scroll Up, Scroll Down
+			3 list Sidebar
+				4 row (selectable) Remarque Documentation
+				5 row (selectable) Getting Started
+				6 row (selectable) The Editor
+				7 row (selectable) Workspace & Linking
+				8 row (selectable) Versions, Snippets & Automation
+				9 row (selected) Outline & Navigation
+				10 row (selectable) Live Preview
+				11 row (selectable) Math & Equations
+				12 row (selectable) Mermaid: Writing Diagrams
+				13 row (selectable) Mermaid: Visual Editor
+				14 row (selectable) Mermaid: Importing
+				15 row (selectable) Mermaid: Move, Resize & Align
+				16 row (selectable) Mermaid: Templates & Types
+				17 row (selectable) Exporting
+				18 row (selectable) Themes & Appearance
+				19 row (selectable) Command Palette & Search
+				20 row (selectable) Keyboard Shortcuts
+				21 row (selectable) Settings Reference
+				22 row (selectable) Privacy & Local-First
+				23 row (selectable) Markdown Reference
+			24 scroll bar (settable, float) 0
+				25 value indicator (settable, float) 0
+				26 increment arrow button
+				27 decrement arrow button
+				28 increment page button
+				29 decrement page button
+		30 search text field (settable) Search documentation
+			31 button Search
+		32 splitter (disabled, settable, float) 250
+		33 scroll area
+			34 image Description: Split View Horizontally Left, ID: sidebar.left
+			35 text Outline & Navigation Move through large documents with a live structural map. The Outline parses your headings into a hierarchy. Click any row to scroll the editor straight to that section. The current section is highlighted as you move the cursor. Diagrams as landmarks Mermaid diagrams can appear in the Outline as landmarks, labelled by their title (or first line). Toggle this in Settings ▸ Mermaid ▸ Show Mermaid diagrams in outline. Jumping around • Toggle Outline: ⌥⌘O • Go to Heading: open the Command Palette (⇧⌘P) and type part of a heading.
+			36 image Description: Lightbulb, ID: lightbulb.fill
+			37 text Duplicate headings get unique, stable anchors automatically (for example overview, overview-1), so navigation and export links never collide.
+	38 toolbar
+		39 button Description: Hide Sidebar, Secondary Actions: Increment, Decrement, Delete, Cancel
+	40 close button
+	41 zoom button
+	42 minimize button
+	43 text Remarque Documentation
+44 menu bar
+	45 Remarque
+	46 File
+	47 Edit
+	48 View
+	49 Format
+	50 Diagram
+	51 Tools
+	52 Window
+	53 Help
+
+The focused UI element is 0 standard window Remarque Documentation, ID: documentation, Secondary Actions: Raise

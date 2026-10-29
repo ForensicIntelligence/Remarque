@@ -1,0 +1,80 @@
+Window: "feature-probe.md", App: Remarque.
+0 standard window feature-probe.md, URL: file:///Users/johnczlonka/Desktop/remarquerebuild/docs/fixtures/feature-probe.md, Secondary Actions: Raise
+	1 container
+		2 text Sequence Diagram
+		3 button Description: Zoom Out, ID: minus.magnifyingglass
+		4 text 100%
+		5 button Description: Zoom In, ID: plus.magnifyingglass
+		6 button Description: Fit, ID: arrow.up.left.and.arrow.down.right
+		7 button (selected) Description: Toggle Source, ID: sidebar.left
+		8 button (selected) Description: Toggle Inspector, ID: sidebar.right
+		9 button Cancel
+		10 button Apply
+		11 button (selected) Description: Select & Move (V), ID: cursorarrow
+		12 button Description: Add Participant, ID: person.badge.plus
+		13 button Description: Add Message, ID: plus.message
+		14 button Description: Delete Selection, ID: trash
+		15 split group
+			16 container
+				17 text Generated Mermaid
+				18 button Description: Copy, ID: doc.on.doc
+				19 scroll area
+					20 text sequenceDiagram
+    participant User
+    participant App
+    User->>App: Edit
+    App-->>User: Preview
+			21 splitter (disabled, settable, float) 210
+			22 splitter (disabled, settable, float) 1359
+			23 container
+				24 text Inspector
+				25 scroll area
+					26 text PARTICIPANTS
+					27 text field (settable) Value: User, Placeholder: Name
+					28 button Description: Remove, ID: minus.circle
+					29 text field (settable) Value: App, Placeholder: Name
+					30 button Description: Remove, ID: minus.circle
+					31 button Add Participant
+					32 text MESSAGES
+					33 pop up button User
+					34 image Description: Right, ID: arrow.right
+					35 pop up button App
+					36 button Description: Go Up, ID: chevron.up
+					37 button Description: Go Down, ID: chevron.down
+					38 button Description: Remove, ID: minus.circle
+					39 text field (settable) Value: Edit, Placeholder: Message
+					40 pop up button Solid Arrow
+					41 pop up button App
+					42 image Description: Right, ID: arrow.right
+					43 pop up button User
+					44 button Description: Go Up, ID: chevron.up
+					45 button Description: Go Down, ID: chevron.down
+					46 button Description: Remove, ID: minus.circle
+					47 text field (settable) Value: Preview, Placeholder: Message
+					48 pop up button Dashed Arrow
+					49 button Add Message
+		50 text No selection Zoom 100% 206 words · 2 min read · 5 diagrams Line 120, Col 1 · Mermaid Visual Editor · Saved
+	51 toolbar
+		52 menu button Layout, Help: Layout — Mermaid Visual Editor, Value: Mermaid Visual Editor, ID: point.topleft.down.curvedto.point.bottomright.up
+		53 button Description: Mermaid Visual Editor, ID: point.topleft.down.curvedto.point.bottomright.up, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		54 button Description: Toggle Outline, ID: sidebar.left, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		55 button Description: Focus Mode, ID: moon.stars, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		56 button Description: Find, ID: magnifyingglass, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		57 menu button Export, ID: square.and.arrow.up
+		58 button Description: Settings, ID: gearshape, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Remove from toolbar
+	59 close button
+	60 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	61 minimize button
+	62 text feature-probe.md
+63 menu bar
+	64 Remarque
+	65 File
+	66 Edit
+	67 View
+	68 Format
+	69 Diagram
+	70 Tools
+	71 Window
+	72 Help
+
+The focused UI element is 0 standard window feature-probe.md, URL: file:///Users/johnczlonka/Desktop/remarquerebuild/docs/fixtures/feature-probe.md, Secondary Actions: Raise

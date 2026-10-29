@@ -1,0 +1,54 @@
+Window: "Export", App: Remarque.
+0 standard window Export, ID: com_apple_SwiftUI_Settings_window, Secondary Actions: Raise
+	1 scroll area Secondary Actions: Scroll Up, Scroll Down
+		2 container
+			3 pop up button Default format, Value: HTML
+			4 pop up button Image storage, Value: Linked — sibling assets/ folder
+		5 heading Document
+		6 container
+			7 switch Include title page, Value: off
+			8 switch Include table of contents, Value: off
+			9 switch Include page numbers (DOCX), Value: off
+		10 heading DOCX
+		11 container
+			12 pop up button Page size, Value: Letter
+			13 switch Landscape orientation, Value: off
+			14 switch Include front matter, Value: off
+			15 switch Embed local images, Value: off
+			16 switch Include Mermaid source below diagrams, Value: off
+		17 heading HTML & Slides
+		18 container
+			19 switch Include inline CSS, Value: on
+			20 switch Include Mermaid source in exports, Value: off
+			21 text Custom CSS None
+			22 button Choose…
+		23 scroll bar (settable, float) 0
+			24 value indicator (settable, float) 0
+			25 increment arrow button
+			26 decrement arrow button
+			27 increment page button
+			28 decrement page button
+	29 toolbar
+		30 button Appearance, Secondary Actions: Move next, Remove from toolbar
+		31 button Editing, Secondary Actions: Move previous, Move next, Remove from toolbar
+		32 button Preview, Secondary Actions: Move previous, Move next, Remove from toolbar
+		33 button Mermaid, Secondary Actions: Move previous, Move next, Remove from toolbar
+		34 button Export, Secondary Actions: Move previous, Move next, Remove from toolbar
+		35 button Snippets, Secondary Actions: Move previous, Move next, Remove from toolbar
+		36 button Keyboard, Secondary Actions: Move previous, Move next, Remove from toolbar
+		37 pop up button more toolbar items
+	38 close button
+	39 zoom button (disabled)
+	40 text Export
+41 menu bar
+	42 Remarque
+	43 File
+	44 Edit
+	45 View
+	46 Format
+	47 Diagram
+	48 Tools
+	49 Window
+	50 Help
+
+The focused UI element is 0 standard window Export, ID: com_apple_SwiftUI_Settings_window, Secondary Actions: Raise

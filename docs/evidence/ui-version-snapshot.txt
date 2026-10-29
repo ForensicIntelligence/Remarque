@@ -1,0 +1,37 @@
+Window: "", App: Remarque.
+0 sheet Secondary Actions: Raise
+	1 container
+		2 image Description: Clock With A Circular Arrow, ID: clock.arrow.circlepath
+		3 text Version History
+		4 button Snapshot Now
+		5 button Done
+		6 split group
+			7 scroll area
+				8 list
+					9 row (selected) Oct 29, 2026 at 12:04 PM
+2 KB
+			10 splitter (disabled, settable, float) 260
+			11 container
+				12 text Compared to current +0 −0
+				13 button Restore This Version
+				14 scroll area Secondary Actions: Scroll Up, Scroll Down
+					15 list Secondary Actions: AXScrollToTop, AXScrollToBottom (showing 0-50 of 100 items)
+						16 text --- title: Remarque Feature Probe author: Local inventory --- # Remarque Feature Probe Disposable document for the rebuild inventory. UNIQUE_TOP_ANCHOR ## Inline formatting Plain **bold**, *italic*, ***both***, ~~strike~~, `inline_code`, ==highlight==, H~2~O, x^2^, :rocket: and snake_case. An inline equation $E=mc^2$ and literal prices $5 and $10. [Inline link](https://example.com) and [reference link][example]. [[Other Note|Wiki alias]] [example]: https://example.com "Reference title" ## Lists and callouts - Parent   - Child     1. Nested ordered child - [ ] Unchecked task
+					17 scroll bar (settable, float) 0
+						18 value indicator (settable, float) 0
+						19 increment arrow button
+						20 decrement arrow button
+						21 increment page button
+						22 decrement page button
+23 menu bar
+	24 Remarque
+	25 File
+	26 Edit
+	27 View
+	28 Format
+	29 Diagram
+	30 Tools
+	31 Window
+	32 Help
+
+The focused UI element is 0 sheet Secondary Actions: Raise

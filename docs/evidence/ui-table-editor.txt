@@ -1,0 +1,44 @@
+Window: "", App: Remarque.
+0 sheet Secondary Actions: Raise
+	1 container
+		2 image Description: Table, ID: tablecells
+		3 text Insert Table
+		4 button Add Column
+		5 button Add Row
+		6 scroll area
+			7 menu button Align Left
+			8 button Remove
+			9 menu button Align Left
+			10 button Remove
+			11 menu button Align Left
+			12 button Remove
+			13 text field (settable) Value: Column 1, Placeholder: Header
+			14 text field (settable) Value: Column 2, Placeholder: Header
+			15 text field (settable) Value: Column 3, Placeholder: Header
+			16 text field (settable)
+			17 text field (settable)
+			18 text field (settable)
+			19 button Remove
+			20 text field (settable)
+			21 text field (settable)
+			22 text field (settable)
+			23 button Remove
+		24 text 3 columns × 2 rows
+		25 button Cancel
+		26 button Insert
+27 menu bar
+	28 Remarque
+	29 File
+	30 Edit
+	31 View
+	32 Format
+	33 Diagram
+	34 Tools
+	35 Window
+	36 Help
+
+Selected text: ```
+Column 1
+```
+
+Note: Pay special attention to the content selected by the user. If the user asks a question or refers to the content they are looking at on-screen, they might be referring to the selected content (but they might be referring to something else that's visible, too).

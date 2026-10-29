@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; padding: 0; background: transparent; }
+  #c { position: absolute; top: 0; left: 0; font-size: 22px; }
+  #c svg { display: block; }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$','$']], displayMath: [['$$','$$']],
+      // The tex-svg-full bundle activates every extension by default, so
+      // \boldsymbol renders as true bold-italic natively. We only drop
+      // 'physics' so \div keeps meaning the division sign (physics redefines
+      // it as the divergence operator). \oiint/\oiiint still need a macro —
+      // no esint package exists in MathJax — built from stacked \oint exactly
+      // the way MathJax builds \iint, so they can never hard-fail a block.
+      packages: {'[-]': ['physics']},
+      macros: {
+        oiint: '{\\oint\\!\\!\\!\\oint}',
+        oiiint: '{\\oint\\!\\!\\!\\oint\\!\\!\\!\\oint}'
+      }
+    },
+    svg: { fontCache: 'none' },
+    startup: { typeset: false }
+  };
+</script>
+<script src="tex-svg.js"></script>
+<script>
+  function post(msg) {
+    if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.math) {
+      window.webkit.messageHandlers.math.postMessage(msg);
+    }
+  }
+  function renderMath(tex, display, color, token) {
+    if (!window.MathJax || !MathJax.startup) { post({ ok: false, error: 'engine not ready', token: token }); return; }
+    MathJax.startup.promise.then(function() {
+      try {
+        MathJax.texReset();
+        var node = MathJax.tex2svg(tex, { display: display });
+        var c = document.getElementById('c');
+        c.innerHTML = ''; c.appendChild(node);
+        var svg = c.querySelector('svg');
+        if (!svg) { post({ ok: false, error: 'no svg produced', token: token }); return; }
+        svg.style.color = color;
+        svg.style.display = 'block';
+        var valign = (svg.style.verticalAlign || '');
+        var r = svg.getBoundingClientRect();
+        post({ ok: true, svg: svg.outerHTML,
+               x: r.left, y: r.top, w: r.width, h: r.height, valign: valign, token: token });
+      } catch (e) {
+        post({ ok: false, error: String((e && e.message) || e), token: token });
+      }
+    }).catch(function(e) { post({ ok: false, error: String((e && e.message) || e), token: token }); });
+  }
+</script>
+</head>
+<body><div id="c"></div></body>
+</html>

@@ -1,0 +1,56 @@
+Window: "feature-probe.md", App: Remarque.
+0 File, Secondary Actions: Cancel, Pick
+	1 menu Secondary Actions: Cancel
+		2 New, ID: newDocument:
+		3 Show Start Window, ID: menuAction:
+		4 Workspace, ID: menuAction:
+		5 Open Folder as Workspace…, ID: menuAction:
+		6 Open…, ID: openDocument:
+		7 Open Recent
+			8 menu Secondary Actions: Cancel
+				9 feature-probe.md
+				10 Photato Developer Diary.md
+				11 diary15-Photato Developer Diary.md
+				12 DEVLOG.md —  -
+				13 README.md
+				14 DEVLOG.md —  Dee
+				15 Speculative Decoding with DSpark on Apple Silicon.md
+				16 lithos_metal_m3_ultra_convo.md
+				17 PGxIQ Architecture & Data Flow at 10132026.md
+				18 Clear Menu, ID: clearRecentDocuments:
+		19 Close, ID: performClose:
+		20 Close All, ID: closeAll:
+		21 Save, ID: saveDocument:
+		22 Save As…, ID: saveDocumentAs:
+		23 Duplicate, ID: duplicateDocument:
+		24 Rename…, ID: renameDocument:
+		25 Move To…, ID: moveDocument:
+		26 Revert To
+			27 menu Secondary Actions: Cancel
+				28 Browse All Versions…, ID: browseDocumentVersions:
+		29 Share
+			30 menu Secondary Actions: Cancel
+				31 AirDrop
+				32 Messages
+				33 Notes
+				34 Freeform
+				35 Journal
+				36 Reminders
+				37 Tailscale
+				38 More…
+		39 Save Version, ID: menuAction:
+		40 Version History…, ID: menuAction:
+		41 Import Mermaid Diagram…, ID: menuAction:
+		42 Import Document… (RTF, Word, PDF), ID: menuAction:
+		43 Export HTML…, ID: menuAction:
+		44 Export PDF…, ID: menuAction:
+		45 Export DOCX…, ID: menuAction:
+		46 Export RTF…, ID: menuAction:
+		47 Export Slides…, ID: menuAction:
+		48 Export EPUB…, ID: menuAction:
+		49 Export LaTeX…, ID: menuAction:
+		50 Remarque Bundle (.remarque)…, ID: menuAction:
+		51 Embedded Markdown (.md)…, ID: menuAction:
+		52 Print Document…, ID: menuAction:
+		53 Print Source…, ID: menuAction:
+		54 Print Rendered & Source…, ID: menuAction:

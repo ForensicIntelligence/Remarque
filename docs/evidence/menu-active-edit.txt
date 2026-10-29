@@ -1,0 +1,18 @@
+Window: "feature-probe.md", App: Remarque.
+0 Edit, Secondary Actions: Cancel, Pick
+	1 menu Secondary Actions: Cancel
+		2 (disabled) Undo, ID: undo:
+		3 (disabled) Redo, ID: redo:
+		4 (disabled) Cut, ID: cut:
+		5 (disabled) Copy, ID: copy:
+		6 (disabled) Paste, ID: paste:
+		7 (disabled) Delete, ID: delete:
+		8 (disabled) Select All, ID: selectAll:
+		9 Emoji & Symbols, ID: menuAction:
+		10 AutoFill
+			11 menu Secondary Actions: Cancel
+				12 (disabled) Contact…
+				13 (disabled) Passwords…
+				14 (disabled) Credit Card…
+		15 Start Dictation…, ID: startDictation:
+		16 Emoji & Symbols, ID: orderFrontCharacterPalette:

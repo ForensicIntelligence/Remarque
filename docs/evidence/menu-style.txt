@@ -1,0 +1,226 @@
+Window: "Untitled", App: Remarque.
+0 standard window Untitled, Secondary Actions: Raise
+	1 container
+		2 split group
+			3 container
+				4 text OUTLINE 5
+				5 scroll area
+					6 list Secondary Actions: AXScrollToTop, AXScrollToBottom
+						7 button Welcome to Remarque
+						8 button Structure at a glance
+						9 button Write with flow
+						10 button Diagram visually or in source
+						11 button Diagram: Editing Flow
+						12 button Export without drama
+			13 splitter (disabled, settable, float) 180
+			14 container
+				15 menu button Style, Help: Set the current line's section style
+					16 menu Secondary Actions: Cancel
+						17 Body, ID: menuAction:
+						18 Heading 1, ID: menuAction:
+						19 Heading 2, ID: menuAction:
+						20 Heading 3, ID: menuAction:
+						21 Heading 4, ID: menuAction:
+						22 Heading 5, ID: menuAction:
+						23 Heading 6, ID: menuAction:
+						24 Quote, ID: menuAction:
+				25 button Description: Bold, Help: Bold  (⌘B), ID: bold
+				26 button Description: Italic, Help: Italic  (⌘I), ID: italic
+				27 button Description: Strike Through, Help: Strikethrough, ID: strikethrough
+				28 button Description: Highlight, ID: highlighter
+				29 button Description: Embed Code, Help: Inline Code, ID: chevron.left.forwardslash.chevron.right
+				30 button (disabled) Description: Align Left, Help: Align column left, ID: text.alignleft
+				31 button (disabled) Description: Align Center, Help: Align column centre, ID: text.aligncenter
+				32 button (disabled) Description: Align Right, Help: Align column right, ID: text.alignright
+				33 menu button (disabled) Table, Help: Position the whole table on the page (left / centre / right)
+				34 image Description: Change Text Size, Help: Text size — scales the editor and preview together, ID: textformat.size
+				35 stepper 15 pt, Help: Text size — scales the editor and preview together, Value: 15, Secondary Actions: Increment, Decrement
+					36 increment arrow button
+					37 decrement arrow button
+				38 button Description: Bold, Help: Inserts or wraps the selection, ID: bold
+				39 button Description: Italic, Help: Inserts or wraps the selection, ID: italic
+				40 button Description: Strikethrough, Help: Inserts or wraps the selection, ID: strikethrough
+				41 button Description: Inline Code, Help: Inserts or wraps the selection, ID: chevron.left.forwardslash.chevron.right
+				42 button Description: Heading, Help: Inserts or wraps the selection, ID: number
+				43 button Description: Blockquote, Help: Inserts or wraps the selection, ID: text.quote
+				44 button Description: Bullet List, Help: Inserts or wraps the selection, ID: list.bullet
+				45 button Description: Numbered List, Help: Inserts or wraps the selection, ID: list.number
+				46 button Description: Task List, Help: Inserts or wraps the selection, ID: checklist
+				47 button Description: Link, Help: Inserts or wraps the selection, ID: link
+				48 button Description: Image, Help: Inserts or wraps the selection, ID: photo
+				49 button Description: Table Editor, Help: Inserts or wraps the selection, ID: tablecells
+				50 button Description: Code Block, Help: Inserts or wraps the selection, ID: curlybraces
+				51 button Description: Equation, Help: Inserts or wraps the selection, ID: function
+				52 button Description: Horizontal Rule, Help: Inserts or wraps the selection, ID: minus
+				53 button Description: Mermaid Diagram, Help: Inserts or wraps the selection, ID: chart.xyaxis.line
+				54 scroll area Secondary Actions: Scroll Up, Scroll Down
+					55 text entry area (settable) ID: editorTextView, Value: **# Welcome to Remarque**
+
+**Markdown. Beautifully refined.**
+
+Remarque is a calm, native macOS editor for serious Markdown — technical
+specs, product docs, research notes, and long prompts. Everything stays in
+a plain `.md` file you fully own.
+
+**## Structure at a glance**
+
+Use the ****outline**** on the left to navigate large documents. Toggle the
+****preview**** to see your writing typeset beautifully.
+
+**## Write with flow**
+
+- Press ****⌘B**** for bold, ****⌘I**** for italic, ****⌘K**** for a link
+- Create a fenced code block with ****⌥⌘C****
+- Insert a diagram with ****⌥⌘M****
+
+**## Diagram visually or in source**
+
+Mermaid diagrams render live and can be edited visually (****⇧⌘M****):
+
+<!-- remarque:mermaid id="diagram-welcome" title="Editing Flow" width="720" height="420" align="center" -->
+
+```mermaid
+flowchart LR
+    Write[Write Markdown] --> Preview[Live Preview]
+    Preview --> Diagram{Edit Diagram?}
+    Diagram -->|Visually| Canvas[Visual Editor]
+    Diagram -->|As source| Source[Raw Mermaid]
+    Canvas --> Export[Export]
+    Source --> Export
+```
+
+**## Export without drama**
+
+Export to ****HTML****, ****PDF****, or ****Microsoft Word**** locally — no cloud, no
+account, no network.
+
+| Format | Best for            |
+| ------ | ------------------- |
+| HTML   | Sharing on the web  |
+| PDF    | Printing & archives |
+| DOCX   | Reviews in Word     |
+
+*> Everything is local-first. Your words never leave your Mac.*
+
+Happy writing.
+					56 scroll bar (settable, float) 0
+						57 value indicator (settable, float) 0
+						58 increment arrow button
+						59 decrement arrow button
+						60 increment page button
+						61 decrement page button
+			62 splitter (disabled, settable, float) 784
+			63 scroll area
+				64 HTML content Description: Untitled, URL: about:blank
+					65 container
+						66 heading Welcome to Remarque, Value: 1
+							67 text Welcome to Remarque
+						68 text Markdown. Beautifully refined. Remarque is a calm, native macOS editor for serious Markdown — technical specs, product docs, research notes, and long prompts. Everything stays in a plain .md file you fully own.
+						69 heading Structure at a glance, Value: 2
+							70 text Structure at a glance
+						71 text Use the outline on the left to navigate large documents. Toggle the preview to see your writing typeset beautifully.
+						72 heading Write with flow, Value: 2
+							73 text Write with flow
+						74 content list
+							75 container Press ⌘B for bold, ⌘I for italic, ⌘K for a link
+								76 text • Press ⌘B for bold, ⌘I for italic, ⌘K for a link
+							77 container Create a fenced code block with ⌥⌘C
+								78 text • Create a fenced code block with ⌥⌘C
+							79 container Insert a diagram with ⌥⌘M
+								80 text • Insert a diagram with ⌥⌘M
+						81 heading Diagram visually or in source, Value: 2
+							82 text Diagram visually or in source
+						83 text Mermaid diagrams render live and can be edited visually (⇧⌘M):
+						84 text Editing Flow
+						85 container
+							86 text Visually As source Write Markdown Live Preview Edit Diagram? Visual Editor Raw Mermaid Export
+						87 heading Export without drama, Value: 2
+							88 text Export without drama
+						89 text Export to HTML, PDF, or Microsoft Word locally — no cloud, no account, no network.
+						90 table
+							91 row (selectable) Format
+Best for
+							92 row (selectable)
+								93 cell (selectable) HTML
+								94 cell (selectable) Sharing on the web
+							95 row (selectable)
+								96 cell (selectable) PDF
+								97 cell (selectable) Printing & archives
+							98 row (selectable)
+								99 cell (selectable) DOCX
+								100 cell (selectable) Reviews in Word
+						101 text Everything is local-first. Your words never leave your Mac. Happy writing.
+				102 scroll bar (settable, float) 0
+		103 text 176 words · 1 min read · 1 diagram Line 49, Col 15 · Outline + Editor + Preview · Saved
+	104 toolbar
+		105 menu button Layout, Help: Layout — Outline + Editor + Preview, Value: Outline + Editor + Preview, ID: rectangle.split.3x1
+		106 button Description: Mermaid Visual Editor, ID: point.topleft.down.curvedto.point.bottomright.up, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		107 button Description: Toggle Outline, ID: sidebar.left, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		108 button Description: Focus Mode, ID: moon.stars, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		109 button Description: Find, ID: magnifyingglass, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		110 menu button Export, ID: square.and.arrow.up
+		111 button Description: Settings, ID: gearshape, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Remove from toolbar
+	112 close button
+	113 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	114 minimize button
+	115 text Untitled
+116 menu bar
+	117 Remarque
+	118 File
+	119 Edit
+	120 View
+	121 Format
+	122 Diagram
+	123 Tools
+	124 Window
+	125 Help
+
+The focused UI element is 55 text entry area (settable) ID: editorTextView, Value: **# Welcome to Remarque**
+
+**Markdown. Beautifully refined.**
+
+Remarque is a calm, native macOS editor for serious Markdown — technical
+specs, product docs, research notes, and long prompts. Everything stays in
+a plain `.md` file you fully own.
+
+**## Structure at a glance**
+
+Use the ****outline**** on the left to navigate large documents. Toggle the
+****preview**** to see your writing typeset beautifully.
+
+**## Write with flow**
+
+- Press ****⌘B**** for bold, ****⌘I**** for italic, ****⌘K**** for a link
+- Create a fenced code block with ****⌥⌘C****
+- Insert a diagram with ****⌥⌘M****
+
+**## Diagram visually or in source**
+
+Mermaid diagrams render live and can be edited visually (****⇧⌘M****):
+
+<!-- remarque:mermaid id="diagram-welcome" title="Editing Flow" width="720" height="420" align="center" -->
+
+```mermaid
+flowchart LR
+    Write[Write Markdown] --> Preview[Live Preview]
+    Preview --> Diagram{Edit Diagram?}
+    Diagram -->|Visually| Canvas[Visual Editor]
+    Diagram -->|As source| Source[Raw Mermaid]
+    Canvas --> Export[Export]
+    Source --> Export
+```
+
+**## Export without drama**
+
+Export to ****HTML****, ****PDF****, or ****Microsoft Word**** locally — no cloud, no
+account, no network.
+
+| Format | Best for            |
+| ------ | ------------------- |
+| HTML   | Sharing on the web  |
+| PDF    | Printing & archives |
+| DOCX   | Reviews in Word     |
+
+*> Everything is local-first. Your words never leave your Mac.*
+
+Happy writing.

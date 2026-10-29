@@ -1,0 +1,70 @@
+Window: "", App: Remarque.
+0 sheet Secondary Actions: Raise
+	1 container
+		2 image Description: Xy Axis With A Trend Line, ID: chart.xyaxis.line
+		3 text Import Mermaid Diagram Source Rendered Preview
+		4 scroll area Secondary Actions: Scroll Up, Scroll Down
+			5 text ---
+title: Remarque Feature Probe
+author: Local inventory
+---
+
+# Remarque Feature Probe
+
+Disposable document for the rebuild inventory. UNIQUE_TOP_ANCHOR
+
+## Inline formatting
+
+Plain **bold**, *italic*, ***both***, ~~strike~~, `inline_code`, ==highlight==, H~2~O, x^2^, :rocket: and snake_case.
+
+An inline equation $E=mc^2$ and literal prices $5 and $10.
+
+[Inline link](https://example.com) and [reference link][example]. [[Other Note|Wiki alias]]
+
+[example]: https://example.com "Reference title"
+
+## Lists and 
+			6 scroll bar (settable, float) 0
+				7 value indicator (settable, float) 0
+				8 increment arrow button
+				9 decrement arrow button
+				10 increment page button
+				11 decrement page button
+		12 image Description: Warning, ID: exclamationmark.triangle
+		13 text No diagram type detected matching given configuration for text: # Remarque Feature Probe
+
+Disposable document for the rebuild inventory. UNIQUE_TOP_ANCHOR
+
+## Inline formatting
+
+Plain **bold**, *italic*, ***both***, ~~strike~~, `inline_code`, ==highlight==, H~2~O, x^2^, :rocket: and snake_case.
+
+An inline equation $E=mc^2$ and literal prices $5 and $10.
+
+[Inline link](https://example.com) and [reference link][example]. [[Other Note|Wiki alias]]
+
+[example]: https://example.com "Reference title"
+
+## Lists and Title
+		14 text field (settable) Value: feature-probe, Placeholder: Diagram title
+		15 text Width
+		16 text field (settable) 720
+		17 text Height
+		18 text field (settable) 420
+		19 text Align
+		20 pop up button Center
+		21 pop up button Insert at Cursor
+		22 button Cancel
+		23 button Import Diagram
+24 menu bar
+	25 Remarque
+	26 File
+	27 Edit
+	28 View
+	29 Format
+	30 Diagram
+	31 Tools
+	32 Window
+	33 Help
+
+The focused UI element is 0 sheet Secondary Actions: Raise

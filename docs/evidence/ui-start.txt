@@ -1,0 +1,52 @@
+Window: "Remarque", App: Remarque.
+0 standard window Remarque, ID: start, Secondary Actions: Raise
+	1 split group
+		2 container
+			3 image AppIcon
+			4 text Remarque Markdown. Beautifully refined.
+			5 button New Document
+			6 button Open…
+			7 button Documentation
+			8 text Local-first — no cloud, no network
+		9 splitter (disabled, settable, float) 320
+		10 scroll area Secondary Actions: Scroll Up, Scroll Down
+			11 text Start a new document
+			12 collection Secondary Actions: AXScrollToTop, AXScrollToBottom
+				13 button Blank Document, Start from nothing
+				14 button Guided Tour, See what Remarque can do
+				15 button Technical Spec, Architecture & design
+				16 button Meeting Notes, Agenda & action items
+				17 button Diagram Doc, Start with a flowchart
+				18 button Product Plan, Problem, solution, milestones
+			19 text Recent
+			20 button Open Other…
+			21 button Photato Developer Diary, /Users/johnczlonka/Downloads
+			22 button diary15-Photato Developer Diary, /Users/johnczlonka/Desktop/notadobe/notphotoshop/-/artifacts/runs/20261028T233908Z-232-sequence-export
+			23 button DEVLOG, /Users/johnczlonka/Desktop/notadobe/notphotoshop/-/docs
+			24 button README, /Users/johnczlonka/Desktop/Dee
+			25 button DEVLOG, /Users/johnczlonka/Desktop/Dee/docs
+			26 button Speculative Decoding with DSpark on Apple Silicon, /Users/johnczlonka/Downloads
+			27 button lithos_metal_m3_ultra_convo, /Users/johnczlonka/Downloads
+			28 button PGxIQ Architecture & Data Flow at 10132026, /Users/johnczlonka/Desktop/splitdox
+			29 scroll bar (settable, float) 0
+				30 value indicator (settable, float) 0
+				31 increment arrow button
+				32 decrement arrow button
+				33 increment page button
+				34 decrement page button
+	35 close button
+	36 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	37 minimize button
+	38 text Remarque
+39 menu bar
+	40 Remarque
+	41 File
+	42 Edit
+	43 View
+	44 Format
+	45 Diagram
+	46 Tools
+	47 Window
+	48 Help
+
+The focused UI element is 0 standard window Remarque, ID: start, Secondary Actions: Raise

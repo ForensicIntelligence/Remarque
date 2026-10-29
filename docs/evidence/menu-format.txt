@@ -1,0 +1,19 @@
+Window: "Remarque", App: Remarque.
+0 Format, Secondary Actions: Cancel, Pick
+	1 menu Secondary Actions: Cancel
+		2 Bold, ID: menuAction:
+		3 Italic, ID: menuAction:
+		4 Inline Code, ID: menuAction:
+		5 Code Block, ID: menuAction:
+		6 Link, ID: menuAction:
+		7 Image, ID: menuAction:
+		8 Insert Equation…, ID: menuAction:
+		9 Heading, ID: menuAction:
+		10 Blockquote, ID: menuAction:
+		11 Bullet List, ID: menuAction:
+		12 Numbered List, ID: menuAction:
+		13 Task List, ID: menuAction:
+		14 Table…, ID: menuAction:
+		15 Quick Table, ID: menuAction:
+		16 Horizontal Rule, ID: menuAction:
+		17 Format Document, ID: menuAction:

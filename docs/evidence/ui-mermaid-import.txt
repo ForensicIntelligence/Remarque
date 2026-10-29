@@ -1,0 +1,22 @@
+Window: "", App: Remarque.
+0 sheet Secondary Actions: Raise
+	1 container
+		2 image Description: Xy Axis With A Trend Line, ID: chart.xyaxis.line
+		3 text Import Mermaid Diagram
+		4 image Description: Download, ID: square.and.arrow.down
+		5 text Choose a Mermaid or Markdown file to import
+		6 button Choose File…
+		7 button Cancel
+		8 button (disabled) Import Diagram
+9 menu bar
+	10 Remarque
+	11 File
+	12 Edit
+	13 View
+	14 Format
+	15 Diagram
+	16 Tools
+	17 Window
+	18 Help
+
+The focused UI element is 0 sheet Secondary Actions: Raise

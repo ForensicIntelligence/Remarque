@@ -1,0 +1,20 @@
+Window: "", App: Remarque.
+0 dialog Secondary Actions: Raise
+	1 image Remarque icon
+	2 text Remarque Version 2.1 (733)
+	3 scroll area
+		4 text Remarque — Markdown. Beautifully refined.
+	5 close button
+	6 zoom button (disabled)
+7 menu bar
+	8 Remarque
+	9 File
+	10 Edit
+	11 View
+	12 Format
+	13 Diagram
+	14 Tools
+	15 Window
+	16 Help
+
+The focused UI element is 0 dialog Secondary Actions: Raise

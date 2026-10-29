@@ -1,0 +1,760 @@
+{
+  "date": "2026-10-29",
+  "files": [
+    {
+      "path": ".DS_Store",
+      "bytes": 6148,
+      "sha256": "0ac3dd32717c8cbd944d88c9ec70942e59662be019a3b9a1677a2c6005a5c06e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1435,
+      "sha256": "bfa21fa3e0e8cffc8f95d77bfc446add30eec88a6b0d2f55b1480024d740e796"
+    },
+    {
+      "path": "docs/.DS_Store",
+      "bytes": 6148,
+      "sha256": "286ecd8ad2e3860cedeaf447ea40115d77ded59ec50f715352c84bde9f4d8140"
+    },
+    {
+      "path": "docs/CONTROL_REFERENCE.md",
+      "bytes": 15426,
+      "sha256": "b1dabe03059986dd8e841359170b2dff1f4e4733fa859f09c9130e6c79a2d731"
+    },
+    {
+      "path": "docs/FEATURE_INVENTORY.md",
+      "bytes": 37651,
+      "sha256": "bccfad4d5259ba7dc4741c4a2871b68db2057ae6930f1147a53c88cccd46e62f"
+    },
+    {
+      "path": "docs/REBUILD_SPECIFICATION.md",
+      "bytes": 31091,
+      "sha256": "84d61cf49b4cbd1a28661203bc9d15a81a0bbc44a409d599f41bd103351137a0"
+    },
+    {
+      "path": "docs/RECOVERY.md",
+      "bytes": 7859,
+      "sha256": "b7e227b4060f56d6004cc3a4c0432de517db9238e59312e9e8147490fc46e4ae"
+    },
+    {
+      "path": "docs/VERIFICATION.md",
+      "bytes": 16414,
+      "sha256": "22f8b0f1c1437a0813ecd29eaca36b44c4c5fe9cef5d8cc19e047de99435e3da"
+    },
+    {
+      "path": "docs/build_inventory_index.py",
+      "bytes": 8581,
+      "sha256": "12e706c742e5892ddcad62d515d6bfdc88a809141dc9cb564ad07482b5846c96"
+    },
+    {
+      "path": "docs/evidence/.DS_Store",
+      "bytes": 6148,
+      "sha256": "f80f397711e1f3883b5d94a2af64700ebdbbbfc78572725e3e118ff3e27c9da5"
+    },
+    {
+      "path": "docs/evidence/app-info.json",
+      "bytes": 1957,
+      "sha256": "349335fe3e402c6640dc7a9fa08cd613c220bae1840dd26ec493f9ffeb7385ec"
+    },
+    {
+      "path": "docs/evidence/cstring.json",
+      "bytes": 81217,
+      "sha256": "a6e77b94c8c27bcb699d8f70ce5d7dddb3cdd65f134ea71f01e61496b17ce0a7"
+    },
+    {
+      "path": "docs/evidence/cstring.txt",
+      "bytes": 75227,
+      "sha256": "fb82dc6f875d3141bef55d0990e293a3477fe0d3c6f51806e403ac6f55dc5666"
+    },
+    {
+      "path": "docs/evidence/demangled-symbols.txt",
+      "bytes": 134313,
+      "sha256": "c53053691265119ff35c612637ecdb807d6e7ad022cf6f6ef100c18335143908"
+    },
+    {
+      "path": "docs/evidence/entitlements.plist",
+      "bytes": 653,
+      "sha256": "196ff78c30f542c05466d663437a6514a9c147f29ac347a2bad1d06a34640c7a"
+    },
+    {
+      "path": "docs/evidence/equation-arrows.txt",
+      "bytes": 1548,
+      "sha256": "55865adbb99c00f7b4e3f8e836404e8a1eeb63633f0134ade7ae9d3c0ab94604"
+    },
+    {
+      "path": "docs/evidence/equation-functions.txt",
+      "bytes": 1623,
+      "sha256": "97da67d443996cddb0555b8fd23fe6f94ed4ff4f20812d493eb342b68e9553b4"
+    },
+    {
+      "path": "docs/evidence/equation-greek.txt",
+      "bytes": 2402,
+      "sha256": "a3a9b3e97bc6fde68a6ea2affad7f22726a052dd6a0fb67932a25079394da3ce"
+    },
+    {
+      "path": "docs/evidence/equation-operators.txt",
+      "bytes": 1717,
+      "sha256": "3400fde915590ddc17f75c4e48c1a00186201cca6785b38d5e8d16a6e486dcb4"
+    },
+    {
+      "path": "docs/evidence/equation-relations.txt",
+      "bytes": 1790,
+      "sha256": "01ee5459ba4bd987d4a3e48d61b3f0238641037cad7a832213c7e8f7874bb5e1"
+    },
+    {
+      "path": "docs/evidence/equation-symbols.txt",
+      "bytes": 1858,
+      "sha256": "f0528fa19afdd956f0b3f95b2b30b3d651b504343758ecf19c663dd3631a2f7d"
+    },
+    {
+      "path": "docs/evidence/executable-strings.txt",
+      "bytes": 668426,
+      "sha256": "c8f1267a53622202d7341c262537518cce0a45f8a475ffb83c5f23cf80f5e7e7"
+    },
+    {
+      "path": "docs/evidence/export-feature-probe-docx.txt",
+      "bytes": 11944,
+      "sha256": "7320eaa6bfe898bc089fb42e93e7a9a67c7796d7ab3ac20b8c80ab84e89ae1b5"
+    },
+    {
+      "path": "docs/evidence/export-feature-probe-embedded-md.txt",
+      "bytes": 11944,
+      "sha256": "7320eaa6bfe898bc089fb42e93e7a9a67c7796d7ab3ac20b8c80ab84e89ae1b5"
+    },
+    {
+      "path": "docs/evidence/export-feature-probe-epub.txt",
+      "bytes": 11944,
+      "sha256": "7320eaa6bfe898bc089fb42e93e7a9a67c7796d7ab3ac20b8c80ab84e89ae1b5"
+    },
+    {
+      "path": "docs/evidence/export-feature-probe-pdf.txt",
+      "bytes": 11944,
+      "sha256": "7320eaa6bfe898bc089fb42e93e7a9a67c7796d7ab3ac20b8c80ab84e89ae1b5"
+    },
+    {
+      "path": "docs/evidence/export-feature-probe-remarque.txt",
+      "bytes": 11944,
+      "sha256": "7320eaa6bfe898bc089fb42e93e7a9a67c7796d7ab3ac20b8c80ab84e89ae1b5"
+    },
+    {
+      "path": "docs/evidence/export-feature-probe-rtf.txt",
+      "bytes": 11944,
+      "sha256": "7320eaa6bfe898bc089fb42e93e7a9a67c7796d7ab3ac20b8c80ab84e89ae1b5"
+    },
+    {
+      "path": "docs/evidence/export-feature-probe-slides-html.txt",
+      "bytes": 11944,
+      "sha256": "7320eaa6bfe898bc089fb42e93e7a9a67c7796d7ab3ac20b8c80ab84e89ae1b5"
+    },
+    {
+      "path": "docs/evidence/export-feature-probe-tex.txt",
+      "bytes": 11944,
+      "sha256": "7320eaa6bfe898bc089fb42e93e7a9a67c7796d7ab3ac20b8c80ab84e89ae1b5"
+    },
+    {
+      "path": "docs/evidence/export-html-result.txt",
+      "bytes": 11944,
+      "sha256": "7320eaa6bfe898bc089fb42e93e7a9a67c7796d7ab3ac20b8c80ab84e89ae1b5"
+    },
+    {
+      "path": "docs/evidence/export-validation.json",
+      "bytes": 2330,
+      "sha256": "92a05edc9f43d339030a222b4836a69467d7bc7e39ea14de65f93cb8d9a5fecb"
+    },
+    {
+      "path": "docs/evidence/exports/Flow probe.png",
+      "bytes": 20220,
+      "sha256": "516dfa4ea2a3165a6131d5fce103ca56833cfbcd875fa78cfe2eb030ddd57e06"
+    },
+    {
+      "path": "docs/evidence/exports/feature-probe-embedded.md",
+      "bytes": 2410,
+      "sha256": "7c8939fe3cde91ddb6d6202328daaf7f9d207ee014e231c4d215d39b29163c2a"
+    },
+    {
+      "path": "docs/evidence/exports/feature-probe-slides.html",
+      "bytes": 106486,
+      "sha256": "0dd129f5063b180257fb7d07f9d5fe9084e5a76144e4e5d7e5fa6c989452f989"
+    },
+    {
+      "path": "docs/evidence/exports/feature-probe.docx",
+      "bytes": 214383,
+      "sha256": "03e367e703b72a049adffb8a55f19f089b298e2eabe7e3badee48e79a5aefc69"
+    },
+    {
+      "path": "docs/evidence/exports/feature-probe.epub",
+      "bytes": 107666,
+      "sha256": "c2b1cd249f85914f7fa205b7250144dd8df34f7909c784695732d505add85fca"
+    },
+    {
+      "path": "docs/evidence/exports/feature-probe.html",
+      "bytes": 107977,
+      "sha256": "6a0c95fac1f0df55940466c9e3e980139b11be8a3b31a39aad54258633549e56"
+    },
+    {
+      "path": "docs/evidence/exports/feature-probe.pdf",
+      "bytes": 327426,
+      "sha256": "ecd10fbeaf3a2f512d7a0376c7fe25eac90fa451ee6d518762ccae586c676538"
+    },
+    {
+      "path": "docs/evidence/exports/feature-probe.remarque",
+      "bytes": 2540,
+      "sha256": "2816dd5e27025440574afa49593816be3160e91bd5796735aca9dcb97d6db7ee"
+    },
+    {
+      "path": "docs/evidence/exports/feature-probe.rtf",
+      "bytes": 406709,
+      "sha256": "e29a64b553ce8af096a2360d1b8a6e90cba26a66ecd60da43220f3aaafab406d"
+    },
+    {
+      "path": "docs/evidence/exports/feature-probe.tex.txt",
+      "bytes": 4167,
+      "sha256": "67e29f82f01ac56aafc0a92880b51de35d6181c37c15e1d16b5e341da13b64ea"
+    },
+    {
+      "path": "docs/evidence/guided-tour.png",
+      "bytes": 294807,
+      "sha256": "0bc2ede05e9a7f5796873c705c3e5d781eae848fa923ac38819d49d5bb3d2383"
+    },
+    {
+      "path": "docs/evidence/help-command-palette-search.txt",
+      "bytes": 2778,
+      "sha256": "82148331b89522eb8fbea2e396ee521e9866f945a303c177b5006ef9911e2343"
+    },
+    {
+      "path": "docs/evidence/help-exporting.txt",
+      "bytes": 5404,
+      "sha256": "4c737dc69e3e69094a874833620d782890433806ddd922ec10f7777c00f5ca4c"
+    },
+    {
+      "path": "docs/evidence/help-getting-started.txt",
+      "bytes": 3390,
+      "sha256": "4e8a0783df4cf2c804b1cae8ceb7203de39fa7acffcfb88d87c5ac351e0e03b7"
+    },
+    {
+      "path": "docs/evidence/help-keyboard-shortcuts.txt",
+      "bytes": 2936,
+      "sha256": "c168689796189c78d20a36a65f388b27e627cf939997e18269a87fb62dc77ba8"
+    },
+    {
+      "path": "docs/evidence/help-live-preview.txt",
+      "bytes": 2987,
+      "sha256": "c55df340ea90978dc928d62b57bf77bfa3efaa793b1900b86d12171e014cf921"
+    },
+    {
+      "path": "docs/evidence/help-markdown-reference.txt",
+      "bytes": 4048,
+      "sha256": "34e281c88d51b166e6b36664da7149ebce488aa0723afb592a1b137d872938a5"
+    },
+    {
+      "path": "docs/evidence/help-math-equations.txt",
+      "bytes": 3488,
+      "sha256": "e8a18f1d34f4ffe809a6730bcdbeb1a315d0de66d77829173b320da92d791728"
+    },
+    {
+      "path": "docs/evidence/help-mermaid-importing.txt",
+      "bytes": 2587,
+      "sha256": "d8e485e8efd9ca947203d6089cd6b3c173937dbaf1dbd507d9f228858571d7a8"
+    },
+    {
+      "path": "docs/evidence/help-mermaid-move-resize-align.txt",
+      "bytes": 3131,
+      "sha256": "7df5ed904043e44568f30f634f34088a518c61978f9c9e4c273d2bc2833788a8"
+    },
+    {
+      "path": "docs/evidence/help-mermaid-templates-types.txt",
+      "bytes": 2833,
+      "sha256": "31b1d6b6f2d9117f3cfe7abdab32ca5878b7777befcdecea3b1f2e265f472c62"
+    },
+    {
+      "path": "docs/evidence/help-mermaid-visual-editor.txt",
+      "bytes": 4080,
+      "sha256": "112a4ccf2a895abc80ed1c236480162f00be9bd7906486d789e26b2ac54c49d4"
+    },
+    {
+      "path": "docs/evidence/help-mermaid-writing-diagrams.txt",
+      "bytes": 3132,
+      "sha256": "b44b331034524f49b71f3cc5abee4ec070bccd10f5971b09038902b8a949c070"
+    },
+    {
+      "path": "docs/evidence/help-outline-navigation.txt",
+      "bytes": 2756,
+      "sha256": "bda97d47b8ca1ae06d7c469cfdc1b9dd96e0646904e959ccf6ca6bbb880fb274"
+    },
+    {
+      "path": "docs/evidence/help-privacy-local-first.txt",
+      "bytes": 3666,
+      "sha256": "c110dd73b6fdbdc6b67e2565d0b2958565d132d59d04702f9b018e02602b4a3e"
+    },
+    {
+      "path": "docs/evidence/help-settings-reference.txt",
+      "bytes": 3205,
+      "sha256": "bbdeaf4136bb2ba4a45d9547d41e417a3715411b6af16314999e65d670dec1c6"
+    },
+    {
+      "path": "docs/evidence/help-the-editor.txt",
+      "bytes": 7929,
+      "sha256": "f0a029a7ad5e5eeb15b390ea9aac9f0bd446c990a23d216bd4c56afa5c5894fb"
+    },
+    {
+      "path": "docs/evidence/help-themes-appearance.txt",
+      "bytes": 2511,
+      "sha256": "2aadbb05eb870c39b5596fbc54e16eb92f07c99b6ab65198847bd29eecb65f31"
+    },
+    {
+      "path": "docs/evidence/help-versions-snippets-automation.txt",
+      "bytes": 3301,
+      "sha256": "404b0147738d0cc4f28fd8bc84b1db421d7cef5978bf97e9fc23775d56da4ad7"
+    },
+    {
+      "path": "docs/evidence/help-workspace-linking.txt",
+      "bytes": 3135,
+      "sha256": "74f328fed65ac220e8349d6728c614ea6fddc9893b5740e3fcdb57f8005db495"
+    },
+    {
+      "path": "docs/evidence/installed-sha256.txt",
+      "bytes": 375,
+      "sha256": "92a83860bff93e1edd813f6477d5ad0b55673f2e750f1768154cd2972f27db4f"
+    },
+    {
+      "path": "docs/evidence/live-editing.png",
+      "bytes": 200375,
+      "sha256": "e6f3ee7e39eb780c8e56c0d8434a20fde2cdb115bf76d6877036e0725d741839"
+    },
+    {
+      "path": "docs/evidence/menu-active-edit.txt",
+      "bytes": 629,
+      "sha256": "ca0799b2d7122f09619ce5ea0651372b213a4ae77af18d92ae907fdf9b8ff055"
+    },
+    {
+      "path": "docs/evidence/menu-active-file.txt",
+      "bytes": 1897,
+      "sha256": "79a3d778522c176d480636c5976ed1c5db74c594b0bcde19c5d17e9d48ff89d8"
+    },
+    {
+      "path": "docs/evidence/menu-active-remarque.txt",
+      "bytes": 670,
+      "sha256": "ef204edb338b2e9774f32964647f80404d111c73abca4c2f9a50e8fa96724224"
+    },
+    {
+      "path": "docs/evidence/menu-active-view.txt",
+      "bytes": 688,
+      "sha256": "f5d50387043f0297497b1851e22e6181622fda2be812b6015e314e8209cad702"
+    },
+    {
+      "path": "docs/evidence/menu-active-window.txt",
+      "bytes": 1704,
+      "sha256": "094b31cd807a243683076d4d87ccdee82262902a9c19289db685272679bc3f37"
+    },
+    {
+      "path": "docs/evidence/menu-diagram-card.txt",
+      "bytes": 10909,
+      "sha256": "3cd161201df6743ca179f5fe1725a32db00b50d5060b8938f0ffd3f66fa0d8f0"
+    },
+    {
+      "path": "docs/evidence/menu-diagram.txt",
+      "bytes": 391,
+      "sha256": "fb7565058394d5a741ec07cc7415eee446d92a4502db99401ca6c61d613448d9"
+    },
+    {
+      "path": "docs/evidence/menu-document-view.txt",
+      "bytes": 680,
+      "sha256": "6dc953e6c186e7413ad47c747d32ac7a3c458c1e9320cfbea99defd7965fa4ee"
+    },
+    {
+      "path": "docs/evidence/menu-edit.txt",
+      "bytes": 621,
+      "sha256": "eac5b4b7564e9181c2b6b5365fc2b06f475dc248bd5f0029646ed00a3332ed89"
+    },
+    {
+      "path": "docs/evidence/menu-export.txt",
+      "bytes": 12371,
+      "sha256": "351648c0f3bb066f75d57da573948e85f690d2af5ba19145f04ffe47d49cd0d9"
+    },
+    {
+      "path": "docs/evidence/menu-file.txt",
+      "bytes": 1826,
+      "sha256": "95a6497342029dc7958f1a53d9b491754b03ed877c8f92c180e49324269bcfa8"
+    },
+    {
+      "path": "docs/evidence/menu-format.txt",
+      "bytes": 628,
+      "sha256": "08ae18f5cc09345c79981bba48ae64e6b39c057ae1187a5eb881b144c17b876a"
+    },
+    {
+      "path": "docs/evidence/menu-help.txt",
+      "bytes": 305,
+      "sha256": "d01fdfbf3a72fc43730064c83441911bad4a64f5d6dc857a74d6eeedcd25f12a"
+    },
+    {
+      "path": "docs/evidence/menu-layout.txt",
+      "bytes": 10462,
+      "sha256": "31cdcc16c4f3e5e2e4ad5f992063536b1a549c2b176a76b0a96f1b28f878bf2c"
+    },
+    {
+      "path": "docs/evidence/menu-style.txt",
+      "bytes": 10420,
+      "sha256": "94bdecd630ad0e345c0d2bf87e5d9d857b3c1881ad2a0161fa4e3f048128839c"
+    },
+    {
+      "path": "docs/evidence/menu-tools.txt",
+      "bytes": 279,
+      "sha256": "6b295d7e79005f305249d92fcb99766bbe850e2dcbc20cbafebf58b53d89d685"
+    },
+    {
+      "path": "docs/evidence/menu-view.txt",
+      "bytes": 594,
+      "sha256": "d28b7c4ee2e2deff3378855a8a860dcffaaf85aad3aa46b475763c56e4f06036"
+    },
+    {
+      "path": "docs/evidence/menu-window.txt",
+      "bytes": 1389,
+      "sha256": "9408b08567f1ecbc531e90c48813a0c66132e1a7167e2b8d6f568fccc63fda56"
+    },
+    {
+      "path": "docs/evidence/mermaid-visual.png",
+      "bytes": 127837,
+      "sha256": "ef739bbb4580c1df3a0cc90ea9cd61074968cace97aeda1e9f27807be25c98cc"
+    },
+    {
+      "path": "docs/evidence/objc_methname.json",
+      "bytes": 19634,
+      "sha256": "742edf52f816174dc236f862d8d47f2c960f912f457bcea55bf6ec12f4a645a6"
+    },
+    {
+      "path": "docs/evidence/objc_methname.txt",
+      "bytes": 16802,
+      "sha256": "58c84ebe00cb8738e38f7744506e91d320c86acb624677e554011f641890aada"
+    },
+    {
+      "path": "docs/evidence/palette-page-1.txt",
+      "bytes": 15030,
+      "sha256": "5df4e7d9cacb5995444c50fb313c5fa502068c693bbbe15cbd21cc6bcbd0ecc4"
+    },
+    {
+      "path": "docs/evidence/palette-page-2.txt",
+      "bytes": 14862,
+      "sha256": "379cbba5415197d2802a9abf2704ad27be577f1d04859887b6255b0bdb34fa6a"
+    },
+    {
+      "path": "docs/evidence/palette-page-3.txt",
+      "bytes": 14910,
+      "sha256": "f2096aae82b0c0c677d82a883d7d2c8852e6ca2a349578803bff35bab39a160b"
+    },
+    {
+      "path": "docs/evidence/palette-page-4.txt",
+      "bytes": 14633,
+      "sha256": "5ffba84f97e6055a427f739d063effd75fc56dfe225b3a3e708aee47b1b4213f"
+    },
+    {
+      "path": "docs/evidence/probe-preview-click.txt",
+      "bytes": 11744,
+      "sha256": "b46119b0d89ec8d66c629e8052a047fc5eba806891ffacf1fcbf2eb116f756c4"
+    },
+    {
+      "path": "docs/evidence/settings-appearance.txt",
+      "bytes": 2005,
+      "sha256": "0694eed0b8cf8db7d97266cb2c3e0330ebd240d6ca5fbf82bbdc9f0353cbda6d"
+    },
+    {
+      "path": "docs/evidence/settings-editing.txt",
+      "bytes": 2184,
+      "sha256": "b5392d712b825cec05d43fcfb7ca3cf5414464e358a41c5aca91c4b380773091"
+    },
+    {
+      "path": "docs/evidence/settings-export.txt",
+      "bytes": 2082,
+      "sha256": "44bcecb7ee618f898e855b75831c464f844beb6d9aafeb10456105a0bdc5dc0b"
+    },
+    {
+      "path": "docs/evidence/settings-keyboard.txt",
+      "bytes": 1964,
+      "sha256": "d0fc4a141967189a6d803fcf9362d95dfd025b7470ca0a51dc9604bed2e8bb13"
+    },
+    {
+      "path": "docs/evidence/settings-mermaid.txt",
+      "bytes": 2115,
+      "sha256": "ebd8ddbcadc821c281f80bc4028f2a400b93834104e82bb026cd33d1571c458f"
+    },
+    {
+      "path": "docs/evidence/settings-overflow.txt",
+      "bytes": 2080,
+      "sha256": "d47b6d99d15bfaaffdd93b07b3b7a307fa18f56e17e6f15a8fb9ff9d69f6994e"
+    },
+    {
+      "path": "docs/evidence/settings-preview.txt",
+      "bytes": 1320,
+      "sha256": "098ba4f31dccff18893feb36d80c95e733309f4d118c6fcb718c3b53cec21690"
+    },
+    {
+      "path": "docs/evidence/settings-snippet-detail.txt",
+      "bytes": 2174,
+      "sha256": "32ccfe0712fecccc5e68b5add76d5998ec28828ea2ac60262ba829e4ff1dc35d"
+    },
+    {
+      "path": "docs/evidence/settings-snippets.txt",
+      "bytes": 1551,
+      "sha256": "0c6bccd3855930ca221e8454c8822c42c88d56dc3f72c7c08c9007a7f3c0ad5d"
+    },
+    {
+      "path": "docs/evidence/snippet-details.txt",
+      "bytes": 2202,
+      "sha256": "e965bcb64081e323c5dd75c0eb97ed9ec9f3ff16156e2a0691db670cbd9171f1"
+    },
+    {
+      "path": "docs/evidence/snippet-fenced-code.txt",
+      "bytes": 2169,
+      "sha256": "7f06502c2e21155056901bb8d4f3c7d131868cf940922a6ddfd95ba3a5a41463"
+    },
+    {
+      "path": "docs/evidence/snippet-front-matter.txt",
+      "bytes": 2183,
+      "sha256": "1ddd7cb88b5bbc9d404031782fde66c73156c7993af438953e2a3f4fd0f90d6e"
+    },
+    {
+      "path": "docs/evidence/snippet-link.txt",
+      "bytes": 2166,
+      "sha256": "45b922cc2d7971501adbf23f5ef4852e2bf2426b8a7f8504c7056d7e6afe9774"
+    },
+    {
+      "path": "docs/evidence/snippet-table-2-2.txt",
+      "bytes": 2204,
+      "sha256": "70dadd8400cc89d484908d621cb3b7a14a053119202848129310aad4e767eb1f"
+    },
+    {
+      "path": "docs/evidence/snippet-warning-callout.txt",
+      "bytes": 2180,
+      "sha256": "4bd935bf7632f5c72ffd95f02a9f2b617e96188edad5d4ae826c85b4ce6fa4b7"
+    },
+    {
+      "path": "docs/evidence/swift5_reflstr.json",
+      "bytes": 15173,
+      "sha256": "6531ada27e9092aad4b354d1d3bbc6e6390358d63d7e5d05a87978b69b196804"
+    },
+    {
+      "path": "docs/evidence/swift5_reflstr.txt",
+      "bytes": 11061,
+      "sha256": "328ff8ac2f0c0bd4a3c9175d4a47c08995f4a33df26303fe05aab4a8c8e44d99"
+    },
+    {
+      "path": "docs/evidence/ui-about.txt",
+      "bytes": 391,
+      "sha256": "02e8d2b5900529053c181bc2d10c681d2728391de666c34a79c05401a912ffc2"
+    },
+    {
+      "path": "docs/evidence/ui-class-visual-unsupported.txt",
+      "bytes": 2427,
+      "sha256": "1037ac8030b19c74287b6f464b855d7de8ab59c27fb3211f230015dc4cc5c5cf"
+    },
+    {
+      "path": "docs/evidence/ui-command-palette.txt",
+      "bytes": 14041,
+      "sha256": "61ff040f6f3454411975480381cdd114918ebdb3a6bae842baf0b6dbeffb25c0"
+    },
+    {
+      "path": "docs/evidence/ui-diagram-export.txt",
+      "bytes": 8828,
+      "sha256": "a146a94c000c3a934f4f121c6d7eba28f30b65c46a271a9a6b161a7a3ec1262f"
+    },
+    {
+      "path": "docs/evidence/ui-documentation.txt",
+      "bytes": 3390,
+      "sha256": "4e8a0783df4cf2c804b1cae8ceb7203de39fa7acffcfb88d87c5ac351e0e03b7"
+    },
+    {
+      "path": "docs/evidence/ui-equation-editor.txt",
+      "bytes": 1951,
+      "sha256": "7f2cc910ea4405cdac61846422da5d21aa084f08b0e6c5ad4b1db1a7063a26fa"
+    },
+    {
+      "path": "docs/evidence/ui-export-html-dialog.txt",
+      "bytes": 4853,
+      "sha256": "6545f3893a7f851606f040cdd9b315c2f8caf44923ae6e4f3f848afc6276978b"
+    },
+    {
+      "path": "docs/evidence/ui-feature-probe.txt",
+      "bytes": 10319,
+      "sha256": "d32bdae35598ef549ebe0bf1004fb09b6c2f146a42210c0874a7425e5d863991"
+    },
+    {
+      "path": "docs/evidence/ui-feature-rendered.txt",
+      "bytes": 14176,
+      "sha256": "30493d8847e91bd2370f59a1ee503a86d8969fcc3b520dd7bfd2b219887eed59"
+    },
+    {
+      "path": "docs/evidence/ui-find-replace.txt",
+      "bytes": 12521,
+      "sha256": "06ca95b2f5e58712ac3673b19f7e9f53af45d96221556e224ac5076948509e05"
+    },
+    {
+      "path": "docs/evidence/ui-find.txt",
+      "bytes": 12267,
+      "sha256": "05ce58b32ea9ded09c0e262dce92c1454b5baaa3ab92c2c8cf0ecd93443c1d5a"
+    },
+    {
+      "path": "docs/evidence/ui-guided-tour.txt",
+      "bytes": 7960,
+      "sha256": "f26c08b3a29fcfcb7ddf8c8229c53044867d607c5bab03da9d16e2e54b2bafd0"
+    },
+    {
+      "path": "docs/evidence/ui-live-editing.txt",
+      "bytes": 11910,
+      "sha256": "458317867aac19bcf74a3987df19cf1d8e6e9fa5c8a189d9035c1ea3c3684cdd"
+    },
+    {
+      "path": "docs/evidence/ui-mermaid-import-options.txt",
+      "bytes": 2026,
+      "sha256": "377a0e9aecfe6be0aaef1ff7eee265371e0d53d4833e5b3bba168488528b2601"
+    },
+    {
+      "path": "docs/evidence/ui-mermaid-import.txt",
+      "bytes": 533,
+      "sha256": "ddfe75d10b796c19215231e842ae0cdcc53e3772a18c206d9dd49bc6ab352cff"
+    },
+    {
+      "path": "docs/evidence/ui-mermaid-node.txt",
+      "bytes": 3757,
+      "sha256": "7d5a89e46d568b6a30d523902075a9dbfbc6bf4a60765872a69f74f49b0acc64"
+    },
+    {
+      "path": "docs/evidence/ui-mermaid-visual.txt",
+      "bytes": 3644,
+      "sha256": "15def08c123514928817c9e0bbcfdf552cfd875030707988fd16c51cb541cfdc"
+    },
+    {
+      "path": "docs/evidence/ui-native-diagram-cards.txt",
+      "bytes": 10322,
+      "sha256": "1732676c238a3987eac786bd33d8df019d1a357a20e106d68939c00d61b5fe45"
+    },
+    {
+      "path": "docs/evidence/ui-native-preview.txt",
+      "bytes": 10032,
+      "sha256": "5c3f5c2ccc59abf30ed26d2f277c8e2462d00a3ad40758c961664399b0eef775"
+    },
+    {
+      "path": "docs/evidence/ui-presentation-next.txt",
+      "bytes": 12041,
+      "sha256": "0ebb2a07762e7e8d6425af38d028fda60f01ae5a7600ad9f84113b84e4cf0f82"
+    },
+    {
+      "path": "docs/evidence/ui-presentation.txt",
+      "bytes": 12041,
+      "sha256": "0ebb2a07762e7e8d6425af38d028fda60f01ae5a7600ad9f84113b84e4cf0f82"
+    },
+    {
+      "path": "docs/evidence/ui-selected-diagram-card.txt",
+      "bytes": 10502,
+      "sha256": "7015e79f6c936ad7e25915bed1cb471f46dee92042944cfaefd5715edacbd8dc"
+    },
+    {
+      "path": "docs/evidence/ui-settings.txt",
+      "bytes": 2005,
+      "sha256": "0694eed0b8cf8db7d97266cb2c3e0330ebd240d6ca5fbf82bbdc9f0353cbda6d"
+    },
+    {
+      "path": "docs/evidence/ui-start.txt",
+      "bytes": 2098,
+      "sha256": "d91a9780397dd1fce52b32f55a9e8dd0d736860d3f2dda50b7cd373f74d7f51d"
+    },
+    {
+      "path": "docs/evidence/ui-state-visual-editor.txt",
+      "bytes": 3905,
+      "sha256": "1109a5f3df7f9c749d14088ad937101d7f1e21924b091ce70630d3a78069ccff"
+    },
+    {
+      "path": "docs/evidence/ui-state-visual-selected-source.txt",
+      "bytes": 3401,
+      "sha256": "ae751d952218e9afc6f5d5813c5304cfb2db16f77968d953f63784457adb365e"
+    },
+    {
+      "path": "docs/evidence/ui-table-editor.txt",
+      "bytes": 1216,
+      "sha256": "322d09e02d9c3815c12e91c7550318b58934102e86a31cd2b5d57b015088199d"
+    },
+    {
+      "path": "docs/evidence/ui-version-history.txt",
+      "bytes": 473,
+      "sha256": "3db13bb04ad830dc49a4ba678cd177cd9781b219e805cf4460f361610919690b"
+    },
+    {
+      "path": "docs/evidence/ui-version-snapshot.txt",
+      "bytes": 1575,
+      "sha256": "830a345e662d713b54c641a572baeab9eff22e933279f984825f65ad9da78fac"
+    },
+    {
+      "path": "docs/evidence/ui-workspace.txt",
+      "bytes": 674,
+      "sha256": "ece13c2b8ec74979890ed3c859a42a61ddf838478b2308448a99256796d9f61d"
+    },
+    {
+      "path": "docs/feature-index.json",
+      "bytes": 60429,
+      "sha256": "4719f2271f98d5ea4747fa9f2bfec061ab73f6a37035de0b7ae256cfcd102ff0"
+    },
+    {
+      "path": "docs/fixtures/feature-probe.md",
+      "bytes": 2410,
+      "sha256": "7c8939fe3cde91ddb6d6202328daaf7f9d207ee014e231c4d215d39b29163c2a"
+    },
+    {
+      "path": "recovery/.DS_Store",
+      "bytes": 6148,
+      "sha256": "4f5cd52e421eed4ec891f0d5bb34b8e6a0fce101d47d1103d38bf836def2c701"
+    },
+    {
+      "path": "recovery/Remarque-2.1-733.zip",
+      "bytes": 6397259,
+      "sha256": "e6e4ac3b062f1eeb87c5294a297bec9e99e4a94d1933b8c1c7be2c3766c9f947"
+    },
+    {
+      "path": "recovery/extract_metadata.py",
+      "bytes": 1492,
+      "sha256": "7e9f5d1d600fe2bf5308cfbec1ae4d89d185a5c04cddcf7e7b557fc6184226e8"
+    },
+    {
+      "path": "recovery/recovered-text/template-572.md",
+      "bytes": 69,
+      "sha256": "923ff984891f931b5923309431603051c9aa856069b4d7335906509fcb29cf87"
+    },
+    {
+      "path": "recovery/recovered-text/template-934.md",
+      "bytes": 1413,
+      "sha256": "9cfe8137218520f7c106777f7b0d7d9a651a144ae4c0ef69c23087cd837e2884"
+    },
+    {
+      "path": "recovery/recovered-text/template-936.md",
+      "bytes": 336,
+      "sha256": "265e1a41892eb9e43d7c2bbe0f59be6dd3861d127e4244cb217cb208e0187970"
+    },
+    {
+      "path": "recovery/recovered-text/template-939.md",
+      "bytes": 130,
+      "sha256": "fb29492fa98d946ff78e99241f07d78d1947f373d410bdcac6b728822a041fa5"
+    },
+    {
+      "path": "recovery/recovered-text/template-941.md",
+      "bytes": 211,
+      "sha256": "820e1bfe8b8d66a455946ccda48cacfe3e1eff6f79f609e43d27c1cbd523d28c"
+    },
+    {
+      "path": "recovery/recovered-text/template-943.md",
+      "bytes": 215,
+      "sha256": "eab91b6339f5edee43b82f240b334604ca3226937dc2d7dbd8d26e1d893a9034"
+    },
+    {
+      "path": "recovery/recovered-text/template-982.md",
+      "bytes": 38,
+      "sha256": "141ebb1cce49ef7ec27f3106c48f9390d9a25b8e50d7a71f1b8fc2c5a775c4b0"
+    },
+    {
+      "path": "recovery/recovered-text/web-harness-325.html",
+      "bytes": 2394,
+      "sha256": "6fc5f6047230aea0dc7a5c6978bf7a8336695db0aef5b8bde40f9cabf4c4b784"
+    },
+    {
+      "path": "recovery/recovered-text/web-harness-436.html",
+      "bytes": 2298,
+      "sha256": "344d4940e460d10dbf47629ebd42823e87fd2678c4cc0b0711005bb1d7149c44"
+    }
+  ]
+}

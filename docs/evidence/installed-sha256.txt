@@ -1,0 +1,3 @@
+2b4f7044d80afb74316490a2f6547e4d5a345f5fda484377b6caddce69b72672  /Applications/Remarque.app/Contents/MacOS/Remarque
+a4354ff94fd868aea0cc6eaaa79a57fda0588646fc46ee3700a349ee0a11cbe6  /Applications/Remarque.app/Contents/Resources/mathjax-tex-svg.js
+70137e77bb273bb2ef972b86e8b0400cca8be53cb25bfc45911a186dc98665de  /Applications/Remarque.app/Contents/Resources/mermaid.min.js

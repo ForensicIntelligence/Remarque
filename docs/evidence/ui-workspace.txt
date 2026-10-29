@@ -1,0 +1,25 @@
+Window: "Workspace", App: Remarque.
+0 standard window Workspace, ID: workspace, Secondary Actions: Raise
+	1 container
+		2 image Description: Move, ID: folder
+		3 text No Folder
+		4 button Description: New Folder, Help: Open Folder…
+		5 image Description: Folder With A Question Mark Badge, ID: folder.badge.questionmark
+		6 text Open a folder to browse and search your notes.
+		7 button Open Folder…
+	8 close button
+	9 zoom button
+	10 minimize button
+	11 text Workspace
+12 menu bar
+	13 Remarque
+	14 File
+	15 Edit
+	16 View
+	17 Format
+	18 Diagram
+	19 Tools
+	20 Window
+	21 Help
+
+The focused UI element is 0 standard window Workspace, ID: workspace, Secondary Actions: Raise

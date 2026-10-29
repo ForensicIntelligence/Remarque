@@ -1,0 +1,52 @@
+Window: "Mermaid", App: Remarque.
+0 standard window Mermaid, ID: com_apple_SwiftUI_Settings_window, Secondary Actions: Raise
+	1 scroll area Secondary Actions: Scroll Up, Scroll Down
+		2 heading Rendering
+		3 container
+			4 switch Enable Mermaid rendering, Value: on
+			5 switch Render Mermaid live in preview, Value: on
+			6 switch Mermaid theme follows app theme, Value: on
+			7 switch Show Mermaid source below diagram, Value: off
+			8 switch Show Mermaid diagrams in outline, Value: on
+		9 heading Editing
+		10 container
+			11 switch Enable visual Mermaid editing, Value: on
+			12 switch Enable move/resize controls, Value: on
+		13 heading Defaults
+		14 container
+			15 slider (settable, float) Default width: 720 pt, Value: 720
+			16 slider (settable, float) Default height: 420 pt, Value: 420
+			17 pop up button Default alignment, Value: Center
+		18 heading Security
+		19 container
+			20 text Security level, Value: Strict Remarque renders diagrams locally and never executes diagram scripts.
+		21 scroll bar (settable, float) 0
+			22 value indicator (settable, float) 0
+			23 increment arrow button
+			24 decrement arrow button
+			25 increment page button
+			26 decrement page button
+	27 toolbar
+		28 button Appearance, Secondary Actions: Move next, Remove from toolbar
+		29 button Editing, Secondary Actions: Move previous, Move next, Remove from toolbar
+		30 button Preview, Secondary Actions: Move previous, Move next, Remove from toolbar
+		31 button Mermaid, Secondary Actions: Move previous, Move next, Remove from toolbar
+		32 button Export, Secondary Actions: Move previous, Move next, Remove from toolbar
+		33 button Snippets, Secondary Actions: Move previous, Move next, Remove from toolbar
+		34 button Keyboard, Secondary Actions: Move previous, Move next, Remove from toolbar
+		35 pop up button more toolbar items
+	36 close button
+	37 zoom button (disabled)
+	38 text Mermaid
+39 menu bar
+	40 Remarque
+	41 File
+	42 Edit
+	43 View
+	44 Format
+	45 Diagram
+	46 Tools
+	47 Window
+	48 Help
+
+The focused UI element is 0 standard window Mermaid, ID: com_apple_SwiftUI_Settings_window, Secondary Actions: Raise

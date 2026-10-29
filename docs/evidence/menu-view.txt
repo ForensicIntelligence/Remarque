@@ -1,0 +1,15 @@
+Window: "Remarque", App: Remarque.
+0 View, Secondary Actions: Cancel, Pick
+	1 menu Secondary Actions: Cancel
+		2 Toggle Preview, ID: menuAction:
+		3 Toggle Outline, ID: menuAction:
+		4 Focus Mode, ID: menuAction:
+		5 Typewriter Mode, ID: menuAction:
+		6 Smart Editing Mode ✓, ID: menuAction:
+		7 Live Editing Mode (WYSIWYG), ID: menuAction:
+		8 Start Presentation, ID: menuAction:
+		9 Hide Markdown Tools, ID: menuAction:
+		10 Hide Formatting Ribbon, ID: menuAction:
+		11 Use Native Preview, ID: menuAction:
+		12 (disabled) Mermaid Visual Editor
+		13 Enter Full Screen, ID: toggleFullScreen:

@@ -1,0 +1,1595 @@
+{
+  "baseline": "Remarque 2.1 (733)",
+  "date": "2026-10-29",
+  "feature_count": 226,
+  "evidence_legend": {
+    "V": "Exercised within recorded probe scope",
+    "U": "Observed UI",
+    "D": "App documentation",
+    "B": "Bundle/binary/output structure"
+  },
+  "features": [
+    {
+      "id": "APP-01",
+      "category": "Application and document lifecycle",
+      "feature": "Native macOS application",
+      "baseline_contract": "Universal Intel and Apple Silicon executable; minimum macOS 14.0. SwiftUI, AppKit, WebKit, native document windows.",
+      "evidence": "B"
+    },
+    {
+      "id": "APP-02",
+      "category": "Application and document lifecycle",
+      "feature": "Product identity",
+      "baseline_contract": "Remarque; “Markdown. Beautifully refined.” Bundle ID `ca.forensicintelligence.remarkable` retains the former Remarkable name.",
+      "evidence": "U+B"
+    },
+    {
+      "id": "APP-03",
+      "category": "Application and document lifecycle",
+      "feature": "Plain Markdown ownership",
+      "baseline_contract": "Documents remain user-owned UTF-8 text, not an application database format.",
+      "evidence": "V+D+B"
+    },
+    {
+      "id": "APP-04",
+      "category": "Application and document lifecycle",
+      "feature": "Registered file types",
+      "baseline_contract": "`.md`, `.markdown`, `.mdown`, standard Markdown UTI, legacy application Markdown UTI, and plain text.",
+      "evidence": "B"
+    },
+    {
+      "id": "APP-05",
+      "category": "Application and document lifecycle",
+      "feature": "New document",
+      "baseline_contract": "Native New command and start-window New Document / Blank Document.",
+      "evidence": "V"
+    },
+    {
+      "id": "APP-06",
+      "category": "Application and document lifecycle",
+      "feature": "Open document",
+      "baseline_contract": "Native file picker and recent-document opening; tested opening the local feature probe.",
+      "evidence": "V"
+    },
+    {
+      "id": "APP-07",
+      "category": "Application and document lifecycle",
+      "feature": "Recent documents",
+      "baseline_contract": "Start-window list and native Open Recent list; names, location context, Clear Menu.",
+      "evidence": "U"
+    },
+    {
+      "id": "APP-08",
+      "category": "Application and document lifecycle",
+      "feature": "Save lifecycle",
+      "baseline_contract": "Save, Save As, Duplicate, Rename, Move To, Revert To, Share; native command enablement depends on the active document.",
+      "evidence": "U"
+    },
+    {
+      "id": "APP-09",
+      "category": "Application and document lifecycle",
+      "feature": "Multiple documents",
+      "baseline_contract": "Separate document windows; native tab bar and tab overview appear with document windows.",
+      "evidence": "U"
+    },
+    {
+      "id": "APP-10",
+      "category": "Application and document lifecycle",
+      "feature": "Window management",
+      "baseline_contract": "Close, Close All, minimize/zoom, full screen, Bring All to Front, macOS tiling/arrangement.",
+      "evidence": "U"
+    },
+    {
+      "id": "APP-11",
+      "category": "Application and document lifecycle",
+      "feature": "Dirty state",
+      "baseline_contract": "Status bar reports Saved or document modification state; edits must participate in the document lifecycle.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "APP-12",
+      "category": "Application and document lifecycle",
+      "feature": "External file changes",
+      "baseline_contract": "Clean document reloads automatically; unsaved edits prompt to reload/discard or keep editing.",
+      "evidence": "D+B"
+    },
+    {
+      "id": "APP-13",
+      "category": "Application and document lifecycle",
+      "feature": "Text validation",
+      "baseline_contract": "Error paths for unsupported type, invalid UTF-8, unreadable/empty file, encoding failure, open/save failure.",
+      "evidence": "B"
+    },
+    {
+      "id": "APP-14",
+      "category": "Application and document lifecycle",
+      "feature": "Atomic exports",
+      "baseline_contract": "Release notes promise atomic export writes so failed output does not destroy a previous file.",
+      "evidence": "D"
+    },
+    {
+      "id": "APP-15",
+      "category": "Application and document lifecycle",
+      "feature": "App menus",
+      "baseline_contract": "About, Settings, Services, Hide, Hide Others, Show All, Quit, Quit and Keep Windows.",
+      "evidence": "U"
+    },
+    {
+      "id": "APP-16",
+      "category": "Application and document lifecycle",
+      "feature": "Offline product contract",
+      "baseline_contract": "Local document processing, no account/cloud/telemetry dependency. Bundled rendering assets verified; absence of network traffic is not proven.",
+      "evidence": "D+B"
+    },
+    {
+      "id": "APP-17",
+      "category": "Application and document lifecycle",
+      "feature": "File access grants",
+      "baseline_contract": "Sandboxed file access, remembered security-scoped folder bookmarks for sibling images and custom stylesheets.",
+      "evidence": "D+B"
+    },
+    {
+      "id": "APP-18",
+      "category": "Application and document lifecycle",
+      "feature": "Image access recovery",
+      "baseline_contract": "One-time folder-access prompt and a Grant Access banner after decline; grants also support export.",
+      "evidence": "D+B"
+    },
+    {
+      "id": "START-01",
+      "category": "Start window and learning surfaces",
+      "feature": "Start window",
+      "baseline_contract": "Brand/sidebar; New Document, Open, Documentation, recent files, Open Other. Show Start Window command.",
+      "evidence": "V+U"
+    },
+    {
+      "id": "START-02",
+      "category": "Start window and learning surfaces",
+      "feature": "Blank Document template",
+      "baseline_contract": "Empty Markdown document.",
+      "evidence": "U"
+    },
+    {
+      "id": "START-03",
+      "category": "Start window and learning surfaces",
+      "feature": "Guided Tour template",
+      "baseline_contract": "Welcome, outline guidance, formatting shortcuts, flowchart with layout metadata, export comparison table. Opened during audit.",
+      "evidence": "V+B"
+    },
+    {
+      "id": "START-04",
+      "category": "Start window and learning surfaces",
+      "feature": "Technical Spec template",
+      "baseline_contract": "Overview, goals, architecture diagram, risks/tasks, references.",
+      "evidence": "U+B"
+    },
+    {
+      "id": "START-05",
+      "category": "Start window and learning surfaces",
+      "feature": "Meeting Notes template",
+      "baseline_contract": "Meeting title, date, attendees, agenda, notes, action-item tasks.",
+      "evidence": "U+B"
+    },
+    {
+      "id": "START-06",
+      "category": "Start window and learning surfaces",
+      "feature": "Diagram Doc template",
+      "baseline_contract": "Named flowchart with size/alignment metadata and decision branches.",
+      "evidence": "U+B"
+    },
+    {
+      "id": "START-07",
+      "category": "Start window and learning surfaces",
+      "feature": "Product Plan template",
+      "baseline_contract": "Problem, solution, and milestone table.",
+      "evidence": "U+B"
+    },
+    {
+      "id": "START-08",
+      "category": "Start window and learning surfaces",
+      "feature": "Onboarding",
+      "baseline_contract": "Welcome, structured writing, diagramming, export, privacy, and setup-default pages. Image storage and default export choices.",
+      "evidence": "D+B"
+    },
+    {
+      "id": "START-09",
+      "category": "Start window and learning surfaces",
+      "feature": "What's New",
+      "baseline_contract": "Versioned release highlights; remembered last-seen version/onboarding state.",
+      "evidence": "U+B"
+    },
+    {
+      "id": "START-10",
+      "category": "Start window and learning surfaces",
+      "feature": "Searchable documentation",
+      "baseline_contract": "Dedicated window, searchable sidebar, 19 help articles. Full article evidence retained.",
+      "evidence": "V"
+    },
+    {
+      "id": "START-11",
+      "category": "Start window and learning surfaces",
+      "feature": "Markdown Guide",
+      "baseline_contract": "Syntax examples for headings, marks, lists, links, images, tables/alignment, callouts, math, details, front matter.",
+      "evidence": "U+B"
+    },
+    {
+      "id": "START-12",
+      "category": "Start window and learning surfaces",
+      "feature": "Mermaid Guide",
+      "baseline_contract": "Diagram examples/templates, source insertion, and visual-editor entry for supported types.",
+      "evidence": "U+D+B"
+    },
+    {
+      "id": "START-13",
+      "category": "Start window and learning surfaces",
+      "feature": "Keyboard reference",
+      "baseline_contract": "Dedicated window plus Settings Keyboard and documentation article.",
+      "evidence": "V"
+    },
+    {
+      "id": "START-14",
+      "category": "Start window and learning surfaces",
+      "feature": "About and publisher link",
+      "baseline_contract": "Version/product attribution and Forensic Intelligence website. External link not followed during audit.",
+      "evidence": "U+B"
+    },
+    {
+      "id": "NAV-01",
+      "category": "Layout and navigation",
+      "feature": "Editor layout",
+      "baseline_contract": "Source editor alone.",
+      "evidence": "U"
+    },
+    {
+      "id": "NAV-02",
+      "category": "Layout and navigation",
+      "feature": "Editor and Preview layout",
+      "baseline_contract": "Side-by-side source and typeset preview.",
+      "evidence": "V"
+    },
+    {
+      "id": "NAV-03",
+      "category": "Layout and navigation",
+      "feature": "Editor and Outline layout",
+      "baseline_contract": "Source and structural navigation.",
+      "evidence": "U"
+    },
+    {
+      "id": "NAV-04",
+      "category": "Layout and navigation",
+      "feature": "Full layout",
+      "baseline_contract": "Outline, source editor, preview; observed on launch of test documents.",
+      "evidence": "V"
+    },
+    {
+      "id": "NAV-05",
+      "category": "Layout and navigation",
+      "feature": "Preview layout",
+      "baseline_contract": "Preview-only proofreading.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "NAV-06",
+      "category": "Layout and navigation",
+      "feature": "Mermaid editor layout",
+      "baseline_contract": "Generated source, interactive canvas, inspector; distinct document layout.",
+      "evidence": "V"
+    },
+    {
+      "id": "NAV-07",
+      "category": "Layout and navigation",
+      "feature": "Splitters",
+      "baseline_contract": "Adjustable pane widths; stored outline/preview width and last-layout fields exist.",
+      "evidence": "U+B"
+    },
+    {
+      "id": "NAV-08",
+      "category": "Layout and navigation",
+      "feature": "Pane toggles",
+      "baseline_contract": "Toolbar/menu commands toggle preview and outline.",
+      "evidence": "U"
+    },
+    {
+      "id": "NAV-09",
+      "category": "Layout and navigation",
+      "feature": "Outline headings",
+      "baseline_contract": "Hierarchical headings, current-section highlighting, heading count, click-to-source navigation.",
+      "evidence": "V+D"
+    },
+    {
+      "id": "NAV-10",
+      "category": "Layout and navigation",
+      "feature": "Outline diagram landmarks",
+      "baseline_contract": "Optional diagram entries labelled by metadata title or diagram source/type.",
+      "evidence": "V"
+    },
+    {
+      "id": "NAV-11",
+      "category": "Layout and navigation",
+      "feature": "Duplicate heading anchors",
+      "baseline_contract": "Unique IDs generated, e.g. `repeated-heading` and `repeated-heading-1`; verified in HTML output.",
+      "evidence": "V+B"
+    },
+    {
+      "id": "NAV-12",
+      "category": "Layout and navigation",
+      "feature": "Focus Mode",
+      "baseline_contract": "Hides chrome, readable centered column, optional inactive-paragraph dimming.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "NAV-13",
+      "category": "Layout and navigation",
+      "feature": "Typewriter Mode",
+      "baseline_contract": "Keeps caret line vertically centered.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "NAV-14",
+      "category": "Layout and navigation",
+      "feature": "Scroll sync",
+      "baseline_contract": "Setting advertises source-to-preview and preview-to-source scrolling. Precise behavior differs by engine and needs regression testing.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "NAV-15",
+      "category": "Layout and navigation",
+      "feature": "Status bar",
+      "baseline_contract": "Word count, reading minutes, diagram count, source line/column, layout name, saved state.",
+      "evidence": "V"
+    },
+    {
+      "id": "NAV-16",
+      "category": "Layout and navigation",
+      "feature": "Presentation",
+      "baseline_contract": "In-app slide overlay, slide counter, exit control, documented arrows/Space/Escape. Probe reported 12 slides; see discrepancy record.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "NAV-17",
+      "category": "Layout and navigation",
+      "feature": "Empty states",
+      "baseline_contract": "No headings, nothing to present, no recents, no workspace folder, no versions, no matching commands.",
+      "evidence": "U+B"
+    },
+    {
+      "id": "NAV-18",
+      "category": "Layout and navigation",
+      "feature": "Selection from preview",
+      "baseline_contract": "Ordinary HTML preview heading click did not move source cursor. This is a requested new feature, not established baseline behavior.",
+      "evidence": "V"
+    },
+    {
+      "id": "EDIT-01",
+      "category": "Source editing and formatting commands",
+      "feature": "Native text editing",
+      "baseline_contract": "AppKit text engine; selection, caret, copy/cut/paste/delete/select-all, keyboard movement and native undo/redo.",
+      "evidence": "U+D+B"
+    },
+    {
+      "id": "EDIT-02",
+      "category": "Source editing and formatting commands",
+      "feature": "Syntax highlighting",
+      "baseline_contract": "Markdown structure, subdued markers, headings, links, Mermaid fence tint; incremental styling documented.",
+      "evidence": "V+D"
+    },
+    {
+      "id": "EDIT-03",
+      "category": "Source editing and formatting commands",
+      "feature": "Code syntax highlighting",
+      "baseline_contract": "Optional preview/export highlighting; Swift, JS/TS, Python, Go, Rust and other languages documented.",
+      "evidence": "V+D"
+    },
+    {
+      "id": "EDIT-04",
+      "category": "Source editing and formatting commands",
+      "feature": "Smart Editing master switch",
+      "baseline_contract": "Enabled in observed settings; disables smart behaviors for plain source editing.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "EDIT-05",
+      "category": "Source editing and formatting commands",
+      "feature": "Render-aware style toggles",
+      "baseline_contract": "Toggle whole styled span under caret, or current word without selection; avoid repeated marker stacking, including nested emphasis.",
+      "evidence": "D"
+    },
+    {
+      "id": "EDIT-06",
+      "category": "Source editing and formatting commands",
+      "feature": "Smart headings",
+      "baseline_contract": "Tab at line start cycles body/H1/H2/H3/body.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "EDIT-07",
+      "category": "Source editing and formatting commands",
+      "feature": "List continuation",
+      "baseline_contract": "Return continues bullets, numbering or task boxes; automatic numbering; empty item Return exits list.",
+      "evidence": "D"
+    },
+    {
+      "id": "EDIT-08",
+      "category": "Source editing and formatting commands",
+      "feature": "Quote continuation",
+      "baseline_contract": "Smart quote continuation is explicitly advertised in Editing settings.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "EDIT-09",
+      "category": "Source editing and formatting commands",
+      "feature": "Indent and outdent",
+      "baseline_contract": "Tab/Shift-Tab on list lines; snippet expansion shares Tab.",
+      "evidence": "D"
+    },
+    {
+      "id": "EDIT-10",
+      "category": "Source editing and formatting commands",
+      "feature": "Bracket pairing",
+      "baseline_contract": "Brackets, parentheses and quotes pair or wrap selected text.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "EDIT-11",
+      "category": "Source editing and formatting commands",
+      "feature": "Rich paste conversion",
+      "baseline_contract": "HTML/Word rich text becomes Markdown headings, marks, links, code, and lists; switchable.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "EDIT-12",
+      "category": "Source editing and formatting commands",
+      "feature": "Image paste and drop",
+      "baseline_contract": "Clipboard/Finder images become Markdown references and stored media.",
+      "evidence": "D"
+    },
+    {
+      "id": "EDIT-13",
+      "category": "Source editing and formatting commands",
+      "feature": "URL drop on text",
+      "baseline_contract": "Dropping a URL on selected text makes a Markdown link.",
+      "evidence": "D"
+    },
+    {
+      "id": "EDIT-14",
+      "category": "Source editing and formatting commands",
+      "feature": "Spelling and typography",
+      "baseline_contract": "Spellcheck, smart quotes, smart dashes, soft wrap preferences; OS dictation and Emoji & Symbols menus.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "EDIT-15",
+      "category": "Source editing and formatting commands",
+      "feature": "Live Editing Mode",
+      "baseline_contract": "Conceals source markers and provides in-place math/Mermaid tiles; entering a block reveals source. Toggle and same source-editing surface observed; full tile behavior needs further testing.",
+      "evidence": "U+D+B"
+    },
+    {
+      "id": "EDIT-16",
+      "category": "Source editing and formatting commands",
+      "feature": "Formatting ribbon",
+      "baseline_contract": "Existing ribbon is above the **left/source pane**. Style selector, bold, italic, strike, highlight, inline code, table alignment, text-size control.",
+      "evidence": "V"
+    },
+    {
+      "id": "EDIT-17",
+      "category": "Source editing and formatting commands",
+      "feature": "Style selector",
+      "baseline_contract": "Body, Heading 1–6, Quote; applies to current source line.",
+      "evidence": "U"
+    },
+    {
+      "id": "EDIT-18",
+      "category": "Source editing and formatting commands",
+      "feature": "Column alignment",
+      "baseline_contract": "Left/center/right commands enabled in table context.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "EDIT-19",
+      "category": "Source editing and formatting commands",
+      "feature": "Whole-table placement",
+      "baseline_contract": "Left/center/right table placement stored using an HTML comment.",
+      "evidence": "U+D+B"
+    },
+    {
+      "id": "EDIT-20",
+      "category": "Source editing and formatting commands",
+      "feature": "Shared display size",
+      "baseline_contract": "Ribbon text-size stepper scales source and preview together; observed source size 15 pt.",
+      "evidence": "U"
+    },
+    {
+      "id": "EDIT-21",
+      "category": "Source editing and formatting commands",
+      "feature": "Vertical Markdown tools",
+      "baseline_contract": "Bold, italic, strike, inline code, heading, blockquote, bullet/number/task lists, link, image, table editor, code fence, equation, rule, Mermaid. Hide/show command.",
+      "evidence": "U"
+    },
+    {
+      "id": "EDIT-22",
+      "category": "Source editing and formatting commands",
+      "feature": "Format menu helpers",
+      "baseline_contract": "Bold, italic, inline code, code block, link, image, equation, heading, blockquote, lists, table editor, quick table, horizontal rule.",
+      "evidence": "U"
+    },
+    {
+      "id": "EDIT-23",
+      "category": "Source editing and formatting commands",
+      "feature": "Selection wrapping",
+      "baseline_contract": "Helpers wrap selection or insert a placeholder; source edits participate in undo.",
+      "evidence": "D"
+    },
+    {
+      "id": "EDIT-24",
+      "category": "Source editing and formatting commands",
+      "feature": "Format Document",
+      "baseline_contract": "One undoable pass normalizing whitespace/list markers/table columns. Preserve code/math content, rules, hashtags and hard breaks.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "EDIT-25",
+      "category": "Source editing and formatting commands",
+      "feature": "Standard platform commands",
+      "baseline_contract": "Native AutoFill, dictation, Emoji & Symbols, document/tab/window controls; some depend on macOS/context.",
+      "evidence": "U"
+    },
+    {
+      "id": "MD-01",
+      "category": "Markdown language contract",
+      "feature": "ATX headings",
+      "baseline_contract": "H1–H6; heading hierarchy and IDs. H1/H2 exercised; other levels exposed by styles.",
+      "evidence": "V+U"
+    },
+    {
+      "id": "MD-02",
+      "category": "Markdown language contract",
+      "feature": "Setext headings",
+      "baseline_contract": "Underlined headings; `===` form exercised.",
+      "evidence": "V+D"
+    },
+    {
+      "id": "MD-03",
+      "category": "Markdown language contract",
+      "feature": "Paragraphs and breaks",
+      "baseline_contract": "Paragraph separation, soft wrapping, trailing-space hard line breaks.",
+      "evidence": "V+D"
+    },
+    {
+      "id": "MD-04",
+      "category": "Markdown language contract",
+      "feature": "Bold, italic, combined",
+      "baseline_contract": "Strong/emphasis/nested combination with asterisk and documented underscore forms.",
+      "evidence": "V+D"
+    },
+    {
+      "id": "MD-05",
+      "category": "Markdown language contract",
+      "feature": "Strikethrough",
+      "baseline_contract": "`~~text~~`.",
+      "evidence": "V"
+    },
+    {
+      "id": "MD-06",
+      "category": "Markdown language contract",
+      "feature": "Inline code",
+      "baseline_contract": "Literal code spans; underscores preserved in rendered `inline_code`.",
+      "evidence": "V"
+    },
+    {
+      "id": "MD-07",
+      "category": "Markdown language contract",
+      "feature": "Fenced code",
+      "baseline_contract": "Language annotation, code rendering/highlighting, four-backtick outer fence exercised.",
+      "evidence": "V"
+    },
+    {
+      "id": "MD-08",
+      "category": "Markdown language contract",
+      "feature": "Highlight",
+      "baseline_contract": "`==text==`; HTML uses contrasting mark colors, including inline code inside marks.",
+      "evidence": "V+B"
+    },
+    {
+      "id": "MD-09",
+      "category": "Markdown language contract",
+      "feature": "Superscript and subscript",
+      "baseline_contract": "`x^2^`, `H~2~O`.",
+      "evidence": "V"
+    },
+    {
+      "id": "MD-10",
+      "category": "Markdown language contract",
+      "feature": "Emoji shortcodes",
+      "baseline_contract": "Named shortcodes, aliases such as `:+1:`, broad embedded name table; `:rocket:` exercised.",
+      "evidence": "V+D+B"
+    },
+    {
+      "id": "MD-11",
+      "category": "Markdown language contract",
+      "feature": "Bullet lists",
+      "baseline_contract": "Nested unordered lists.",
+      "evidence": "V"
+    },
+    {
+      "id": "MD-12",
+      "category": "Markdown language contract",
+      "feature": "Ordered lists",
+      "baseline_contract": "Explicit start number and mixed/nested ordered/unordered children.",
+      "evidence": "V"
+    },
+    {
+      "id": "MD-13",
+      "category": "Markdown language contract",
+      "feature": "Task lists",
+      "baseline_contract": "Checked/unchecked task syntax. HTML preview checkboxes are disabled in the baseline.",
+      "evidence": "V"
+    },
+    {
+      "id": "MD-14",
+      "category": "Markdown language contract",
+      "feature": "Blockquotes",
+      "baseline_contract": "Quoted paragraphs and continued quoted lines.",
+      "evidence": "V"
+    },
+    {
+      "id": "MD-15",
+      "category": "Markdown language contract",
+      "feature": "Horizontal rules",
+      "baseline_contract": "Rule rendering; formatter promises preservation.",
+      "evidence": "V+D"
+    },
+    {
+      "id": "MD-16",
+      "category": "Markdown language contract",
+      "feature": "Inline links and autolinks",
+      "baseline_contract": "Standard links, titles, automatic URL syntax; parenthesized URLs called out in release notes.",
+      "evidence": "V+D"
+    },
+    {
+      "id": "MD-17",
+      "category": "Markdown language contract",
+      "feature": "Reference links",
+      "baseline_contract": "Definitions reused in paragraphs and table cells.",
+      "evidence": "V"
+    },
+    {
+      "id": "MD-18",
+      "category": "Markdown language contract",
+      "feature": "Images",
+      "baseline_contract": "Inline/block Markdown images, reference images, local assets, data URIs, alt text.",
+      "evidence": "D+B"
+    },
+    {
+      "id": "MD-19",
+      "category": "Markdown language contract",
+      "feature": "Wiki links",
+      "baseline_contract": "`[[Note]]` and documented alias syntax; links resolve toward local Markdown files/workspace. Alias label was incorrect in the probe.",
+      "evidence": "V+D"
+    },
+    {
+      "id": "MD-20",
+      "category": "Markdown language contract",
+      "feature": "Tables",
+      "baseline_contract": "Header/divider/body, inline formatting and links in cells, column alignment and escaped pipes.",
+      "evidence": "V"
+    },
+    {
+      "id": "MD-21",
+      "category": "Markdown language contract",
+      "feature": "Table placement metadata",
+      "baseline_contract": "`<!-- table-align: center -->` extension.",
+      "evidence": "V+B"
+    },
+    {
+      "id": "MD-22",
+      "category": "Markdown language contract",
+      "feature": "Built-in callouts",
+      "baseline_contract": "NOTE, TIP, IMPORTANT, WARNING, CAUTION; titles and body formatting.",
+      "evidence": "V"
+    },
+    {
+      "id": "MD-23",
+      "category": "Markdown language contract",
+      "feature": "Custom callouts and aliases",
+      "baseline_contract": "Custom bracket names and custom title; documented synonyms such as info/danger.",
+      "evidence": "V+D"
+    },
+    {
+      "id": "MD-24",
+      "category": "Markdown language contract",
+      "feature": "Footnotes",
+      "baseline_contract": "Definitions/references; numbered section at document end and links to it.",
+      "evidence": "V"
+    },
+    {
+      "id": "MD-25",
+      "category": "Markdown language contract",
+      "feature": "Definition lists",
+      "baseline_contract": "Term plus one or more colon-prefixed definitions.",
+      "evidence": "V"
+    },
+    {
+      "id": "MD-26",
+      "category": "Markdown language contract",
+      "feature": "Collapsible sections",
+      "baseline_contract": "`<details>`/`<summary>`, expansion state and Markdown content; nested sections with math/diagrams documented.",
+      "evidence": "U+V+D"
+    },
+    {
+      "id": "MD-27",
+      "category": "Markdown language contract",
+      "feature": "Front matter",
+      "baseline_contract": "YAML-style front matter, optional preview hiding, export-specific inclusion. Exact YAML semantics beyond demonstrated fields remain unspecified.",
+      "evidence": "V+U"
+    },
+    {
+      "id": "MD-28",
+      "category": "Markdown language contract",
+      "feature": "Math delimiters",
+      "baseline_contract": "Inline `$…$`, block `$$…$$`; literal currency such as `$5 and $10` stays text.",
+      "evidence": "V"
+    },
+    {
+      "id": "MD-29",
+      "category": "Markdown language contract",
+      "feature": "Mermaid fences",
+      "baseline_contract": "First-class rendered diagrams from fenced `mermaid` source.",
+      "evidence": "V"
+    },
+    {
+      "id": "MD-30",
+      "category": "Markdown language contract",
+      "feature": "Diagram metadata",
+      "baseline_contract": "Optional readable HTML comment storing diagram identity, title, size, alignment and source-display choices. Legacy `remarkable:mermaid` recognized in binary.",
+      "evidence": "V+D+B"
+    },
+    {
+      "id": "MD-31",
+      "category": "Markdown language contract",
+      "feature": "Escapes and literal punctuation",
+      "baseline_contract": "Escaped table pipe, literal snake_case, longer code fences verified; broad conformance suite still required.",
+      "evidence": "V+D"
+    },
+    {
+      "id": "MD-32",
+      "category": "Markdown language contract",
+      "feature": "HTML handling",
+      "baseline_contract": "Details and HTML/comment AST types exist; unrestricted raw HTML support/sanitization cannot be inferred. Preserve unknown constructs losslessly in rebuild.",
+      "evidence": "B"
+    },
+    {
+      "id": "PREV-01",
+      "category": "Preview and media",
+      "feature": "HTML preview",
+      "baseline_contract": "HTML engine selected initially; styled headings/text/tables, rendered math and diagrams. Related setting says matching print.",
+      "evidence": "V+U"
+    },
+    {
+      "id": "PREV-02",
+      "category": "Preview and media",
+      "feature": "Native preview",
+      "baseline_contract": "SwiftUI-native rendering and interactive diagram cards; manually switched to inspect, then restored.",
+      "evidence": "V"
+    },
+    {
+      "id": "PREV-03",
+      "category": "Preview and media",
+      "feature": "Live refresh",
+      "baseline_contract": "Source-driven render with configurable debounce; observed 150 ms setting.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "PREV-04",
+      "category": "Preview and media",
+      "feature": "Typography and themes",
+      "baseline_contract": "Coordinated app/editor/preview/diagram colors, configurable preview size.",
+      "evidence": "V+U+D"
+    },
+    {
+      "id": "PREV-05",
+      "category": "Preview and media",
+      "feature": "Front-matter visibility",
+      "baseline_contract": "Hide-front-matter setting enabled in observed configuration.",
+      "evidence": "V+U"
+    },
+    {
+      "id": "PREV-06",
+      "category": "Preview and media",
+      "feature": "Link handling",
+      "baseline_contract": "Default-browser preference; wiki/local-note routing; internal heading and footnote links.",
+      "evidence": "U+D+B"
+    },
+    {
+      "id": "PREV-07",
+      "category": "Preview and media",
+      "feature": "Image formats",
+      "baseline_contract": "Insert PNG, JPEG, GIF, SVG. Animated GIF playback is not established.",
+      "evidence": "D+B"
+    },
+    {
+      "id": "PREV-08",
+      "category": "Preview and media",
+      "feature": "Image storage modes",
+      "baseline_contract": "Linked sibling `assets/` folder or embedded/base64 self-contained Markdown.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "PREV-09",
+      "category": "Preview and media",
+      "feature": "Image performance",
+      "baseline_contract": "Cached/downsampled previews; embedded-media cache type survives.",
+      "evidence": "D+B"
+    },
+    {
+      "id": "PREV-10",
+      "category": "Preview and media",
+      "feature": "Folder permissions",
+      "baseline_contract": "Missing-access banner, approval and remembered folder grant; local-image export uses same permission.",
+      "evidence": "D+B"
+    },
+    {
+      "id": "PREV-11",
+      "category": "Preview and media",
+      "feature": "Engine errors",
+      "baseline_contract": "Error states for missing engine, parse failures, timeouts; self-healing transient render failures advertised.",
+      "evidence": "U+D+B"
+    },
+    {
+      "id": "PREV-12",
+      "category": "Preview and media",
+      "feature": "Render cache management",
+      "baseline_contract": "Separate math/diagram caches and in-flight/loading/ready/failed states, generation tokens. Exact limits not recovered.",
+      "evidence": "B"
+    },
+    {
+      "id": "PREV-13",
+      "category": "Preview and media",
+      "feature": "Read-only right panel",
+      "baseline_contract": "HTML text is not exposed as an editable area; task inputs disabled; heading click does not select corresponding source.",
+      "evidence": "V+U"
+    },
+    {
+      "id": "TABLE-01",
+      "category": "Tables",
+      "feature": "Grid editor",
+      "baseline_contract": "Modal table builder with editable headers/cells; initial grid observed as 3 columns × 2 body rows.",
+      "evidence": "U"
+    },
+    {
+      "id": "TABLE-02",
+      "category": "Tables",
+      "feature": "Structure operations",
+      "baseline_contract": "Add Row, Add Column, remove row/column controls, visible dimensions.",
+      "evidence": "U"
+    },
+    {
+      "id": "TABLE-03",
+      "category": "Tables",
+      "feature": "Per-column alignment",
+      "baseline_contract": "Alignment menu for each column.",
+      "evidence": "U"
+    },
+    {
+      "id": "TABLE-04",
+      "category": "Tables",
+      "feature": "Existing-table editing",
+      "baseline_contract": "Select existing source table and open editor; preserve prefix/suffix and extra cells rather than trimming.",
+      "evidence": "D+B"
+    },
+    {
+      "id": "TABLE-05",
+      "category": "Tables",
+      "feature": "Insert or cancel",
+      "baseline_contract": "Explicit confirmation button and cancellation; source serialization is Markdown.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "TABLE-06",
+      "category": "Tables",
+      "feature": "Quick Table",
+      "baseline_contract": "Direct insertion shortcut distinct from the grid editor; recovered 2-column/2-body-row template.",
+      "evidence": "U+B"
+    },
+    {
+      "id": "TABLE-07",
+      "category": "Tables",
+      "feature": "Table formatting",
+      "baseline_contract": "Source formatter aligns Markdown columns; visual placement and text alignment remain distinct.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "MATH-01",
+      "category": "Math and equations",
+      "feature": "Offline TeX rendering",
+      "baseline_contract": "Bundled MathJax TeX-to-SVG engine; no CDN required. Sample inline/display equations rendered and exported.",
+      "evidence": "V+B"
+    },
+    {
+      "id": "MATH-02",
+      "category": "Math and equations",
+      "feature": "Equation editor",
+      "baseline_contract": "LaTeX field, live preview, Inline/Display toggle, Insert and Cancel, empty insert disabled.",
+      "evidence": "U"
+    },
+    {
+      "id": "MATH-03",
+      "category": "Math and equations",
+      "feature": "Structures palette",
+      "baseline_contract": "Powers, subscripts, fraction, square/nth roots, sum, product, integral, contour integral, limit, binomial, vector/hat/bar, matrix, cases.",
+      "evidence": "U"
+    },
+    {
+      "id": "MATH-04",
+      "category": "Math and equations",
+      "feature": "Greek palette",
+      "baseline_contract": "Lower/uppercase Greek choices; exact 30 buttons and TeX strings retained.",
+      "evidence": "U"
+    },
+    {
+      "id": "MATH-05",
+      "category": "Math and equations",
+      "feature": "Operators palette",
+      "baseline_contract": "Times/divide/plus-minus/minus-plus/dot/asterisk/star/circle/circled-plus/circled-times/nabla/partial/surd/percent.",
+      "evidence": "U"
+    },
+    {
+      "id": "MATH-06",
+      "category": "Math and equations",
+      "feature": "Relations palette",
+      "baseline_contract": "Equality, inequality, comparison, approximation, equivalence, similarity, proportionality, set membership/subsets/union/intersection.",
+      "evidence": "U"
+    },
+    {
+      "id": "MATH-07",
+      "category": "Math and equations",
+      "feature": "Arrows palette",
+      "baseline_contract": "Right/left/bidirectional, double arrows, maps-to, up/down.",
+      "evidence": "U"
+    },
+    {
+      "id": "MATH-08",
+      "category": "Math and equations",
+      "feature": "Symbols palette",
+      "baseline_contract": "Infinity, quantifiers, empty set, standard number sets, ellipses, angle/degree, perpendicular/parallel.",
+      "evidence": "U"
+    },
+    {
+      "id": "MATH-09",
+      "category": "Math and equations",
+      "feature": "Functions palette",
+      "baseline_contract": "sin, cos, tan, log, ln, exp, max, min, det, dim, gcd, mod.",
+      "evidence": "U"
+    },
+    {
+      "id": "MATH-10",
+      "category": "Math and equations",
+      "feature": "Template caret slots",
+      "baseline_contract": "Insertion positions caret in the first editable slot.",
+      "evidence": "D+B"
+    },
+    {
+      "id": "MATH-11",
+      "category": "Math and equations",
+      "feature": "Baseline alignment",
+      "baseline_contract": "Inline equation image baseline is tracked separately; proper text-baseline alignment advertised.",
+      "evidence": "D+B"
+    },
+    {
+      "id": "MATH-12",
+      "category": "Math and equations",
+      "feature": "Math export representations",
+      "baseline_contract": "SVG for HTML/EPUB/slides; image for PDF/DOCX/RTF; native TeX expressions for LaTeX. HTML SVG and DOCX image packaging exercised.",
+      "evidence": "V+D+B"
+    },
+    {
+      "id": "DIA-01",
+      "category": "Mermaid diagrams",
+      "feature": "Bundled full renderer",
+      "baseline_contract": "Local Mermaid engine supports broader syntax than the native visual editor. Flowchart, sequence, state, class and pie examples rendered.",
+      "evidence": "V+B"
+    },
+    {
+      "id": "DIA-02",
+      "category": "Mermaid diagrams",
+      "feature": "Other rendered types",
+      "baseline_contract": "ER, Gantt, journey, mindmap and other engine-supported types advertised. Exact engine syntax support requires fixtures/version pinning.",
+      "evidence": "D+B"
+    },
+    {
+      "id": "DIA-03",
+      "category": "Mermaid diagrams",
+      "feature": "Menu insertion templates",
+      "baseline_contract": "Generic diagram/flowchart, sequence, ER from Diagram menu and palette.",
+      "evidence": "U"
+    },
+    {
+      "id": "DIA-04",
+      "category": "Mermaid diagrams",
+      "feature": "Additional templates",
+      "baseline_contract": "Class, state, Gantt, pie examples survive in built-in guide/template strings.",
+      "evidence": "B+D"
+    },
+    {
+      "id": "DIA-05",
+      "category": "Mermaid diagrams",
+      "feature": "Diagram outline entries",
+      "baseline_contract": "Named metadata landmarks or type/source fallback labels.",
+      "evidence": "V"
+    },
+    {
+      "id": "DIA-06",
+      "category": "Mermaid diagrams",
+      "feature": "Card selection",
+      "baseline_contract": "Native preview card selection reveals visual-edit, alignment, reset-size, copy-source and resize affordances.",
+      "evidence": "V"
+    },
+    {
+      "id": "DIA-07",
+      "category": "Mermaid diagrams",
+      "feature": "Card actions menu",
+      "baseline_contract": "Visual Edit, Zoom, Copy Mermaid Source, Copy SVG, Export Diagram, Show Source.",
+      "evidence": "U"
+    },
+    {
+      "id": "DIA-08",
+      "category": "Mermaid diagrams",
+      "feature": "Individual diagram export",
+      "baseline_contract": "PNG save dialog and actual PNG output observed; SVG copy is separate.",
+      "evidence": "V+U"
+    },
+    {
+      "id": "DIA-09",
+      "category": "Mermaid diagrams",
+      "feature": "Card resizing",
+      "baseline_contract": "Drag corner; Shift maintains ratio; live dimensions; setting enables controls.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "DIA-10",
+      "category": "Mermaid diagrams",
+      "feature": "Card alignment and size reset",
+      "baseline_contract": "Left/center/right placement and reset to configured dimensions.",
+      "evidence": "U"
+    },
+    {
+      "id": "DIA-11",
+      "category": "Mermaid diagrams",
+      "feature": "Layout metadata",
+      "baseline_contract": "Optional comment written only after layout/title edits; one undoable edit; plain Markdown compatibility.",
+      "evidence": "D+B"
+    },
+    {
+      "id": "DIA-12",
+      "category": "Mermaid diagrams",
+      "feature": "Source visibility",
+      "baseline_contract": "Per-card Show Source plus global default and independent HTML/DOCX source-export preferences.",
+      "evidence": "U"
+    },
+    {
+      "id": "DIA-13",
+      "category": "Mermaid diagrams",
+      "feature": "Visual editing scope",
+      "baseline_contract": "Flowchart, sequence and simple `stateDiagram-v2` have visual interfaces. Class diagram explicitly reports unsupported visual editing.",
+      "evidence": "V"
+    },
+    {
+      "id": "DIA-14",
+      "category": "Mermaid diagrams",
+      "feature": "Visual editor panes",
+      "baseline_contract": "Generated source, canvas, inspector; independently toggle source and inspector.",
+      "evidence": "V"
+    },
+    {
+      "id": "DIA-15",
+      "category": "Mermaid diagrams",
+      "feature": "Flow direction",
+      "baseline_contract": "Direction selector; observed Left→Right and Top→Down values. Other direction enum choices need direct menu capture.",
+      "evidence": "U+B"
+    },
+    {
+      "id": "DIA-16",
+      "category": "Mermaid diagrams",
+      "feature": "Node creation and movement",
+      "baseline_contract": "Add Node, select/move tool, canvas placement/drag, node labels, delete, snap-to-grid.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "DIA-17",
+      "category": "Mermaid diagrams",
+      "feature": "Node shapes",
+      "baseline_contract": "Rectangle, rounded, diamond/decision, circle, stadium represented in implementation metadata.",
+      "evidence": "U+D+B"
+    },
+    {
+      "id": "DIA-18",
+      "category": "Mermaid diagrams",
+      "feature": "Edge editing",
+      "baseline_contract": "Source-node then target-node connection; labels; arrow/open/dotted/thick styles.",
+      "evidence": "U+D+B"
+    },
+    {
+      "id": "DIA-19",
+      "category": "Mermaid diagrams",
+      "feature": "Canvas layout and zoom",
+      "baseline_contract": "Auto Layout, Zoom In/Out, Fit, zoom indicator, source/inspector toggles.",
+      "evidence": "U"
+    },
+    {
+      "id": "DIA-20",
+      "category": "Mermaid diagrams",
+      "feature": "Canvas shortcuts",
+      "baseline_contract": "Select/Move V, Add Node N, Connect E displayed in tooltips.",
+      "evidence": "U"
+    },
+    {
+      "id": "DIA-21",
+      "category": "Mermaid diagrams",
+      "feature": "Sequence participants",
+      "baseline_contract": "Add/remove/rename participants.",
+      "evidence": "U"
+    },
+    {
+      "id": "DIA-22",
+      "category": "Mermaid diagrams",
+      "feature": "Sequence messages",
+      "baseline_contract": "Add/remove, choose sender/receiver, edit text, reorder up/down, solid/dashed arrow/line styles.",
+      "evidence": "U+B"
+    },
+    {
+      "id": "DIA-23",
+      "category": "Mermaid diagrams",
+      "feature": "State diagrams",
+      "baseline_contract": "States/transitions on flowchart-like canvas, start/end circle markers, generated `stateDiagram-v2`; label aliases documented.",
+      "evidence": "V+D"
+    },
+    {
+      "id": "DIA-24",
+      "category": "Mermaid diagrams",
+      "feature": "Apply and Cancel",
+      "baseline_contract": "Generated source changes in visual editor; Apply writes back, Cancel leaves source unchanged. Cancel exercised; edit/apply round trips still require test suite.",
+      "evidence": "V+U+D"
+    },
+    {
+      "id": "DIA-25",
+      "category": "Mermaid diagrams",
+      "feature": "Unsupported visual source",
+      "baseline_contract": "“Edit as Source” fallback for unsupported diagram kinds; prevent silent loss.",
+      "evidence": "V"
+    },
+    {
+      "id": "DIA-26",
+      "category": "Mermaid diagrams",
+      "feature": "Passthrough preservation",
+      "baseline_contract": "Preserve subgraph/style/classDef/click/linkStyle/exotic-arrow lines; warn about deleted referenced node IDs.",
+      "evidence": "D+B"
+    },
+    {
+      "id": "DIA-27",
+      "category": "Mermaid diagrams",
+      "feature": "Loss warnings",
+      "baseline_contract": "Warnings for unsupported notes/composite states/sequence loops or alt blocks before Apply removes content.",
+      "evidence": "B"
+    },
+    {
+      "id": "DIA-28",
+      "category": "Mermaid diagrams",
+      "feature": "Import file types",
+      "baseline_contract": "`.mmd`, `.mermaid`, `.md`, `.txt`; raw source wrapped in fence, documented multi-block selection. Complex Markdown import failed in this audit.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "DIA-29",
+      "category": "Mermaid diagrams",
+      "feature": "Import configuration",
+      "baseline_contract": "Source/rendered preview, title, width, height, alignment, cursor/append/replace insertion choice, Import/Cancel.",
+      "evidence": "U"
+    },
+    {
+      "id": "DIA-30",
+      "category": "Mermaid diagrams",
+      "feature": "Rendering preferences",
+      "baseline_contract": "Enable rendering, live rendering, theme following, outline entries, source visibility, visual editing, move/resize, size/alignment.",
+      "evidence": "U"
+    },
+    {
+      "id": "DIA-31",
+      "category": "Mermaid diagrams",
+      "feature": "Render errors",
+      "baseline_contract": "Parse error display and unavailable-engine/timeout/empty-diagram paths; source remains editable.",
+      "evidence": "U+B"
+    },
+    {
+      "id": "DIA-32",
+      "category": "Mermaid diagrams",
+      "feature": "Renderer isolation",
+      "baseline_contract": "Local WebKit harness calls strict Mermaid initialization and returns SVG/size/token via message bridge.",
+      "evidence": "B"
+    },
+    {
+      "id": "DIA-33",
+      "category": "Mermaid diagrams",
+      "feature": "Native versus HTML affordances",
+      "baseline_contract": "Native cards expose the rich interaction controls above. HTML preview presented static SVG content; do not assume card-feature parity.",
+      "evidence": "V+U"
+    },
+    {
+      "id": "SEARCH-01",
+      "category": "Search and command discovery",
+      "feature": "Find panel",
+      "baseline_contract": "In-document field, live count, previous/next, close; includes raw Mermaid because source is Markdown.",
+      "evidence": "V+D"
+    },
+    {
+      "id": "SEARCH-02",
+      "category": "Search and command discovery",
+      "feature": "Search options",
+      "baseline_contract": "Case sensitive, whole word, regex toggles.",
+      "evidence": "U"
+    },
+    {
+      "id": "SEARCH-03",
+      "category": "Search and command discovery",
+      "feature": "Replace expansion",
+      "baseline_contract": "Replace field, replace-current and replace-all actions.",
+      "evidence": "U"
+    },
+    {
+      "id": "SEARCH-04",
+      "category": "Search and command discovery",
+      "feature": "Replacement correctness",
+      "baseline_contract": "Match ranges recompute after edits; regex replacement accepts `$1` capture templates.",
+      "evidence": "D"
+    },
+    {
+      "id": "SEARCH-05",
+      "category": "Search and command discovery",
+      "feature": "Search keyboard flow",
+      "baseline_contract": "Return/Shift-Return cycle results while find field retains focus.",
+      "evidence": "D"
+    },
+    {
+      "id": "SEARCH-06",
+      "category": "Search and command discovery",
+      "feature": "Command palette",
+      "baseline_contract": "Fuzzy query, keyboard selection, Return to run, Escape to dismiss, empty-results state.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "SEARCH-07",
+      "category": "Search and command discovery",
+      "feature": "Palette action coverage",
+      "baseline_contract": "Pane/mode toggles, diagram/table/code/link/task/equation insertion, table editor, formatter, snippets, diagram import/editor, HTML/PDF/DOCX export, Copy as HTML, themes, Settings.",
+      "evidence": "U"
+    },
+    {
+      "id": "SEARCH-08",
+      "category": "Search and command discovery",
+      "feature": "Dynamic navigation",
+      "baseline_contract": "Commands for each heading and diagram landmark in active document.",
+      "evidence": "U"
+    },
+    {
+      "id": "SEARCH-09",
+      "category": "Search and command discovery",
+      "feature": "Copy as HTML",
+      "baseline_contract": "Copies rendered HTML; clipboard fidelity not tested.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "WORK-01",
+      "category": "Workspace and links",
+      "feature": "Folder workspace",
+      "baseline_contract": "Separate window; File Workspace, Open Folder as Workspace; no-folder state.",
+      "evidence": "U"
+    },
+    {
+      "id": "WORK-02",
+      "category": "Workspace and links",
+      "feature": "Markdown file browsing",
+      "baseline_contract": "Lists Markdown notes from chosen folder. Recursion/exclusion policy not established.",
+      "evidence": "D"
+    },
+    {
+      "id": "WORK-03",
+      "category": "Workspace and links",
+      "feature": "Quick Open",
+      "baseline_contract": "Fuzzy filename field; Return opens selected note.",
+      "evidence": "D"
+    },
+    {
+      "id": "WORK-04",
+      "category": "Workspace and links",
+      "feature": "Cross-file search",
+      "baseline_contract": "Search tab, phrase search across notes, file and line result context, open result.",
+      "evidence": "D"
+    },
+    {
+      "id": "WORK-05",
+      "category": "Workspace and links",
+      "feature": "Wiki links",
+      "baseline_contract": "Note names and aliases resolve inside workspace; opening linked notes is documented.",
+      "evidence": "D+B"
+    },
+    {
+      "id": "WORK-06",
+      "category": "Workspace and links",
+      "feature": "Backlinks",
+      "baseline_contract": "Tab lists notes linking to active document; no-backlinks/no-active-document states.",
+      "evidence": "D+B"
+    },
+    {
+      "id": "WORK-07",
+      "category": "Workspace and links",
+      "feature": "Workspace persistence",
+      "baseline_contract": "Folder path and security bookmark retained and restored at next launch.",
+      "evidence": "D+B"
+    },
+    {
+      "id": "LOCAL-01",
+      "category": "Versions snippets and automation",
+      "feature": "Automatic versions",
+      "baseline_contract": "Local snapshots as saved documents are edited; history begins only after save. Frequency/retention limits not recovered.",
+      "evidence": "D+B"
+    },
+    {
+      "id": "LOCAL-02",
+      "category": "Versions snippets and automation",
+      "feature": "Manual version capture",
+      "baseline_contract": "File Save Version and history Snapshot Now; actual snapshot created for fixture.",
+      "evidence": "V"
+    },
+    {
+      "id": "LOCAL-03",
+      "category": "Versions snippets and automation",
+      "feature": "History list",
+      "baseline_contract": "Timestamp and byte size, version selection.",
+      "evidence": "V"
+    },
+    {
+      "id": "LOCAL-04",
+      "category": "Versions snippets and automation",
+      "feature": "Diff view",
+      "baseline_contract": "Compared to current, additions/removals counts and line list. Unchanged snapshot displayed +0 −0.",
+      "evidence": "V"
+    },
+    {
+      "id": "LOCAL-05",
+      "category": "Versions snippets and automation",
+      "feature": "Restore safety",
+      "baseline_contract": "Restore first captures current text; recoverable history, no cloud dependency.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "LOCAL-06",
+      "category": "Versions snippets and automation",
+      "feature": "Snippet management",
+      "baseline_contract": "Select/add/remove, name, trigger, body editor, `$0` caret marker.",
+      "evidence": "U+D+B"
+    },
+    {
+      "id": "LOCAL-07",
+      "category": "Versions snippets and automation",
+      "feature": "Snippet expansion",
+      "baseline_contract": "Trigger followed by Tab; also insert via command palette.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "LOCAL-08",
+      "category": "Versions snippets and automation",
+      "feature": "Built-in snippets",
+      "baseline_contract": "Note (`note`), warning (`warn`), fenced code (`code`), 2×2 table (`table`), link (`link`), details (`details`), front matter (`fm`).",
+      "evidence": "U"
+    },
+    {
+      "id": "LOCAL-09",
+      "category": "Versions snippets and automation",
+      "feature": "Snippet persistence",
+      "baseline_contract": "User snippets plus backup key survive in implementation metadata. Exact restore behavior untested.",
+      "evidence": "B"
+    },
+    {
+      "id": "LOCAL-10",
+      "category": "Versions snippets and automation",
+      "feature": "Shortcuts integration",
+      "baseline_contract": "“New Markdown Note” and “Append to Scratchpad” App Intents; optional initial text.",
+      "evidence": "D+B"
+    },
+    {
+      "id": "LOCAL-11",
+      "category": "Versions snippets and automation",
+      "feature": "macOS Services",
+      "baseline_contract": "Selected text becomes New Remarque Note or Append to Remarque Scratchpad.",
+      "evidence": "U+B"
+    },
+    {
+      "id": "IO-01",
+      "category": "Import export and print",
+      "feature": "Document conversion import",
+      "baseline_contract": "Native picker for RTF, Word DOCX, PDF; converts to new Markdown document.",
+      "evidence": "U+D+B"
+    },
+    {
+      "id": "IO-02",
+      "category": "Import export and print",
+      "feature": "DOCX import",
+      "baseline_contract": "In-app ZIP/XML reader; documented equations/images/numbering/nesting preservation, embedded images.",
+      "evidence": "D+B"
+    },
+    {
+      "id": "IO-03",
+      "category": "Import export and print",
+      "feature": "PDF import limits",
+      "baseline_contract": "Best-effort text extraction; layout, tables, equations are not promised to survive.",
+      "evidence": "D+B"
+    },
+    {
+      "id": "IO-04",
+      "category": "Import export and print",
+      "feature": "HTML export",
+      "baseline_contract": "Standalone styled HTML, inline CSS option, embedded diagram/math SVG, optional Mermaid source, custom CSS. Actual output contains 9 SVGs, no external script tags.",
+      "evidence": "V+U"
+    },
+    {
+      "id": "IO-05",
+      "category": "Import export and print",
+      "feature": "PDF export",
+      "baseline_contract": "Paginated output; TextKit exporter; math/diagrams as images; title page, TOC with page numbers, page numbers, page size and landscape documented. File generated, full visual fidelity not certified.",
+      "evidence": "V+D+B"
+    },
+    {
+      "id": "IO-06",
+      "category": "Import export and print",
+      "feature": "DOCX export",
+      "baseline_contract": "OOXML headings/styles, lists/numbering, tables, links, marks, diagrams/math images; structural options. Actual package has nine PNGs and valid XML.",
+      "evidence": "V+D+B"
+    },
+    {
+      "id": "IO-07",
+      "category": "Import export and print",
+      "feature": "RTF export",
+      "baseline_contract": "Styled rich text with image-backed diagrams/math. File generated; downstream word-processor fidelity untested.",
+      "evidence": "V+D"
+    },
+    {
+      "id": "IO-08",
+      "category": "Import export and print",
+      "feature": "Slides export",
+      "baseline_contract": "Single HTML deck with embedded graphics and navigation script. Probe created 12 slides; documentation says top-level-heading split, which does not match this fixture.",
+      "evidence": "V+D"
+    },
+    {
+      "id": "IO-09",
+      "category": "Import export and print",
+      "feature": "EPUB export",
+      "baseline_contract": "EPUB 3 ZIP, navigation, chapter XHTML, styles, local-image packaging documented. Generated ZIP/XML parses; reader/EPUB-validator conformance untested.",
+      "evidence": "V+D+B"
+    },
+    {
+      "id": "IO-10",
+      "category": "Import export and print",
+      "feature": "LaTeX export",
+      "baseline_contract": "Article preamble, mapped structure/marks/lists/tables/verbatim code, native math. Save panel produced `feature-probe.tex.txt`; compile not tested.",
+      "evidence": "V+D+B"
+    },
+    {
+      "id": "IO-11",
+      "category": "Import export and print",
+      "feature": "Remarque bundle",
+      "baseline_contract": "ZIP-compatible `.remarque` export packages Markdown and available assets. Probe archive contains its Markdown file; asset behavior not exercised. Reopen support not established.",
+      "evidence": "V+D+B"
+    },
+    {
+      "id": "IO-12",
+      "category": "Import export and print",
+      "feature": "Embedded Markdown",
+      "baseline_contract": "Self-contained `.md` with base64 images; sample without local images exported successfully.",
+      "evidence": "V+D"
+    },
+    {
+      "id": "IO-13",
+      "category": "Import export and print",
+      "feature": "Export entry points",
+      "baseline_contract": "File menu, toolbar export menu, and selected palette commands; native save dialog; reveal in Finder documented.",
+      "evidence": "V+U+D"
+    },
+    {
+      "id": "IO-14",
+      "category": "Import export and print",
+      "feature": "Default export preference",
+      "baseline_contract": "Configurable default format, initially HTML in observed settings.",
+      "evidence": "U"
+    },
+    {
+      "id": "IO-15",
+      "category": "Import export and print",
+      "feature": "Structural export options",
+      "baseline_contract": "Title page, table of contents, page numbers; Letter/A4, landscape, front matter, image embedding; PDF follows some DOCX-labelled controls.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "IO-16",
+      "category": "Import export and print",
+      "feature": "Source inclusion options",
+      "baseline_contract": "Independent Mermaid-source inclusion for DOCX versus HTML/general exports.",
+      "evidence": "U"
+    },
+    {
+      "id": "IO-17",
+      "category": "Import export and print",
+      "feature": "Custom stylesheet",
+      "baseline_contract": "Choose custom CSS for HTML/slides; persistent bookmark across launches.",
+      "evidence": "U+D+B"
+    },
+    {
+      "id": "IO-18",
+      "category": "Import export and print",
+      "feature": "Print document",
+      "baseline_contract": "Rendered document command and Cmd-P. Web-print/native-print implementations survive.",
+      "evidence": "U+B"
+    },
+    {
+      "id": "IO-19",
+      "category": "Import export and print",
+      "feature": "Print source",
+      "baseline_contract": "Raw Markdown/Mermaid listing.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "IO-20",
+      "category": "Import export and print",
+      "feature": "Combined printing",
+      "baseline_contract": "Rendered document followed by labelled source in one print job; light print theme documented.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "IO-21",
+      "category": "Import export and print",
+      "feature": "Export fallback and failure handling",
+      "baseline_contract": "Diagram placeholder fallback; unreadable media/engine errors; atomic output promise. Exact error recovery requires regression tests.",
+      "evidence": "D+B"
+    },
+    {
+      "id": "ACCESS-01",
+      "category": "Accessibility and product constraints",
+      "feature": "Accessible controls",
+      "baseline_contract": "Many controls provide names/help; diagram nodes exposed as selectable accessibility buttons.",
+      "evidence": "V"
+    },
+    {
+      "id": "ACCESS-02",
+      "category": "Accessibility and product constraints",
+      "feature": "Keyboard operation",
+      "baseline_contract": "Standard shortcuts, menus, documented full keyboard navigation; complete accessibility audit outstanding.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "ACCESS-03",
+      "category": "Accessibility and product constraints",
+      "feature": "Text scaling",
+      "baseline_contract": "Editor/preview size preferences and shared ribbon size stepper.",
+      "evidence": "U"
+    },
+    {
+      "id": "ACCESS-04",
+      "category": "Accessibility and product constraints",
+      "feature": "Theme choices",
+      "baseline_contract": "System, Paper, Midnight, Graphite; Graphite has light/dark variants by documentation.",
+      "evidence": "U+D"
+    },
+    {
+      "id": "ACCESS-05",
+      "category": "Accessibility and product constraints",
+      "feature": "Sandboxed architecture",
+      "baseline_contract": "App Sandbox and user-selected read/write plus scoped bookmarks entitlements present. Network-client entitlement is also present; offline claims need runtime verification.",
+      "evidence": "B"
+    },
+    {
+      "id": "ACCESS-06",
+      "category": "Accessibility and product constraints",
+      "feature": "No account workflow",
+      "baseline_contract": "No account, sign-in, sync, collaboration or subscription feature found in inspected product surfaces. This is an observed scope statement, not a proof about every code path.",
+      "evidence": "U+D"
+    }
+  ]
+}

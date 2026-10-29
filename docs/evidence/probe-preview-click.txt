@@ -1,0 +1,341 @@
+Window: "feature-probe.md", App: Remarque.
+0 standard window feature-probe.md, URL: file:///Users/johnczlonka/Desktop/remarquerebuild/docs/fixtures/feature-probe.md, Secondary Actions: Raise
+	1 container
+		2 split group
+			3 container
+				4 text OUTLINE 11
+				5 scroll area
+					6 list Secondary Actions: AXScrollToTop, AXScrollToBottom
+						7 button Remarque Feature Probe
+						8 button Inline formatting
+						9 button Lists and callouts
+						10 button Tables
+						11 button Code and equations
+						12 button Extended structure
+						13 button Setext heading
+						14 button Diagrams
+						15 button Diagram: Flow probe
+						16 button Diagram: sequenceDiagram
+						17 button Diagram: stateDiagram-v2
+						18 button Diagram: classDiagram
+						19 button Diagram: pie title Feature coverage
+						20 button Repeated heading
+						21 button Repeated heading
+						22 button End marker
+			23 splitter (disabled, settable, float) 180
+			24 container
+				25 menu button Style, Help: Set the current line's section style
+				26 button Description: Bold, Help: Bold  (⌘B), ID: bold
+				27 button Description: Italic, Help: Italic  (⌘I), ID: italic
+				28 button Description: Strike Through, Help: Strikethrough, ID: strikethrough
+				29 button Description: Highlight, ID: highlighter
+				30 button Description: Embed Code, Help: Inline Code, ID: chevron.left.forwardslash.chevron.right
+				31 button (disabled) Description: Align Left, Help: Align column left, ID: text.alignleft
+				32 button (disabled) Description: Align Center, Help: Align column centre, ID: text.aligncenter
+				33 button (disabled) Description: Align Right, Help: Align column right, ID: text.alignright
+				34 menu button (disabled) Table, Help: Position the whole table on the page (left / centre / right)
+				35 image Description: Change Text Size, Help: Text size — scales the editor and preview together, ID: textformat.size
+				36 stepper 15 pt, Help: Text size — scales the editor and preview together, Value: 15, Secondary Actions: Increment, Decrement
+					37 increment arrow button
+					38 decrement arrow button
+				39 button Description: Bold, Help: Inserts or wraps the selection, ID: bold
+				40 button Description: Italic, Help: Inserts or wraps the selection, ID: italic
+				41 button Description: Strikethrough, Help: Inserts or wraps the selection, ID: strikethrough
+				42 button Description: Inline Code, Help: Inserts or wraps the selection, ID: chevron.left.forwardslash.chevron.right
+				43 button Description: Heading, Help: Inserts or wraps the selection, ID: number
+				44 button Description: Blockquote, Help: Inserts or wraps the selection, ID: text.quote
+				45 button Description: Bullet List, Help: Inserts or wraps the selection, ID: list.bullet
+				46 button Description: Numbered List, Help: Inserts or wraps the selection, ID: list.number
+				47 button Description: Task List, Help: Inserts or wraps the selection, ID: checklist
+				48 button Description: Link, Help: Inserts or wraps the selection, ID: link
+				49 button Description: Image, Help: Inserts or wraps the selection, ID: photo
+				50 button Description: Table Editor, Help: Inserts or wraps the selection, ID: tablecells
+				51 button Description: Code Block, Help: Inserts or wraps the selection, ID: curlybraces
+				52 button Description: Equation, Help: Inserts or wraps the selection, ID: function
+				53 button Description: Horizontal Rule, Help: Inserts or wraps the selection, ID: minus
+				54 button Description: Mermaid Diagram, Help: Inserts or wraps the selection, ID: chart.xyaxis.line
+				55 scroll area Secondary Actions: Scroll Up, Scroll Down
+					56 text entry area (settable) ID: editorTextView, Value: ---
+title: Remarque Feature Probe
+author: Local inventory
+---
+
+**# Remarque Feature Probe**
+
+Disposable document for the rebuild inventory. UNIQUE*_TOP_*ANCHOR
+
+**## Inline formatting**
+
+Plain ****bold****, **italic**, *****both*****, ~~~~strike~~~~, `inline*_code`, ==highlight==, H~2~O, x^2^, :rocket: and snake_*case.
+
+An inline equation $E=mc^2$ and literal prices $5 and $10.
+
+[Inline link](https://example.com) and [reference link][example]. [[Other Note|Wiki alias]]
+
+[example]: https://example.com "Reference title"
+
+**## Lists and callouts**
+
+- Parent
+  - Child
+    1. Nested ordered child
+- [ ] Unchecked task
+- [x] Checked task
+
+3. Third
+4. Fourth
+
+*> Ordinary quote*
+*>*
+*> Continued paragraph.*
+
+*> [!NOTE] Custom note title*
+*> A note with *****bold*****.*
+
+*> [!TIP]*
+*> A tip.*
+
+*> [!IMPORTANT]*
+*> Important.*
+
+*> [!WARNING]*
+*> Warning.*
+
+*> [!CAUTION]*
+*> Caution.*
+
+*> [!CUSTOM] Custom box*
+*> A custom callout.*
+
+**## Tables**
+
+<!-- table-align: center -->
+| Left | Center | Right |
+| :--- | :----: | ----: |
+| ****bold**** | escaped \| pipe | 42 |
+| [link][example] | `code` | $x^2$ |
+
+**## Code and equations**
+
+```swift
+let greeting = "Hello"
+// A comment
+print(greeting)
+```
+
+````text
+```nested fence```
+````
+
+$$
+\int_0^\infty e^{-x^2}\,dx = \frac{\sqrt{\pi}}{2}
+$$
+
+## Extended structure
+
+A footnote reference.[^one]
+
+[^one]: Footnote **content**.
+
+Term
+: First definition
+: Second definition
+
+<details>
+<summary>Expandable section</summary>
+
+Hidden **Markdown** and $x^2$.
+
+</details>
+
+Setext heading
+==============
+
+Hard break follows.  
+Second line.
+
+---
+
+## Diagrams
+
+<!-- remarque:mermaid id="probe-flow" title="Flow probe" width="720" height="420" align="center" -->
+```mermaid
+flowchart LR
+    A[Start] --> B{Decision}
+    B -->|Yes| C[End]
+    B -->|No| A
+```
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant App
+    User->>App: Edit
+    App-->>User: Preview
+```
+
+```mermaid
+stateDiagram-v2
+    [*] --> Editing
+    Editing --> Saved: save
+    Saved --> Editing: edit
+    Saved --> [*]
+```
+
+```mermaid
+classDiagram
+    class Document {
+        +String text
+        +save()
+    }
+```
+
+```mermaid
+pie title Feature coverage
+    "Editor" : 50
+    "Preview" : 50
+```
+
+## Repeated heading
+
+First duplicate. UNIQUE_MIDDLE_ANCHOR
+
+## Repeated heading
+
+Second duplicate. Unicode: café, 日本語, 👩🏽‍💻.
+
+## End marker
+
+UNIQUE_BOTTOM_ANCHOR. Selecting this rendered sentence should identify this source paragraph in the rebuilt editor.
+
+					57 scroll bar (settable, float) 0
+						58 value indicator (settable, float) 0
+						59 increment arrow button
+						60 decrement arrow button
+						61 increment page button
+						62 decrement page button
+			63 splitter (disabled, settable, float) 784
+			64 scroll area
+				65 HTML content Description: feature-probe, URL: file:///Users/johnczlonka/Desktop/remarquerebuild/docs/fixtures/
+					66 container
+						67 heading Remarque Feature Probe, Value: 1
+							68 text Remarque Feature Probe
+						69 text Disposable document for the rebuild inventory. UNIQUE_TOP_ANCHOR
+						70 heading Inline formatting, Value: 2
+							71 text Inline formatting
+						72 text Plain bold, italic, both, 
+						73 text strike
+						74 text , inline_code, highlight, H2O, x2, 🚀 and snake_case.
+						75 text An inline equation and literal prices $5 and $10.
+						76 link Inline link, Value: example.com/
+						77 text  and 
+						78 link reference link, Value: example.com/
+						79 text . 
+						80 link Other Note, Value: file:///Users/johnczlonka/Desktop/remarquerebuild/docs/fixtures/Other%20Note.md
+						81 heading Lists and callouts, Value: 2
+							82 text Lists and callouts
+						83 container Parent
+							84 text Parent
+							85 content list
+								86 container Child
+									87 list marker ◦
+									88 text Child
+									89 content list
+										90 container Nested ordered child
+											91 text 1. Nested ordered child
+						92 container Unchecked task
+							93 checkbox (disabled) 0
+							94 text  Unchecked task
+						95 container Checked task
+							96 checkbox (disabled) 1
+							97 text  Checked task
+						98 content list
+							99 container Third
+								100 text 3. Third
+							101 container Fourth
+								102 text 4. Fourth
+						103 text Ordinary quote Continued paragraph. Custom note title A note with bold. Tip A tip. Important Important. Warning Warning. Caution Caution. Custom box A custom callout.
+						104 heading Tables, Value: 2
+							105 text Tables
+						106 table
+							107 row (selectable) Left
+Center
+Right
+							108 row (selectable)
+								109 cell (selectable) bold
+								110 cell (selectable) escaped | pipe
+								111 cell (selectable) 42
+							112 row (selectable)
+								113 cell (selectable) link
+								114 cell (selectable) code
+								115 cell (selectable)
+						116 heading Code and equations, Value: 2
+							117 text Code and equations
+						118 text let greeting = "Hello"
+// A comment
+print(greeting)
+						119 text ```nested fence```
+						120 heading Extended structure, Value: 2
+							121 text Extended structure
+						122 text A footnote reference.
+						123 link 1, Value: file:///Users/johnczlonka/Desktop/remarquerebuild/docs/fixtures/#fn-one
+						124 description list
+							125 text Term
+							126 text First definition
+							127 text Second definition
+						128 summary Expandable section, Value: off
+							129 text Expandable section
+						130 heading Setext heading, Value: 1
+							131 text Setext heading
+						132 text Hard break follows. Second line.
+						133 heading Diagrams, Value: 2
+							134 text Diagrams
+						135 text Flow probe
+						136 container
+							137 text Yes No Start Decision End
+						138 container
+							139 text App User App User Edit Preview
+						140 container
+							141 text save edit Editing Saved
+						142 container
+							143 text Document +String text +save()
+						144 container
+							145 text 50% 50% Feature coverage Editor Preview
+						146 heading Repeated heading, Value: 2
+							147 text Repeated heading
+						148 text First duplicate. UNIQUE_MIDDLE_ANCHOR
+						149 heading Repeated heading, Value: 2
+							150 text Repeated heading
+						151 text Second duplicate. Unicode: café, 日本語, 👩🏽‍💻.
+						152 heading End marker, Value: 2
+							153 text End marker
+						154 text UNIQUE_BOTTOM_ANCHOR. Selecting this rendered sentence should identify this source paragraph in the rebuilt editor.
+						155 content list
+							156 container Footnote content.
+								157 text 1. Footnote content.
+				158 scroll bar (settable, float) 0
+		159 text 206 words · 2 min read · 5 diagrams Line 153, Col 1 · Outline + Editor + Preview · Saved
+	160 toolbar
+		161 menu button Layout, Help: Layout — Outline + Editor + Preview, Value: Outline + Editor + Preview, ID: rectangle.split.3x1
+		162 button Description: Mermaid Visual Editor, ID: point.topleft.down.curvedto.point.bottomright.up, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		163 button Description: Toggle Outline, ID: sidebar.left, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		164 button Description: Focus Mode, ID: moon.stars, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		165 button Description: Find, ID: magnifyingglass, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		166 menu button Export, ID: square.and.arrow.up
+		167 button Description: Settings, ID: gearshape, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Remove from toolbar
+	168 close button
+	169 zoom button
+	170 minimize button
+	171 text feature-probe.md
+172 menu bar
+	173 Remarque
+	174 File
+	175 Edit
+	176 View
+	177 Format
+	178 Diagram
+	179 Tools
+	180 Window
+	181 Help
+
+The focused UI element is 65 HTML content Description: feature-probe, URL: file:///Users/johnczlonka/Desktop/remarquerebuild/docs/fixtures/

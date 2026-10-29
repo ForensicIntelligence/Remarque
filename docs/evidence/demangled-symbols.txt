@@ -1,0 +1,1772 @@
+protocol descriptor for AppIntents._SupportsAppDependencies
+AppIntents.AppShortcutPhrase.StringInterpolation.appendInterpolation(AppIntents.AppShortcutPhraseToken) -> ()
+AppIntents.AppShortcutPhrase.StringInterpolation.appendLiteral(Swift.String) -> ()
+AppIntents.AppShortcutPhrase.StringInterpolation.init(literalCapacity: Swift.Int, interpolationCount: Swift.Int) -> AppIntents.AppShortcutPhrase<A>.StringInterpolation
+nominal type descriptor for AppIntents.AppShortcutPhrase.StringInterpolation
+AppIntents.AppShortcutPhrase.init(stringInterpolation: AppIntents.AppShortcutPhrase<A>.StringInterpolation) -> AppIntents.AppShortcutPhrase<A>
+nominal type descriptor for AppIntents.AppShortcutPhrase
+static AppIntents.AppShortcutsBuilder.buildBlock(AppIntents.AppShortcut...) -> [AppIntents.AppShortcut]
+static AppIntents.AppShortcutsBuilder.buildExpression(AppIntents.AppShortcut) -> AppIntents.AppShortcut
+protocol descriptor for AppIntents.AppShortcutsProvider
+method descriptor for static AppIntents.AppShortcutsProvider.appShortcuts.getter : [AppIntents.AppShortcut]
+method descriptor for static AppIntents.AppShortcutsProvider.shortcutTileColor.getter : AppIntents.ShortcutTileColor
+static (extension in AppIntents):AppIntents.AppShortcutsProvider.shortcutTileColor.getter : AppIntents.ShortcutTileColor
+enum case for AppIntents.AppShortcutPhraseToken.applicationName(AppIntents.AppShortcutPhraseToken.Type) -> AppIntents.AppShortcutPhraseToken
+type metadata accessor for AppIntents.AppShortcutPhraseToken
+protocol descriptor for AppIntents.AppIntent
+method descriptor for static AppIntents.AppIntent.openAppWhenRun.getter : Swift.Bool
+method descriptor for static AppIntents.AppIntent.description.getter : AppIntents.IntentDescription?
+associated conformance descriptor for AppIntents.AppIntent.AppIntents.AppIntent.PerformResult: AppIntents.IntentResult
+associated conformance descriptor for AppIntents.AppIntent.AppIntents.AppIntent.SummaryContent: AppIntents.ParameterSummary
+method descriptor for static AppIntents.AppIntent.isDiscoverable.getter : Swift.Bool
+method descriptor for static AppIntents.AppIntent.supportedModes.getter : AppIntents.IntentModes
+method descriptor for static AppIntents.AppIntent.parameterSummary.getter : A.SummaryContent
+method descriptor for static AppIntents.AppIntent.authenticationPolicy.getter : AppIntents.IntentAuthenticationPolicy
+method descriptor for static AppIntents.AppIntent.title.getter : Foundation.LocalizedStringResource
+method descriptor for AppIntents.AppIntent.perform() async throws -> A.PerformResult
+base conformance descriptor for AppIntents.AppIntent: AppIntents._SupportsAppDependencies
+base conformance descriptor for AppIntents.AppIntent: AppIntents.PersistentlyIdentifiable
+static (extension in AppIntents):AppIntents.AppIntent.description.getter : AppIntents.IntentDescription?
+static (extension in AppIntents):AppIntents.AppIntent.isDiscoverable.getter : Swift.Bool
+static (extension in AppIntents):AppIntents.AppIntent.supportedModes.getter : AppIntents.IntentModes
+static (extension in AppIntents):AppIntents.AppIntent.parameterSummary.getter : some
+opaque type descriptor for <<opaque return type of static (extension in AppIntents):AppIntents.AppIntent.parameterSummary : some>>
+static (extension in AppIntents):AppIntents.AppIntent.authenticationPolicy.getter : AppIntents.IntentAuthenticationPolicy
+static (extension in AppIntents):AppIntents.AppIntent.persistentIdentifier.getter : Swift.String
+method descriptor for AppIntents.AppIntent.init() -> A
+AppIntents.AppShortcut.init<A where A: AppIntents.AppIntent>(intent: A, phrases: [AppIntents.AppShortcutPhrase<A>], shortTitle: Foundation.LocalizedStringResource, systemImageName: _const Swift.String) -> AppIntents.AppShortcut
+type metadata accessor for AppIntents.AppShortcut
+nominal type descriptor for AppIntents.AppShortcut
+type metadata accessor for AppIntents.IntentDialog
+nominal type descriptor for AppIntents.IntentDialog
+protocol descriptor for AppIntents.IntentResult
+static (extension in AppIntents):AppIntents.IntentResult.result< where A == AppIntents.IntentResultContainer<Swift.Never, Swift.Never, Swift.Never, Swift.Never>>() -> AppIntents.IntentResultContainer<Swift.Never, Swift.Never, Swift.Never, Swift.Never>
+AppIntents.IntentParameter.wrappedValue.getter : A
+(extension in AppIntents):AppIntents.IntentParameter< where A.ValueType == Swift.String>.init(title: Foundation.LocalizedStringResource, description: Foundation.LocalizedStringResource?, default: _const A.UnwrappedType?, inputOptions: (extension in AppIntents):Swift.String.IntentInputOptions?, requestValueDialog: AppIntents.IntentDialog?, inputConnectionBehavior: _const AppIntents.InputConnectionBehavior) -> AppIntents.IntentParameter<A>
+nominal type descriptor for AppIntents.IntentParameter
+nominal type descriptor for AppIntents.IntentResultContainer
+protocol conformance descriptor for AppIntents.IntentResultContainer<A, B, C, D> : AppIntents.IntentResult in AppIntents
+enum case for AppIntents.InputConnectionBehavior.default(AppIntents.InputConnectionBehavior.Type) -> AppIntents.InputConnectionBehavior
+type metadata accessor for AppIntents.InputConnectionBehavior
+protocol descriptor for AppIntents.PersistentlyIdentifiable
+method descriptor for static AppIntents.PersistentlyIdentifiable.persistentIdentifier.getter : Swift.String
+static Foundation.CocoaError.Code.fileNoSuchFile.getter : Foundation.CocoaError.Code
+static Foundation.CocoaError.Code.fileReadNoSuchFile.getter : Foundation.CocoaError.Code
+type metadata accessor for Foundation.CocoaError.Code
+protocol conformance descriptor for Foundation.CocoaError.Code : Swift.Equatable in Foundation
+protocol conformance descriptor for Foundation.CocoaError : Foundation._BridgedStoredNSError in Foundation
+type metadata accessor for Foundation.CocoaError
+Foundation.NSNotFound.getter : Swift.Int
+static Foundation.URLRequest._unconditionallyBridgeFromObjectiveC(__C.NSURLRequest?) -> Foundation.URLRequest
+Foundation.URLRequest.url.getter : Foundation.URL?
+type metadata accessor for Foundation.URLRequest
+dispatch thunk of Foundation.JSONDecoder.decode<A where A: Swift.Decodable>(_: A.Type, from: Foundation.Data) throws -> A
+Foundation.JSONDecoder.init() -> Foundation.JSONDecoder
+type metadata accessor for Foundation.JSONDecoder
+dispatch thunk of Foundation.JSONEncoder.encode<A where A: Swift.Encodable>(A) throws -> Foundation.Data
+Foundation.JSONEncoder.init() -> Foundation.JSONEncoder
+type metadata accessor for Foundation.JSONEncoder
+static Foundation.CharacterSet.whitespaces.getter : Foundation.CharacterSet
+Foundation.CharacterSet.init(charactersIn: __shared Swift.String) -> Foundation.CharacterSet
+static Foundation.CharacterSet.alphanumerics.getter : Foundation.CharacterSet
+static Foundation.CharacterSet.urlPathAllowed.getter : Foundation.CharacterSet
+static Foundation.CharacterSet.punctuationCharacters.getter : Foundation.CharacterSet
+static Foundation.CharacterSet.whitespacesAndNewlines.getter : Foundation.CharacterSet
+Foundation.CharacterSet.union(Foundation.CharacterSet) -> Foundation.CharacterSet
+Foundation.CharacterSet.remove(charactersIn: Swift.String) -> ()
+Foundation.CharacterSet.contains(Swift.Unicode.Scalar) -> Swift.Bool
+type metadata accessor for Foundation.CharacterSet
+static Foundation.Notification._unconditionallyBridgeFromObjectiveC(__C.NSNotification?) -> Foundation.Notification
+type metadata accessor for Foundation.Notification
+Foundation.__DataStorage.init(bytes: Swift.UnsafeMutableRawPointer?, length: Swift.Int, copy: Swift.Bool, deallocator: ((Swift.UnsafeMutableRawPointer, Swift.Int) -> ())?, offset: Swift.Int) -> Foundation.__DataStorage
+Foundation.__DataStorage.init(bytes: Swift.UnsafeRawPointer?, length: Swift.Int) -> Foundation.__DataStorage
+Foundation.__DataStorage._bytes.getter : Swift.UnsafeMutableRawPointer?
+Foundation.__DataStorage.init(length: Swift.Int) -> Foundation.__DataStorage
+Foundation.__DataStorage._length.getter : Swift.Int
+Foundation.__DataStorage._offset.getter : Swift.Int
+type metadata accessor for Foundation.__DataStorage
+protocol descriptor for Foundation.LocalizedError
+method descriptor for Foundation.LocalizedError.helpAnchor.getter : Swift.String?
+method descriptor for Foundation.LocalizedError.failureReason.getter : Swift.String?
+dispatch thunk of Foundation.LocalizedError.errorDescription.getter : Swift.String?
+method descriptor for Foundation.LocalizedError.errorDescription.getter : Swift.String?
+method descriptor for Foundation.LocalizedError.recoverySuggestion.getter : Swift.String?
+(extension in Foundation):Foundation.LocalizedError.helpAnchor.getter : Swift.String?
+(extension in Foundation):Foundation.LocalizedError.failureReason.getter : Swift.String?
+(extension in Foundation):Foundation.LocalizedError.recoverySuggestion.getter : Swift.String?
+base conformance descriptor for Foundation.LocalizedError: Swift.Error
+protocol conformance descriptor for Foundation.AttributeScopes.FoundationAttributes.LinkAttribute : Foundation.AttributedStringKey in Foundation
+type metadata for Foundation.AttributeScopes.FoundationAttributes.LinkAttribute
+protocol conformance descriptor for (extension in SwiftUI):Foundation.AttributeScopes.SwiftUIAttributes.BaselineOffsetAttribute : Foundation.AttributedStringKey in SwiftUI
+type metadata for (extension in SwiftUI):Foundation.AttributeScopes.SwiftUIAttributes.BaselineOffsetAttribute
+protocol conformance descriptor for (extension in SwiftUI):Foundation.AttributeScopes.SwiftUIAttributes.UnderlineStyleAttribute : Foundation.AttributedStringKey in SwiftUI
+type metadata for (extension in SwiftUI):Foundation.AttributeScopes.SwiftUIAttributes.UnderlineStyleAttribute
+protocol conformance descriptor for (extension in SwiftUI):Foundation.AttributeScopes.SwiftUIAttributes.BackgroundColorAttribute : Foundation.AttributedStringKey in SwiftUI
+type metadata for (extension in SwiftUI):Foundation.AttributeScopes.SwiftUIAttributes.BackgroundColorAttribute
+protocol conformance descriptor for (extension in SwiftUI):Foundation.AttributeScopes.SwiftUIAttributes.ForegroundColorAttribute : Foundation.AttributedStringKey in SwiftUI
+type metadata for (extension in SwiftUI):Foundation.AttributeScopes.SwiftUIAttributes.ForegroundColorAttribute
+protocol conformance descriptor for (extension in SwiftUI):Foundation.AttributeScopes.SwiftUIAttributes.StrikethroughStyleAttribute : Foundation.AttributedStringKey in SwiftUI
+type metadata for (extension in SwiftUI):Foundation.AttributeScopes.SwiftUIAttributes.StrikethroughStyleAttribute
+protocol conformance descriptor for (extension in SwiftUI):Foundation.AttributeScopes.SwiftUIAttributes.FontAttribute : Foundation.AttributedStringKey in SwiftUI
+type metadata for (extension in SwiftUI):Foundation.AttributeScopes.SwiftUIAttributes.FontAttribute
+protocol descriptor for Foundation.ContiguousBytes
+dispatch thunk of Foundation.ContiguousBytes.withUnsafeBytes<A>((Swift.UnsafeRawBufferPointer) throws -> A1) throws -> A1
+Foundation.AttributedString.append<A where A: Foundation.AttributedStringProtocol>(A) -> ()
+protocol conformance descriptor for Foundation.AttributedString : Foundation.AttributedStringProtocol in Foundation
+Foundation.AttributedString.init() -> Foundation.AttributedString
+type metadata accessor for Foundation.AttributedString
+Foundation.AttributedString.init(_: Swift.String, attributes: Foundation.AttributeContainer) -> Foundation.AttributedString
+Foundation.AttributedString.subscript.setter : <A where A: Foundation.AttributedStringKey>(A.Type) -> A.Value?
+Foundation.URLResourceValues.fileSize.getter : Swift.Int?
+type metadata accessor for Foundation.URLResourceValues
+Foundation.AttributeContainer.init() -> Foundation.AttributeContainer
+type metadata accessor for Foundation.AttributeContainer
+(extension in Foundation):Foundation._BridgedStoredNSError.code.getter : A.Code
+Foundation._convertErrorToNSError(Swift.Error) -> __C.NSError
+Foundation._convertNSErrorToError(__C.NSError?) -> Swift.Error
+Foundation.LocalizedStringResource.init(stringLiteral: Swift.String) -> Foundation.LocalizedStringResource
+type metadata accessor for Foundation.LocalizedStringResource
+nominal type descriptor for Foundation.LocalizedStringResource
+Foundation.FloatingPointFormatStyle.init(locale: Foundation.Locale) -> Foundation.FloatingPointFormatStyle<A>
+nominal type descriptor for Foundation.FloatingPointFormatStyle
+protocol conformance descriptor for Foundation.FloatingPointFormatStyle<A> : Foundation.ParseableFormatStyle in Foundation
+Foundation.NSFastEnumerationIterator.next() -> Any?
+type metadata accessor for Foundation.NSFastEnumerationIterator
+Foundation.URL.standardizedFileURL.getter : Foundation.URL
+Foundation.URL.isFileURL.getter : Swift.Bool
+Foundation.URL.bookmarkData(options: __C.NSURLBookmarkCreationOptions, includingResourceValuesForKeys: Swift.Set<__C.NSURLResourceKey>?, relativeTo: Foundation.URL?) throws -> Foundation.Data
+Foundation.URL.pathExtension.getter : Swift.String
+Foundation.URL.absoluteString.getter : Swift.String
+Foundation.URL.resourceValues(forKeys: Swift.Set<__C.NSURLResourceKey>) throws -> Foundation.URLResourceValues
+Foundation.URL.init(fileURLWithPath: __shared Swift.String) -> Foundation.URL
+Foundation.URL.lastPathComponent.getter : Swift.String
+Foundation.URL._bridgeToObjectiveC() -> __C.NSURL
+Foundation.URL.deletingPathExtension() -> Foundation.URL
+Foundation.URL.init(resolvingBookmarkData: __shared Foundation.Data, options: __C.NSURLBookmarkResolutionOptions, relativeTo: __shared Foundation.URL?, bookmarkDataIsStale: inout Swift.Bool) throws -> Foundation.URL
+Foundation.URL.appendingPathComponent(_: Swift.String, isDirectory: Swift.Bool) -> Foundation.URL
+Foundation.URL.appendingPathComponent(Swift.String) -> Foundation.URL
+Foundation.URL.deletingLastPathComponent() -> Foundation.URL
+static Foundation.URL.== infix(Foundation.URL, Foundation.URL) -> Swift.Bool
+Foundation.URL.stopAccessingSecurityScopedResource() -> ()
+static Foundation.URL._unconditionallyBridgeFromObjectiveC(__C.NSURL?) -> Foundation.URL
+Foundation.URL.startAccessingSecurityScopedResource() -> Swift.Bool
+Foundation.URL.path.getter : Swift.String
+Foundation.URL.scheme.getter : Swift.String?
+Foundation.URL.init(string: __shared Swift.String) -> Foundation.URL?
+type metadata accessor for Foundation.URL
+nominal type descriptor for Foundation.URL
+protocol conformance descriptor for Foundation.URL : Swift.Hashable in Foundation
+protocol conformance descriptor for Foundation.URL : Swift.Equatable in Foundation
+Foundation.Data.LargeSlice.ensureUniqueReference() -> ()
+Foundation.Data.init(contentsOf: __shared Foundation.URL, options: __C.NSDataReadingOptions) throws -> Foundation.Data
+Foundation.Data._copyContents(initializing: Swift.UnsafeMutableBufferPointer<Swift.UInt8>) -> (Foundation.Data.Iterator, Swift.Int)
+type metadata accessor for Foundation.Data.RangeReference
+Foundation.Data._Representation.replaceSubrange(_: Swift.Range<Swift.Int>, with: Swift.UnsafeRawPointer?, count: Swift.Int) -> ()
+Foundation.Data._Representation.append(contentsOf: Swift.UnsafeRawBufferPointer) -> ()
+type metadata for Foundation.Data._Representation
+Foundation.Data._Representation.subscript.getter : (Swift.Range<Swift.Int>) -> Foundation.Data
+Foundation.Data._bridgeToObjectiveC() -> __C.NSData
+Foundation.Data.base64EncodedString(options: __C.NSDataBase64EncodingOptions) -> Swift.String
+static Foundation.Data._unconditionallyBridgeFromObjectiveC(__C.NSData?) -> Foundation.Data
+Foundation.Data.write(to: Foundation.URL, options: __C.NSDataWritingOptions) throws -> ()
+Foundation.Data.append(Foundation.Data) -> ()
+Foundation.Data.Iterator.next() -> Swift.UInt8?
+type metadata accessor for Foundation.Data.Iterator
+protocol conformance descriptor for Foundation.Data.Iterator : Swift.IteratorProtocol in Foundation
+Foundation.Data.Iterator.init(_: Foundation.Data, at: Swift.Int) -> Foundation.Data.Iterator
+nominal type descriptor for Foundation.Data
+type metadata for Foundation.Data
+Foundation.Date.timeIntervalSince(Foundation.Date) -> Swift.Double
+Foundation.Date._bridgeToObjectiveC() -> __C.NSDate
+static Foundation.Date.> infix(Foundation.Date, Foundation.Date) -> Swift.Bool
+Foundation.Date.init(timeIntervalSince1970: Swift.Double) -> Foundation.Date
+Foundation.Date.timeIntervalSince1970.getter : Swift.Double
+static Foundation.Date.== infix(Foundation.Date, Foundation.Date) -> Swift.Bool
+Foundation.Date.init() -> Foundation.Date
+type metadata accessor for Foundation.Date
+nominal type descriptor for Foundation.Date
+Foundation.UUID.uuidString.getter : Swift.String
+static Foundation.UUID.== infix(Foundation.UUID, Foundation.UUID) -> Swift.Bool
+Foundation.UUID.init() -> Foundation.UUID
+type metadata accessor for Foundation.UUID
+nominal type descriptor for Foundation.UUID
+protocol conformance descriptor for Foundation.UUID : Swift.Encodable in Foundation
+protocol conformance descriptor for Foundation.UUID : Swift.Hashable in Foundation
+protocol conformance descriptor for Foundation.UUID : Swift.Equatable in Foundation
+protocol conformance descriptor for Foundation.UUID : Swift.Decodable in Foundation
+protocol conformance descriptor for Foundation.UUID : Swift.CustomStringConvertible in Foundation
+static Foundation.Locale.autoupdatingCurrent.getter : Foundation.Locale
+type metadata accessor for Foundation.Locale
+nominal type descriptor for Foundation.Locale
+associated type descriptor for SwiftUI.NSViewRepresentable.NSViewType
+nominal type descriptor for ObjectiveC.ObjCBool
+ObjectiveC.Selector.init(Swift.String) -> ObjectiveC.Selector
+associated type descriptor for SwiftUI.NSViewRepresentable.Coordinator
+nominal type descriptor for CoreGraphics.CGFloat
+type metadata for CoreGraphics.CGFloat
+protocol conformance descriptor for CoreGraphics.CGFloat : Swift.Equatable in CoreGraphics
+protocol conformance descriptor for CoreGraphics.CGFloat : Swift.CVarArg in CoreGraphics
+associated type descriptor for AppIntents.AppIntent.PerformResult
+associated type descriptor for SwiftUI.Animatable.AnimatableData
+associated type descriptor for AppIntents.AppIntent.SummaryContent
+associated type descriptor for Swift._ObjectiveCBridgeable._ObjectiveCType
+associated type descriptor for Swift.ExpressibleByArrayLiteral.ArrayLiteralElement
+UniformTypeIdentifiers.UTType.init(filenameExtension: Swift.String, conformingTo: UniformTypeIdentifiers.UTType) -> UniformTypeIdentifiers.UTType?
+static UniformTypeIdentifiers.UTType.gif.getter : UniformTypeIdentifiers.UTType
+static UniformTypeIdentifiers.UTType.pdf.getter : UniformTypeIdentifiers.UTType
+static UniformTypeIdentifiers.UTType.png.getter : UniformTypeIdentifiers.UTType
+static UniformTypeIdentifiers.UTType.rtf.getter : UniformTypeIdentifiers.UTType
+static UniformTypeIdentifiers.UTType.svg.getter : UniformTypeIdentifiers.UTType
+static UniformTypeIdentifiers.UTType.data.getter : UniformTypeIdentifiers.UTType
+static UniformTypeIdentifiers.UTType.html.getter : UniformTypeIdentifiers.UTType
+static UniformTypeIdentifiers.UTType.jpeg.getter : UniformTypeIdentifiers.UTType
+static UniformTypeIdentifiers.UTType.text.getter : UniformTypeIdentifiers.UTType
+static UniformTypeIdentifiers.UTType.image.getter : UniformTypeIdentifiers.UTType
+UniformTypeIdentifiers.UTType.conforms(to: UniformTypeIdentifiers.UTType) -> Swift.Bool
+static UniformTypeIdentifiers.UTType.plainText.getter : UniformTypeIdentifiers.UTType
+type metadata accessor for UniformTypeIdentifiers.UTType
+nominal type descriptor for UniformTypeIdentifiers.UTType
+UniformTypeIdentifiers.UTType.init(Swift.String) -> UniformTypeIdentifiers.UTType?
+associated type descriptor for Combine.ObservableObject.ObjectWillChangePublisher
+associated type descriptor for Swift.Identifiable.ID
+os.os_log(_: __C.os_log_type_t, dso: Swift.UnsafeRawPointer, log: __C.OS_os_log, _: Swift.StaticString, _: Swift.CVarArg...) -> ()
+associated type descriptor for SwiftUI.ButtonStyle.Body
+associated type descriptor for SwiftUI.App.Body
+associated type descriptor for SwiftUI.View.Body
+associated type descriptor for SwiftUI.Commands.Body
+associated type descriptor for SwiftUI.FocusedValueKey.Value
+Darwin.open(Swift.UnsafePointer<Swift.Int8>, Swift.Int32) -> Swift.Int32
+nominal type descriptor for Combine.Publishers.ReceiveOn
+protocol conformance descriptor for Combine.Publishers.ReceiveOn<A, B> : Combine.Publisher in Combine
+Combine.AnyCancellable.store(in: inout Swift.Set<Combine.AnyCancellable>) -> ()
+nominal type descriptor for Combine.AnyCancellable
+protocol descriptor for Combine.ObservableObject
+associated conformance descriptor for Combine.ObservableObject.Combine.ObservableObject.ObjectWillChangePublisher: Combine.Publisher
+dispatch thunk of Combine.ObservableObject.objectWillChange.getter : A.ObjectWillChangePublisher
+method descriptor for Combine.ObservableObject.objectWillChange.getter : A.ObjectWillChangePublisher
+(extension in Combine):Combine.ObservableObject< where A.ObjectWillChangePublisher == Combine.ObservableObjectPublisher>.objectWillChange.getter : Combine.ObservableObjectPublisher
+Combine.PassthroughSubject.send(A) -> ()
+Combine.PassthroughSubject.init() -> Combine.PassthroughSubject<A, B>
+nominal type descriptor for Combine.PassthroughSubject
+protocol conformance descriptor for Combine.PassthroughSubject<A, B> : Combine.Publisher in Combine
+Combine.ObservableObjectPublisher.send() -> ()
+protocol witness table for Combine.ObservableObjectPublisher : Combine.Publisher in Combine
+type metadata accessor for Combine.ObservableObjectPublisher
+nominal type descriptor for Combine.ObservableObjectPublisher
+Combine.Published.init(initialValue: A) -> Combine.Published<A>
+static Combine.Published.subscript.modify : <A where A1: AnyObject>(_enclosingInstance: A1, wrapped: Swift.ReferenceWritableKeyPath<A1, A>, storage: Swift.ReferenceWritableKeyPath<A1, Combine.Published<A>>) -> A
+static Combine.Published.subscript.getter : <A where A1: AnyObject>(_enclosingInstance: A1, wrapped: Swift.ReferenceWritableKeyPath<A1, A>, storage: Swift.ReferenceWritableKeyPath<A1, Combine.Published<A>>) -> A
+static Combine.Published.subscript.setter : <A where A1: AnyObject>(_enclosingInstance: A1, wrapped: Swift.ReferenceWritableKeyPath<A1, A>, storage: Swift.ReferenceWritableKeyPath<A1, Combine.Published<A>>) -> A
+type metadata accessor for Combine.Published
+nominal type descriptor for Combine.Published
+(extension in Combine):Combine.Publisher.receive<A where A1: Combine.Scheduler>(on: A1, options: A1.SchedulerOptions?) -> Combine.Publishers.ReceiveOn<A, A1>
+(extension in Combine):Combine.Publisher< where A.Failure == Swift.Never>.sink(receiveValue: (A.Output) -> ()) -> Combine.AnyCancellable
+associated type descriptor for Swift.SetAlgebra.Element
+protocol descriptor for SwiftUI.Animatable
+method descriptor for static SwiftUI.Animatable._makeAnimatable(value: inout SwiftUI._GraphValue<A>, inputs: SwiftUI._GraphInputs) -> ()
+associated conformance descriptor for SwiftUI.Animatable.SwiftUI.Animatable.AnimatableData: SwiftUI.VectorArithmetic
+method descriptor for SwiftUI.Animatable.animatableData.modify : A.AnimatableData
+method descriptor for SwiftUI.Animatable.animatableData.getter : A.AnimatableData
+method descriptor for SwiftUI.Animatable.animatableData.setter : A.AnimatableData
+(extension in SwiftUI):SwiftUI.Animatable< where A.AnimatableData == SwiftUI.EmptyAnimatableData>.animatableData.modify : SwiftUI.EmptyAnimatableData
+static (extension in SwiftUI):SwiftUI.Animatable< where A.AnimatableData == SwiftUI.EmptyAnimatableData>._makeAnimatable(value: inout SwiftUI._GraphValue<A>, inputs: SwiftUI._GraphInputs) -> ()
+static SwiftUI.ButtonRole.destructive.getter : SwiftUI.ButtonRole
+static SwiftUI.ButtonRole.cancel.getter : SwiftUI.ButtonRole
+type metadata accessor for SwiftUI.ButtonRole
+nominal type descriptor for SwiftUI.ButtonRole
+SwiftUI.EdgeInsets.init(_all: CoreGraphics.CGFloat) -> SwiftUI.EdgeInsets
+SwiftUI.FocusState.wrappedValue.setter : A
+SwiftUI.FocusState.projectedValue.getter : SwiftUI.FocusState<A>.Binding
+SwiftUI.FocusState.init< where A == Swift.Bool>() -> SwiftUI.FocusState<Swift.Bool>
+nominal type descriptor for SwiftUI.FocusState
+SwiftUI.HSplitView.init(content: () -> A) -> SwiftUI.HSplitView<A>
+nominal type descriptor for SwiftUI.HSplitView
+protocol conformance descriptor for SwiftUI.HSplitView<A> : SwiftUI.View in SwiftUI
+SwiftUI.LazyVStack.init(alignment: SwiftUI.HorizontalAlignment, spacing: CoreGraphics.CGFloat?, pinnedViews: SwiftUI.PinnedScrollableViews, content: () -> A) -> SwiftUI.LazyVStack<A>
+nominal type descriptor for SwiftUI.LazyVStack
+protocol conformance descriptor for SwiftUI.LazyVStack<A> : SwiftUI.View in SwiftUI
+nominal type descriptor for SwiftUI.ScrollView
+SwiftUI.ScrollView.init(_: SwiftUI.Axis.Set, showsIndicators: Swift.Bool, content: () -> A) -> SwiftUI.ScrollView<A>
+protocol conformance descriptor for SwiftUI.ScrollView<A> : SwiftUI.View in SwiftUI
+SwiftUI.TextEditor.init(text: SwiftUI.Binding<Swift.String>) -> SwiftUI.TextEditor
+nominal type descriptor for SwiftUI.TextEditor
+(extension in SwiftUI):SwiftUI.Transition.combined<A where A1: SwiftUI.Transition>(with: A1) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.Transition.combined<A where A1: SwiftUI.Transition>(with: A1) -> some>>
+nominal type descriptor for SwiftUI.Visibility
+nominal type descriptor for SwiftUI._ShapeView
+protocol conformance descriptor for SwiftUI._ShapeView<A, B> : SwiftUI.View in SwiftUI
+nominal type descriptor for SwiftUI.AnyLocation
+protocol descriptor for SwiftUI.ButtonStyle
+associated conformance descriptor for SwiftUI.ButtonStyle.SwiftUI.ButtonStyle.Body: SwiftUI.View
+method descriptor for SwiftUI.ButtonStyle.makeBody(configuration: SwiftUI.ButtonStyleConfiguration) -> A.Body
+static SwiftUI.ColorScheme.== infix(SwiftUI.ColorScheme, SwiftUI.ColorScheme) -> Swift.Bool
+enum case for SwiftUI.ColorScheme.dark(SwiftUI.ColorScheme.Type) -> SwiftUI.ColorScheme
+enum case for SwiftUI.ColorScheme.light(SwiftUI.ColorScheme.Type) -> SwiftUI.ColorScheme
+type metadata accessor for SwiftUI.ColorScheme
+nominal type descriptor for SwiftUI.ColorScheme
+nominal type descriptor for SwiftUI.CommandMenu
+SwiftUI.CommandMenu.init(_: SwiftUI.LocalizedStringKey, content: () -> A) -> SwiftUI.CommandMenu<A>
+enum case for SwiftUI.ControlSize.large(SwiftUI.ControlSize.Type) -> SwiftUI.ControlSize
+enum case for SwiftUI.ControlSize.small(SwiftUI.ControlSize.Type) -> SwiftUI.ControlSize
+type metadata accessor for SwiftUI.ControlSize
+nominal type descriptor for SwiftUI.ControlSize
+SwiftUI.DragGesture.init<A where A: SwiftUI.CoordinateSpaceProtocol>(minimumDistance: CoreGraphics.CGFloat, coordinateSpace: A) -> SwiftUI.DragGesture
+SwiftUI.DragGesture.Value.translation.getter : __C.CGSize
+SwiftUI.DragGesture.Value.location.getter : __C.CGPoint
+type metadata accessor for SwiftUI.DragGesture.Value
+protocol conformance descriptor for SwiftUI.DragGesture.Value : Swift.Equatable in SwiftUI
+protocol conformance descriptor for SwiftUI.DragGesture : SwiftUI.Gesture in SwiftUI
+type metadata accessor for SwiftUI.DragGesture
+nominal type descriptor for SwiftUI.DragGesture
+type metadata accessor for SwiftUI.Environment.Content
+nominal type descriptor for SwiftUI.Environment.Content
+nominal type descriptor for SwiftUI.Environment
+static SwiftUI.GestureMask.all.getter : SwiftUI.GestureMask
+static SwiftUI.GestureMask.subviews.getter : SwiftUI.GestureMask
+SwiftUI.StateObject.wrappedValue.getter : A
+SwiftUI.StateObject.projectedValue.getter : SwiftUI.ObservedObject<A>.Wrapper
+nominal type descriptor for SwiftUI.StateObject
+SwiftUI.StrokeStyle.init(lineWidth: CoreGraphics.CGFloat, lineCap: __C.CGLineCap, lineJoin: __C.CGLineJoin, miterLimit: CoreGraphics.CGFloat, dash: [CoreGraphics.CGFloat], dashPhase: CoreGraphics.CGFloat) -> SwiftUI.StrokeStyle
+type metadata for SwiftUI.StrokeStyle
+nominal type descriptor for SwiftUI._BlurEffect
+nominal type descriptor for SwiftUI._ClipEffect
+protocol conformance descriptor for SwiftUI._ClipEffect<A> : SwiftUI.ViewModifier in SwiftUI
+nominal type descriptor for SwiftUI._TupleScene
+SwiftUI._TupleScene.init(A) -> SwiftUI._TupleScene<A>
+protocol conformance descriptor for SwiftUI._TupleScene<A> : SwiftUI.Scene in SwiftUI
+SwiftUI.CommandGroup.init(after: SwiftUI.CommandGroupPlacement, addition: () -> A) -> SwiftUI.CommandGroup<A>
+SwiftUI.CommandGroup.init(replacing: SwiftUI.CommandGroupPlacement, addition: () -> A) -> SwiftUI.CommandGroup<A>
+nominal type descriptor for SwiftUI.CommandGroup
+protocol descriptor for SwiftUI.FileDocument
+method descriptor for SwiftUI.FileDocument.fileWrapper(configuration: SwiftUI.FileDocumentWriteConfiguration) throws -> __C.NSFileWrapper
+method descriptor for SwiftUI.FileDocument.init(configuration: SwiftUI.FileDocumentReadConfiguration) throws -> A
+method descriptor for static SwiftUI.FileDocument.readableContentTypes.getter : [UniformTypeIdentifiers.UTType]
+method descriptor for static SwiftUI.FileDocument.writableContentTypes.getter : [UniformTypeIdentifiers.UTType]
+SwiftUI.FocusedValue.content.getter : SwiftUI.FocusedValue<A>.Content
+type metadata accessor for SwiftUI.FocusedValue
+nominal type descriptor for SwiftUI.FocusedValue
+SwiftUI.FocusedValue.init(Swift.KeyPath<SwiftUI.FocusedValues, A?>) -> SwiftUI.FocusedValue<A>
+(extension in SwiftUI):SwiftUI.ProgressView< where B == SwiftUI.EmptyView>.init< where A == SwiftUI.EmptyView>() -> SwiftUI.ProgressView<SwiftUI.EmptyView, SwiftUI.EmptyView>
+nominal type descriptor for SwiftUI.ProgressView
+protocol conformance descriptor for SwiftUI.ProgressView<A, B> : SwiftUI.View in SwiftUI
+SwiftUI.SettingsLink.init(label: () -> A) -> SwiftUI.SettingsLink<A>
+nominal type descriptor for SwiftUI.SettingsLink
+protocol conformance descriptor for SwiftUI.SettingsLink<A> : SwiftUI.View in SwiftUI
+SwiftUI._FrameLayout.init(width: CoreGraphics.CGFloat?, height: CoreGraphics.CGFloat?, alignment: SwiftUI.Alignment) -> SwiftUI._FrameLayout
+protocol witness table for SwiftUI._FrameLayout : SwiftUI.ViewModifier in SwiftUI
+nominal type descriptor for SwiftUI._FrameLayout
+protocol witness table for SwiftUI._ScaleEffect : SwiftUI.ViewModifier in SwiftUI
+nominal type descriptor for SwiftUI._ScaleEffect
+nominal type descriptor for SwiftUI.AnyShapeStyle
+SwiftUI.AnyShapeStyle.init<A where A: SwiftUI.ShapeStyle>(A) -> SwiftUI.AnyShapeStyle
+SwiftUI.AnyTransition.init<A where A: SwiftUI.Transition>(A) -> SwiftUI.AnyTransition
+SwiftUI.DismissAction.callAsFunction() -> ()
+type metadata accessor for SwiftUI.DismissAction
+nominal type descriptor for SwiftUI.DismissAction
+(extension in SwiftUI):SwiftUI.DocumentGroup< where A: SwiftUI.FileDocument>.init(newDocument: @autoclosure () -> A, editor: (SwiftUI.FileDocumentConfiguration<A>) -> B) -> SwiftUI.DocumentGroup<A, B>
+nominal type descriptor for SwiftUI.DocumentGroup
+protocol conformance descriptor for SwiftUI.DocumentGroup<A, B> : SwiftUI.Scene in SwiftUI
+nominal type descriptor for SwiftUI.FocusedValues
+SwiftUI.FocusedValues.subscript.getter : <A where A: SwiftUI.FocusedValueKey>(A.Type) -> A.Value?
+SwiftUI.FocusedValues.subscript.setter : <A where A: SwiftUI.FocusedValueKey>(A.Type) -> A.Value?
+SwiftUI.GeometryProxy.size.getter : __C.CGSize
+type metadata accessor for SwiftUI.GeometryProxy
+nominal type descriptor for SwiftUI.GeometryProxy
+SwiftUI.ImageRenderer.nsImage.getter : __C.NSImage?
+SwiftUI.ImageRenderer.scale.setter : CoreGraphics.CGFloat
+SwiftUI.ImageRenderer.init(content: A) -> SwiftUI.ImageRenderer<A>
+nominal type descriptor for SwiftUI.ImageRenderer
+static SwiftUI.KeyEquivalent.rightArrow.getter : SwiftUI.KeyEquivalent
+SwiftUI.KeyEquivalent.init(extendedGraphemeClusterLiteral: Swift.Character) -> SwiftUI.KeyEquivalent
+static SwiftUI.KeyEquivalent.space.getter : SwiftUI.KeyEquivalent
+static SwiftUI.KeyEquivalent.escape.getter : SwiftUI.KeyEquivalent
+static SwiftUI.KeyEquivalent.return.getter : SwiftUI.KeyEquivalent
+static SwiftUI.KeyEquivalent.upArrow.getter : SwiftUI.KeyEquivalent
+static SwiftUI.KeyEquivalent.downArrow.getter : SwiftUI.KeyEquivalent
+static SwiftUI.KeyEquivalent.leftArrow.getter : SwiftUI.KeyEquivalent
+type metadata accessor for SwiftUI.KeyEquivalent
+nominal type descriptor for SwiftUI.KeyEquivalent
+static SwiftUI.OpenURLAction.Result.systemAction.getter : SwiftUI.OpenURLAction.Result
+static SwiftUI.OpenURLAction.Result.handled.getter : SwiftUI.OpenURLAction.Result
+SwiftUI.OpenURLAction.init(handler: (Foundation.URL) -> SwiftUI.OpenURLAction.Result) -> SwiftUI.OpenURLAction
+type metadata accessor for SwiftUI.OpenURLAction
+nominal type descriptor for SwiftUI.OpenURLAction
+nominal type descriptor for SwiftUI.TextAlignment
+nominal type descriptor for SwiftUI._EndedGesture
+protocol conformance descriptor for SwiftUI._EndedGesture<A> : SwiftUI.Gesture in SwiftUI
+nominal type descriptor for SwiftUI._HStackLayout
+protocol witness table for SwiftUI._OffsetEffect : SwiftUI.ViewModifier in SwiftUI
+nominal type descriptor for SwiftUI._OffsetEffect
+protocol witness table for SwiftUI._ShadowEffect : SwiftUI.ViewModifier in SwiftUI
+nominal type descriptor for SwiftUI._ShadowEffect
+nominal type descriptor for SwiftUI._StrokedShape
+nominal type descriptor for SwiftUI._VStackLayout
+nominal type descriptor for SwiftUI._VariadicView.Tree
+nominal type descriptor for SwiftUI._ZStackLayout
+SwiftUI.withAnimation<A>(SwiftUI.Animation?, () throws -> A) throws -> A
+static SwiftUI.EventModifiers.shift.getter : SwiftUI.EventModifiers
+static SwiftUI.EventModifiers.option.getter : SwiftUI.EventModifiers
+static SwiftUI.EventModifiers.command.getter : SwiftUI.EventModifiers
+static SwiftUI.EventModifiers.control.getter : SwiftUI.EventModifiers
+SwiftUI.EventModifiers.init(rawValue: Swift.Int) -> SwiftUI.EventModifiers
+nominal type descriptor for SwiftUI.GeometryReader
+protocol conformance descriptor for SwiftUI.GeometryReader<A> : SwiftUI.View in SwiftUI
+(extension in SwiftUI):SwiftUI.LabeledContent< where A == SwiftUI.Text, B == SwiftUI.Text>.init<A where A1: Swift.StringProtocol>(_: SwiftUI.LocalizedStringKey, value: A1) -> SwiftUI.LabeledContent<SwiftUI.Text, SwiftUI.Text>
+nominal type descriptor for SwiftUI.LabeledContent
+SwiftUI.LinearGradient.init(gradient: SwiftUI.Gradient, startPoint: SwiftUI.UnitPoint, endPoint: SwiftUI.UnitPoint) -> SwiftUI.LinearGradient
+nominal type descriptor for SwiftUI.LinearGradient
+SwiftUI.MoveTransition.init(edge: SwiftUI.Edge) -> SwiftUI.MoveTransition
+protocol conformance descriptor for SwiftUI.MoveTransition : SwiftUI.Transition in SwiftUI
+type metadata accessor for SwiftUI.MoveTransition
+nominal type descriptor for SwiftUI.MoveTransition
+SwiftUI.ObservedObject.init(wrappedValue: A) -> SwiftUI.ObservedObject<A>
+SwiftUI.ObservedObject.projectedValue.getter : SwiftUI.ObservedObject<A>.Wrapper
+SwiftUI.ObservedObject.Wrapper.subscript.getter : <A>(dynamicMember: Swift.ReferenceWritableKeyPath<A, A1>) -> SwiftUI.Binding<A1>
+nominal type descriptor for SwiftUI.ObservedObject
+static SwiftUI.SubmitTriggers.text.getter : SwiftUI.SubmitTriggers
+type metadata accessor for SwiftUI.SubmitTriggers
+nominal type descriptor for SwiftUI.ZIndexTraitKey
+nominal type descriptor for SwiftUI._OpacityEffect
+protocol witness table for SwiftUI._PaddingLayout : SwiftUI.ViewModifier in SwiftUI
+nominal type descriptor for SwiftUI._PaddingLayout
+SwiftUI.DisclosureGroup.init(isExpanded: SwiftUI.Binding<Swift.Bool>, content: () -> B, label: () -> A) -> SwiftUI.DisclosureGroup<A, B>
+nominal type descriptor for SwiftUI.DisclosureGroup
+protocol conformance descriptor for SwiftUI.DisclosureGroup<A, B> : SwiftUI.View in SwiftUI
+protocol descriptor for SwiftUI.FocusedValueKey
+nominal type descriptor for SwiftUI.ForegroundStyle
+SwiftUI.GraphicsContext.ResolvedText.measure(in: __C.CGSize) -> __C.CGSize
+SwiftUI.GraphicsContext.ResolvedText.shading.setter : SwiftUI.GraphicsContext.Shading
+type metadata accessor for SwiftUI.GraphicsContext.ResolvedText
+SwiftUI.GraphicsContext.draw(_: SwiftUI.GraphicsContext.ResolvedText, at: __C.CGPoint, anchor: SwiftUI.UnitPoint) -> ()
+SwiftUI.GraphicsContext.draw(_: SwiftUI.GraphicsContext.ResolvedText, in: __C.CGRect) -> ()
+SwiftUI.GraphicsContext.fill(_: SwiftUI.Path, with: SwiftUI.GraphicsContext.Shading, style: SwiftUI.FillStyle) -> ()
+SwiftUI.GraphicsContext.stroke(_: SwiftUI.Path, with: SwiftUI.GraphicsContext.Shading, style: SwiftUI.StrokeStyle) -> ()
+SwiftUI.GraphicsContext.stroke(_: SwiftUI.Path, with: SwiftUI.GraphicsContext.Shading, lineWidth: CoreGraphics.CGFloat) -> ()
+static SwiftUI.GraphicsContext.Shading.color(SwiftUI.Color) -> SwiftUI.GraphicsContext.Shading
+type metadata accessor for SwiftUI.GraphicsContext.Shading
+SwiftUI.GraphicsContext.resolve(SwiftUI.Text) -> SwiftUI.GraphicsContext.ResolvedText
+protocol witness table for SwiftUI.MenuPickerStyle : SwiftUI.PickerStyle in SwiftUI
+SwiftUI.MenuPickerStyle.init() -> SwiftUI.MenuPickerStyle
+type metadata accessor for SwiftUI.MenuPickerStyle
+nominal type descriptor for SwiftUI.MenuPickerStyle
+(extension in SwiftUI):SwiftUI.ModifiedContent< where B == SwiftUI.AccessibilityAttachmentModifier>.accessibilityHint(SwiftUI.Text) -> SwiftUI.ModifiedContent<A, SwiftUI.AccessibilityAttachmentModifier>
+(extension in SwiftUI):SwiftUI.ModifiedContent< where B == SwiftUI.AccessibilityAttachmentModifier>.accessibilityValue(SwiftUI.Text) -> SwiftUI.ModifiedContent<A, SwiftUI.AccessibilityAttachmentModifier>
+(extension in SwiftUI):SwiftUI.ModifiedContent< where B == SwiftUI.AccessibilityAttachmentModifier>.accessibilityAddTraits(SwiftUI.AccessibilityTraits) -> SwiftUI.ModifiedContent<A, SwiftUI.AccessibilityAttachmentModifier>
+type metadata accessor for SwiftUI.ModifiedContent
+nominal type descriptor for SwiftUI.ModifiedContent
+protocol conformance descriptor for < where A: SwiftUI.View, B: SwiftUI.ViewModifier> SwiftUI.ModifiedContent<A, B> : SwiftUI.View in SwiftUI
+static SwiftUI.SafeAreaRegions.all.getter : SwiftUI.SafeAreaRegions
+SwiftUI.ScrollViewProxy.scrollTo<A where A: Swift.Hashable>(_: A, anchor: SwiftUI.UnitPoint?) -> ()
+type metadata accessor for SwiftUI.ScrollViewProxy
+nominal type descriptor for SwiftUI.ScrollViewProxy
+nominal type descriptor for SwiftUI.StrokeShapeView
+nominal type descriptor for SwiftUI._ChangedGesture
+protocol conformance descriptor for SwiftUI._ChangedGesture<A> : SwiftUI.Gesture in SwiftUI
+protocol witness table for SwiftUI._PositionLayout : SwiftUI.ViewModifier in SwiftUI
+nominal type descriptor for SwiftUI._PositionLayout
+protocol conformance descriptor for SwiftUI.GroupedFormStyle : SwiftUI.FormStyle in SwiftUI
+type metadata accessor for SwiftUI.GroupedFormStyle
+nominal type descriptor for SwiftUI.GroupedFormStyle
+static SwiftUI.KeyboardShortcut.cancelAction.getter : SwiftUI.KeyboardShortcut
+static SwiftUI.KeyboardShortcut.defaultAction.getter : SwiftUI.KeyboardShortcut
+type metadata accessor for SwiftUI.KeyboardShortcut
+SwiftUI.OpenWindowAction.callAsFunction(id: Swift.String) -> ()
+type metadata accessor for SwiftUI.OpenWindowAction
+nominal type descriptor for SwiftUI.OpenWindowAction
+protocol conformance descriptor for SwiftUI.PlainButtonStyle : SwiftUI.PrimitiveButtonStyle in SwiftUI
+SwiftUI.PlainButtonStyle.init() -> SwiftUI.PlainButtonStyle
+type metadata accessor for SwiftUI.PlainButtonStyle
+nominal type descriptor for SwiftUI.PlainButtonStyle
+protocol conformance descriptor for SwiftUI.RoundedRectangle : SwiftUI.Shape in SwiftUI
+type metadata accessor for SwiftUI.RoundedRectangle
+nominal type descriptor for SwiftUI.RoundedRectangle
+nominal type descriptor for SwiftUI.ScrollViewReader
+protocol witness table for SwiftUI.SidebarListStyle : SwiftUI.ListStyle in SwiftUI
+SwiftUI.SidebarListStyle.init() -> SwiftUI.SidebarListStyle
+type metadata accessor for SwiftUI.SidebarListStyle
+nominal type descriptor for SwiftUI.SidebarListStyle
+nominal type descriptor for SwiftUI.SubscriptionView
+type metadata accessor for SwiftUI.TagValueTraitKey
+nominal type descriptor for SwiftUI.TagValueTraitKey
+protocol conformance descriptor for SwiftUI.TagValueTraitKey<A> : SwiftUI._ViewTraitKey in SwiftUI
+SwiftUI.ToolbarItemGroup.init(placement: SwiftUI.ToolbarItemPlacement, content: () -> A) -> SwiftUI.ToolbarItemGroup<A>
+nominal type descriptor for SwiftUI.ToolbarItemGroup
+protocol witness table for SwiftUI._FixedSizeLayout : SwiftUI.ViewModifier in SwiftUI
+nominal type descriptor for SwiftUI._FixedSizeLayout
+SwiftUI._FlexFrameLayout.init(minWidth: CoreGraphics.CGFloat?, idealWidth: CoreGraphics.CGFloat?, maxWidth: CoreGraphics.CGFloat?, minHeight: CoreGraphics.CGFloat?, idealHeight: CoreGraphics.CGFloat?, maxHeight: CoreGraphics.CGFloat?, alignment: SwiftUI.Alignment) -> SwiftUI._FlexFrameLayout
+protocol witness table for SwiftUI._FlexFrameLayout : SwiftUI.ViewModifier in SwiftUI
+nominal type descriptor for SwiftUI._FlexFrameLayout
+nominal type descriptor for SwiftUI._OverlayModifier
+protocol conformance descriptor for SwiftUI._OverlayModifier<A> : SwiftUI.ViewModifier in SwiftUI
+SwiftUI.EnvironmentValues.openWindow.getter : SwiftUI.OpenWindowAction
+property descriptor for SwiftUI.EnvironmentValues.openWindow : SwiftUI.OpenWindowAction
+SwiftUI.EnvironmentValues.colorScheme.getter : SwiftUI.ColorScheme
+property descriptor for SwiftUI.EnvironmentValues.colorScheme : SwiftUI.ColorScheme
+SwiftUI.EnvironmentValues.colorScheme.setter : SwiftUI.ColorScheme
+SwiftUI.EnvironmentValues.controlSize.getter : SwiftUI.ControlSize
+property descriptor for SwiftUI.EnvironmentValues.controlSize : SwiftUI.ControlSize
+SwiftUI.EnvironmentValues.controlSize.setter : SwiftUI.ControlSize
+SwiftUI.EnvironmentValues.lineSpacing.getter : CoreGraphics.CGFloat
+property descriptor for SwiftUI.EnvironmentValues.lineSpacing : CoreGraphics.CGFloat
+SwiftUI.EnvironmentValues.lineSpacing.setter : CoreGraphics.CGFloat
+SwiftUI.EnvironmentValues.truncationMode.getter : SwiftUI.Text.TruncationMode
+property descriptor for SwiftUI.EnvironmentValues.truncationMode : SwiftUI.Text.TruncationMode
+SwiftUI.EnvironmentValues.truncationMode.setter : SwiftUI.Text.TruncationMode
+SwiftUI.EnvironmentValues.controlActiveState.getter : SwiftUI.ControlActiveState
+property descriptor for SwiftUI.EnvironmentValues.controlActiveState : SwiftUI.ControlActiveState
+SwiftUI.EnvironmentValues.controlActiveState.setter : SwiftUI.ControlActiveState
+SwiftUI.EnvironmentValues.multilineTextAlignment.getter : SwiftUI.TextAlignment
+property descriptor for SwiftUI.EnvironmentValues.multilineTextAlignment : SwiftUI.TextAlignment
+SwiftUI.EnvironmentValues.multilineTextAlignment.setter : SwiftUI.TextAlignment
+SwiftUI.EnvironmentValues.menuIndicatorVisibility.getter : SwiftUI.Visibility
+property descriptor for SwiftUI.EnvironmentValues.menuIndicatorVisibility : SwiftUI.Visibility
+SwiftUI.EnvironmentValues.menuIndicatorVisibility.setter : SwiftUI.Visibility
+SwiftUI.EnvironmentValues.font.getter : SwiftUI.Font?
+property descriptor for SwiftUI.EnvironmentValues.font : SwiftUI.Font?
+SwiftUI.EnvironmentValues.font.setter : SwiftUI.Font?
+SwiftUI.EnvironmentValues.tint.getter : SwiftUI.AnyShapeStyle?
+property descriptor for SwiftUI.EnvironmentValues.tint : SwiftUI.AnyShapeStyle?
+SwiftUI.EnvironmentValues.tint.setter : SwiftUI.AnyShapeStyle?
+SwiftUI.EnvironmentValues.dismiss.getter : SwiftUI.DismissAction
+property descriptor for SwiftUI.EnvironmentValues.dismiss : SwiftUI.DismissAction
+SwiftUI.EnvironmentValues.openURL.getter : SwiftUI.OpenURLAction
+property descriptor for SwiftUI.EnvironmentValues.openURL : SwiftUI.OpenURLAction
+SwiftUI.EnvironmentValues.openURL.setter : SwiftUI.OpenURLAction
+SwiftUI.EnvironmentValues.textCase.getter : SwiftUI.Text.Case?
+property descriptor for SwiftUI.EnvironmentValues.textCase : SwiftUI.Text.Case?
+SwiftUI.EnvironmentValues.textCase.setter : SwiftUI.Text.Case?
+SwiftUI.EnvironmentValues.isEnabled.getter : Swift.Bool
+property descriptor for SwiftUI.EnvironmentValues.isEnabled : Swift.Bool
+SwiftUI.EnvironmentValues.isEnabled.setter : Swift.Bool
+SwiftUI.EnvironmentValues.lineLimit.getter : Swift.Int?
+property descriptor for SwiftUI.EnvironmentValues.lineLimit : Swift.Int?
+SwiftUI.EnvironmentValues.lineLimit.setter : Swift.Int?
+SwiftUI.EnvironmentValues.init() -> SwiftUI.EnvironmentValues
+type metadata accessor for SwiftUI.EnvironmentValues
+nominal type descriptor for SwiftUI.EnvironmentValues
+protocol conformance descriptor for SwiftUI.OpacityTransition : SwiftUI.Transition in SwiftUI
+SwiftUI.OpacityTransition.init() -> SwiftUI.OpacityTransition
+type metadata accessor for SwiftUI.OpacityTransition
+nominal type descriptor for SwiftUI.OpacityTransition
+SwiftUI.SpatialTapGesture.Value.location.getter : __C.CGPoint
+SwiftUI.SpatialTapGesture.init<A where A: SwiftUI.CoordinateSpaceProtocol>(count: Swift.Int, coordinateSpace: A) -> SwiftUI.SpatialTapGesture
+protocol conformance descriptor for SwiftUI.SpatialTapGesture : SwiftUI.Gesture in SwiftUI
+type metadata accessor for SwiftUI.SpatialTapGesture
+nominal type descriptor for SwiftUI.SpatialTapGesture
+static SwiftUI.VerticalAlignment.firstTextBaseline.getter : SwiftUI.VerticalAlignment
+static SwiftUI.VerticalAlignment.top.getter : SwiftUI.VerticalAlignment
+static SwiftUI.VerticalAlignment.center.getter : SwiftUI.VerticalAlignment
+enum case for SwiftUI.ColorRenderingMode.nonLinear(SwiftUI.ColorRenderingMode.Type) -> SwiftUI.ColorRenderingMode
+type metadata accessor for SwiftUI.ColorRenderingMode
+static SwiftUI.ControlActiveState.== infix(SwiftUI.ControlActiveState, SwiftUI.ControlActiveState) -> Swift.Bool
+enum case for SwiftUI.ControlActiveState.key(SwiftUI.ControlActiveState.Type) -> SwiftUI.ControlActiveState
+enum case for SwiftUI.ControlActiveState.active(SwiftUI.ControlActiveState.Type) -> SwiftUI.ControlActiveState
+type metadata accessor for SwiftUI.ControlActiveState
+nominal type descriptor for SwiftUI.ControlActiveState
+protocol conformance descriptor for SwiftUI.ControlActiveState : Swift.Equatable in SwiftUI
+SwiftUI.LocalizedStringKey.StringInterpolation.appendInterpolation<A where A: SwiftUI._FormatSpecifiable>(_: A, specifier: Swift.String) -> ()
+SwiftUI.LocalizedStringKey.StringInterpolation.appendInterpolation(Swift.String) -> ()
+SwiftUI.LocalizedStringKey.StringInterpolation.appendLiteral(Swift.String) -> ()
+SwiftUI.LocalizedStringKey.StringInterpolation.init(literalCapacity: Swift.Int, interpolationCount: Swift.Int) -> SwiftUI.LocalizedStringKey.StringInterpolation
+type metadata accessor for SwiftUI.LocalizedStringKey.StringInterpolation
+SwiftUI.LocalizedStringKey.init(stringLiteral: Swift.String) -> SwiftUI.LocalizedStringKey
+SwiftUI.LocalizedStringKey.init(stringInterpolation: SwiftUI.LocalizedStringKey.StringInterpolation) -> SwiftUI.LocalizedStringKey
+SwiftUI.LocalizedStringKey.init(Swift.String) -> SwiftUI.LocalizedStringKey
+enum case for SwiftUI.RoundedCornerStyle.continuous(SwiftUI.RoundedCornerStyle.Type) -> SwiftUI.RoundedCornerStyle
+type metadata accessor for SwiftUI.RoundedCornerStyle
+nominal type descriptor for SwiftUI.TransitionTraitKey
+static SwiftUI.WindowResizability.contentSize.getter : SwiftUI.WindowResizability
+static SwiftUI.WindowResizability.contentMinSize.getter : SwiftUI.WindowResizability
+type metadata accessor for SwiftUI.WindowResizability
+nominal type descriptor for SwiftUI._AnimationModifier
+protocol conformance descriptor for SwiftUI._AnimationModifier<A> : SwiftUI.ViewModifier in SwiftUI
+protocol witness table for SwiftUI._AspectRatioLayout : SwiftUI.ViewModifier in SwiftUI
+nominal type descriptor for SwiftUI._AspectRatioLayout
+type metadata accessor for SwiftUI._TaskValueModifier
+nominal type descriptor for SwiftUI._TaskValueModifier
+protocol conformance descriptor for SwiftUI._TaskValueModifier<A> : SwiftUI.ViewModifier in SwiftUI
+static SwiftUI.AccessibilityTraits.isSelected.getter : SwiftUI.AccessibilityTraits
+static SwiftUI.AccessibilityTraits.isButton.getter : SwiftUI.AccessibilityTraits
+type metadata accessor for SwiftUI.AccessibilityTraits
+nominal type descriptor for SwiftUI.AccessibilityTraits
+protocol conformance descriptor for SwiftUI.AccessibilityTraits : Swift.SetAlgebra in SwiftUI
+protocol conformance descriptor for SwiftUI.BorderedButtonStyle : SwiftUI.PrimitiveButtonStyle in SwiftUI
+SwiftUI.BorderedButtonStyle.init() -> SwiftUI.BorderedButtonStyle
+type metadata accessor for SwiftUI.BorderedButtonStyle
+nominal type descriptor for SwiftUI.BorderedButtonStyle
+protocol witness table for SwiftUI.DefaultTabViewStyle : SwiftUI.TabViewStyle in SwiftUI
+SwiftUI.DefaultTabViewStyle.init() -> SwiftUI.DefaultTabViewStyle
+type metadata accessor for SwiftUI.DefaultTabViewStyle
+nominal type descriptor for SwiftUI.DefaultTabViewStyle
+protocol conformance descriptor for SwiftUI.EmptyAnimatableData : SwiftUI.VectorArithmetic in SwiftUI
+nominal type descriptor for SwiftUI.EmptyAnimatableData
+type metadata for SwiftUI.EmptyAnimatableData
+static SwiftUI.HorizontalAlignment.center.getter : SwiftUI.HorizontalAlignment
+static SwiftUI.HorizontalAlignment.leading.getter : SwiftUI.HorizontalAlignment
+protocol descriptor for SwiftUI.NSViewRepresentable
+method descriptor for SwiftUI.NSViewRepresentable.makeNSView(context: SwiftUI.NSViewRepresentableContext<A>) -> A.NSViewType
+method descriptor for SwiftUI.NSViewRepresentable.updateNSView(_: A.NSViewType, context: SwiftUI.NSViewRepresentableContext<A>) -> ()
+method descriptor for static SwiftUI.NSViewRepresentable.dismantleNSView(_: A.NSViewType, coordinator: A.Coordinator) -> ()
+method descriptor for SwiftUI.NSViewRepresentable.sizeThatFits(_: SwiftUI.ProposedViewSize, nsView: A.NSViewType, context: SwiftUI.NSViewRepresentableContext<A>) -> __C.CGSize?
+method descriptor for static SwiftUI.NSViewRepresentable._layoutOptions(A.NSViewType) -> SwiftUI._PlatformViewRepresentableLayoutOptions
+method descriptor for SwiftUI.NSViewRepresentable.makeCoordinator() -> A.Coordinator
+method descriptor for SwiftUI.NSViewRepresentable._identifiedViewTree(in: A.NSViewType) -> SwiftUI._IdentifiedViewTree
+method descriptor for SwiftUI.NSViewRepresentable._overrideLayoutTraits(_: inout SwiftUI._LayoutTraits, for: A.NSViewType) -> ()
+method descriptor for SwiftUI.NSViewRepresentable._overrideSizeThatFits(_: inout __C.CGSize, in: SwiftUI._ProposedSize, nsView: A.NSViewType) -> ()
+method descriptor for static SwiftUI.NSViewRepresentable._modifyBridgedViewInputs(inout SwiftUI._ViewInputs) -> ()
+method descriptor for static SwiftUI.NSViewRepresentable._invalidatesSizeOnConstraintChanges.getter : Swift.Bool
+base conformance descriptor for SwiftUI.NSViewRepresentable: SwiftUI.View
+static (extension in SwiftUI):SwiftUI.NSViewRepresentable.dismantleNSView(_: A.NSViewType, coordinator: A.Coordinator) -> ()
+(extension in SwiftUI):SwiftUI.NSViewRepresentable.sizeThatFits(_: SwiftUI.ProposedViewSize, nsView: A.NSViewType, context: SwiftUI.NSViewRepresentableContext<A>) -> __C.CGSize?
+static (extension in SwiftUI):SwiftUI.NSViewRepresentable._makeViewList(view: SwiftUI._GraphValue<A>, inputs: SwiftUI._ViewListInputs) -> SwiftUI._ViewListOutputs
+static (extension in SwiftUI):SwiftUI.NSViewRepresentable._layoutOptions(A.NSViewType) -> SwiftUI._PlatformViewRepresentableLayoutOptions
+(extension in SwiftUI):SwiftUI.NSViewRepresentable._identifiedViewTree(in: A.NSViewType) -> SwiftUI._IdentifiedViewTree
+(extension in SwiftUI):SwiftUI.NSViewRepresentable._overrideLayoutTraits(_: inout SwiftUI._LayoutTraits, for: A.NSViewType) -> ()
+(extension in SwiftUI):SwiftUI.NSViewRepresentable._overrideSizeThatFits(_: inout __C.CGSize, in: SwiftUI._ProposedSize, nsView: A.NSViewType) -> ()
+static (extension in SwiftUI):SwiftUI.NSViewRepresentable._modifyBridgedViewInputs(inout SwiftUI._ViewInputs) -> ()
+static (extension in SwiftUI):SwiftUI.NSViewRepresentable._invalidatesSizeOnConstraintChanges.getter : Swift.Bool
+(extension in SwiftUI):SwiftUI.NSViewRepresentable.body.getter : Swift.Never
+static (extension in SwiftUI):SwiftUI.NSViewRepresentable._makeView(view: SwiftUI._GraphValue<A>, inputs: SwiftUI._ViewInputs) -> SwiftUI._ViewOutputs
+SwiftUI.NavigationSplitView.init< where B == SwiftUI.EmptyView>(sidebar: () -> A, detail: () -> C) -> SwiftUI.NavigationSplitView<A, SwiftUI.EmptyView, C>
+nominal type descriptor for SwiftUI.NavigationSplitView
+protocol conformance descriptor for SwiftUI.NavigationSplitView<A, B, C> : SwiftUI.View in SwiftUI
+protocol conformance descriptor for SwiftUI.PlainTextFieldStyle : SwiftUI.TextFieldStyle in SwiftUI
+SwiftUI.PlainTextFieldStyle.init() -> SwiftUI.PlainTextFieldStyle
+type metadata accessor for SwiftUI.PlainTextFieldStyle
+nominal type descriptor for SwiftUI.PlainTextFieldStyle
+nominal type descriptor for SwiftUI.TupleCommandContent
+SwiftUI.TupleCommandContent.init(A) -> SwiftUI.TupleCommandContent<A>
+protocol conformance descriptor for SwiftUI.TupleCommandContent<A> : SwiftUI.Commands in SwiftUI
+nominal type descriptor for SwiftUI.TupleToolbarContent
+SwiftUI.TupleToolbarContent.init(A) -> SwiftUI.TupleToolbarContent<A>
+protocol conformance descriptor for SwiftUI.TupleToolbarContent<A> : SwiftUI.ToolbarContent in SwiftUI
+nominal type descriptor for SwiftUI._BackgroundModifier
+protocol conformance descriptor for SwiftUI._BackgroundModifier<A> : SwiftUI.ViewModifier in SwiftUI
+nominal type descriptor for SwiftUI._ConditionalContent.Storage
+(extension in SwiftUI):SwiftUI._ConditionalContent< where A: SwiftUI.View, B: SwiftUI.View>.init(storage: SwiftUI._ConditionalContent<A, B>.Storage) -> SwiftUI._ConditionalContent<A, B>
+nominal type descriptor for SwiftUI._ConditionalContent
+protocol conformance descriptor for < where A: SwiftUI.View, B: SwiftUI.View> SwiftUI._ConditionalContent<A, B> : SwiftUI.View in SwiftUI
+SwiftUI._TaskValueModifier2.init(id: A, name: Swift.String, executorPreference: Swift.TaskExecutor?, priority: Swift.TaskPriority, action: __owned @isolated(any) () async -> ()) -> SwiftUI._TaskValueModifier2<A>
+type metadata accessor for SwiftUI._TaskValueModifier2
+nominal type descriptor for SwiftUI._TaskValueModifier2
+protocol conformance descriptor for SwiftUI._TaskValueModifier2<A> : SwiftUI.ViewModifier in SwiftUI
+protocol witness table for SwiftUI.LocalCoordinateSpace : SwiftUI.CoordinateSpaceProtocol in SwiftUI
+type metadata accessor for SwiftUI.LocalCoordinateSpace
+SwiftUI.MagnificationGesture.init(minimumScaleDelta: CoreGraphics.CGFloat) -> SwiftUI.MagnificationGesture
+protocol conformance descriptor for SwiftUI.MagnificationGesture : SwiftUI.Gesture in SwiftUI
+type metadata accessor for SwiftUI.MagnificationGesture
+nominal type descriptor for SwiftUI.MagnificationGesture
+protocol witness table for SwiftUI.NamedCoordinateSpace : SwiftUI.CoordinateSpaceProtocol in SwiftUI
+type metadata accessor for SwiftUI.NamedCoordinateSpace
+static SwiftUI.SearchFieldPlacement.sidebar.getter : SwiftUI.SearchFieldPlacement
+type metadata accessor for SwiftUI.SearchFieldPlacement
+protocol witness table for SwiftUI.SegmentedPickerStyle : SwiftUI.PickerStyle in SwiftUI
+SwiftUI.SegmentedPickerStyle.init() -> SwiftUI.SegmentedPickerStyle
+type metadata accessor for SwiftUI.SegmentedPickerStyle
+nominal type descriptor for SwiftUI.SegmentedPickerStyle
+static SwiftUI.ToolbarItemPlacement.navigation.getter : SwiftUI.ToolbarItemPlacement
+static SwiftUI.ToolbarItemPlacement.primaryAction.getter : SwiftUI.ToolbarItemPlacement
+static SwiftUI.ToolbarItemPlacement.principal.getter : SwiftUI.ToolbarItemPlacement
+type metadata accessor for SwiftUI.ToolbarItemPlacement
+protocol conformance descriptor for SwiftUI._HoverRegionModifier : SwiftUI.ViewModifier in SwiftUI
+nominal type descriptor for SwiftUI._HoverRegionModifier
+type metadata for SwiftUI._HoverRegionModifier
+protocol conformance descriptor for SwiftUI.BorderlessButtonStyle : SwiftUI.PrimitiveButtonStyle in SwiftUI
+SwiftUI.BorderlessButtonStyle.init() -> SwiftUI.BorderlessButtonStyle
+type metadata accessor for SwiftUI.BorderlessButtonStyle
+nominal type descriptor for SwiftUI.BorderlessButtonStyle
+static SwiftUI.CommandGroupPlacement.pasteboard.getter : SwiftUI.CommandGroupPlacement
+static SwiftUI.CommandGroupPlacement.importExport.getter : SwiftUI.CommandGroupPlacement
+static SwiftUI.CommandGroupPlacement.help.getter : SwiftUI.CommandGroupPlacement
+static SwiftUI.CommandGroupPlacement.newItem.getter : SwiftUI.CommandGroupPlacement
+static SwiftUI.CommandGroupPlacement.toolbar.getter : SwiftUI.CommandGroupPlacement
+static SwiftUI.CommandGroupPlacement.saveItem.getter : SwiftUI.CommandGroupPlacement
+static SwiftUI.CommandGroupPlacement.printItem.getter : SwiftUI.CommandGroupPlacement
+type metadata accessor for SwiftUI.CommandGroupPlacement
+type metadata accessor for SwiftUI.PinnedScrollableViews
+protocol conformance descriptor for SwiftUI.PinnedScrollableViews : Swift.OptionSet in SwiftUI
+static SwiftUI.ToolbarContentBuilder.buildBlock<A where A: SwiftUI.ToolbarContent>(A) -> some
+opaque type descriptor for <<opaque return type of static SwiftUI.ToolbarContentBuilder.buildBlock<A where A: SwiftUI.ToolbarContent>(A) -> some>>
+nominal type descriptor for SwiftUI._ContentShapeModifier
+protocol conformance descriptor for SwiftUI._ContentShapeModifier<A> : SwiftUI.ViewModifier in SwiftUI
+nominal type descriptor for SwiftUI._OverlayStyleModifier
+type metadata accessor for SwiftUI._TraitWritingModifier
+nominal type descriptor for SwiftUI._TraitWritingModifier
+protocol conformance descriptor for SwiftUI._TraitWritingModifier<A> : SwiftUI.ViewModifier in SwiftUI
+(extension in SwiftUI):SwiftUI.ContentUnavailableView< where A == SwiftUI.Label<SwiftUI.Text, SwiftUI.Image>, B == SwiftUI.Text?, C == SwiftUI.EmptyView>.init(_: SwiftUI.LocalizedStringKey, systemImage: Swift.String, description: SwiftUI.Text?) -> SwiftUI.ContentUnavailableView<SwiftUI.Label<SwiftUI.Text, SwiftUI.Image>, SwiftUI.Text?, SwiftUI.EmptyView>
+nominal type descriptor for SwiftUI.ContentUnavailableView
+protocol conformance descriptor for SwiftUI.ContentUnavailableView<A, B, C> : SwiftUI.View in SwiftUI
+static SwiftUI.HierarchicalShapeStyle.quaternary.getter : SwiftUI.HierarchicalShapeStyle
+static SwiftUI.HierarchicalShapeStyle.tertiary.getter : SwiftUI.HierarchicalShapeStyle
+static SwiftUI.HierarchicalShapeStyle.secondary.getter : SwiftUI.HierarchicalShapeStyle
+protocol conformance descriptor for SwiftUI.HierarchicalShapeStyle : SwiftUI.ShapeStyle in SwiftUI
+nominal type descriptor for SwiftUI.HierarchicalShapeStyle
+type metadata for SwiftUI.HierarchicalShapeStyle
+nominal type descriptor for SwiftUI.LayoutPriorityTraitKey
+static (extension in SwiftUI):SwiftUI.CoordinateSpaceProtocol< where A == SwiftUI.LocalCoordinateSpace>.local.getter : SwiftUI.LocalCoordinateSpace
+static (extension in SwiftUI):SwiftUI.CoordinateSpaceProtocol< where A == SwiftUI.NamedCoordinateSpace>.named<A where A1: Swift.Hashable>(A1) -> SwiftUI.NamedCoordinateSpace
+nominal type descriptor for SwiftUI.PreferredColorSchemeKey
+protocol conformance descriptor for SwiftUI.ButtonStyleConfiguration.Label : SwiftUI.View in SwiftUI
+type metadata accessor for SwiftUI.ButtonStyleConfiguration.Label
+nominal type descriptor for SwiftUI.ButtonStyleConfiguration.Label
+SwiftUI.ButtonStyleConfiguration.label.getter : SwiftUI.ButtonStyleConfiguration.Label
+SwiftUI.ButtonStyleConfiguration.isPressed.getter : Swift.Bool
+protocol witness table for SwiftUI.EnabledTextSelectability : SwiftUI.TextSelectability in SwiftUI
+SwiftUI.EnabledTextSelectability.init() -> SwiftUI.EnabledTextSelectability
+type metadata accessor for SwiftUI.EnabledTextSelectability
+nominal type descriptor for SwiftUI.EnabledTextSelectability
+nominal type descriptor for SwiftUI._BackgroundStyleModifier
+protocol conformance descriptor for SwiftUI._BackgroundStyleModifier<A> : SwiftUI.ViewModifier in SwiftUI
+nominal type descriptor for SwiftUI._CoordinateSpaceModifier
+protocol conformance descriptor for SwiftUI._CoordinateSpaceModifier<A> : SwiftUI.ViewModifier in SwiftUI
+nominal type descriptor for SwiftUI._ForegroundStyleModifier
+protocol conformance descriptor for SwiftUI._ForegroundStyleModifier<A> : SwiftUI.ViewModifier in SwiftUI
+type metadata accessor for SwiftUI._TagTraitWritingModifier
+nominal type descriptor for SwiftUI._TagTraitWritingModifier
+protocol conformance descriptor for SwiftUI._TagTraitWritingModifier<A> : SwiftUI.ViewModifier in SwiftUI
+protocol conformance descriptor for SwiftUI.BorderlessButtonMenuStyle : SwiftUI.MenuStyle in SwiftUI
+SwiftUI.BorderlessButtonMenuStyle.init() -> SwiftUI.BorderlessButtonMenuStyle
+type metadata accessor for SwiftUI.BorderlessButtonMenuStyle
+nominal type descriptor for SwiftUI.BorderlessButtonMenuStyle
+SwiftUI.FileDocumentConfiguration.fileURL.getter : Foundation.URL?
+SwiftUI.FileDocumentConfiguration.$document.getter : SwiftUI.Binding<A>
+nominal type descriptor for SwiftUI.FileDocumentConfiguration
+protocol witness table for SwiftUI._AppearanceActionModifier : SwiftUI.ViewModifier in SwiftUI
+nominal type descriptor for SwiftUI._AppearanceActionModifier
+static SwiftUI.AccessibilityChildBehavior.ignore.getter : SwiftUI.AccessibilityChildBehavior
+type metadata accessor for SwiftUI.AccessibilityChildBehavior
+SwiftUI.NSViewRepresentableContext.coordinator.getter : A.Coordinator
+nominal type descriptor for SwiftUI.NSViewRepresentableContext
+nominal type descriptor for SwiftUI._PreferenceWritingModifier
+protocol conformance descriptor for SwiftUI._PreferenceWritingModifier<A> : SwiftUI.ViewModifier in SwiftUI
+protocol conformance descriptor for SwiftUI.RoundedBorderTextFieldStyle : SwiftUI.TextFieldStyle in SwiftUI
+SwiftUI.RoundedBorderTextFieldStyle.init() -> SwiftUI.RoundedBorderTextFieldStyle
+type metadata accessor for SwiftUI.RoundedBorderTextFieldStyle
+nominal type descriptor for SwiftUI.RoundedBorderTextFieldStyle
+protocol conformance descriptor for SwiftUI.BorderedProminentButtonStyle : SwiftUI.PrimitiveButtonStyle in SwiftUI
+SwiftUI.BorderedProminentButtonStyle.init() -> SwiftUI.BorderedProminentButtonStyle
+type metadata accessor for SwiftUI.BorderedProminentButtonStyle
+nominal type descriptor for SwiftUI.BorderedProminentButtonStyle
+type metadata accessor for SwiftUI.NSApplicationDelegateAdaptor
+nominal type descriptor for SwiftUI.NSApplicationDelegateAdaptor
+SwiftUI.NSApplicationDelegateAdaptor.init(A.Type) -> SwiftUI.NSApplicationDelegateAdaptor<A>
+SwiftUI.FileDocumentReadConfiguration.file.getter : __C.NSFileWrapper
+type metadata accessor for SwiftUI.FileDocumentReadConfiguration
+nominal type descriptor for SwiftUI._EnvironmentKeyWritingModifier
+protocol conformance descriptor for SwiftUI._EnvironmentKeyWritingModifier<A> : SwiftUI.ViewModifier in SwiftUI
+protocol witness table for SwiftUI._SafeAreaRegionsIgnoringLayout : SwiftUI.ViewModifier in SwiftUI
+nominal type descriptor for SwiftUI._SafeAreaRegionsIgnoringLayout
+protocol conformance descriptor for SwiftUI.AccessibilityAttachmentModifier : SwiftUI.ViewModifier in SwiftUI
+type metadata accessor for SwiftUI.AccessibilityAttachmentModifier
+nominal type descriptor for SwiftUI.AccessibilityAttachmentModifier
+nominal type descriptor for SwiftUI._EnvironmentKeyTransformModifier
+protocol conformance descriptor for SwiftUI._EnvironmentKeyTransformModifier<A> : SwiftUI.ViewModifier in SwiftUI
+nominal type descriptor for SwiftUI._InsettableBackgroundShapeModifier
+protocol conformance descriptor for SwiftUI._InsettableBackgroundShapeModifier<A, B> : SwiftUI.ViewModifier in SwiftUI
+protocol descriptor for SwiftUI.App
+associated conformance descriptor for SwiftUI.App.SwiftUI.App.Body: SwiftUI.Scene
+method descriptor for SwiftUI.App.body.getter : A.Body
+static (extension in SwiftUI):SwiftUI.App.main() -> ()
+method descriptor for SwiftUI.App.init() -> A
+static SwiftUI.Log.runtimeIssuesLog.getter : __C.OS_os_log
+static SwiftUI.Axis.Set.horizontal.getter : SwiftUI.Axis.Set
+SwiftUI.Axis.Set.init(rawValue: Swift.Int8) -> SwiftUI.Axis.Set
+static SwiftUI.Axis.Set.vertical.getter : SwiftUI.Axis.Set
+static SwiftUI.Edge.Set.horizontal.getter : SwiftUI.Edge.Set
+static SwiftUI.Edge.Set.all.getter : SwiftUI.Edge.Set
+static SwiftUI.Edge.Set.top.getter : SwiftUI.Edge.Set
+static SwiftUI.Edge.Set.bottom.getter : SwiftUI.Edge.Set
+static SwiftUI.Edge.Set.leading.getter : SwiftUI.Edge.Set
+static SwiftUI.Edge.Set.trailing.getter : SwiftUI.Edge.Set
+static SwiftUI.Edge.Set.vertical.getter : SwiftUI.Edge.Set
+enum case for SwiftUI.Font.Design.monospaced(SwiftUI.Font.Design.Type) -> SwiftUI.Font.Design
+enum case for SwiftUI.Font.Design.serif(SwiftUI.Font.Design.Type) -> SwiftUI.Font.Design
+enum case for SwiftUI.Font.Design.default(SwiftUI.Font.Design.Type) -> SwiftUI.Font.Design
+type metadata accessor for SwiftUI.Font.Design
+nominal type descriptor for SwiftUI.Font.Design
+static SwiftUI.Font.Weight.bold.getter : SwiftUI.Font.Weight
+static SwiftUI.Font.Weight.thin.getter : SwiftUI.Font.Weight
+static SwiftUI.Font.Weight.light.getter : SwiftUI.Font.Weight
+static SwiftUI.Font.Weight.medium.getter : SwiftUI.Font.Weight
+static SwiftUI.Font.Weight.regular.getter : SwiftUI.Font.Weight
+static SwiftUI.Font.Weight.semibold.getter : SwiftUI.Font.Weight
+SwiftUI.Font.italic() -> SwiftUI.Font
+static SwiftUI.Font.system(size: CoreGraphics.CGFloat, weight: SwiftUI.Font.Weight?, design: SwiftUI.Font.Design?) -> SwiftUI.Font
+static SwiftUI.Font.system(_: SwiftUI.Font.TextStyle, design: SwiftUI.Font.Design?, weight: SwiftUI.Font.Weight?) -> SwiftUI.Font
+enum case for SwiftUI.Font.TextStyle.body(SwiftUI.Font.TextStyle.Type) -> SwiftUI.Font.TextStyle
+type metadata accessor for SwiftUI.Font.TextStyle
+nominal type descriptor for SwiftUI.Font
+SwiftUI.Form.init(content: () -> A) -> SwiftUI.Form<A>
+nominal type descriptor for SwiftUI.Form
+protocol conformance descriptor for SwiftUI.Form<A> : SwiftUI.View in SwiftUI
+SwiftUI.Link.init(destination: Foundation.URL, label: () -> A) -> SwiftUI.Link<A>
+nominal type descriptor for SwiftUI.Link
+protocol conformance descriptor for SwiftUI.Link<A> : SwiftUI.View in SwiftUI
+SwiftUI.List.init(selection: SwiftUI.Binding<A?>?, content: () -> B) -> SwiftUI.List<A, B>
+(extension in SwiftUI):SwiftUI.List< where A == Swift.Never>.init(content: () -> B) -> SwiftUI.List<Swift.Never, B>
+nominal type descriptor for SwiftUI.List
+protocol conformance descriptor for SwiftUI.List<A, B> : SwiftUI.View in SwiftUI
+SwiftUI.Menu.init(content: () -> B, label: () -> A) -> SwiftUI.Menu<A, B>
+nominal type descriptor for SwiftUI.Menu
+protocol conformance descriptor for SwiftUI.Menu<A, B> : SwiftUI.View in SwiftUI
+SwiftUI.Path.init(roundedRect: __C.CGRect, cornerRadius: CoreGraphics.CGFloat, style: SwiftUI.RoundedCornerStyle) -> SwiftUI.Path
+SwiftUI.Path.closeSubpath() -> ()
+SwiftUI.Path.move(to: __C.CGPoint) -> ()
+SwiftUI.Path.addLine(to: __C.CGPoint) -> ()
+SwiftUI.Path.init(ellipseIn: __C.CGRect) -> SwiftUI.Path
+SwiftUI.Path.init() -> SwiftUI.Path
+type metadata for SwiftUI.Path
+SwiftUI.Path.init(__C.CGRect) -> SwiftUI.Path
+enum case for SwiftUI.Text.TruncationMode.tail(SwiftUI.Text.TruncationMode.Type) -> SwiftUI.Text.TruncationMode
+enum case for SwiftUI.Text.TruncationMode.middle(SwiftUI.Text.TruncationMode.Type) -> SwiftUI.Text.TruncationMode
+type metadata accessor for SwiftUI.Text.TruncationMode
+nominal type descriptor for SwiftUI.Text.TruncationMode
+SwiftUI.Text.baselineOffset(CoreGraphics.CGFloat) -> SwiftUI.Text
+SwiftUI.Text.foregroundColor(SwiftUI.Color?) -> SwiftUI.Text
+SwiftUI.Text.foregroundStyle<A where A: SwiftUI.ShapeStyle>(A) -> SwiftUI.Text
+SwiftUI.Text.monospacedDigit() -> SwiftUI.Text
+static SwiftUI.Text.+ infix(SwiftUI.Text, SwiftUI.Text) -> SwiftUI.Text
+enum case for SwiftUI.Text.Case.uppercase(SwiftUI.Text.Case.Type) -> SwiftUI.Text.Case
+type metadata accessor for SwiftUI.Text.Case
+nominal type descriptor for SwiftUI.Text.Case
+SwiftUI.Text.font(SwiftUI.Font?) -> SwiftUI.Text
+static SwiftUI.Text.LineStyle.single.getter : SwiftUI.Text.LineStyle
+type metadata accessor for SwiftUI.Text.LineStyle
+nominal type descriptor for SwiftUI.Text.LineStyle
+protocol witness table for SwiftUI.Text : SwiftUI.View in SwiftUI
+nominal type descriptor for SwiftUI.Text
+type metadata for SwiftUI.Text
+SwiftUI.Text.init(_: SwiftUI.LocalizedStringKey, tableName: Swift.String?, bundle: __C.NSBundle?, comment: Swift.StaticString?) -> SwiftUI.Text
+SwiftUI.Text.init(Foundation.AttributedString) -> SwiftUI.Text
+SwiftUI.Text.init<A where A: Swift.StringProtocol>(A) -> SwiftUI.Text
+SwiftUI.Text.init(SwiftUI.Image) -> SwiftUI.Text
+protocol descriptor for SwiftUI.View
+method descriptor for static SwiftUI.View._makeView(view: SwiftUI._GraphValue<A>, inputs: SwiftUI._ViewInputs) -> SwiftUI._ViewOutputs
+method descriptor for static SwiftUI.View._makeViewList(view: SwiftUI._GraphValue<A>, inputs: SwiftUI._ViewListInputs) -> SwiftUI._ViewListOutputs
+method descriptor for static SwiftUI.View._viewListCount(inputs: SwiftUI._ViewListCountInputs) -> Swift.Int?
+associated conformance descriptor for SwiftUI.View.SwiftUI.View.Body: SwiftUI.View
+method descriptor for SwiftUI.View.body.getter : A.Body
+(extension in SwiftUI):SwiftUI.View.navigationSplitViewColumnWidth(min: CoreGraphics.CGFloat?, ideal: CoreGraphics.CGFloat, max: CoreGraphics.CGFloat?) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.navigationSplitViewColumnWidth(min: CoreGraphics.CGFloat?, ideal: CoreGraphics.CGFloat, max: CoreGraphics.CGFloat?) -> some>>
+(extension in SwiftUI):SwiftUI.View.tabViewStyle<A where A1: SwiftUI.TabViewStyle>(A1) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.tabViewStyle<A where A1: SwiftUI.TabViewStyle>(A1) -> some>>
+static (extension in SwiftUI):SwiftUI.View._makeView(view: SwiftUI._GraphValue<A>, inputs: SwiftUI._ViewInputs) -> SwiftUI._ViewOutputs
+static (extension in SwiftUI):SwiftUI.View._makeViewList(view: SwiftUI._GraphValue<A>, inputs: SwiftUI._ViewListInputs) -> SwiftUI._ViewListOutputs
+(extension in SwiftUI):SwiftUI.View.onKeyPress(_: SwiftUI.KeyEquivalent, action: () -> SwiftUI.KeyPress.Result) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.onKeyPress(_: SwiftUI.KeyEquivalent, action: () -> SwiftUI.KeyPress.Result) -> some>>
+(extension in SwiftUI):SwiftUI.View.searchable(text: SwiftUI.Binding<Swift.String>, placement: SwiftUI.SearchFieldPlacement, prompt: SwiftUI.LocalizedStringKey) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.searchable(text: SwiftUI.Binding<Swift.String>, placement: SwiftUI.SearchFieldPlacement, prompt: SwiftUI.LocalizedStringKey) -> some>>
+(extension in SwiftUI):SwiftUI.View.buttonStyle<A where A1: SwiftUI.PrimitiveButtonStyle>(A1) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.buttonStyle<A where A1: SwiftUI.PrimitiveButtonStyle>(A1) -> some>>
+(extension in SwiftUI):SwiftUI.View.buttonStyle<A where A1: SwiftUI.ButtonStyle>(A1) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.buttonStyle<A where A1: SwiftUI.ButtonStyle>(A1) -> some>>
+(extension in SwiftUI):SwiftUI.View.pickerStyle<A where A1: SwiftUI.PickerStyle>(A1) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.pickerStyle<A where A1: SwiftUI.PickerStyle>(A1) -> some>>
+(extension in SwiftUI):SwiftUI.View.labelsHidden() -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.labelsHidden() -> some>>
+(extension in SwiftUI):SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -> ()) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -> ()) -> some>>
+(extension in SwiftUI):SwiftUI.View.textSelection<A where A1: SwiftUI.TextSelectability>(A1) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.textSelection<A where A1: SwiftUI.TextSelectability>(A1) -> some>>
+static (extension in SwiftUI):SwiftUI.View._viewListCount(inputs: SwiftUI._ViewListCountInputs) -> Swift.Int?
+(extension in SwiftUI):SwiftUI.View.textFieldStyle<A where A1: SwiftUI.TextFieldStyle>(A1) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.textFieldStyle<A where A1: SwiftUI.TextFieldStyle>(A1) -> some>>
+(extension in SwiftUI):SwiftUI.View.keyboardShortcut(_: SwiftUI.KeyEquivalent, modifiers: SwiftUI.EventModifiers) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.keyboardShortcut(_: SwiftUI.KeyEquivalent, modifiers: SwiftUI.EventModifiers) -> some>>
+(extension in SwiftUI):SwiftUI.View.keyboardShortcut(SwiftUI.KeyboardShortcut) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.keyboardShortcut(SwiftUI.KeyboardShortcut) -> some>>
+(extension in SwiftUI):SwiftUI.View.focusedSceneValue<A>(Swift.WritableKeyPath<SwiftUI.FocusedValues, A1?>, A1) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.focusedSceneValue<A>(Swift.WritableKeyPath<SwiftUI.FocusedValues, A1?>, A1) -> some>>
+(extension in SwiftUI):SwiftUI.View.accessibilityLabel(SwiftUI.Text) -> SwiftUI.ModifiedContent<A, SwiftUI.AccessibilityAttachmentModifier>
+(extension in SwiftUI):SwiftUI.View.focusEffectDisabled(Swift.Bool) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.focusEffectDisabled(Swift.Bool) -> some>>
+(extension in SwiftUI):SwiftUI.View.highPriorityGesture<A where A1: SwiftUI.Gesture>(_: A1, including: SwiftUI.GestureMask) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.highPriorityGesture<A where A1: SwiftUI.Gesture>(_: A1, including: SwiftUI.GestureMask) -> some>>
+(extension in SwiftUI):SwiftUI.View.accessibilityElement(children: SwiftUI.AccessibilityChildBehavior) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.accessibilityElement(children: SwiftUI.AccessibilityChildBehavior) -> some>>
+(extension in SwiftUI):SwiftUI.View.help(SwiftUI.LocalizedStringKey) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.help(SwiftUI.LocalizedStringKey) -> some>>
+(extension in SwiftUI):SwiftUI.View.help<A where A1: Swift.StringProtocol>(A1) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.help<A where A1: Swift.StringProtocol>(A1) -> some>>
+(extension in SwiftUI):SwiftUI.View.alert<A, B where A1: SwiftUI.View, B1: SwiftUI.View>(_: SwiftUI.LocalizedStringKey, isPresented: SwiftUI.Binding<Swift.Bool>, actions: () -> A1, message: () -> B1) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.alert<A, B where A1: SwiftUI.View, B1: SwiftUI.View>(_: SwiftUI.LocalizedStringKey, isPresented: SwiftUI.Binding<Swift.Bool>, actions: () -> A1, message: () -> B1) -> some>>
+(extension in SwiftUI):SwiftUI.View.sheet<A where A1: SwiftUI.View>(isPresented: SwiftUI.Binding<Swift.Bool>, onDismiss: (() -> ())?, content: () -> A1) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.sheet<A where A1: SwiftUI.View>(isPresented: SwiftUI.Binding<Swift.Bool>, onDismiss: (() -> ())?, content: () -> A1) -> some>>
+(extension in SwiftUI):SwiftUI.View.sheet<A, B where A1: Swift.Identifiable, B1: SwiftUI.View>(item: SwiftUI.Binding<A1?>, onDismiss: (() -> ())?, content: (A1) -> B1) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.sheet<A, B where A1: Swift.Identifiable, B1: SwiftUI.View>(item: SwiftUI.Binding<A1?>, onDismiss: (() -> ())?, content: (A1) -> B1) -> some>>
+(extension in SwiftUI):SwiftUI.View.focused(SwiftUI.FocusState<Swift.Bool>.Binding) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.focused(SwiftUI.FocusState<Swift.Bool>.Binding) -> some>>
+(extension in SwiftUI):SwiftUI.View.gesture<A where A1: SwiftUI.Gesture>(_: A1, including: SwiftUI.GestureMask) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.gesture<A where A1: SwiftUI.Gesture>(_: A1, including: SwiftUI.GestureMask) -> some>>
+(extension in SwiftUI):SwiftUI.View.tabItem<A where A1: SwiftUI.View>(() -> A1) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.tabItem<A where A1: SwiftUI.View>(() -> A1) -> some>>
+(extension in SwiftUI):SwiftUI.View.toolbar<A where A1: SwiftUI.ToolbarContent>(content: () -> A1) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.toolbar<A where A1: SwiftUI.ToolbarContent>(content: () -> A1) -> some>>
+(extension in SwiftUI):SwiftUI.View.onChange<A where A1: Swift.Equatable>(of: A1, initial: Swift.Bool, _: (A1, A1) -> ()) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.onChange<A where A1: Swift.Equatable>(of: A1, initial: Swift.Bool, _: (A1, A1) -> ()) -> some>>
+(extension in SwiftUI):SwiftUI.View.onChange<A where A1: Swift.Equatable>(of: A1, initial: Swift.Bool, _: () -> ()) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.onChange<A where A1: Swift.Equatable>(of: A1, initial: Swift.Bool, _: () -> ()) -> some>>
+(extension in SwiftUI):SwiftUI.View.onSubmit(of: SwiftUI.SubmitTriggers, _: () -> ()) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.onSubmit(of: SwiftUI.SubmitTriggers, _: () -> ()) -> some>>
+(extension in SwiftUI):SwiftUI.View.focusable(Swift.Bool) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.focusable(Swift.Bool) -> some>>
+(extension in SwiftUI):SwiftUI.View.formStyle<A where A1: SwiftUI.FormStyle>(A1) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.formStyle<A where A1: SwiftUI.FormStyle>(A1) -> some>>
+(extension in SwiftUI):SwiftUI.View.listStyle<A where A1: SwiftUI.ListStyle>(A1) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.listStyle<A where A1: SwiftUI.ListStyle>(A1) -> some>>
+(extension in SwiftUI):SwiftUI.View.menuStyle<A where A1: SwiftUI.MenuStyle>(A1) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.View.menuStyle<A where A1: SwiftUI.MenuStyle>(A1) -> some>>
+enum case for SwiftUI.Color.RGBColorSpace.sRGB(SwiftUI.Color.RGBColorSpace.Type) -> SwiftUI.Color.RGBColorSpace
+type metadata accessor for SwiftUI.Color.RGBColorSpace
+static SwiftUI.Color.== infix(SwiftUI.Color, SwiftUI.Color) -> Swift.Bool
+static SwiftUI.Color.red.getter : SwiftUI.Color
+static SwiftUI.Color.pink.getter : SwiftUI.Color
+static SwiftUI.Color.black.getter : SwiftUI.Color
+static SwiftUI.Color.clear.getter : SwiftUI.Color
+static SwiftUI.Color.green.getter : SwiftUI.Color
+static SwiftUI.Color.white.getter : SwiftUI.Color
+static SwiftUI.Color.orange.getter : SwiftUI.Color
+static SwiftUI.Color.yellow.getter : SwiftUI.Color
+SwiftUI.Color.opacity(Swift.Double) -> SwiftUI.Color
+static SwiftUI.Color.primary.getter : SwiftUI.Color
+protocol conformance descriptor for SwiftUI.Color : SwiftUI.ShapeStyle in SwiftUI
+protocol witness table for SwiftUI.Color : SwiftUI.View in SwiftUI
+nominal type descriptor for SwiftUI.Color
+type metadata for SwiftUI.Color
+SwiftUI.Color.init(_: SwiftUI.Color.RGBColorSpace, red: Swift.Double, green: Swift.Double, blue: Swift.Double, opacity: Swift.Double) -> SwiftUI.Color
+nominal type descriptor for SwiftUI.Group
+protocol conformance descriptor for <A where A: SwiftUI.View> SwiftUI.Group<A> : SwiftUI.View in SwiftUI
+SwiftUI.Image.init(nsImage: __C.NSImage) -> SwiftUI.Image
+SwiftUI.Image.init(systemName: Swift.String) -> SwiftUI.Image
+enum case for SwiftUI.Image.ResizingMode.stretch(SwiftUI.Image.ResizingMode.Type) -> SwiftUI.Image.ResizingMode
+type metadata accessor for SwiftUI.Image.ResizingMode
+enum case for SwiftUI.Image.Interpolation.high(SwiftUI.Image.Interpolation.Type) -> SwiftUI.Image.Interpolation
+type metadata accessor for SwiftUI.Image.Interpolation
+SwiftUI.Image.interpolation(SwiftUI.Image.Interpolation) -> SwiftUI.Image
+SwiftUI.Image.resizable(capInsets: SwiftUI.EdgeInsets, resizingMode: SwiftUI.Image.ResizingMode) -> SwiftUI.Image
+protocol witness table for SwiftUI.Image : SwiftUI.View in SwiftUI
+nominal type descriptor for SwiftUI.Image
+type metadata for SwiftUI.Image
+(extension in SwiftUI):SwiftUI.Label< where A == SwiftUI.Text, B == SwiftUI.Image>.init(_: SwiftUI.LocalizedStringKey, systemImage: Swift.String) -> SwiftUI.Label<SwiftUI.Text, SwiftUI.Image>
+(extension in SwiftUI):SwiftUI.Label< where A == SwiftUI.Text, B == SwiftUI.Image>.init<A where A1: Swift.StringProtocol>(_: A1, systemImage: Swift.String) -> SwiftUI.Label<SwiftUI.Text, SwiftUI.Image>
+nominal type descriptor for SwiftUI.Label
+protocol conformance descriptor for SwiftUI.Label<A, B> : SwiftUI.View in SwiftUI
+protocol descriptor for SwiftUI.Scene
+(extension in SwiftUI):SwiftUI.Scene.defaultSize(width: CoreGraphics.CGFloat, height: CoreGraphics.CGFloat) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.Scene.defaultSize(width: CoreGraphics.CGFloat, height: CoreGraphics.CGFloat) -> some>>
+(extension in SwiftUI):SwiftUI.Scene.windowResizability(SwiftUI.WindowResizability) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.Scene.windowResizability(SwiftUI.WindowResizability) -> some>>
+(extension in SwiftUI):SwiftUI.Scene.commands<A where A1: SwiftUI.Commands>(content: () -> A1) -> some
+opaque type descriptor for <<opaque return type of (extension in SwiftUI):SwiftUI.Scene.commands<A where A1: SwiftUI.Commands>(content: () -> A1) -> some>>
+protocol descriptor for SwiftUI.Shape
+method descriptor for SwiftUI.Shape.sizeThatFits(SwiftUI.ProposedViewSize) -> __C.CGSize
+method descriptor for SwiftUI.Shape.layoutDirectionBehavior.getter : SwiftUI.LayoutDirectionBehavior
+method descriptor for SwiftUI.Shape.path(in: __C.CGRect) -> SwiftUI.Path
+method descriptor for static SwiftUI.Shape.role.getter : SwiftUI.ShapeRole
+base conformance descriptor for SwiftUI.Shape: SwiftUI.Animatable
+base conformance descriptor for SwiftUI.Shape: SwiftUI.View
+(extension in SwiftUI):SwiftUI.Shape.sizeThatFits(SwiftUI.ProposedViewSize) -> __C.CGSize
+static (extension in SwiftUI):SwiftUI.Shape._makeViewList(view: SwiftUI._GraphValue<A>, inputs: SwiftUI._ViewListInputs) -> SwiftUI._ViewListOutputs
+(extension in SwiftUI):SwiftUI.Shape.layoutDirectionBehavior.getter : SwiftUI.LayoutDirectionBehavior
+(extension in SwiftUI):SwiftUI.Shape.body.getter : SwiftUI._ShapeView<A, SwiftUI.ForegroundStyle>
+static (extension in SwiftUI):SwiftUI.Shape.role.getter : SwiftUI.ShapeRole
+static (extension in SwiftUI):SwiftUI.Shape._makeView(view: SwiftUI._GraphValue<A>, inputs: SwiftUI._ViewInputs) -> SwiftUI._ViewOutputs
+SwiftUI.State.init(wrappedValue: A) -> SwiftUI.State<A>
+SwiftUI.State.wrappedValue.getter : A
+SwiftUI.State.wrappedValue.setter : A
+SwiftUI.State.projectedValue.getter : SwiftUI.Binding<A>
+type metadata accessor for SwiftUI.State
+nominal type descriptor for SwiftUI.State
+SwiftUI.Button.init(role: SwiftUI.ButtonRole?, action: () -> (), label: () -> A) -> SwiftUI.Button<A>
+SwiftUI.Button.init(action: () -> (), label: () -> A) -> SwiftUI.Button<A>
+(extension in SwiftUI):SwiftUI.Button< where A == SwiftUI.Text>.init(_: SwiftUI.LocalizedStringKey, role: SwiftUI.ButtonRole?, action: () -> ()) -> SwiftUI.Button<SwiftUI.Text>
+(extension in SwiftUI):SwiftUI.Button< where A == SwiftUI.Text>.init(_: SwiftUI.LocalizedStringKey, action: () -> ()) -> SwiftUI.Button<SwiftUI.Text>
+(extension in SwiftUI):SwiftUI.Button< where A == SwiftUI.Text>.init<A where A1: Swift.StringProtocol>(_: A1, action: () -> ()) -> SwiftUI.Button<SwiftUI.Text>
+nominal type descriptor for SwiftUI.Button
+protocol conformance descriptor for SwiftUI.Button<A> : SwiftUI.View in SwiftUI
+(extension in SwiftUI):SwiftUI.Canvas< where A == SwiftUI.EmptyView>.init(opaque: Swift.Bool, colorMode: SwiftUI.ColorRenderingMode, rendersAsynchronously: Swift.Bool, renderer: (inout SwiftUI.GraphicsContext, __C.CGSize) -> ()) -> SwiftUI.Canvas<SwiftUI.EmptyView>
+nominal type descriptor for SwiftUI.Canvas
+protocol conformance descriptor for SwiftUI.Canvas<A> : SwiftUI.View in SwiftUI
+protocol conformance descriptor for SwiftUI.Circle : SwiftUI.Shape in SwiftUI
+nominal type descriptor for SwiftUI.Circle
+type metadata for SwiftUI.Circle
+SwiftUI.HStack.init(alignment: SwiftUI.VerticalAlignment, spacing: CoreGraphics.CGFloat?, content: () -> A) -> SwiftUI.HStack<A>
+type metadata accessor for SwiftUI.HStack
+nominal type descriptor for SwiftUI.HStack
+protocol conformance descriptor for SwiftUI.HStack<A> : SwiftUI.View in SwiftUI
+nominal type descriptor for SwiftUI.IDView
+protocol conformance descriptor for SwiftUI.IDView<A, B> : SwiftUI.View in SwiftUI
+(extension in SwiftUI):SwiftUI.Picker< where A == SwiftUI.Text>.init(_: SwiftUI.LocalizedStringKey, selection: SwiftUI.Binding<B>, content: () -> C) -> SwiftUI.Picker<SwiftUI.Text, B, C>
+nominal type descriptor for SwiftUI.Picker
+protocol conformance descriptor for SwiftUI.Picker<A, B, C> : SwiftUI.View in SwiftUI
+(extension in SwiftUI):SwiftUI.Slider< where B == SwiftUI.EmptyView>.init<A where A1: Swift.BinaryFloatingPoint, A1.Stride: Swift.BinaryFloatingPoint>(value: SwiftUI.Binding<A1>, in: Swift.ClosedRange<A1>, step: A1.Stride, onEditingChanged: (Swift.Bool) -> (), label: () -> A) -> SwiftUI.Slider<A, SwiftUI.EmptyView>
+nominal type descriptor for SwiftUI.Slider
+protocol conformance descriptor for SwiftUI.Slider<A, B> : SwiftUI.View in SwiftUI
+nominal type descriptor for SwiftUI.Spacer
+(extension in SwiftUI):SwiftUI.Toggle< where A == SwiftUI.Text>.init(_: SwiftUI.LocalizedStringKey, isOn: SwiftUI.Binding<Swift.Bool>) -> SwiftUI.Toggle<SwiftUI.Text>
+nominal type descriptor for SwiftUI.Toggle
+nominal type descriptor for SwiftUI.VStack
+protocol conformance descriptor for SwiftUI.VStack<A> : SwiftUI.View in SwiftUI
+nominal type descriptor for SwiftUI.Window
+SwiftUI.Window.init(_: SwiftUI.LocalizedStringKey, id: Swift.String, content: () -> A) -> SwiftUI.Window<A>
+protocol conformance descriptor for SwiftUI.Window<A> : SwiftUI.Scene in SwiftUI
+nominal type descriptor for SwiftUI.ZStack
+protocol conformance descriptor for SwiftUI.ZStack<A> : SwiftUI.View in SwiftUI
+protocol witness table for SwiftUI.AnyView : SwiftUI.View in SwiftUI
+nominal type descriptor for SwiftUI.AnyView
+type metadata for SwiftUI.AnyView
+SwiftUI.AnyView.init<A where A: SwiftUI.View>(A) -> SwiftUI.AnyView
+SwiftUI.Binding.wrappedValue.getter : A
+SwiftUI.Binding.wrappedValue.setter : A
+SwiftUI.Binding.subscript.getter : <A>(dynamicMember: Swift.WritableKeyPath<A, A1>) -> SwiftUI.Binding<A1>
+SwiftUI.Binding.projectedValue.getter : SwiftUI.Binding<A>
+SwiftUI.Binding.init(get: () -> A, set: (A) -> ()) -> SwiftUI.Binding<A>
+static SwiftUI.Binding.constant(A) -> SwiftUI.Binding<A>
+type metadata accessor for SwiftUI.Binding
+nominal type descriptor for SwiftUI.Binding
+protocol conformance descriptor for SwiftUI.Capsule : SwiftUI.Shape in SwiftUI
+type metadata accessor for SwiftUI.Capsule
+nominal type descriptor for SwiftUI.Capsule
+SwiftUI.Divider.init() -> SwiftUI.Divider
+type metadata accessor for SwiftUI.Divider
+nominal type descriptor for SwiftUI.Divider
+(extension in SwiftUI):SwiftUI.ForEach< where C: SwiftUI.View>.init(_: A, id: Swift.KeyPath<A.Element, B>, content: (A.Element) -> C) -> SwiftUI.ForEach<A, B, C>
+(extension in SwiftUI):SwiftUI.ForEach< where B == A.Element.ID, C: SwiftUI.View, A.Element: Swift.Identifiable>.init(_: A, content: (A.Element) -> C) -> SwiftUI.ForEach<A, B, C>
+nominal type descriptor for SwiftUI.ForEach
+protocol conformance descriptor for < where C: SwiftUI.View> SwiftUI.ForEach<A, B, C> : SwiftUI.View in SwiftUI
+(extension in SwiftUI):SwiftUI.Gesture.onEnded((A.Value) -> ()) -> SwiftUI._EndedGesture<A>
+(extension in SwiftUI):SwiftUI.Gesture< where A.Value: Swift.Equatable>.onChanged((A.Value) -> ()) -> SwiftUI._ChangedGesture<A>
+(extension in SwiftUI):SwiftUI.Section< where A == SwiftUI.Text, B: SwiftUI.View, C == SwiftUI.EmptyView>.init(_: SwiftUI.LocalizedStringKey, content: () -> B) -> SwiftUI.Section<SwiftUI.Text, B, SwiftUI.EmptyView>
+(extension in SwiftUI):SwiftUI.Section< where A == SwiftUI.EmptyView, B: SwiftUI.View, C == SwiftUI.EmptyView>.init(content: () -> B) -> SwiftUI.Section<SwiftUI.EmptyView, B, SwiftUI.EmptyView>
+(extension in SwiftUI):SwiftUI.Section< where A == SwiftUI.EmptyView, B: SwiftUI.View, C: SwiftUI.View>.init(footer: C, content: () -> B) -> SwiftUI.Section<SwiftUI.EmptyView, B, C>
+nominal type descriptor for SwiftUI.Section
+protocol conformance descriptor for < where A: SwiftUI.View, B: SwiftUI.View, C: SwiftUI.View> SwiftUI.Section<A, B, C> : SwiftUI.View in SwiftUI
+SwiftUI.Stepper.init<A where A1: Swift.Strideable>(value: SwiftUI.Binding<A1>, in: Swift.ClosedRange<A1>, step: A1.Stride, onEditingChanged: (Swift.Bool) -> (), label: () -> A) -> SwiftUI.Stepper<A>
+nominal type descriptor for SwiftUI.Stepper
+SwiftUI.TabView.init(selection: SwiftUI.Binding<A>?, content: () -> B) -> SwiftUI.TabView<A, B>
+(extension in SwiftUI):SwiftUI.TabView< where A == Swift.Int>.init(content: () -> B) -> SwiftUI.TabView<Swift.Int, B>
+nominal type descriptor for SwiftUI.TabView
+protocol conformance descriptor for SwiftUI.TabView<A, B> : SwiftUI.View in SwiftUI
+nominal type descriptor for SwiftUI.AnyShape
+SwiftUI.AnyShape.init<A where A: SwiftUI.Shape>(A) -> SwiftUI.AnyShape
+protocol descriptor for SwiftUI.Commands
+method descriptor for static SwiftUI.Commands._makeCommands(content: SwiftUI._GraphValue<A>, inputs: SwiftUI._CommandsInputs) -> SwiftUI._CommandsOutputs
+associated conformance descriptor for SwiftUI.Commands.SwiftUI.Commands.Body: SwiftUI.Commands
+method descriptor for SwiftUI.Commands.body.getter : A.Body
+method descriptor for SwiftUI.Commands._resolve(into: inout SwiftUI._ResolvedCommands) -> ()
+static (extension in SwiftUI):SwiftUI.Commands._makeCommands(content: SwiftUI._GraphValue<A>, inputs: SwiftUI._CommandsInputs) -> SwiftUI._CommandsOutputs
+(extension in SwiftUI):SwiftUI.Commands._resolve(into: inout SwiftUI._ResolvedCommands) -> ()
+SwiftUI.Gradient.init(colors: [SwiftUI.Color]) -> SwiftUI.Gradient
+enum case for SwiftUI.GridItem.Size.adaptive(SwiftUI.GridItem.Size.Type) -> (CoreGraphics.CGFloat, CoreGraphics.CGFloat) -> SwiftUI.GridItem.Size
+type metadata accessor for SwiftUI.GridItem.Size
+type metadata accessor for SwiftUI.GridItem
+nominal type descriptor for SwiftUI.GridItem
+SwiftUI.GridItem.init(_: SwiftUI.GridItem.Size, spacing: CoreGraphics.CGFloat?, alignment: SwiftUI.Alignment?) -> SwiftUI.GridItem
+enum case for SwiftUI.KeyPress.Result.handled(SwiftUI.KeyPress.Result.Type) -> SwiftUI.KeyPress.Result
+type metadata accessor for SwiftUI.KeyPress.Result
+static SwiftUI.Material.regular.getter : SwiftUI.Material
+nominal type descriptor for SwiftUI.Material
+SwiftUI.Settings.init(content: () -> A) -> SwiftUI.Settings<A>
+nominal type descriptor for SwiftUI.Settings
+static SwiftUI.Alignment.topLeading.getter : SwiftUI.Alignment
+static SwiftUI.Alignment.bottomTrailing.getter : SwiftUI.Alignment
+static SwiftUI.Alignment.top.getter : SwiftUI.Alignment
+static SwiftUI.Alignment.bottom.getter : SwiftUI.Alignment
+static SwiftUI.Alignment.center.getter : SwiftUI.Alignment
+static SwiftUI.Alignment.leading.getter : SwiftUI.Alignment
+static SwiftUI.Alignment.trailing.getter : SwiftUI.Alignment
+SwiftUI.Animation.repeatForever(autoreverses: Swift.Bool) -> SwiftUI.Animation
+static SwiftUI.Animation.default.getter : SwiftUI.Animation
+static SwiftUI.Animation.easeOut(duration: Swift.Double) -> SwiftUI.Animation
+static SwiftUI.Animation.easeInOut(duration: Swift.Double) -> SwiftUI.Animation
+protocol witness table for SwiftUI.EmptyView : SwiftUI.View in SwiftUI
+nominal type descriptor for SwiftUI.EmptyView
+static (extension in SwiftUI):SwiftUI.FormStyle< where A == SwiftUI.GroupedFormStyle>.grouped.getter : SwiftUI.GroupedFormStyle
+SwiftUI.LazyVGrid.init(columns: [SwiftUI.GridItem], alignment: SwiftUI.HorizontalAlignment, spacing: CoreGraphics.CGFloat?, pinnedViews: SwiftUI.PinnedScrollableViews, content: () -> A) -> SwiftUI.LazyVGrid<A>
+nominal type descriptor for SwiftUI.LazyVGrid
+protocol conformance descriptor for SwiftUI.LazyVGrid<A> : SwiftUI.View in SwiftUI
+nominal type descriptor for SwiftUI.Rectangle
+(extension in SwiftUI):SwiftUI.TextField< where A == SwiftUI.Text>.init(_: SwiftUI.LocalizedStringKey, text: SwiftUI.Binding<Swift.String>, onEditingChanged: (Swift.Bool) -> (), onCommit: () -> ()) -> SwiftUI.TextField<SwiftUI.Text>
+(extension in SwiftUI):SwiftUI.TextField< where A == SwiftUI.Text>.init<A where A1: Foundation.ParseableFormatStyle, A1.FormatOutput == Swift.String>(_: SwiftUI.LocalizedStringKey, value: SwiftUI.Binding<A1.FormatInput>, format: A1, prompt: SwiftUI.Text?) -> SwiftUI.TextField<SwiftUI.Text>
+nominal type descriptor for SwiftUI.TextField
+protocol conformance descriptor for SwiftUI.TextField<A> : SwiftUI.View in SwiftUI
+type metadata accessor for SwiftUI.TupleView
+nominal type descriptor for SwiftUI.TupleView
+SwiftUI.TupleView.init(A) -> SwiftUI.TupleView<A>
+protocol conformance descriptor for SwiftUI.TupleView<A> : SwiftUI.View in SwiftUI
+static SwiftUI.UnitPoint.topLeading.getter : SwiftUI.UnitPoint
+static SwiftUI.UnitPoint.top.getter : SwiftUI.UnitPoint
+static SwiftUI.UnitPoint.center.getter : SwiftUI.UnitPoint
+associated type descriptor for Swift.CaseIterable.AllCases
+type metadata accessor for Dispatch.DispatchWorkItemFlags
+nominal type descriptor for Dispatch.DispatchWorkItemFlags
+protocol conformance descriptor for Dispatch.DispatchWorkItemFlags : Swift.SetAlgebra in Dispatch
+enum case for Dispatch.DispatchQoS.QoSClass.utility(Dispatch.DispatchQoS.QoSClass.Type) -> Dispatch.DispatchQoS.QoSClass
+type metadata accessor for Dispatch.DispatchQoS.QoSClass
+static Dispatch.DispatchQoS.unspecified.getter : Dispatch.DispatchQoS
+static Dispatch.DispatchQoS.userInitiated.getter : Dispatch.DispatchQoS
+type metadata accessor for Dispatch.DispatchQoS
+static Dispatch.DispatchTime.now() -> Dispatch.DispatchTime
+type metadata accessor for Dispatch.DispatchTime
+Dispatch.DispatchWorkItem.init(flags: Dispatch.DispatchWorkItemFlags, block: @convention(block) () -> ()) -> Dispatch.DispatchWorkItem
+dispatch thunk of Dispatch.DispatchWorkItem.cancel() -> ()
+type metadata accessor for Dispatch.DispatchWorkItem
+nominal type descriptor for Dispatch.DispatchWorkItem
+Dispatch.+ infix(Dispatch.DispatchTime, Swift.Double) -> Dispatch.DispatchTime
+associated type descriptor for Swift.RawRepresentable.RawValue
+value witness table for Builtin.UnknownObject
+value witness table for Builtin.BridgeObject
+value witness table for Builtin.Int32
+value witness table for Builtin.Int64
+value witness table for Builtin.NativeObject
+(extension in Foundation):Swift.Dictionary._bridgeToObjectiveC() -> __C.NSDictionary
+static (extension in Foundation):Swift.Dictionary._unconditionallyBridgeFromObjectiveC(__C.NSDictionary?) -> [A : B]
+method descriptor for Swift.Encodable.encode(to: Swift.Encoder) throws -> ()
+protocol descriptor for Swift.Encodable
+method descriptor for Swift.Hashable._rawHashValue(seed: Swift.Int) -> Swift.Int
+method descriptor for Swift.Hashable.hash(into: inout Swift.Hasher) -> ()
+method descriptor for Swift.Hashable.hashValue.getter : Swift.Int
+protocol descriptor for Swift.Hashable
+base conformance descriptor for Swift.Hashable: Swift.Equatable
+Swift.Character.isUppercase.getter : Swift.Bool
+Swift.Character.isWhitespace.getter : Swift.Bool
+Swift.Character.hexDigitValue.getter : Swift.Int?
+Swift.Character.isPunctuation.getter : Swift.Bool
+Swift.Character.hash(into: inout Swift.Hasher) -> ()
+Swift.Character.isLetter.getter : Swift.Bool
+Swift.Character.isNumber.getter : Swift.Bool
+Swift.Character.isSymbol.getter : Swift.Bool
+type metadata for Swift.Character
+(extension in Swift):Swift.BidirectionalCollection< where A.Element == Swift.String>.joined(separator: Swift.String) -> Swift.String
+protocol conformance descriptor for < where A: Swift.Strideable, A.Stride: Swift.SignedInteger> Swift.ClosedRange<A> : Swift.RandomAccessCollection in Swift
+dispatch thunk of static Swift.Equatable.== infix(A, A) -> Swift.Bool
+method descriptor for static Swift.Equatable.== infix(A, A) -> Swift.Bool
+protocol descriptor for Swift.Equatable
+type metadata accessor for (extension in AppIntents):Swift.String.IntentInputOptions
+nominal type descriptor for (extension in AppIntents):Swift.String.IntentInputOptions
+(extension in Foundation):Swift.String.init(contentsOf: __shared Foundation.URL, encoding: (extension in Foundation):Swift.String.Encoding) throws -> Swift.String
+(extension in Foundation):Swift.String.init(contentsOfFile: __shared Swift.String, encoding: (extension in Foundation):Swift.String.Encoding) throws -> Swift.String
+(extension in Foundation):Swift.String._bridgeToObjectiveC() -> __C.NSString
+static (extension in Foundation):Swift.String._forceBridgeFromObjectiveC(_: __C.NSString, result: inout Swift.String?) -> ()
+static (extension in Foundation):Swift.String._conditionallyBridgeFromObjectiveC(_: __C.NSString, result: inout Swift.String?) -> Swift.Bool
+static (extension in Foundation):Swift.String._unconditionallyBridgeFromObjectiveC(__C.NSString?) -> Swift.String
+(extension in Foundation):Swift.String.init(data: __shared Foundation.Data, encoding: (extension in Foundation):Swift.String.Encoding) -> Swift.String?
+(extension in Foundation):Swift.String.init(format: __shared Swift.String, _: Swift.CVarArg...) -> Swift.String
+static (extension in Foundation):Swift.String.Encoding.utf16BigEndian.getter : (extension in Foundation):Swift.String.Encoding
+static (extension in Foundation):Swift.String.Encoding.utf32BigEndian.getter : (extension in Foundation):Swift.String.Encoding
+static (extension in Foundation):Swift.String.Encoding.utf16LittleEndian.getter : (extension in Foundation):Swift.String.Encoding
+static (extension in Foundation):Swift.String.Encoding.utf32LittleEndian.getter : (extension in Foundation):Swift.String.Encoding
+static (extension in Foundation):Swift.String.Encoding.utf8.getter : (extension in Foundation):Swift.String.Encoding
+(extension in Foundation):Swift.String.Encoding.rawValue.getter : Swift.UInt
+static (extension in Foundation):Swift.String.Encoding.isoLatin1.getter : (extension in Foundation):Swift.String.Encoding
+type metadata accessor for (extension in Foundation):Swift.String.Encoding
+nominal type descriptor for (extension in Foundation):Swift.String.Encoding
+Swift.String.lowercased() -> Swift.String
+Swift.String.uppercased() -> Swift.String
+Swift.String.utf8CString.getter : Swift.ContiguousArray<Swift.Int8>
+static Swift.String._fromSubstring(__shared Swift.Substring) -> Swift.String
+Swift.String.removeSubrange(Swift.Range<Swift.String.Index>) -> ()
+Swift.String.reserveCapacity(Swift.Int) -> ()
+Swift.String.UnicodeScalarView.append(Swift.Unicode.Scalar) -> ()
+static Swift.String._fromUTF8Repairing(Swift.UnsafeBufferPointer<Swift.UInt8>) -> (result: Swift.String, repairsMade: Swift.Bool)
+static Swift.String._uncheckedFromUTF8(Swift.UnsafeBufferPointer<Swift.UInt8>) -> Swift.String
+Swift.String.hash(into: inout Swift.Hasher) -> ()
+nominal type descriptor for Swift.String.Index
+Swift.String.count.getter : Swift.Int
+Swift.String.index(after: Swift.String.Index) -> Swift.String.Index
+Swift.String.index(before: Swift.String.Index) -> Swift.String.Index
+Swift.String.index(_: Swift.String.Index, offsetBy: Swift.Int, limitedBy: Swift.String.Index) -> Swift.String.Index?
+Swift.String.index(_: Swift.String.Index, offsetBy: Swift.Int) -> Swift.String.Index
+Swift.String.append(Swift.Character) -> ()
+Swift.String.append(Swift.String) -> ()
+Swift.String.remove(at: Swift.String.Index) -> Swift.Character
+Swift.String.Iterator.next() -> Swift.Character?
+Swift.String.UTF8View._foreignCount() -> Swift.Int
+Swift.String.UTF8View._foreignIndex(after: Swift.String.Index) -> Swift.String.Index
+Swift.String.UTF8View._foreignIndex(_: Swift.String.Index, offsetBy: Swift.Int) -> Swift.String.Index
+Swift.String.UTF8View._foreignDistance(from: Swift.String.Index, to: Swift.String.Index) -> Swift.Int
+Swift.String.UTF8View._foreignSubscript(position: Swift.String.Index) -> Swift.UInt8
+type metadata for Swift.String.UTF8View
+Swift.String.distance(from: Swift.String.Index, to: Swift.String.Index) -> Swift.Int
+Swift.String.UTF16View.index(_: Swift.String.Index, offsetBy: Swift.Int) -> Swift.String.Index
+Swift.String.UTF16View.distance(from: Swift.String.Index, to: Swift.String.Index) -> Swift.Int
+Swift.String.hasPrefix(Swift.String) -> Swift.Bool
+Swift.String.hasSuffix(Swift.String) -> Swift.Bool
+Swift.String.hashValue.getter : Swift.Int
+Swift.String.init(repeating: Swift.String, count: Swift.Int) -> Swift.String
+type metadata for Swift.String
+protocol witness table for Swift.String : Swift.Encodable in Swift
+protocol witness table for Swift.String : Swift.Hashable in Swift
+protocol witness table for Swift.String : Swift.Equatable in Swift
+protocol witness table for Swift.String : Swift.Sequence in Swift
+protocol conformance descriptor for Swift.String : Swift.StringProtocol in Swift
+Swift.String.init<A where A: Swift.BinaryInteger>(_: A, radix: Swift.Int, uppercase: Swift.Bool) -> Swift.String
+protocol witness table for Swift.String : Swift.LosslessStringConvertible in Swift
+Swift.String.subscript.getter : (Swift.String.Index) -> Swift.Character
+Swift.String.init<A where A: Swift.Sequence, A.Element == Swift.Character>(A) -> Swift.String
+Swift.String.init<A where A: Swift.LosslessStringConvertible, A: Swift.Sequence, A.Swift.Sequence.Element == Swift.Character>(A) -> Swift.String
+Swift.String.subscript.getter : (Swift.Range<Swift.String.Index>) -> Swift.Substring
+method descriptor for Swift.RawRepresentable.rawValue.getter : A.RawValue
+method descriptor for Swift.RawRepresentable.init(rawValue: A.RawValue) -> A?
+protocol descriptor for Swift.RawRepresentable
+(extension in Swift):Swift.RawRepresentable< where A: Swift.Encodable, A.Swift.RawRepresentable.RawValue == Swift.String>.encode(to: Swift.Encoder) throws -> ()
+(extension in Swift):Swift.RawRepresentable< where A: Swift.Decodable, A.Swift.RawRepresentable.RawValue == Swift.String>.init(from: Swift.Decoder) throws -> A
+generic pre-specialization <Swift.AnyObject> of Swift.Array._makeUniqueAndReserveCapacityIfNotUnique() -> ()
+(extension in Foundation):Swift.Array._bridgeToObjectiveC() -> __C.NSArray
+static (extension in Foundation):Swift.Array._unconditionallyBridgeFromObjectiveC(__C.NSArray?) -> [A]
+generic pre-specialization <Swift.AnyObject> of Swift.Array._createNewBuffer(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> ()
+static Swift.Array._allocateBufferUninitialized(minimumCapacity: Swift.Int) -> Swift._ArrayBuffer<A>
+generic pre-specialization <Swift.AnyObject> of Swift.Array._appendElementAssumeUniqueAndCapacity(_: Swift.Int, newElement: __owned A) -> ()
+Swift.Array.count.getter : Swift.Int
+property descriptor for Swift.Array.count : Swift.Int
+protocol conformance descriptor for <A where A == Swift.UInt8> [A] : Foundation.ContiguousBytes in Foundation
+protocol conformance descriptor for <A where A: Swift.Encodable> [A] : Swift.Encodable in Swift
+protocol conformance descriptor for [A] : Swift.BidirectionalCollection in Swift
+protocol conformance descriptor for [A] : Swift.Sequence in Swift
+protocol conformance descriptor for <A where A: Swift.Decodable> [A] : Swift.Decodable in Swift
+protocol conformance descriptor for [A] : Swift.RandomAccessCollection in Swift
+protocol conformance descriptor for [A] : Swift.Collection in Swift
+(extension in Foundation):Swift.Bool._bridgeToObjectiveC() -> __C.NSNumber
+type metadata for Swift.Bool
+protocol witness table for Swift.Bool : Swift.Hashable in Swift
+protocol witness table for Swift.Bool : Swift.Equatable in Swift
+dispatch thunk of Swift.Actor.unownedExecutor.getter : Swift.UnownedSerialExecutor
+Swift.CheckedContinuation.init(continuation: Swift.UnsafeContinuation<A, B>, function: Swift.String) -> Swift.CheckedContinuation<A, B>
+Swift.CheckedContinuation.resume(returning: __owned A) -> ()
+static Swift.MainActor.shared.getter : Swift.MainActor
+type metadata accessor for Swift.MainActor
+protocol conformance descriptor for Swift.MainActor : Swift.Actor in Swift
+static Swift.TaskPriority.userInitiated.getter : Swift.TaskPriority
+Swift.TaskPriority.rawValue.getter : Swift.UInt8
+type metadata accessor for Swift.TaskPriority
+Swift.Task.cancel() -> ()
+(extension in Swift):Swift.Task< where B == Swift.Never>.value.getter : A
+async function pointer to (extension in Swift):Swift.Task< where B == Swift.Never>.value.getter : A
+static (extension in Swift):Swift.Task< where A == Swift.Never, B == Swift.Never>.isCancelled.getter : Swift.Bool
+static (extension in Swift):Swift.Task< where A == Swift.Never, B == Swift.Never>.sleep(nanoseconds: Swift.UInt64) async throws -> ()
+async function pointer to static (extension in Swift):Swift.Task< where A == Swift.Never, B == Swift.Never>.sleep(nanoseconds: Swift.UInt64) async throws -> ()
+Swift.Double.write<A where A: Swift.TextOutputStream>(to: inout A) -> ()
+type metadata for Swift.Double
+protocol conformance descriptor for Swift.Double : Swift.BinaryFloatingPoint in Swift
+protocol witness table for Swift.Double : Swift.Strideable in Swift
+protocol witness table for Swift.Double : Swift.CVarArg in Swift
+Swift.Double.init(Swift.Substring) -> Swift.Double?
+method descriptor for Swift.Decodable.init(from: Swift.Decoder) throws -> A
+protocol descriptor for Swift.Decodable
+Swift.Set.init(minimumCapacity: Swift.Int) -> Swift.Set<A>
+(extension in Foundation):Swift.Int._bridgeToObjectiveC() -> __C.NSNumber
+protocol witness table for Swift.Int : SwiftUI._FormatSpecifiable in SwiftUI
+type metadata for Swift.Int
+protocol witness table for Swift.Int : Swift.Hashable in Swift
+protocol witness table for Swift.Int : Swift.Equatable in Swift
+protocol conformance descriptor for Swift.Int : Swift.SignedInteger in Swift
+protocol witness table for Swift.Int : Swift.Strideable in Swift
+protocol witness table for Swift.Int : Swift.CustomStringConvertible in Swift
+protocol witness table for Swift.Int : Swift.CVarArg in Swift
+protocol conformance descriptor for < where A: Swift.Strideable, A.Stride: Swift.SignedInteger> Swift.Range<A> : Swift.RandomAccessCollection in Swift
+(extension in CoreGraphics):__C.CGContextRef.draw(_: __C.CGImageRef, in: __C.CGRect, byTiling: Swift.Bool) -> ()
+(extension in Foundation):__C.NSEnumerator.makeIterator() -> Foundation.NSFastEnumerationIterator
+(extension in Foundation):__C.NSFileManager.enumerator(at: Foundation.URL, includingPropertiesForKeys: [__C.NSURLResourceKey]?, options: __C.NSDirectoryEnumerationOptions, errorHandler: ((Foundation.URL, Swift.Error) -> Swift.Bool)?) -> __C.NSDirectoryEnumerator?
+static (extension in os):__C.os_log_type_t.fault.getter : __C.os_log_type_t
+type metadata accessor for (extension in Dispatch):__C.OS_dispatch_queue.Attributes
+nominal type descriptor for (extension in Dispatch):__C.OS_dispatch_queue.Attributes
+protocol conformance descriptor for (extension in Dispatch):__C.OS_dispatch_queue.Attributes : Swift.SetAlgebra in Dispatch
+(extension in Dispatch):__C.OS_dispatch_queue.asyncAfter(deadline: Dispatch.DispatchTime, qos: Dispatch.DispatchQoS, flags: Dispatch.DispatchWorkItemFlags, execute: @convention(block) () -> ()) -> ()
+(extension in Dispatch):__C.OS_dispatch_queue.asyncAfter(deadline: Dispatch.DispatchTime, execute: Dispatch.DispatchWorkItem) -> ()
+enum case for (extension in Dispatch):__C.OS_dispatch_queue.AutoreleaseFrequency.inherit((extension in Dispatch):__C.OS_dispatch_queue.AutoreleaseFrequency.Type) -> (extension in Dispatch):__C.OS_dispatch_queue.AutoreleaseFrequency
+type metadata accessor for (extension in Dispatch):__C.OS_dispatch_queue.AutoreleaseFrequency
+static (extension in Dispatch):__C.OS_dispatch_queue.main.getter : __C.OS_dispatch_queue
+(extension in Dispatch):__C.OS_dispatch_queue.async(group: __C.OS_dispatch_group?, qos: Dispatch.DispatchQoS, flags: Dispatch.DispatchWorkItemFlags, execute: @convention(block) () -> ()) -> ()
+(extension in Dispatch):__C.OS_dispatch_queue.init(label: Swift.String, qos: Dispatch.DispatchQoS, attributes: (extension in Dispatch):__C.OS_dispatch_queue.Attributes, autoreleaseFrequency: (extension in Dispatch):__C.OS_dispatch_queue.AutoreleaseFrequency, target: __C.OS_dispatch_queue?) -> __C.OS_dispatch_queue
+static (extension in Dispatch):__C.OS_dispatch_queue.global(qos: Dispatch.DispatchQoS.QoSClass) -> __C.OS_dispatch_queue
+static (extension in Dispatch):__C.OS_dispatch_source.FileSystemEvent.write.getter : (extension in Dispatch):__C.OS_dispatch_source.FileSystemEvent
+static (extension in Dispatch):__C.OS_dispatch_source.FileSystemEvent.delete.getter : (extension in Dispatch):__C.OS_dispatch_source.FileSystemEvent
+static (extension in Dispatch):__C.OS_dispatch_source.FileSystemEvent.extend.getter : (extension in Dispatch):__C.OS_dispatch_source.FileSystemEvent
+static (extension in Dispatch):__C.OS_dispatch_source.FileSystemEvent.rename.getter : (extension in Dispatch):__C.OS_dispatch_source.FileSystemEvent
+type metadata accessor for (extension in Dispatch):__C.OS_dispatch_source.FileSystemEvent
+nominal type descriptor for (extension in Dispatch):__C.OS_dispatch_source.FileSystemEvent
+protocol conformance descriptor for (extension in Dispatch):__C.OS_dispatch_source.FileSystemEvent : Swift.SetAlgebra in Dispatch
+static (extension in Dispatch):__C.OS_dispatch_source.makeFileSystemObjectSource(fileDescriptor: Swift.Int32, eventMask: (extension in Dispatch):__C.OS_dispatch_source.FileSystemEvent, queue: __C.OS_dispatch_queue?) -> __C.OS_dispatch_source_vnode
+(extension in Dispatch):__C.OS_dispatch_source.setEventHandler(qos: Dispatch.DispatchQoS, flags: Dispatch.DispatchWorkItemFlags, handler: (@convention(block) () -> ())?) -> ()
+(extension in Dispatch):__C.OS_dispatch_source.setCancelHandler(qos: Dispatch.DispatchQoS, flags: Dispatch.DispatchWorkItemFlags, handler: (@convention(block) () -> ())?) -> ()
+(extension in Dispatch):__C.OS_dispatch_source.cancel() -> ()
+(extension in Dispatch):__C.OS_dispatch_source.resume() -> ()
+(extension in Dispatch):__C.OS_dispatch_source_vnode.data.getter : (extension in Dispatch):__C.OS_dispatch_source.FileSystemEvent
+(extension in AppKit):__C.CGRect.fill(using: __C.NSCompositingOperation) -> ()
+(extension in SwiftUI):__C.NSColor.init(SwiftUI.Color) -> __C.NSColor
+static (extension in AppKit):__C.NSSound.beep() -> ()
+static (extension in ObjectiveC):__C.NSObject.== infix(__C.NSObject, __C.NSObject) -> Swift.Bool
+(extension in Foundation):__C._NSRange.init<A, B where A: Swift.RangeExpression, B: Swift.StringProtocol, A.Bound == Swift.String.Index>(_: A, in: B) -> __C._NSRange
+type metadata accessor for (extension in Foundation):__C.NSRunLoop.SchedulerOptions
+nominal type descriptor for (extension in Foundation):__C.NSRunLoop.SchedulerOptions
+protocol conformance descriptor for __C.NSRunLoop : Combine.Scheduler in Foundation
+type metadata accessor for Swift.Optional
+Swift.Substring.uppercased() -> Swift.String
+Swift.Substring.index(after: Swift.String.Index) -> Swift.String.Index
+Swift.Substring.index(before: Swift.String.Index) -> Swift.String.Index
+Swift.Substring.index(_: Swift.String.Index, offsetBy: Swift.Int, limitedBy: Swift.String.Index) -> Swift.String.Index?
+Swift.Substring.UTF8View.distance(from: Swift.String.Index, to: Swift.String.Index) -> Swift.Int
+Swift.Substring.distance(from: Swift.String.Index, to: Swift.String.Index) -> Swift.Int
+type metadata for Swift.Substring
+protocol conformance descriptor for Swift.Substring : Swift.Sequence in Swift
+protocol conformance descriptor for Swift.Substring : Swift.StringProtocol in Swift
+protocol witness table for Swift.Substring : Swift.LosslessStringConvertible in Swift
+Swift.Substring.subscript.getter : (Swift.String.Index) -> Swift.Character
+Swift.Substring.init(Swift.String) -> Swift.Substring
+Swift.Substring.subscript.getter : (Swift.Range<Swift.String.Index>) -> Swift.Substring
+dispatch thunk of Swift.IteratorProtocol.next() -> A.Element?
+type metadata for Swift.UInt
+(extension in Foundation):Swift.StringProtocol.components(separatedBy: Foundation.CharacterSet) -> [Swift.String]
+(extension in Foundation):Swift.StringProtocol.components<A where A1: Swift.StringProtocol>(separatedBy: A1) -> [Swift.String]
+(extension in Foundation):Swift.StringProtocol.capitalized.getter : Swift.String
+(extension in Foundation):Swift.StringProtocol.rangeOfCharacter(from: Foundation.CharacterSet, options: __C.NSStringCompareOptions, range: Swift.Range<Swift.String.Index>?) -> Swift.Range<Swift.String.Index>?
+(extension in Foundation):Swift.StringProtocol.trimmingCharacters(in: Foundation.CharacterSet) -> Swift.String
+(extension in Foundation):Swift.StringProtocol.replacingOccurrences<A, B where A1: Swift.StringProtocol, B1: Swift.StringProtocol>(of: A1, with: B1, options: __C.NSStringCompareOptions, range: Swift.Range<Swift.String.Index>?) -> Swift.String
+(extension in Foundation):Swift.StringProtocol.addingPercentEncoding(withAllowedCharacters: Foundation.CharacterSet) -> Swift.String?
+(extension in Foundation):Swift.StringProtocol.removingPercentEncoding.getter : Swift.String?
+(extension in Foundation):Swift.StringProtocol.localizedCaseInsensitiveCompare<A where A1: Swift.StringProtocol>(A1) -> __C.NSComparisonResult
+(extension in Foundation):Swift.StringProtocol.data(using: (extension in Foundation):Swift.String.Encoding, allowLossyConversion: Swift.Bool) -> Foundation.Data?
+(extension in Foundation):Swift.StringProtocol.range<A where A1: Swift.StringProtocol>(of: A1, options: __C.NSStringCompareOptions, range: Swift.Range<Swift.String.Index>?, locale: Foundation.Locale?) -> Swift.Range<Swift.String.Index>?
+(extension in Foundation):Swift.StringProtocol.write(to: Foundation.URL, atomically: Swift.Bool, encoding: (extension in Foundation):Swift.String.Encoding) throws -> ()
+(extension in Foundation):Swift.StringProtocol.contains<A where A1: Swift.StringProtocol>(A1) -> Swift.Bool
+Swift._bridgeAnyObjectToAny(Swift.AnyObject?) -> Any
+Swift._stdlib_isOSVersionAtLeastOrVariantVersionAtLeast(Builtin.Word, Builtin.Word, Builtin.Word, Builtin.Word, Builtin.Word, Builtin.Word) -> Builtin.Int1
+nominal type descriptor for Swift.ArraySlice
+protocol conformance descriptor for <A where A == Swift.UInt8> Swift.ArraySlice<A> : Foundation.ContiguousBytes in Foundation
+protocol conformance descriptor for Swift.ArraySlice<A> : Swift.Sequence in Swift
+protocol conformance descriptor for Swift.ArraySlice<A> : Swift.RandomAccessCollection in Swift
+protocol descriptor for Swift.SetAlgebra
+method descriptor for Swift.SetAlgebra.isDisjoint(with: A) -> Swift.Bool
+dispatch thunk of Swift.SetAlgebra.isSuperset(of: A) -> Swift.Bool
+method descriptor for Swift.SetAlgebra.isSuperset(of: A) -> Swift.Bool
+method descriptor for Swift.SetAlgebra.subtracting(A) -> A
+method descriptor for Swift.SetAlgebra.intersection(A) -> A
+method descriptor for Swift.SetAlgebra.formIntersection(A) -> ()
+method descriptor for Swift.SetAlgebra.symmetricDifference(__owned A) -> A
+method descriptor for Swift.SetAlgebra.formSymmetricDifference(__owned A) -> ()
+method descriptor for Swift.SetAlgebra.union(__owned A) -> A
+method descriptor for Swift.SetAlgebra.insert(__owned A.Element) -> (inserted: Swift.Bool, memberAfterInsert: A.Element)
+method descriptor for Swift.SetAlgebra.remove(A.Element) -> A.Element?
+method descriptor for Swift.SetAlgebra.update(with: __owned A.Element) -> A.Element?
+method descriptor for Swift.SetAlgebra.isEmpty.getter : Swift.Bool
+method descriptor for Swift.SetAlgebra.contains(A.Element) -> Swift.Bool
+method descriptor for Swift.SetAlgebra.isSubset(of: A) -> Swift.Bool
+method descriptor for Swift.SetAlgebra.subtract(A) -> ()
+method descriptor for Swift.SetAlgebra.formUnion(__owned A) -> ()
+base conformance descriptor for Swift.SetAlgebra: Swift.Equatable
+base conformance descriptor for Swift.SetAlgebra: Swift.ExpressibleByArrayLiteral
+(extension in Swift):Swift.SetAlgebra.init<A where A1: Swift.Sequence, A.Element == A1.Element>(__owned A1) -> A
+method descriptor for Swift.SetAlgebra.init() -> A
+dispatch thunk of Swift.SetAlgebra.init<A where A1: Swift.Sequence, A.Element == A1.Element>(__owned A1) -> A
+method descriptor for Swift.SetAlgebra.init<A where A1: Swift.Sequence, A.Element == A1.Element>(__owned A1) -> A
+Swift._HashTable.previousHole(before: Swift._HashTable.Bucket) -> Swift._HashTable.Bucket
+type metadata for Swift._MergeError
+protocol witness table for Swift._MergeError : Swift.Error in Swift
+static Swift._SetStorage.copy(original: Swift.__RawSetStorage) -> Swift._SetStorage<A>
+static Swift._SetStorage.resize(original: Swift.__RawSetStorage, capacity: Swift.Int, move: Swift.Bool) -> Swift._SetStorage<A>
+static Swift._SetStorage.allocate(capacity: Swift.Int) -> Swift._SetStorage<A>
+nominal type descriptor for Swift._SetStorage
+Swift._StringGuts._foreignCopyUTF8(into: Swift.UnsafeMutableBufferPointer<Swift.UInt8>) -> Swift.Int?
+Swift._StringGuts._slowWithCString<A>((Swift.UnsafePointer<Swift.Int8>) throws -> A) throws -> A
+Swift._StringGuts.foreignErrorCorrectedScalar(startingAt: Swift.String.Index) -> (Swift.Unicode.Scalar, scalarLength: Swift.Int)
+Swift._StringGuts.grow(Swift.Int) -> ()
+Swift._StringGuts.copyUTF8(into: Swift.UnsafeMutableBufferPointer<Swift.UInt8>) -> Swift.Int?
+type metadata for Swift._StringGuts
+protocol descriptor for Swift.CaseIterable
+associated conformance descriptor for Swift.CaseIterable.Swift.CaseIterable.AllCases: Swift.Collection
+method descriptor for static Swift.CaseIterable.allCases.getter : A.AllCases
+protocol descriptor for Swift.Identifiable
+associated conformance descriptor for Swift.Identifiable.Swift.Identifiable.ID: Swift.Hashable
+method descriptor for Swift.Identifiable.id.getter : A.ID
+nominal type descriptor for Swift.StaticString
+generic pre-specialization <Swift.AnyObject> of Swift._ArrayBuffer._getElementSlowPath(Swift.Int) -> Swift.AnyObject
+Swift._StringObject.sharedUTF8.getter : Swift.UnsafeBufferPointer<Swift.UInt8>
+nominal type descriptor for Swift.CollectionOfOne
+protocol conformance descriptor for <A where A == Swift.UInt8> Swift.CollectionOfOne<A> : Foundation.ContiguousBytes in Foundation
+generic pre-specialization <Swift.AnyObject> of Swift.ContiguousArray._makeUniqueAndReserveCapacityIfNotUnique() -> ()
+generic pre-specialization <Swift.AnyObject> of Swift.ContiguousArray._endMutation() -> ()
+generic pre-specialization <Swift.AnyObject> of Swift.ContiguousArray.reserveCapacity(Swift.Int) -> ()
+static Swift.ContiguousArray._allocateBufferUninitialized(minimumCapacity: Swift.Int) -> Swift._ContiguousArrayBuffer<A>
+generic pre-specialization <Swift.AnyObject> of Swift.ContiguousArray._reserveCapacityAssumingUniqueBuffer(oldCount: Swift.Int) -> ()
+generic pre-specialization <Swift.AnyObject> of Swift.ContiguousArray._appendElementAssumeUniqueAndCapacity(_: Swift.Int, newElement: __owned A) -> ()
+Swift._print_unlocked<A, B where B: Swift.TextOutputStream>(A, inout B) -> ()
+nominal type descriptor for Swift.PartialRangeFrom
+protocol conformance descriptor for Swift.PartialRangeFrom<A> : Swift.RangeExpression in Swift
+Swift._NativeDictionary.removeAll(isUnique: Swift.Bool) -> ()
+nominal type descriptor for Swift._NativeDictionary
+Swift._assertionFailure(_: Swift.StaticString, _: Swift.String, file: Swift.StaticString, line: Swift.UInt, flags: Swift.UInt32) -> Swift.Never
+nominal type descriptor for Swift.EnumeratedSequence.Iterator
+nominal type descriptor for Swift.ReversedCollection
+protocol conformance descriptor for Swift.ReversedCollection<A> : Swift.Sequence in Swift
+Swift._CocoaArrayWrapper.endIndex.getter : Swift.Int
+static Swift._DictionaryStorage.copy(original: Swift.__RawDictionaryStorage) -> Swift._DictionaryStorage<A, B>
+static Swift._DictionaryStorage.resize(original: Swift.__RawDictionaryStorage, capacity: Swift.Int, move: Swift.Bool) -> Swift._DictionaryStorage<A, B>
+static Swift._DictionaryStorage.allocate(capacity: Swift.Int) -> Swift._DictionaryStorage<A, B>
+nominal type descriptor for Swift._DictionaryStorage
+protocol descriptor for Swift._SwiftNewtypeWrapper
+base conformance descriptor for Swift._SwiftNewtypeWrapper: Swift.RawRepresentable
+base conformance descriptor for Swift._SwiftNewtypeWrapper: Swift._HasCustomAnyHashableRepresentation
+(extension in Swift):Swift._SwiftNewtypeWrapper< where A: Swift.Hashable, A.Swift.RawRepresentable.RawValue: Swift.Hashable>._toCustomAnyHashable() -> Swift.AnyHashable?
+protocol descriptor for Swift._ObjectiveCBridgeable
+method descriptor for static Swift._ObjectiveCBridgeable._forceBridgeFromObjectiveC(_: A._ObjectiveCType, result: inout A?) -> ()
+method descriptor for static Swift._ObjectiveCBridgeable._conditionallyBridgeFromObjectiveC(_: A._ObjectiveCType, result: inout A?) -> Swift.Bool
+method descriptor for static Swift._ObjectiveCBridgeable._unconditionallyBridgeFromObjectiveC(A._ObjectiveCType?) -> A
+method descriptor for Swift._ObjectiveCBridgeable._bridgeToObjectiveC() -> A._ObjectiveCType
+Swift._findStringSwitchCase(cases: [Swift.StaticString], string: Swift.String) -> Swift.Int
+Swift.KeyedDecodingContainer.decodeIfPresent(_: Swift.String.Type, forKey: A) throws -> Swift.String?
+Swift.KeyedDecodingContainer.decodeIfPresent(_: Swift.Double.Type, forKey: A) throws -> Swift.Double?
+Swift.KeyedDecodingContainer.decode(_: Swift.String.Type, forKey: A) throws -> Swift.String
+Swift.KeyedDecodingContainer.decode(_: Swift.Bool.Type, forKey: A) throws -> Swift.Bool
+Swift.KeyedDecodingContainer.decode<A where A1: Swift.Decodable>(_: A1.Type, forKey: A) throws -> A1
+nominal type descriptor for Swift.KeyedDecodingContainer
+Swift.KeyedEncodingContainer.encodeIfPresent(_: Swift.String?, forKey: A) throws -> ()
+Swift.KeyedEncodingContainer.encodeIfPresent(_: Swift.Double?, forKey: A) throws -> ()
+Swift.KeyedEncodingContainer.encode(_: Swift.String, forKey: A) throws -> ()
+Swift.KeyedEncodingContainer.encode(_: Swift.Bool, forKey: A) throws -> ()
+Swift.KeyedEncodingContainer.encode<A where A1: Swift.Encodable>(_: A1, forKey: A) throws -> ()
+nominal type descriptor for Swift.KeyedEncodingContainer
+Swift._minimumMergeRunLength(Swift.Int) -> Swift.Int
+protocol descriptor for Swift.CustomStringConvertible
+dispatch thunk of Swift.CustomStringConvertible.description.getter : Swift.String
+method descriptor for Swift.CustomStringConvertible.description.getter : Swift.String
+nominal type descriptor for Swift._ContiguousArrayStorage
+Swift.withCheckedContinuation<A>(isolation: isolated Swift.Actor?, function: Swift.String, _: (Swift.CheckedContinuation<A, Swift.Never>) -> ()) async -> A
+async function pointer to Swift.withCheckedContinuation<A>(isolation: isolated Swift.Actor?, function: Swift.String, _: (Swift.CheckedContinuation<A, Swift.Never>) -> ()) async -> A
+nominal type descriptor for Swift.ReferenceWritableKeyPath
+protocol descriptor for Swift.ExpressibleByArrayLiteral
+method descriptor for Swift.ExpressibleByArrayLiteral.init(arrayLiteral: A.ArrayLiteralElement...) -> A
+type metadata for Swift.DefaultStringInterpolation
+protocol witness table for Swift.DefaultStringInterpolation : Swift.TextOutputStream in Swift
+Swift._stdlib_isOSVersionAtLeast(Builtin.Word, Builtin.Word, Builtin.Word) -> Builtin.Int1
+Swift._bridgeAnythingToObjectiveC<A>(A) -> Swift.AnyObject
+Swift._stringCompareWithSmolCheck(_: Swift._StringGuts, _: Swift._StringGuts, expecting: Swift._StringComparisonResult) -> Swift.Bool
+protocol descriptor for Swift.CustomDebugStringConvertible
+method descriptor for Swift.CustomDebugStringConvertible.debugDescription.getter : Swift.String
+type metadata accessor for Swift.__ContiguousArrayStorageBase
+protocol descriptor for Swift._HasCustomAnyHashableRepresentation
+method descriptor for Swift._HasCustomAnyHashableRepresentation._toCustomAnyHashable() -> Swift.AnyHashable?
+Swift.ELEMENT_TYPE_OF_SET_VIOLATES_HASHABLE_REQUIREMENTS(Any.Type) -> Swift.Never
+Swift.KEY_TYPE_OF_DICTIONARY_VIOLATES_HASHABLE_REQUIREMENTS(Any.Type) -> Swift.Never
+protocol descriptor for Swift.Error
+(extension in Foundation):Swift.Error.localizedDescription.getter : Swift.String
+method descriptor for Swift.Error._getEmbeddedNSError() -> Swift.AnyObject?
+method descriptor for Swift.Error._code.getter : Swift.Int
+method descriptor for Swift.Error._domain.getter : Swift.String
+method descriptor for Swift.Error._userInfo.getter : Swift.AnyObject?
+(extension in Swift):Swift.Error._getEmbeddedNSError() -> Swift.AnyObject?
+(extension in Swift):Swift.Error._code.getter : Swift.Int
+(extension in Swift):Swift.Error._domain.getter : Swift.String
+(extension in Swift):Swift.Error._userInfo.getter : Swift.AnyObject?
+protocol self-conformance witness table for Swift.Error
+nominal type descriptor for Swift.Int32
+protocol witness table for Swift.Never : SwiftUI.View in SwiftUI
+nominal type descriptor for Swift.Never
+type metadata for Swift.Never
+protocol witness table for Swift.Never : Swift.Error in Swift
+nominal type descriptor for Swift.Slice
+nominal type descriptor for Swift.UInt8
+type metadata for Swift.UInt8
+protocol witness table for Swift.UInt8 : Swift.CVarArg in Swift
+static Swift.Hasher._hash(seed: Swift.Int, _: Swift.UInt64) -> Swift.Int
+Swift.Hasher.init(_seed: Swift.Int) -> Swift.Hasher
+Swift.Hasher._combine(Swift.UInt) -> ()
+Swift.Hasher._finalize() -> Swift.Int
+nominal type descriptor for Swift.Result
+nominal type descriptor for Swift.UInt16
+nominal type descriptor for Swift.UInt32
+type metadata for Swift.UInt64
+protocol conformance descriptor for Swift.UInt64 : Swift.BinaryInteger in Swift
+protocol descriptor for Swift.CVarArg
+dispatch thunk of Swift.Decoder.container<A where A1: Swift.CodingKey>(keyedBy: A1.Type) throws -> Swift.KeyedDecodingContainer<A1>
+dispatch thunk of Swift.Encoder.container<A where A1: Swift.CodingKey>(keyedBy: A1.Type) -> Swift.KeyedEncodingContainer<A1>
+protocol descriptor for Swift.CodingKey
+method descriptor for Swift.CodingKey.stringValue.getter : Swift.String
+method descriptor for Swift.CodingKey.init(stringValue: Swift.String) -> A?
+method descriptor for Swift.CodingKey.intValue.getter : Swift.Int?
+method descriptor for Swift.CodingKey.init(intValue: Swift.Int) -> A?
+base conformance descriptor for Swift.CodingKey: Swift.CustomStringConvertible
+base conformance descriptor for Swift.CodingKey: Swift.CustomDebugStringConvertible
+(extension in Swift):Swift.CodingKey.description.getter : Swift.String
+(extension in Swift):Swift.CodingKey.debugDescription.getter : Swift.String
+protocol descriptor for Swift.OptionSet
+dispatch thunk of Swift.OptionSet.init(rawValue: A.RawValue) -> A
+method descriptor for Swift.OptionSet.init(rawValue: A.RawValue) -> A
+base conformance descriptor for Swift.OptionSet: Swift.RawRepresentable
+base conformance descriptor for Swift.OptionSet: Swift.SetAlgebra
+Swift._typeName(_: Any.Type, qualified: Swift.Bool) -> Swift.String
+protocol conformance descriptor for <A where A: SwiftUI.View> A? : SwiftUI.View in SwiftUI
+protocol conformance descriptor for <A where A: Swift.Hashable> A? : Swift.Hashable in Swift
+protocol conformance descriptor for <A where A: Swift.Equatable> A? : Swift.Equatable in Swift
+type metadata for Any
+type metadata for ()
+value witness table for ()
+value witness table for () -> ()
+_CGContextRestoreGState
+_CGContextSaveGState
+_CGContextScaleCTM
+_CGContextTranslateCTM
+_CGDataConsumerCreateWithCFData
+_CGPDFContextBeginPage
+_CGPDFContextClose
+_CGPDFContextCreate
+_CGPDFContextEndPage
+_CGRectEqualToRect
+_CGRectGetHeight
+_CGRectGetMaxX
+_CGRectGetMaxY
+_CGRectGetMidX
+_CGRectGetMidY
+_CGRectGetMinX
+_CGRectGetMinY
+_CGRectGetWidth
+_NSApp
+_NSAppearanceNameAqua
+_NSAppearanceNameDarkAqua
+_NSAttachmentAttributeName
+_NSBackgroundColorAttributeName
+_NSBaselineOffsetAttributeName
+_NSCharacterEncodingDocumentOption
+_NSDeviceRGBColorSpace
+_NSDocumentTypeDocumentAttribute
+_NSDocumentTypeDocumentOption
+_NSFileModificationDate
+_NSFileSize
+_NSFontAttributeName
+_NSFontWeightRegular
+_NSFontWeightSemibold
+_NSForegroundColorAttributeName
+_NSHTMLTextDocumentType
+_NSIntersectionRange
+_NSLinkAttributeName
+_NSObliquenessAttributeName
+_NSOfficeOpenXMLTextDocumentType
+_NSParagraphStyleAttributeName
+_NSPasteboardTypeFileURL
+_NSPasteboardTypeHTML
+_NSPasteboardTypePNG
+_NSPasteboardTypeRTF
+_NSPasteboardTypeString
+_NSPasteboardTypeTIFF
+_NSRTFTextDocumentType
+_NSStrikethroughColorAttributeName
+_NSStrikethroughStyleAttributeName
+_NSSuperscriptAttributeName
+_NSURLFileSizeKey
+_NSURLIsRegularFileKey
+_NSUnderlineStyleAttributeName
+_NSUnionRange
+_NSUpdateDynamicServices
+_NSViewBoundsDidChangeNotification
+_OBJC_CLASS_$_NSAlert
+_OBJC_CLASS_$_NSAppearance
+_OBJC_CLASS_$_NSAttributedString
+_OBJC_CLASS_$_NSBitmapImageRep
+_OBJC_CLASS_$_NSBundle
+_OBJC_CLASS_$_NSByteCountFormatter
+_OBJC_CLASS_$_NSCache
+_OBJC_CLASS_$_NSColor
+_OBJC_CLASS_$_NSColorSpace
+_OBJC_CLASS_$_NSDateFormatter
+_OBJC_CLASS_$_NSDocumentController
+_OBJC_CLASS_$_NSEvent
+_OBJC_CLASS_$_NSFileManager
+_OBJC_CLASS_$_NSFileWrapper
+_OBJC_CLASS_$_NSFont
+_OBJC_CLASS_$_NSFontManager
+_OBJC_CLASS_$_NSGraphicsContext
+_OBJC_CLASS_$_NSImage
+_OBJC_CLASS_$_NSLayoutManager
+_OBJC_CLASS_$_NSLock
+_OBJC_CLASS_$_NSMutableAttributedString
+_OBJC_CLASS_$_NSMutableData
+_OBJC_CLASS_$_NSMutableParagraphStyle
+_OBJC_CLASS_$_NSNotificationCenter
+_OBJC_CLASS_$_NSNumber
+_OBJC_CLASS_$_NSNumberFormatter
+_OBJC_CLASS_$_NSObject
+_OBJC_CLASS_$_NSOpenPanel
+_OBJC_CLASS_$_NSParagraphStyle
+_OBJC_CLASS_$_NSPasteboard
+_OBJC_CLASS_$_NSPrintInfo
+_OBJC_CLASS_$_NSPrintOperation
+_OBJC_CLASS_$_NSRegularExpression
+_OBJC_CLASS_$_NSRulerView
+_OBJC_CLASS_$_NSRunLoop
+_OBJC_CLASS_$_NSSavePanel
+_OBJC_CLASS_$_NSScanner
+_OBJC_CLASS_$_NSScreen
+_OBJC_CLASS_$_NSScrollView
+_OBJC_CLASS_$_NSSound
+_OBJC_CLASS_$_NSSplitView
+_OBJC_CLASS_$_NSTextAttachment
+_OBJC_CLASS_$_NSTextCheckingResult
+_OBJC_CLASS_$_NSTextContainer
+_OBJC_CLASS_$_NSTextStorage
+_OBJC_CLASS_$_NSTextTab
+_OBJC_CLASS_$_NSTextView
+_OBJC_CLASS_$_NSURL
+_OBJC_CLASS_$_NSUserDefaults
+_OBJC_CLASS_$_NSView
+_OBJC_CLASS_$_NSWindow
+_OBJC_CLASS_$_NSWorkspace
+_OBJC_CLASS_$_NSXMLDocument
+_OBJC_CLASS_$_NSXMLElement
+_OBJC_CLASS_$_NSXMLNode
+_OBJC_CLASS_$_OS_dispatch_queue
+_OBJC_CLASS_$_OS_dispatch_source
+_OBJC_CLASS_$_PDFDocument
+_OBJC_CLASS_$_WKSnapshotConfiguration
+_OBJC_CLASS_$_WKWebView
+_OBJC_CLASS_$_WKWebViewConfiguration
+_OBJC_CLASS_$_Swift._SwiftObject
+_OBJC_METACLASS_$_NSObject
+_OBJC_METACLASS_$_NSRulerView
+_OBJC_METACLASS_$_NSTextAttachment
+_OBJC_METACLASS_$_NSTextView
+_OBJC_METACLASS_$_Swift._SwiftObject
+__Block_copy
+__Block_release
+__NSConcreteStackBlock
+___assert_rtn
+___chkstk_darwin
+___sincos_stret
+___stack_chk_fail
+___stack_chk_guard
+__availability_version_check
+__mh_execute_header
+__objc_empty_cache
+__os_log_impl
+__swiftEmptyArrayStorage
+__swiftEmptyDictionarySingleton
+__swiftEmptySetSingleton
+__swift_FORCE_LOAD_$_swiftCompression
+__swift_FORCE_LOAD_$_swiftCoreFoundation
+__swift_FORCE_LOAD_$_swiftCoreImage
+__swift_FORCE_LOAD_$_swiftCoreLocation
+__swift_FORCE_LOAD_$_swiftDispatch
+__swift_FORCE_LOAD_$_swiftFoundation
+__swift_FORCE_LOAD_$_swiftIOKit
+__swift_FORCE_LOAD_$_swiftMetal
+__swift_FORCE_LOAD_$_swiftOSLog
+__swift_FORCE_LOAD_$_swiftObjectiveC
+__swift_FORCE_LOAD_$_swiftQuartzCore
+__swift_FORCE_LOAD_$_swiftSpatial
+__swift_FORCE_LOAD_$_swiftUniformTypeIdentifiers
+__swift_FORCE_LOAD_$_swiftXPC
+__swift_FORCE_LOAD_$_swift_Builtin_float
+__swift_FORCE_LOAD_$_swiftos
+__swift_FORCE_LOAD_$_swiftsimd
+__swift_stdlib_reportUnimplementedInitializer
+__swift_stdlib_strtod_clocale
+_atan2
+_bzero
+_close
+_compression_decode_buffer
+_dispatch_once_f
+_dlsym
+_fclose
+_fopen
+_fread
+_free
+_fseek
+_ftell
+_kCGPDFContextCreator
+_kCGPDFContextTitle
+_malloc
+_malloc_size
+_memcpy
+_memmove
+_objc_allocWithZone
+_objc_msgSend
+_objc_msgSendSuper2
+_objc_opt_self
+_objc_release
+_objc_retain
+_objc_retainAutoreleasedReturnValue
+_os_log_type_enabled
+_rewind
+_sscanf
+_swift_allocBox
+_swift_allocError
+_swift_allocObject
+_swift_allocateGenericValueMetadata
+_swift_arrayDestroy
+_swift_arrayInitWithCopy
+_swift_arrayInitWithTakeBackToFront
+_swift_arrayInitWithTakeFrontToBack
+_swift_beginAccess
+_swift_bridgeObjectRelease
+_swift_bridgeObjectRelease_n
+_swift_bridgeObjectRetain
+_swift_bridgeObjectRetain_n
+_swift_checkMetadataState
+_swift_continuation_await
+_swift_continuation_init
+_swift_coroFrameAlloc
+_swift_deallocClassInstance
+_swift_deallocObject
+_swift_deletedMethodError
+_swift_dynamicCast
+_swift_dynamicCastClass
+_swift_dynamicCastObjCClass
+_swift_endAccess
+_swift_errorRelease
+_swift_errorRetain
+_swift_getAtKeyPath
+_swift_getEnumCaseMultiPayload
+_swift_getEnumTagSinglePayloadGeneric
+_swift_getErrorValue
+_swift_getForeignTypeMetadata
+_swift_getGenericMetadata
+_swift_getKeyPath
+_swift_getObjCClassFromMetadata
+_swift_getObjCClassMetadata
+_swift_getObjectType
+_swift_getOpaqueTypeConformance2
+_swift_getSingletonMetadata
+_swift_getTupleTypeMetadata
+_swift_getTupleTypeMetadata2
+_swift_getTypeByMangledNameInContext2
+_swift_getTypeByMangledNameInContextInMetadataState2
+_swift_getWitnessTable
+_swift_initEnumMetadataMultiPayload
+_swift_initStackObject
+_swift_initStaticObject
+_swift_initStructMetadata
+_swift_isEscapingClosureAtFileLocation
+_swift_isUniquelyReferenced
+_swift_isUniquelyReferenced_nonNull_native
+_swift_once
+_swift_readAtKeyPath
+_swift_release
+_swift_release_n
+_swift_retain
+_swift_retain_n
+_swift_setAtReferenceWritableKeyPath
+_swift_setDeallocating
+_swift_slowAlloc
+_swift_slowDealloc
+_swift_stdlib_isStackAllocationSafe
+_swift_storeEnumTagMultiPayload
+_swift_storeEnumTagSinglePayloadGeneric
+_swift_task_alloc
+_swift_task_create
+_swift_task_dealloc
+_swift_task_getMainExecutor
+_swift_task_isCurrentExecutor
+_swift_task_switch
+_swift_unexpectedError
+_swift_unknownObjectRelease
+_swift_unknownObjectRetain
+_swift_unknownObjectRetain_n
+_swift_unknownObjectWeakAssign
+_swift_unknownObjectWeakDestroy
+_swift_unknownObjectWeakInit
+_swift_unknownObjectWeakLoadStrong
+_swift_updateClassMetadata2
+_swift_weakAssign
+_swift_weakDestroy
+_swift_weakInit
+_swift_weakLoadStrong
+_swift_willThrow
+_swift_willThrowTypedImpl

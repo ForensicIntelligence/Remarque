@@ -1,0 +1,350 @@
+Window: "feature-probe.md", App: Remarque.
+0 standard window feature-probe.md, URL: file:///Users/johnczlonka/Desktop/remarquerebuild/docs/fixtures/feature-probe.md, Secondary Actions: Raise
+	1 container
+		2 split group
+			3 container
+				4 text OUTLINE 11
+				5 scroll area
+					6 list Secondary Actions: AXScrollToTop, AXScrollToBottom
+						7 button Remarque Feature Probe
+						8 button Inline formatting
+						9 button Lists and callouts
+						10 button Tables
+						11 button Code and equations
+						12 button Extended structure
+						13 button Setext heading
+						14 button Diagrams
+						15 button Diagram: Flow probe
+						16 button Diagram: sequenceDiagram
+						17 button Diagram: stateDiagram-v2
+						18 button Diagram: classDiagram
+						19 button Diagram: pie title Feature coverage
+						20 button Repeated heading
+						21 button Repeated heading
+						22 button End marker
+			23 splitter (disabled, settable, float) 280
+			24 container
+				25 menu button Style, Help: Set the current line's section style
+				26 button Description: Bold, Help: Bold  (⌘B), ID: bold
+				27 button Description: Italic, Help: Italic  (⌘I), ID: italic
+				28 button Description: Strike Through, Help: Strikethrough, ID: strikethrough
+				29 button Description: Highlight, ID: highlighter
+				30 button Description: Embed Code, Help: Inline Code, ID: chevron.left.forwardslash.chevron.right
+				31 button (disabled) Description: Align Left, Help: Align column left, ID: text.alignleft
+				32 button (disabled) Description: Align Center, Help: Align column centre, ID: text.aligncenter
+				33 button (disabled) Description: Align Right, Help: Align column right, ID: text.alignright
+				34 menu button (disabled) Table, Help: Position the whole table on the page (left / centre / right)
+				35 image Description: Change Text Size, Help: Text size — scales the editor and preview together, ID: textformat.size
+				36 stepper 15 pt, Help: Text size — scales the editor and preview together, Value: 15, Secondary Actions: Increment, Decrement
+					37 increment arrow button
+					38 decrement arrow button
+				39 button Description: Bold, Help: Inserts or wraps the selection, ID: bold
+				40 button Description: Forward, Help: Toggle Replace, ID: chevron.right
+				41 image Description: Search, ID: magnifyingglass
+				42 text field (settable) Find
+				43 button Description: Case sensitive, Value: Off
+				44 button Description: Whole word, Value: Off
+				45 button Description: Regex, Value: Off
+				46 button (disabled) Description: Previous match, ID: chevron.up
+				47 button (disabled) Description: Next match, ID: chevron.down
+				48 button Description: Close Find, ID: xmark
+				49 button Description: Italic, Help: Inserts or wraps the selection, ID: italic
+				50 button Description: Strikethrough, Help: Inserts or wraps the selection, ID: strikethrough
+				51 button Description: Inline Code, Help: Inserts or wraps the selection, ID: chevron.left.forwardslash.chevron.right
+				52 button Description: Heading, Help: Inserts or wraps the selection, ID: number
+				53 button Description: Blockquote, Help: Inserts or wraps the selection, ID: text.quote
+				54 button Description: Bullet List, Help: Inserts or wraps the selection, ID: list.bullet
+				55 button Description: Numbered List, Help: Inserts or wraps the selection, ID: list.number
+				56 button Description: Task List, Help: Inserts or wraps the selection, ID: checklist
+				57 button Description: Link, Help: Inserts or wraps the selection, ID: link
+				58 button Description: Image, Help: Inserts or wraps the selection, ID: photo
+				59 button Description: Table Editor, Help: Inserts or wraps the selection, ID: tablecells
+				60 button Description: Code Block, Help: Inserts or wraps the selection, ID: curlybraces
+				61 button Description: Equation, Help: Inserts or wraps the selection, ID: function
+				62 button Description: Horizontal Rule, Help: Inserts or wraps the selection, ID: minus
+				63 button Description: Mermaid Diagram, Help: Inserts or wraps the selection, ID: chart.xyaxis.line
+				64 scroll area Secondary Actions: Scroll Up, Scroll Down
+					65 text entry area (settable) ID: editorTextView, Value: ---
+title: Remarque Feature Probe
+author: Local inventory
+---
+
+**# Remarque Feature Probe**
+
+Disposable document for the rebuild inventory. UNIQUE*_TOP_*ANCHOR
+
+**## Inline formatting**
+
+Plain ****bold****, **italic**, *****both*****, ~~~~strike~~~~, `inline*_code`, ==highlight==, H~2~O, x^2^, :rocket: and snake_*case.
+
+An inline equation $E=mc^2$ and literal prices $5 and $10.
+
+[Inline link](https://example.com) and [reference link][example]. [[Other Note|Wiki alias]]
+
+[example]: https://example.com "Reference title"
+
+**## Lists and callouts**
+
+- Parent
+  - Child
+    1. Nested ordered child
+- [ ] Unchecked task
+- [x] Checked task
+
+3. Third
+4. Fourth
+
+*> Ordinary quote*
+*>*
+*> Continued paragraph.*
+
+*> [!NOTE] Custom note title*
+*> A note with *****bold*****.*
+
+*> [!TIP]*
+*> A tip.*
+
+*> [!IMPORTANT]*
+*> Important.*
+
+*> [!WARNING]*
+*> Warning.*
+
+*> [!CAUTION]*
+*> Caution.*
+
+*> [!CUSTOM] Custom box*
+*> A custom callout.*
+
+**## Tables**
+
+<!-- table-align: center -->
+| Left | Center | Right |
+| :--- | :----: | ----: |
+| ****bold**** | escaped \| pipe | 42 |
+| [link][example] | `code` | $x^2$ |
+
+**## Code and equations**
+
+```swift
+let greeting = "Hello"
+// A comment
+print(greeting)
+```
+
+````text
+```nested fence```
+````
+
+$$
+\int_0^\infty e^{-x^2}\,dx = \frac{\sqrt{\pi}}{2}
+$$
+
+## Extended structure
+
+A footnote reference.[^one]
+
+[^one]: Footnote **content**.
+
+Term
+: First definition
+: Second definition
+
+<details>
+<summary>Expandable section</summary>
+
+Hidden **Markdown** and $x^2$.
+
+</details>
+
+Setext heading
+==============
+
+Hard break follows.  
+Second line.
+
+---
+
+## Diagrams
+
+<!-- remarque:mermaid id="probe-flow" title="Flow probe" width="720" height="420" align="center" -->
+```mermaid
+flowchart LR
+    A[Start] --> B{Decision}
+    B -->|Yes| C[End]
+    B -->|No| A
+```
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant App
+    User->>App: Edit
+    App-->>User: Preview
+```
+
+```mermaid
+stateDiagram-v2
+    [*] --> Editing
+    Editing --> Saved: save
+    Saved --> Editing: edit
+    Saved --> [*]
+```
+
+```mermaid
+classDiagram
+    class Document {
+        +String text
+        +save()
+    }
+```
+
+```mermaid
+pie title Feature coverage
+    "Editor" : 50
+    "Preview" : 50
+```
+
+## Repeated heading
+
+First duplicate. UNIQUE_MIDDLE_ANCHOR
+
+## Repeated heading
+
+Second duplicate. Unicode: café, 日本語, 👩🏽‍💻.
+
+## End marker
+
+UNIQUE_BOTTOM_ANCHOR. Selecting this rendered sentence should identify this source paragraph in the rebuilt editor.
+
+					66 scroll bar (settable, float) 0
+						67 value indicator (settable, float) 0
+						68 increment arrow button
+						69 decrement arrow button
+						70 increment page button
+						71 decrement page button
+			72 splitter (disabled, settable, float) 1180
+			73 scroll area
+				74 HTML content Description: feature-probe, URL: file:///Users/johnczlonka/Desktop/remarquerebuild/docs/fixtures/
+					75 container
+						76 heading Remarque Feature Probe, Value: 1
+							77 text Remarque Feature Probe
+						78 text Disposable document for the rebuild inventory. UNIQUE_TOP_ANCHOR
+						79 heading Inline formatting, Value: 2
+							80 text Inline formatting
+						81 text Plain bold, italic, both, 
+						82 text strike
+						83 text , inline_code, highlight, H2O, x2, 🚀 and snake_case.
+						84 text An inline equation and literal prices $5 and $10.
+						85 link Inline link, Value: example.com/
+						86 text  and 
+						87 link reference link, Value: example.com/
+						88 text . 
+						89 link Other Note, Value: file:///Users/johnczlonka/Desktop/remarquerebuild/docs/fixtures/Other%20Note.md
+						90 heading Lists and callouts, Value: 2
+							91 text Lists and callouts
+						92 container Parent
+							93 text Parent
+							94 content list
+								95 container Child
+									96 list marker ◦
+									97 text Child
+									98 content list
+										99 container Nested ordered child
+											100 text 1. Nested ordered child
+						101 container Unchecked task
+							102 checkbox (disabled) 0
+							103 text  Unchecked task
+						104 container Checked task
+							105 checkbox (disabled) 1
+							106 text  Checked task
+						107 content list
+							108 container Third
+								109 text 3. Third
+							110 container Fourth
+								111 text 4. Fourth
+						112 text Ordinary quote Continued paragraph. Custom note title A note with bold. Tip A tip. Important Important. Warning Warning. Caution Caution. Custom box A custom callout.
+						113 heading Tables, Value: 2
+							114 text Tables
+						115 table
+							116 row (selectable) Left
+Center
+Right
+							117 row (selectable)
+								118 cell (selectable) bold
+								119 cell (selectable) escaped | pipe
+								120 cell (selectable) 42
+							121 row (selectable)
+								122 cell (selectable) link
+								123 cell (selectable) code
+								124 cell (selectable)
+						125 heading Code and equations, Value: 2
+							126 text Code and equations
+						127 text let greeting = "Hello"
+// A comment
+print(greeting)
+						128 text ```nested fence```
+						129 heading Extended structure, Value: 2
+							130 text Extended structure
+						131 text A footnote reference.
+						132 link 1, Value: file:///Users/johnczlonka/Desktop/remarquerebuild/docs/fixtures/#fn-one
+						133 description list
+							134 text Term
+							135 text First definition
+							136 text Second definition
+						137 summary Expandable section, Value: off
+							138 text Expandable section
+						139 heading Setext heading, Value: 1
+							140 text Setext heading
+						141 text Hard break follows. Second line.
+						142 heading Diagrams, Value: 2
+							143 text Diagrams
+						144 text Flow probe
+						145 container
+							146 text Yes No Start Decision End
+						147 container
+							148 text App User App User Edit Preview
+						149 container
+							150 text save edit Editing Saved
+						151 container
+							152 text Document +String text +save()
+						153 container
+							154 text 50% 50% Feature coverage Editor Preview
+						155 heading Repeated heading, Value: 2
+							156 text Repeated heading
+						157 text First duplicate. UNIQUE_MIDDLE_ANCHOR
+						158 heading Repeated heading, Value: 2
+							159 text Repeated heading
+						160 text Second duplicate. Unicode: café, 日本語, 👩🏽‍💻.
+						161 heading End marker, Value: 2
+							162 text End marker
+						163 text UNIQUE_BOTTOM_ANCHOR. Selecting this rendered sentence should identify this source paragraph in the rebuilt editor.
+						164 content list
+							165 container Footnote content.
+								166 text 1. Footnote content.
+				167 scroll bar (settable, float) 0
+		168 text 206 words · 2 min read · 5 diagrams Line 153, Col 1 · Outline + Editor + Preview · Saved
+	169 toolbar
+		170 menu button Layout, Help: Layout — Outline + Editor + Preview, Value: Outline + Editor + Preview, ID: rectangle.split.3x1
+		171 button Description: Mermaid Visual Editor, ID: point.topleft.down.curvedto.point.bottomright.up, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		172 button Description: Toggle Outline, ID: sidebar.left, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		173 button Description: Focus Mode, ID: moon.stars, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		174 button Description: Find, ID: magnifyingglass, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		175 menu button Export, ID: square.and.arrow.up
+		176 button Description: Settings, ID: gearshape, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Remove from toolbar
+	177 close button
+	178 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	179 minimize button
+	180 text feature-probe.md
+181 menu bar
+	182 Remarque
+	183 File
+	184 Edit
+	185 View
+	186 Format
+	187 Diagram
+	188 Tools
+	189 Window
+	190 Help
+
+The focused UI element is 42 text field (settable) Find

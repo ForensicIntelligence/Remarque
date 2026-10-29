@@ -1,0 +1,8 @@
+Window: "Remarque", App: Remarque.
+0 Help, Secondary Actions: Cancel, Pick
+	1 menu Secondary Actions: Cancel
+		2 Remarque Documentation, ID: menuAction:
+		3 Welcome to Remarque, ID: menuAction:
+		4 Markdown Guide, ID: menuAction:
+		5 Mermaid Guide, ID: menuAction:
+		6 Keyboard Shortcuts, ID: menuAction:

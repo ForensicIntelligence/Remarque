@@ -1,0 +1,49 @@
+Window: "", App: Remarque.
+0 sheet Secondary Actions: Raise
+	1 container
+		2 image Description: Function, ID: function
+		3 text Equation Editor
+		4 radio button Description: Inline, Value: 1
+		5 radio button Description: Display, Value: 0
+		6 text Your equation appears here
+		7 scroll area Secondary Actions: Scroll Up, Scroll Down
+			8 text entry area (settable)
+			9 scroll bar (disabled, settable, float) 0
+		10 radio button Description: Structures, Value: 0
+		11 radio button Description: Greek, Value: 0
+		12 radio button Description: Operators, Value: 1
+		13 radio button Description: Relations, Value: 0
+		14 radio button Description: Arrows, Value: 0
+		15 radio button Description: Symbols, Value: 0
+		16 radio button Description: Functions, Value: 0
+		17 scroll area
+			18 collection Secondary Actions: AXScrollToTop, AXScrollToBottom
+				19 button Description: ×, Help: \times
+				20 button Description: ÷, Help: \div
+				21 button Description: ±, Help: \pm
+				22 button Description: ∓, Help: \mp
+				23 button Description: ·, Help: \cdot
+				24 button Description: ∗, Help: \ast
+				25 button Description: ⋆, Help: \star
+				26 button Description: ∘, Help: \circ
+				27 button Description: ⊕, Help: \oplus
+				28 button Description: ⊗, Help: \otimes
+				29 button Description: ∇, Help: \nabla
+				30 button Description: ∂, Help: \partial
+				31 button Description: √, Help: \surd
+				32 button Description: %, Help: \%
+		33 text Tip: click a template, then fill the slots.
+		34 button Cancel
+		35 button (disabled) Insert
+36 menu bar
+	37 Remarque
+	38 File
+	39 Edit
+	40 View
+	41 Format
+	42 Diagram
+	43 Tools
+	44 Window
+	45 Help
+
+The focused UI element is 8 text entry area (settable)

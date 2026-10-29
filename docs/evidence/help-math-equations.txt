@@ -1,0 +1,66 @@
+Window: "Remarque Documentation", App: Remarque.
+0 standard window Remarque Documentation, ID: documentation, Secondary Actions: Raise
+	1 split group documentation, SidebarNavigationSplitView
+		2 scroll area Secondary Actions: Scroll Up, Scroll Down
+			3 list Sidebar
+				4 row (selectable) Remarque Documentation
+				5 row (selectable) Getting Started
+				6 row (selectable) The Editor
+				7 row (selectable) Workspace & Linking
+				8 row (selectable) Versions, Snippets & Automation
+				9 row (selectable) Outline & Navigation
+				10 row (selectable) Live Preview
+				11 row (selected) Math & Equations
+				12 row (selectable) Mermaid: Writing Diagrams
+				13 row (selectable) Mermaid: Visual Editor
+				14 row (selectable) Mermaid: Importing
+				15 row (selectable) Mermaid: Move, Resize & Align
+				16 row (selectable) Mermaid: Templates & Types
+				17 row (selectable) Exporting
+				18 row (selectable) Themes & Appearance
+				19 row (selectable) Command Palette & Search
+				20 row (selectable) Keyboard Shortcuts
+				21 row (selectable) Settings Reference
+				22 row (selectable) Privacy & Local-First
+				23 row (selectable) Markdown Reference
+			24 scroll bar (settable, float) 0
+				25 value indicator (settable, float) 0
+				26 increment arrow button
+				27 decrement arrow button
+				28 increment page button
+				29 decrement page button
+		30 search text field (settable) Search documentation
+			31 button Search
+		32 splitter (disabled, settable, float) 250
+		33 scroll area Secondary Actions: Scroll Up, Scroll Down
+			34 image Description: Function, ID: function
+			35 text Math & Equations Typeset LaTeX math, or build equations visually — fully offline. Remarque renders LaTeX math with a bundled engine — no network, no setup. Write inline math between single dollar signs and display math between double dollar signs; inline equations sit on the surrounding text's baseline, so they read as part of the sentence. Inline: $E = mc^2$ and $\sqrt{a^2 + b^2}$.
+
+Display:
+$$\int_0^\infty e^{-x^2}\,dx = \frac{\sqrt{\pi}}{2}$$
+			36 image Description: Lightbulb, ID: lightbulb.fill
+			37 text Dollar amounts are safe — $5 and $10 is left as text, not parsed as math. The visual equation editor Don't know LaTeX? Choose Format ▸ Insert Equation… (⌃⌘E) or the fx button in the Markdown tool palette to open a Word-style editor. 1 Pick symbols and templates — fractions, roots, sums, integrals, Greek letters, operators — from the categorized palette. 2 Templates drop the cursor into the first slot so you can fill it in immediately. 3 Watch the live preview render as you build the expression. 4 Switch between Inline and Display, then click Insert to drop it into your document. In exports Math is embedded as crisp SVG in HTML, EPUB, and slides; as a high-resolution image in PDF, Word, and RTF; and passes through natively when you export to LaTeX.
+			38 scroll bar (settable, float) 0
+				39 value indicator (settable, float) 0
+				40 increment arrow button
+				41 decrement arrow button
+				42 increment page button
+				43 decrement page button
+	44 toolbar
+		45 button Description: Hide Sidebar, Secondary Actions: Increment, Decrement, Delete, Cancel
+	46 close button
+	47 zoom button
+	48 minimize button
+	49 text Remarque Documentation
+50 menu bar
+	51 Remarque
+	52 File
+	53 Edit
+	54 View
+	55 Format
+	56 Diagram
+	57 Tools
+	58 Window
+	59 Help
+
+The focused UI element is 0 standard window Remarque Documentation, ID: documentation, Secondary Actions: Raise

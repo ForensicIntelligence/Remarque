@@ -1,0 +1,63 @@
+Window: "Remarque Documentation", App: Remarque.
+0 standard window Remarque Documentation, ID: documentation, Secondary Actions: Raise
+	1 split group documentation, SidebarNavigationSplitView
+		2 scroll area Secondary Actions: Scroll Up, Scroll Down
+			3 list Sidebar
+				4 row (selectable) Remarque Documentation
+				5 row (selectable) Getting Started
+				6 row (selectable) The Editor
+				7 row (selectable) Workspace & Linking
+				8 row (selectable) Versions, Snippets & Automation
+				9 row (selectable) Outline & Navigation
+				10 row (selectable) Live Preview
+				11 row (selectable) Math & Equations
+				12 row (selectable) Mermaid: Writing Diagrams
+				13 row (selectable) Mermaid: Visual Editor
+				14 row (selectable) Mermaid: Importing
+				15 row (selectable) Mermaid: Move, Resize & Align
+				16 row (selectable) Mermaid: Templates & Types
+				17 row (selected) Exporting
+				18 row (selectable) Themes & Appearance
+				19 row (selectable) Command Palette & Search
+				20 row (selectable) Keyboard Shortcuts
+				21 row (selectable) Settings Reference
+				22 row (selectable) Privacy & Local-First
+				23 row (selectable) Markdown Reference
+			24 scroll bar (settable, float) 0
+				25 value indicator (settable, float) 0
+				26 increment arrow button
+				27 decrement arrow button
+				28 increment page button
+				29 decrement page button
+		30 search text field (settable) Search documentation
+			31 button Search
+		32 splitter (disabled, settable, float) 250
+		33 scroll area Secondary Actions: Scroll Up, Scroll Down
+			34 image Description: Share, ID: square.and.arrow.up
+			35 text Exporting Clean, local export to HTML, PDF, Word, RTF, slides, EPUB, and LaTeX. Export from the toolbar, the File menu, or the Command Palette. A native save panel appears, the file is generated locally, and Remarque reveals it in Finder when it's done. HTML A complete standalone document with clean inline CSS that mirrors the preview. Mermaid diagrams are embedded as inline SVG rendered locally — never from a CDN. Point to your own stylesheet under Settings ▸ Export ▸ Custom CSS to fully restyle the output — the choice is remembered across launches. PDF A paginated PDF laid out with TextKit. Diagrams and math are embedded as crisp images, and the title page, table of contents (with real page numbers), and page numbers settings all apply. Page size follows your DOCX page-size setting (Letter or A4), with an optional landscape orientation (Settings ▸ Export) for wide tables and diagrams. Microsoft Word (DOCX) • Real Word styles for headings, quotes, code, and tables • Bold, italic, inline code, and clickable hyperlinks • Diagrams embedded as images (with a graceful placeholder fallback) • Optional title page, table of contents, and page numbers • Opens cleanly in Word, Pages, and LibreOffice Writer Rich Text (RTF) A formatted RTF document that drops straight into any word processor or email — styled headings, lists, code, and links, with math and diagrams embedded as images, generated from the same typeset model as the preview. Slide deck (HTML) Turn a document into a self-contained slide deck: content splits into slides at each top-level heading, and the result is a single offline HTML file you navigate with the arrow keys — no framework or network needed. EPUB A valid EPUB 3 e-book split into chapters at each # heading, with a navigation document, embedded diagrams, and your local images packaged inside the book. The XHTML is strictly valid — task lists and footnotes included — so it opens in Apple Books and pickier readers alike. LaTeX A standalone .tex document: headings, lists, tables, and formatting map to LaTeX, math passes through natively, and code uses a verbatim environment — ready to compile. Printing Print from the File menu or the keyboard. Print Document… (⌘P) prints the finished document, Print Source… the raw Markdown/Mermaid source, and Print Rendered & Source… both in one job — the rendered document followed by a labelled source listing. Diagrams are rendered by the bundled engine and a clean light theme is used for paper. Importing Word, RTF & PDF Going the other way, File ▸ Import Document… (⇧⌘I) converts an RTF, Word (.docx), or PDF file to Markdown and opens the result as a new document. Word packages are converted entirely in-app — equations, images, and numbered-list nesting all survive the trip, with images embedded so they always travel with the document. PDF text is extracted best-effort. Print document ⌘P Export DOCX ⇧⌘D Import document ⇧⌘I
+			36 image Description: Lightbulb, ID: lightbulb.fill
+			37 text Control front matter, image embedding, page size, and whether to include Mermaid source — separately for DOCX and for HTML — in Settings ▸ Export.
+			38 scroll bar (settable, float) 0
+				39 value indicator (settable, float) 0
+				40 increment arrow button
+				41 decrement arrow button
+				42 increment page button
+				43 decrement page button
+	44 toolbar
+		45 button Description: Hide Sidebar, Secondary Actions: Increment, Decrement, Delete, Cancel
+	46 close button
+	47 zoom button
+	48 minimize button
+	49 text Remarque Documentation
+50 menu bar
+	51 Remarque
+	52 File
+	53 Edit
+	54 View
+	55 Format
+	56 Diagram
+	57 Tools
+	58 Window
+	59 Help
+
+The focused UI element is 0 standard window Remarque Documentation, ID: documentation, Secondary Actions: Raise
