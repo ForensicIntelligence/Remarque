@@ -48,6 +48,11 @@ extension SourceTextView {
         color("!?\\[[^\\n]*?\\]\\([^\\n]*?\\)",.systemTeal);color("^\\s*(?:[-*+] |[0-9]+[.)] |>|```|~~~).*$",.secondaryLabelColor)
         color("`[^`\\n]+`|\\$[^$\\n]+\\$",.systemOrange);color("^<!--.*-->$",.tertiaryLabelColor)
         if prefs.currentLine {let r=(string as NSString).lineRange(for:selectedRange());if r.length>0{storage.addAttribute(.backgroundColor,value:NSColor.controlAccentColor.withAlphaComponent(0.055),range:r)}}
+        if session?.focusMode==true,prefs.dimInactive{
+            let current=(string as NSString).paragraphRange(for:selectedRange())
+            if current.location>0{storage.addAttribute(.foregroundColor,value:NSColor.textColor.withAlphaComponent(0.35),range:NSRange(location:0,length:current.location))}
+            let end=NSMaxRange(current);if end<storage.length{storage.addAttribute(.foregroundColor,value:NSColor.textColor.withAlphaComponent(0.35),range:NSRange(location:end,length:storage.length-end))}
+        }
         storage.endEditing();typingAttributes=[.font:base,.foregroundColor:NSColor.textColor,.paragraphStyle:paragraph]
     }
 }

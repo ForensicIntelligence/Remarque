@@ -13,8 +13,7 @@ import UniformTypeIdentifiers
                 var pages:[String]=[],missing:[Int]=[];for index in 0..<pdf.pageCount{let text=pdf.page(at:index)?.string ?? "";if text.trimmingCharacters(in:.whitespacesAndNewlines).isEmpty{missing.append(index+1)};pages.append(text)}
                 AppWindows.shared.newDocument(text:pages.joined(separator:"\n\n---\n\n"));if !missing.isEmpty{session.error="PDF text import: pages \(missing.map(String.init).joined(separator:", ")) had no extractable text. OCR is not performed."}
             default:
-                let rich=try NSAttributedString(data:data,options:[.documentType:NSAttributedString.DocumentType.rtf],documentAttributes:nil)
-                let html=try rich.data(from:NSRange(location:0,length:rich.length),documentAttributes:[.documentType:NSAttributedString.DocumentType.html]);session.sendWeb?(["type":"command","name":"importHTML","value":String(data:html,encoding:.utf8) ?? rich.string])
+                let html=try RichTextCodec.html(fromRTF:data);session.sendWeb?(["type":"command","name":"importHTML","value":html])
             }
         }catch{session.error="Import failed: \(error.localizedDescription)"}
     }

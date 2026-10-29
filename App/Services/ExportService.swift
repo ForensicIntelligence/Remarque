@@ -26,7 +26,7 @@ import UniformTypeIdentifiers
             let data:Data
             if format=="RTF",let html=body["text"] as? String{
                 let rich=try NSAttributedString(data:Data(html.utf8),options:[.documentType:NSAttributedString.DocumentType.html,.characterEncoding:String.Encoding.utf8.rawValue],documentAttributes:nil)
-                data=try rich.data(from:NSRange(location:0,length:rich.length),documentAttributes:[.documentType:NSAttributedString.DocumentType.rtf])
+                data=try RichTextCodec.rtf(from:rich)
             }else if let text=body["text"] as? String{data=Data(text.utf8)}
             else if let raw=body["base64"] as? String,let decoded=Data(base64Encoded:raw){data=decoded}
             else{throw CocoaError(.fileWriteUnknown)}
@@ -84,12 +84,26 @@ import UniformTypeIdentifiers
         // Printing enters AppKit's modal run loop. Return to WebKit first so
         // its navigation callback can release the renderer's IPC transaction.
         let completion=completions[ObjectIdentifier(webView)]
-        webView.callAsyncJavaScript("await document.fonts.ready; await new Promise(requestAnimationFrame); return true;",in:nil,in:.page){_ in DispatchQueue.main.async{completion?()}}
+        webView.callAsyncJavaScript("""
+        await document.fonts.ready;
+        for(const heading of document.querySelectorAll('h1,h2,h3,h4,h5,h6')){
+            const next=heading.nextElementSibling;
+            if(next?.matches('.mermaid,.math_display')){const section=document.createElement('section');section.style.breakInside='avoid';heading.before(section);section.append(heading,next);for(const svg of next.querySelectorAll('svg'))svg.style.maxHeight='8in';}
+        }
+        await new Promise(requestAnimationFrame);return true;
+        """,in:nil,in:.page){_ in DispatchQueue.main.async{completion?()}}
+    }
+    func webView(_ webView:WKWebView,decidePolicyFor action:WKNavigationAction,decisionHandler:@escaping @MainActor (WKNavigationActionPolicy)->Void){
+        if action.navigationType == .linkActivated{
+            if Preferences.shared.values.externalLinks,let url=action.request.url,["https","http","mailto"].contains(url.scheme?.lowercased() ?? ""){NSWorkspace.shared.open(url)}
+            decisionHandler(.cancel);return
+        }
+        decisionHandler(action.request.url?.absoluteString=="about:blank" ? .allow:.cancel)
     }
     func webView(_ webView:WKWebView,didFail navigation:WKNavigation!,withError error:Error){NSApp.presentError(error)}
     private func present(_ html:String){
-        let config=WKWebViewConfiguration();config.userContentController.add(self,name:"remarque");let web=WKWebView(frame:NSRect(x:0,y:0,width:1200,height:780),configuration:config)
-        let window=NSWindow(contentRect:web.frame,styleMask:[.titled,.closable,.resizable,.miniaturizable],backing:.buffered,defer:false);window.title="Remarque Presentation";window.contentView=web;window.center();presentation=NSWindowController(window:window);presentation?.showWindow(nil);web.loadHTMLString(html,baseURL:nil)
+        let config=WKWebViewConfiguration();config.websiteDataStore = .nonPersistent();config.userContentController.add(self,name:"remarque");let web=WKWebView(frame:NSRect(x:0,y:0,width:1200,height:780),configuration:config)
+        let window=NSWindow(contentRect:web.frame,styleMask:[.titled,.closable,.resizable,.miniaturizable],backing:.buffered,defer:false);web.navigationDelegate=self;window.title="Remarque Presentation";window.contentView=web;window.center();presentation=NSWindowController(window:window);presentation?.showWindow(nil);web.loadHTMLString(html,baseURL:nil)
     }
     func userContentController(_ userContentController:WKUserContentController,didReceive message:WKScriptMessage){guard let body=message.body as? [String:Any],body["type"] as? String=="closePresentation" else{return};presentation?.close();presentation=nil}
     func printSource(_ session:DocumentSession){

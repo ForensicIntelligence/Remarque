@@ -69,8 +69,19 @@ export function textBoundaries(raw, value, start) {
   return out;
 }
 
+function incrementalTree(source,previous,patches){
+ if(!previous||patches.length!==1)return null;const patch=patches[0];
+ if(/[\r\n]/.test(patch.text)||/[\r\n]/.test(previous.source.slice(patch.range.start,patch.range.end)))return null;
+ const index=previous.tree.children.findIndex(n=>['paragraph','heading'].includes(n.type)&&patch.range.start>n.position.start.offset&&patch.range.end<=n.position.end.offset);if(index<0)return null;
+ const owner=previous.tree.children[index],from=owner.position.start.offset,to=mapOffset(owner.position.end.offset,patches,1),raw=source.slice(from,to);
+ // Reference links depend on definitions outside the block; use the full parser.
+ if(/[\[\]]/.test(raw))return null;
+ const fragment=parse(raw);if(fragment.children.length!==1||fragment.children[0].type!==owner.type)return null;
+ const shift=(node,fn)=>{const copy={...node};if(node.position)copy.position={start:{...node.position.start,offset:fn(node.position.start.offset,-1)},end:{...node.position.end,offset:fn(node.position.end.offset,1)}};if(node.children)copy.children=node.children.map(n=>shift(n,fn));return copy;};
+ return {...previous.tree,children:previous.tree.children.map((n,i)=>i===index?shift(fragment.children[0],v=>v+from):i<index?n:shift(n,(offset,affinity)=>mapOffset(offset,patches,affinity)))};
+}
 export function project(source, previous=null, patches=[]) {
-  const tree=parse(source), records=new Map(), leaves=[], refs=new Map(), reuse=new Map();
+  const tree=incrementalTree(source,previous,patches)||parse(source), records=new Map(), leaves=[], refs=new Map(), reuse=new Map();
   if(previous)for(const r of previous.records.values()) {
     const start=mapOffset(r.mdast?.position?.start.offset??r.start,patches,-1),end=mapOffset(r.mdast?.position?.end.offset??r.end,patches,1);
     reuse.set(`${r.kind}:${start}:${end}`,r.id);
@@ -186,12 +197,13 @@ export function project(source, previous=null, patches=[]) {
   }
   // Recognized placement comments are owned by the following object, not editable prose.
   for(let i=0;i<nodes.length-1;i++){
-    if(nodes[i].type.name==='opaque'&&/^<!--\s*(?:remarque|remarkable):mermaid\b/.test(nodes[i].attrs.raw)&&nodes[i+1].type.name==='mermaid'){
+    const metadataKind=nodes[i].type.name==='opaque'&&nodes[i].attrs.raw.match(/^<!--\s*(?:remarque|remarkable):(mermaid|table)\b/)?.[1];
+    if(metadataKind&&nodes[i+1].type.name===metadataKind){
       const comment=nodes[i],diagram=nodes[i+1],r=records.get(diagram.attrs.origin),c=records.get(comment.attrs.origin);
       r.metadata=comment.attrs.raw;r.start=c.start;r.raw=source.slice(r.start,r.end);
-      const old=previous&&[...previous.records.values()].find(pr=>pr.kind==='code'&&pr.pmNode?.type.name==='mermaid'&&mapOffset(pr.start,patches,-1)===r.start&&mapOffset(pr.end,patches,1)===r.end);
+      const old=previous&&[...previous.records.values()].find(pr=>pr.pmNode?.type.name===metadataKind&&mapOffset(pr.start,patches,-1)===r.start&&mapOffset(pr.end,patches,1)===r.end);
       if(old&&old.id!==r.id){records.delete(r.id);r.id=old.id;records.set(r.id,r);}
-      nodes[i+1]=diagram.type.create({...diagram.attrs,origin:r.id,metadata:comment.attrs.raw});nodes.splice(i,1);i--;
+      nodes[i+1]=diagram.type.create({...diagram.attrs,origin:r.id,metadata:comment.attrs.raw,...(metadataKind==='table'?{placement:comment.attrs.raw.match(/align="(left|center|right)"/)?.[1]||null}:{})},diagram.content);nodes.splice(i,1);i--;
     }
   }
   const doc=schema.nodes.doc.create(null,nodes.length?nodes:[schema.nodes.paragraph.create()]);
@@ -259,7 +271,7 @@ export function serialize(node) {
     case 'math_display':return `$$\n${node.attrs.value}\n$$`;
     case 'mermaid':return `${node.attrs.metadata?node.attrs.metadata+'\n':''}\`\`\`mermaid\n${node.attrs.value}\n\`\`\``;
     case 'opaque':return node.attrs.raw;
-    case 'table':{const rows=content.map(r=>{const cells=[];r.forEach(c=>cells.push(serialize(c).replace(/(?<!\\)\|/g,'\\|').replace(/\n+/g,'<br>')));return '| '+cells.join(' | ')+' |';});const alignment=[];content[0]?.forEach(c=>alignment.push(({left:':---',center:':---:',right:'---:'})[c.attrs.alignment]||'---'));return [rows[0],'| '+alignment.join(' | ')+' |',...rows.slice(1)].join('\n');}
+    case 'table':{const rows=content.map(r=>{const cells=[];r.forEach(c=>cells.push(serialize(c).replace(/(?<!\\)\|/g,'\\|').replace(/\n+/g,'<br>')));return '| '+cells.join(' | ')+' |';});const alignment=[];content[0]?.forEach(c=>alignment.push(({left:':---',center:':---:',right:'---:'})[c.attrs.alignment]||'---'));return (node.attrs.metadata?node.attrs.metadata+'\n\n':'')+[rows[0],'| '+alignment.join(' | ')+' |',...rows.slice(1)].join('\n');}
     case 'table_cell':case 'table_header':return content.map(serialize).join('\n');
     default:return node.textContent;
   }

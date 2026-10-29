@@ -9,7 +9,7 @@ settings:
     MACOSX_DEPLOYMENT_TARGET: '14.0'
     PRODUCT_BUNDLE_IDENTIFIER: ca.forensicintelligence.remarque
     MARKETING_VERSION: '3.0.0'
-    CURRENT_PROJECT_VERSION: '734'
+    CURRENT_PROJECT_VERSION: '735'
     CODE_SIGN_STYLE: Manual
     CODE_SIGN_IDENTITY: '-'
     DEVELOPMENT_TEAM: PATM9DNCLA
@@ -49,7 +49,12 @@ targets:
   RemarqueIntegrationTests:
     type: bundle.unit-test
     platform: macOS
-    sources: [Tests/RemarqueIntegrationTests]
+    sources:
+      - path: Tests/RemarqueIntegrationTests
+        excludes: [Fixtures]
+      - path: Tests/RemarqueIntegrationTests/Fixtures
+        type: folder
+        buildPhase: resources
     dependencies:
       - target: Remarque
       - package: RemarqueCore

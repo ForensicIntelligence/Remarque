@@ -1,0 +1,8 @@
+import {catalogue} from '../Web/src/catalogue.mjs';
+import {readFile,writeFile} from 'node:fs/promises';
+const root=new URL('../',import.meta.url),version=JSON.parse(await readFile(new URL('VERSION.json',root)));
+const families=[...new Set(catalogue.map(t=>t.family))];
+let text=`# Shipped Mermaid support\n\nGenerated from the application catalogue for Remarque ${version.version} (${version.build}). Engine: Mermaid 12.2.0, ZenUML 1.0.1, ELK 1.0.1, tidy-tree 1.0.1. Runtime resources are bundled locally.\n\n${families.length} families and ${catalogue.length} starters. The automated catalogue test renders every starter and verifies a Word graphic for each; the native PDF test checks the complete catalogue document. Richer syntax, every possible layout/look combination, and downstream accessibility remain separate qualification tasks.\n\n| Family | Starter IDs | Canvas editing | Syntax status |\n|---|---|---|---|\n`;
+for(const family of families){const items=catalogue.filter(t=>t.family===family);text+=`| ${family} | ${items.map(t=>t.id).join(', ')} | ${['Flowchart','Sequence','State'].includes(family)?'Restricted grammar; source fallback':'Source editor'} | ${items.some(t=>t.experimental)?'Contains experimental Mermaid syntax':'Stable starter syntax'} |\n`;}
+text+='\nAll families retain fenced source through Markdown and Remarque-bundle export. SVG/PNG card exports and HTML/Word/PDF graphics are implemented. RTF embeds PNG picture groups; LaTeX uses native math plus companion diagram/image files. A render failure is surfaced and must not silently become a blank export. See the feature ledger for test scope and unresolved release gates.\n';
+await writeFile(new URL('docs/implementation/SHIPPED_MERMAID_SUPPORT.md',root),text);

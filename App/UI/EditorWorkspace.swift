@@ -9,10 +9,10 @@ struct EditorWorkspace:View{
             if !session.focusMode{HStack(spacing:12){
                 Image(systemName:"doc.richtext").font(.title3).foregroundStyle(.blue)
                 Text("Remarque").font(.headline)
-                Text("3.0 · Development").font(.caption).foregroundStyle(.secondary)
+                Text(BuildInfo.label).font(.caption).foregroundStyle(.secondary)
                 Spacer()
                 Button{session.showPalette=true}label:{Image(systemName:"command")}.help("Command Palette (⇧⌘P)")
-                Menu{ForEach(["HTML","PDF","DOCX","RTF","Slides","EPUB","LaTeX","Remarque","Embedded Markdown"],id:\.self){format in Button(format){session.command("export:"+format)}}}label:{Image(systemName:"square.and.arrow.up")}.help("Export")
+                Menu{Button("Export as "+preferences.values.exportFormat+"…"){session.command("export:"+preferences.values.exportFormat)};Divider();ForEach(["HTML","PDF","DOCX","RTF","Slides","EPUB","LaTeX","Remarque","Embedded Markdown"],id:\.self){format in Button(format){session.command("export:"+format)}}}label:{Image(systemName:"square.and.arrow.up")}.help("Export")
                 Button{session.showOutline.toggle()}label:{Image(systemName:"sidebar.left")}.help("Toggle Outline (⌥⌘O)")
                 Picker("Layout",selection:Binding(get:{session.showSource && session.showPreview ? "split":session.showSource ? "source":"preview"},set:{session.showSource=$0 != "preview";session.showPreview=$0 != "source"})){
                     Text("Editor + Preview").tag("split");Text("Editor").tag("source");Text("Preview").tag("preview")
@@ -35,7 +35,7 @@ struct EditorWorkspace:View{
                     VStack(spacing:0){
                         HStack{Text("MARKDOWN SOURCE").font(.caption.weight(.semibold)).foregroundStyle(.secondary);Spacer();Text("UTF-8").font(.caption2).foregroundStyle(.tertiary)}.padding(.horizontal,18).frame(height:34)
                         if preferences.values.formatRibbon && !session.focusMode{SourceRibbon(session:session)}
-                        Divider();if preferences.values.liveEditing{RenderedEditor(session:session,mode:"liveSource")}else{SourceEditor(session:session)}
+                        Divider();HStack(spacing:0){if preferences.values.toolPalette && !session.focusMode{MarkdownToolPalette(session:session)};if preferences.values.liveEditing{RenderedEditor(session:session,mode:"liveSource")}else{SourceEditor(session:session)}}
                     }.frame(minWidth:240)
                 }
                 VStack(spacing:0){if session.showPreview && !session.focusMode{RightToolbar(session:session);Divider()};RenderedEditor(session:session)}.frame(minWidth:session.showPreview ? 300:0,maxWidth:session.showPreview ? .infinity:0).opacity(session.showPreview ? 1:0).accessibilityHidden(!session.showPreview)
@@ -77,7 +77,7 @@ struct RightToolbar:View{
                     Menu{Button("Link…"){session.command("link")};Button("Image…"){session.command("image")};Button("Table"){session.command("table")};Button("Code Block"){session.command("codeBlock")};Button("Horizontal Rule"){session.command("rule")};Button("Callout"){session.command("callout")};Button("Footnote"){session.command("footnote")};Button("Details"){session.command("details")}}label:{Image(systemName:"plus.square")}.fixedSize().help("Insert")
                     Menu("Table"){
                         Button("Table Editor…"){session.command("tableEditor")};Button("Add Row"){session.command("addRow")};Button("Add Column"){session.command("addColumn")};Button("Delete Row"){session.command("deleteRow")};Button("Delete Column"){session.command("deleteColumn")}
-                        Divider();ForEach(["left","center","right"],id:\.self){alignment in Button("Align "+alignment){session.command("align:"+alignment)}}
+                        Divider();ForEach(["left","center","right"],id:\.self){alignment in Button("Align column "+alignment){session.command("align:"+alignment)};Button("Place table "+alignment){session.command("tablePlacement:"+alignment)}}
                     }.fixedSize()
                 }else if session.activeTab=="Mermaid"{
                     Button("Insert Diagram…"){session.command("gallery")}.font(.caption)
@@ -105,4 +105,10 @@ struct SourceRibbon:View{
         Text("\(Int(preferences.values.editorSize))").font(.caption)
         Button{preferences.values.editorSize=min(32,preferences.values.editorSize+1);preferences.values.previewSize=min(36,preferences.values.previewSize+1)}label:{Image(systemName:"textformat.size.larger")}.help("Larger text")
     }.buttonStyle(.borderless).padding(.horizontal,15).frame(height:32)}}
+}
+
+struct MarkdownToolPalette:View{
+    @ObservedObject var session:DocumentSession
+    private let tools=[("Bold","bold","bold"),("Italic","italic","italic"),("Link","link","link"),("Image","photo","image"),("List","list.bullet","bullet"),("Task List","checklist","task"),("Quote","text.quote","quote"),("Code Block","curlybraces","codeBlock"),("Table","tablecells","tableEditor"),("Diagram","point.3.connected.trianglepath.dotted","gallery"),("Equation","function","equation")]
+    var body:some View{VStack(spacing:9){ForEach(tools,id:\.0){title,symbol,command in Button{session.command(command)}label:{Image(systemName:symbol).frame(width:28,height:26)}.help(title).accessibilityLabel(title).buttonStyle(.borderless)};Spacer()}.padding(.top,12).frame(width:38).background(.quaternary.opacity(0.3))}
 }

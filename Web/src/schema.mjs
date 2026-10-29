@@ -4,6 +4,8 @@ import {tableNodes} from 'prosemirror-tables';
 const origin = {origin: {default: null}};
 const tables = tableNodes({tableGroup: 'block', cellContent: 'block+',cellAttributes:{alignment:{default:null,getFromDOM:dom=>dom.style.textAlign||null,setDOMAttr:(value,attrs)=>{if(value)attrs.style=`text-align:${value}`;}}}});
 for (const spec of Object.values(tables)) spec.attrs = {...spec.attrs, ...origin};
+tables.table.attrs={...tables.table.attrs,metadata:{default:''},placement:{default:null}};
+tables.table.toDOM=n=>['table',n.attrs.placement?{'data-placement':n.attrs.placement,style:`width:auto;margin-left:${n.attrs.placement==='left'?'0':'auto'};margin-right:${n.attrs.placement==='right'?'0':'auto'}`}:{},['tbody',0]];
 
 export const schema = new Schema({
   nodes: {

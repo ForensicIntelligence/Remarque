@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 import {createServer} from 'node:http';
-import {readFile} from 'node:fs/promises';
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {extname,resolve} from 'node:path';
 import {catalogue} from '../src/catalogue.mjs';
 let server,url;
@@ -57,6 +57,11 @@ test('all 41 templates from all 33 Mermaid families render',async({page})=>{
   await expect(page.locator('.mermaid .pending')).toHaveCount(0,{timeout:45000});
   const errors=await page.locator('.render-error').allTextContents();expect(errors).toEqual([]);
   await expect(page.locator('.mermaid:has(svg)')).toHaveCount(41);
+  await page.evaluate(()=>window.Remarque.receive({type:'command',name:'export:HTML',surface:'rendered'}));await expect.poll(()=>page.evaluate(()=>window.messages.some(m=>m.type==='export'&&m.format==='HTML'))).toBe(true);
+  const html=await page.evaluate(()=>window.messages.find(m=>m.type==='export'&&m.format==='HTML').text);await mkdir('../Tests/RemarqueIntegrationTests/Fixtures',{recursive:true});await writeFile('../Tests/RemarqueIntegrationTests/Fixtures/all-diagrams.html',html);
+  await page.evaluate(()=>window.Remarque.receive({type:'command',name:'export:DOCX',surface:'rendered'}));await expect.poll(()=>page.evaluate(()=>window.messages.some(m=>m.type==='export'&&m.format==='DOCX')),{timeout:20000}).toBe(true);
+  const word=await page.evaluate(()=>window.messages.find(m=>m.type==='export'&&m.format==='DOCX'));expect(word.warnings).toEqual([]);const {unzipSync}=await import('fflate');const zip=unzipSync(Buffer.from(word.base64,'base64'));expect(Object.keys(zip).filter(k=>k.startsWith('word/media/')&&k.endsWith('.png'))).toHaveLength(41);
+
 });
 test('equation palettes insert TeX and live edits preserve surrounding source',async({page})=>{
   await load(page,'Before\n\n$$\r\nE=mc^2\r\n$$\n\nAfter');
@@ -73,7 +78,7 @@ test('table builder edits the existing table and cancel is lossless',async({page
   await page.getByRole('textbox',{name:'Row 1, column 2',exact:true}).fill('changed');await page.getByRole('button',{name:'Cancel',exact:true}).click();expect(await source(page)).toBe(original);
   await page.evaluate(()=>window.Remarque.receive({type:'command',name:'tableEditor',start:11,end:11,surface:'source'}));
   await page.getByRole('textbox',{name:'Row 1, column 2',exact:true}).fill('changed');await page.getByRole('button',{name:'Apply',exact:true}).click();
-  await expect.poll(()=>source(page)).toContain('| a\\|b | changed |');expect(await source(page)).toMatch(/^Intro\n\n[\s\S]*\n\nTail$/);
+  await expect.poll(()=>source(page)).toBe('Intro\n\n| A | B |\n| :--- | ---: |\n| a\\|b | changed |\n\nTail');
 });
 test('exports create structured Word, EPUB, HTML, LaTeX and Markdown packages',async({page})=>{
   test.setTimeout(60000);
@@ -145,4 +150,27 @@ test('live source mode reveals one block and commits Markdown without altering n
   await load(page,'# Title\n\nA **bold** word\n\nTail');await page.evaluate(()=>window.Remarque.receive({type:'state',documentID:'test',mode:'liveSource',revision:0,source:'# Title\n\nA **bold** word\n\nTail',start:12,end:12}));
   await page.locator('.ProseMirror p').first().click();const area=page.getByRole('textbox',{name:'Edit Markdown block'});await expect(area).toHaveValue('A **bold** word');await area.fill('An *edited* word');
   await expect.poll(()=>source(page)).toBe('# Title\n\nAn *edited* word\n\nTail');await area.press('Escape');await expect(page.locator('.ProseMirror em')).toHaveText('edited');expect(await page.evaluate(()=>window.messages.filter(m=>m.type==='error'))).toEqual([]);
+});
+test('composition rebases across a nonoverlapping native edit',async({page})=>{
+  await load(page,'First\n\nLast');
+  await page.evaluate(()=>{const a=window.Remarque;a.receive({type:'selection',revision:0,start:11,end:11});a.view.focus();a.view.dom.dispatchEvent(new CompositionEvent('compositionstart',{bubbles:true}));a.view.dispatch(a.view.state.tr.insertText('日本語'));a.receive({type:'state',documentID:'test',revision:1,source:'New First\n\nLast',patches:[{range:{start:0,end:0},text:'New '}],start:0,end:0});});
+  await expect.poll(()=>source(page)).toBe('New First\n\nLast日本語');expect(await page.evaluate(()=>window.messages.filter(m=>m.type==='error'))).toEqual([]);
+});
+test('overlapping composition preserves a full Markdown recovery draft',async({page})=>{
+  await load(page,'# Title\n\nBody');
+  await page.evaluate(()=>{const a=window.Remarque;a.receive({type:'selection',revision:0,start:13,end:13});a.view.focus();a.view.dom.dispatchEvent(new CompositionEvent('compositionstart',{bubbles:true}));a.view.dispatch(a.view.state.tr.insertText('日本語'));a.receive({type:'state',documentID:'test',revision:1,source:'# Title\n\nNative',patches:[{range:{start:9,end:13},text:'Native'}],start:9,end:9});});
+  await expect.poll(()=>source(page)).toBe('# Title\n\nNative');await expect(page.getByRole('textbox',{name:'Recovered uncommitted editor content'})).toHaveValue('# Title\n\nBody日本語');
+});
+test('table placement remains attached through cell edits and the table editor',async({page})=>{
+  await load(page,'Before\n\n| A | B |\n| --- | --- |\n| One | Two |\n\nAfter');
+  await page.evaluate(()=>window.Remarque.receive({type:'command',name:'tablePlacement:right',surface:'source',start:10,end:10}));await expect(page.locator('table')).toHaveAttribute('data-placement','right');
+  await page.locator('td').first().click();await page.keyboard.press('End');await page.keyboard.type('!');await expect.poll(()=>source(page)).toContain('One!');expect(await source(page)).toContain('align="right"');
+  await page.evaluate(()=>window.Remarque.receive({type:'command',name:'tableEditor',surface:'rendered'}));await page.getByRole('textbox',{name:'Row 1, column 2',exact:true}).fill('Changed');await page.getByRole('button',{name:'Apply',exact:true}).click();expect(await source(page)).toContain('align="right"');expect(await source(page)).toContain('Changed');
+});
+test('script-bearing Markdown and Mermaid cannot execute or load remote resources',async({page})=>{
+  const external=[];page.on('request',r=>{if(/^https?:/.test(r.url())&&!r.url().startsWith('http://127.0.0.1:'))external.push(r.url());});
+  const input='# Safe\n\n<script>window.remarquePwned=true</script>\n\n[Unsafe](javascript:alert(1))\n\n<img src="https://example.invalid/tracker" onerror="window.remarquePwned=true">\n\n```mermaid\nflowchart LR\nA-->B\nclick A "https://example.invalid/diagram"\n```';
+  await load(page,input);await expect(page.locator('.mermaid svg')).toBeVisible();expect(await page.evaluate(()=>window.remarquePwned)).toBeUndefined();expect(external).toEqual([]);expect(await source(page)).toBe(input);
+  expect(await page.locator('.ProseMirror a').evaluateAll(links=>links.some(a=>(a.getAttribute('href')||'').startsWith('javascript:')))).toBe(false);
+  await page.evaluate(()=>window.Remarque.receive({type:'command',name:'export:HTML',surface:'rendered'}));await expect.poll(()=>page.evaluate(()=>window.messages.some(m=>m.type==='export'))).toBe(true);const html=await page.evaluate(()=>window.messages.find(m=>m.type==='export').text);expect(html).not.toContain('<script>window.remarquePwned');expect(html).not.toContain('<img src="https://example.invalid/tracker"');
 });

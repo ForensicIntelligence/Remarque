@@ -1,16 +1,19 @@
 [
   {
     "requirement": "APP-01",
-    "status": "in_progress",
+    "status": "verified",
     "implementation": [
-      "App/RemarqueDocument.swift"
+      "project.yml",
+      "App/UI/EditorWorkspace.swift"
     ],
-    "automated_tests": [],
+    "automated_tests": [
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
     "known_limitations": [
-      "Grouped feature requires remaining control coverage and release verification."
+      "Universal build verified; execution on Intel hardware and minimum macOS is not yet tested."
     ],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 735"
   },
   {
     "requirement": "APP-02",
@@ -2893,11 +2896,16 @@
   },
   {
     "requirement": "IO-17",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Services/Preferences.swift",
+      "Web/src/exporters.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Custom CSS is stored with a file bookmark and a fallback copy; manual file-grant/revocation validation remains."
+    ],
     "last_verified_revision": null
   },
   {
@@ -2978,56 +2986,92 @@
   },
   {
     "requirement": "ACCESS-01",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift",
+      "App/Editors/RenderedEditor.swift",
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Native/DOM accessibility names and keyboard paths exist; full VoiceOver and contrast qualification remains."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "ACCESS-02",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift",
+      "App/Editors/RenderedEditor.swift",
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Native/DOM accessibility names and keyboard paths exist; full VoiceOver and contrast qualification remains."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "ACCESS-03",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift",
+      "App/Editors/RenderedEditor.swift",
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Native/DOM accessibility names and keyboard paths exist; full VoiceOver and contrast qualification remains."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "ACCESS-04",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift",
+      "App/Editors/RenderedEditor.swift",
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Native/DOM accessibility names and keyboard paths exist; full VoiceOver and contrast qualification remains."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "ACCESS-05",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift",
+      "App/Editors/RenderedEditor.swift",
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Native/DOM accessibility names and keyboard paths exist; full VoiceOver and contrast qualification remains."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "ACCESS-06",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift",
+      "App/Editors/RenderedEditor.swift",
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Native/DOM accessibility names and keyboard paths exist; full VoiceOver and contrast qualification remains."
+    ],
     "last_verified_revision": null
   },
   {
@@ -3450,254 +3494,506 @@
   },
   {
     "requirement": "A01",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A02",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A03",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A04",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A05",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A06",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A07",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A08",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A09",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A10",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A11",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A12",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A13",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A14",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A15",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A16",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A17",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A18",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A19",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A20",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A21",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A22",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A23",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A24",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A25",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A26",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A27",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "A28",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/DocumentSession.swift",
+      "Web/src/editor.mjs",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative scenarios pass in build 735; the full acceptance row, including platform/input variants, is not yet exhaustively qualified."
+    ],
     "last_verified_revision": null
   },
   {
@@ -4247,12 +4543,15 @@
   },
   {
     "requirement": "MER-A10",
-    "status": "not_started",
-    "implementation": [],
+    "status": "verified",
+    "implementation": [
+      "scripts/support-report.mjs",
+      "docs/implementation/SHIPPED_MERMAID_SUPPORT.md"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 735"
   },
   {
     "requirement": "R01",
@@ -4283,12 +4582,17 @@
   },
   {
     "requirement": "R04",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "project.yml",
+      "App/UI/EditorWorkspace.swift"
+    ],
+    "automated_tests": [
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 735"
   },
   {
     "requirement": "R05",

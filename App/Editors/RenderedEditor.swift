@@ -17,10 +17,11 @@ struct RenderedEditor: NSViewRepresentable {
         #if DEBUG
         view.isInspectable = true
         #endif
+        let editorMode=mode
         session.webReceivers[context.coordinator.id] = { [weak view] original in
-            if let target=original["target"] as? String,target != mode{return}
-            if mode=="liveSource",original["type"] as? String=="command"{return}
-            var message=original;message["mode"]=mode
+            if let target=original["target"] as? String,target != editorMode{return}
+            if editorMode=="liveSource",original["type"] as? String=="command"{return}
+            var message=original;message["mode"]=editorMode
             view?.callAsyncJavaScript("window.Remarque?.receive(message)",arguments:["message":message],in:nil,in:.page) { _ in }
         }
         if let url=Bundle.main.url(forResource:"index",withExtension:"html",subdirectory:"Editor") {
@@ -38,6 +39,7 @@ struct RenderedEditor: NSViewRepresentable {
         return view
     }
     func updateNSView(_ view:WKWebView,context:Context){
+        view.callAsyncJavaScript("document.body.classList.toggle('focus-mode', focused)",arguments:["focused":session.focusMode && preferences.values.dimInactive],in:nil,in:.page){_ in}
         let data=try? JSONEncoder().encode(preferences.values)
         if context.coordinator.lastPreferences != data{context.coordinator.lastPreferences=data;session.sendWeb?(["type":"preferences","values":preferences.web])}
     }

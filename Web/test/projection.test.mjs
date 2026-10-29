@@ -53,3 +53,17 @@ test('cross-mark deletion keeps valid semantic text and unaffected blocks',()=>{
 test('minimal patches preserve emoji boundaries',()=>{
   for(const [a,b] of [['A😀Z','A😁Z'],['abc',''],['','text']])assert.equal(applyPatches(a,[minimalPatch(a,b)]),b);
 });
+
+test('incremental paragraph edits match a fresh parse and preserve later offsets',()=>{
+ const original='# Heading\n\nAn ordinary **bold** paragraph.\n\n# Later\n\nTail';let previous=project(original);let source=original;
+ for(const text of ['changed','a *styled* phrase','emoji 😀','plain']){
+  const start=source.indexOf('ordinary')>=0?source.indexOf('ordinary'):source.indexOf('An ')+3;
+  const end=source.indexOf(' **bold**');const patches=[{range:{start,end},text}];source=applyPatches(source,patches);previous=project(source,previous,patches);const full=project(source);
+  const scrub=n=>{const j=n.toJSON();const walk=v=>{if(v.attrs)delete v.attrs.origin;if(v.marks)v.marks=v.marks.filter(m=>m.type!=='provenance');for(const c of v.content||[])walk(c)};walk(j);return j};
+  assert.deepEqual(scrub(previous.doc),scrub(full.doc));assert.deepEqual(previous.outline,full.outline);assert.equal(previous.sourceAt(previous.positionAt(source.indexOf('Tail'))),source.indexOf('Tail'));
+ }
+});
+
+test('format document aligns tables and list markers while preserving literal blocks',async()=>{
+ const {formatMarkdown}=await import('../src/formatter.mjs');const input='+ One\n* Two\n\n```mermaid\nA-->B  \n```\n\n| A | Longer |\n| --- | ---: |\n| x | y |';const result=formatMarkdown(input);assert.ok(result.startsWith('- One\n- Two'));assert.ok(result.includes('```mermaid\nA-->B  \n```'));assert.ok(result.includes('| x   | y      |'));assert.equal(formatMarkdown(result),result);
+});

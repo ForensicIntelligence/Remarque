@@ -35,7 +35,9 @@ struct OutlineEntry: Identifiable, Codable {
     @Published var showFind = false
     @Published var showPalette = false
     var readOnly = false
-    @Published var fileURL:URL?
+    @Published var fileURL:URL?{didSet{
+        if let old=oldValue?.path,let new=fileURL?.path,old != new{Task{do{try await LocalStorage.history.copyHistory(from:old,to:new)}catch{self.error="History could not follow the renamed file: \(error.localizedDescription)"}}}
+    }}
     @Published var missingMedia:String?
     private var recoveryTask:Task<Void,Never>?
     var onChange: (() -> Void)?
@@ -110,7 +112,8 @@ struct OutlineEntry: Identifiable, Codable {
         if name == "importDocument"{ImportService.openDocument(self);return}
         if name == "importMermaid"{ImportService.mermaid(self);return}
         inputGroup = nil
-        if name == "formatDocument" {
+        if name.hasPrefix("export:") || name=="present"{sendWeb?(["type":"preferences","values":Preferences.shared.web])}
+        if name == "formatDocument" && !webReady {
             replaceSource(MarkdownCommands.format(source),selection:selection.range.nsRange);inputGroup=nil;return
         }
         if selection.surface != "rendered",let edit=sourceCommand(name,value:value){

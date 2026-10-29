@@ -11,6 +11,22 @@ import RemarqueCore
         if smartKey(event){return}
         super.keyDown(with:event)
     }
+    override func performDragOperation(_ sender:any NSDraggingInfo)->Bool{
+        guard let session else{return super.performDragOperation(sender)}
+        let pasteboard=sender.draggingPasteboard
+        if let urls=pasteboard.readObjects(forClasses:[NSURL.self],options:nil) as? [URL],let url=urls.first{
+            if url.isFileURL,["png","jpg","jpeg","gif","svg","tiff","webp"].contains(url.pathExtension.lowercased()){
+                let point=convert(sender.draggingLocation,from:nil),offset=characterIndexForInsertion(at:point)
+                session.select(.init(offset,offset),surface:"source")
+                do{try MediaStore.insert(Data(contentsOf:url),extension:url.pathExtension,in:session);return true}catch{session.error=error.localizedDescription;return false}
+            }
+            if ["https","http"].contains(url.scheme?.lowercased() ?? ""){
+                let range=selectedRange(),label=(string as NSString).substring(with:range),text="[\(label.isEmpty ? url.absoluteString:label.replacingOccurrences(of:"]",with:"\\]"))](\(url.absoluteString.replacingOccurrences(of:")",with:"%29")))"
+                session.apply([.init(.init(range.location,NSMaxRange(range)),text)],label:"Insert Link");return true
+            }
+        }
+        return super.performDragOperation(sender)
+    }
     override func paste(_ sender:Any?){
         if let session,let data=NSPasteboard.general.data(forType:.png){do{try MediaStore.insert(data,extension:"png",in:session)}catch{session.error=error.localizedDescription};return}
         if let session,let data=NSPasteboard.general.data(forType:.tiff),let rep=NSBitmapImageRep(data:data),let png=rep.representation(using:.png,properties:[:]){do{try MediaStore.insert(png,extension:"png",in:session)}catch{session.error=error.localizedDescription};return}
@@ -33,7 +49,7 @@ struct SourceEditor: NSViewRepresentable {
         text.isAutomaticQuoteSubstitutionEnabled=false;text.isAutomaticDashSubstitutionEnabled=false
         text.isAutomaticTextReplacementEnabled=false;text.isContinuousSpellCheckingEnabled=true
         text.usesFindBar=true;text.setAccessibilityLabel("Markdown source editor");text.setAccessibilityIdentifier("sourceEditor")
-        text.string=session.source;text.delegate=context.coordinator;text.highlightSyntax()
+        text.registerForDraggedTypes([.fileURL,.URL,.png,.tiff]);text.string=session.source;text.delegate=context.coordinator;text.highlightSyntax()
         context.coordinator.textView=text;scroll.documentView=text
         session.revealSource = { [weak text, weak coordinator=context.coordinator] range in
             guard let text, let coordinator, range.location+range.length <= (text.string as NSString).length else{return}
@@ -70,6 +86,7 @@ struct SourceEditor: NSViewRepresentable {
         let session:DocumentSession
         weak var textView:SourceTextView?
         var updating=false
+        var compositionSource:String?
         init(_ session:DocumentSession){self.session=session}
         @objc func scrolled(_ notification:Notification){
             guard let t=textView,t.window?.firstResponder===t,Preferences.shared.values.scrollSync else{return}
@@ -78,7 +95,20 @@ struct SourceEditor: NSViewRepresentable {
             session.sendWeb?(["type":"scroll","revision":session.revision,"start":offset])
             t.enclosingScrollView?.verticalRulerView?.needsDisplay=true
         }
-        func textDidChange(_ notification:Notification){guard !updating,let t=textView,!t.hasMarkedText() else{return};session.replaceSource(t.string,selection:t.selectedRange());t.highlightSyntax()}
+        func textDidChange(_ notification:Notification){
+            guard !updating,let t=textView else{return}
+            if t.hasMarkedText(){if compositionSource==nil{compositionSource=session.source};return}
+            if let baseline=compositionSource,baseline != session.source{
+                compositionSource=nil
+                let local=DocumentEngine.minimalPatch(from:baseline,to:t.string),external=DocumentEngine.minimalPatch(from:baseline,to:session.source)
+                if local.range.end<external.range.start || local.range.start>external.range.end{
+                    let delta=external.text.utf16.count-external.range.length,shift=local.range.start>external.range.end ? delta:0
+                    session.apply([.init(.init(local.range.start+shift,local.range.end+shift),local.text)],selection:.init(.init(local.range.start+shift+local.text.utf16.count,local.range.start+shift+local.text.utf16.count)),label:"Compose")
+                }else{AppWindows.shared.newDocument(text:t.string);session.error="An external edit interrupted text composition. Your complete draft has been preserved in a new unsaved document."}
+                updating=true;t.string=session.source;t.setSelectedRange(session.selection.range.nsRange);updating=false
+            }else{compositionSource=nil;session.replaceSource(t.string,selection:t.selectedRange())}
+            t.highlightSyntax()
+        }
         func textViewDidChangeSelection(_ notification:Notification){
             guard !updating,let t=textView,t.window?.firstResponder===t else{return}
             DispatchQueue.main.async { [weak self,weak t] in

@@ -19,3 +19,11 @@ final class EditingTests:XCTestCase {
         XCTAssertEqual(MarkdownCommands.format(text),"# Title  \n\n```swift\nlet x = 1   \n```\n\n$$\nx   \n$$\nDone\n")
     }
 }
+
+extension EditingTests {
+    func testNestedBoldItalicCaretTogglesDoNotConsumeTheOtherStyle(){
+        XCTAssertEqual(MarkdownCommands.wrap("***word***",selection:.init(5,5),marker:"*").patch.text,"**word**")
+        XCTAssertEqual(MarkdownCommands.wrap("***word***",selection:.init(5,5),marker:"**").patch.text,"*word*")
+        XCTAssertEqual(MarkdownCommands.wrap("**word**",selection:.init(4,4),marker:"*").patch.text,"*word*")
+    }
+}

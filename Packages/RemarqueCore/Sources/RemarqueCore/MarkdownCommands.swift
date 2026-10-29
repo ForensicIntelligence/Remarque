@@ -12,14 +12,23 @@ public enum MarkdownCommands {
         if r.length==0 {
             // A caret inside an existing styled span toggles that entire span.
             let escaped=NSRegularExpression.escapedPattern(for:marker)
-            if let regex=try? NSRegularExpression(pattern:escaped+"([^\\n]+?)"+escaped),let match=regex.matches(in:source,range:NSRange(location:0,length:ns.length)).first(where:{$0.range.location<=r.start && NSMaxRange($0.range)>=r.start}) {
-                let content=ns.substring(with:match.range(at:1));return .init(.init(.init(match.range.location,NSMaxRange(match.range)),content),.init(match.range.location,match.range.location+content.utf16.count))
+            let candidates: [(String,Int)]
+            if marker=="*" || marker=="**" {
+                candidates=[("(?<!\\*)\\*{3}([^\\n]+?)\\*{3}(?!\\*)",marker.count),("(?<!\\*)"+escaped+"(?!\\*)([^\\n]+?)"+escaped+"(?!\\*)",marker.count)]
+            }else{candidates=[(escaped+"([^\\n]+?)"+escaped,marker.utf16.count)]}
+            for (pattern,width) in candidates {
+                if let regex=try? NSRegularExpression(pattern:pattern),let match=regex.matches(in:source,range:NSRange(location:0,length:ns.length)).first(where:{$0.range.location<=r.start && NSMaxRange($0.range)>=r.start}) {
+                    let content=ns.substring(with:NSRange(location:match.range.location+width,length:match.range.length-width*2))
+                    return .init(.init(.init(match.range.location,NSMaxRange(match.range)),content),.init(match.range.location,match.range.location+content.utf16.count))
+                }
             }
             let word=try? NSRegularExpression(pattern:"[\\p{L}\\p{N}_]+")
             if let found=word?.matches(in:source,range:NSRange(location:0,length:ns.length)).first(where:{$0.range.location<=r.start && NSMaxRange($0.range)>=r.start}) {r = .init(found.range.location,NSMaxRange(found.range))}
         }
         let width=marker.utf16.count
-        if r.start>=width,r.end+width<=ns.length,ns.substring(with:NSRange(location:r.start-width,length:width))==marker,ns.substring(with:NSRange(location:r.end,length:width))==marker {
+        let beforeStars=ns.substring(to:r.start).reversed().prefix(while:{$0=="*"}).count,afterStars=ns.substring(from:r.end).prefix(while:{$0=="*"}).count
+        let exactDelimiter=marker != "*" || (beforeStars%2==1 && afterStars%2==1)
+        if exactDelimiter,r.start>=width,r.end+width<=ns.length,ns.substring(with:NSRange(location:r.start-width,length:width))==marker,ns.substring(with:NSRange(location:r.end,length:width))==marker {
             let text=ns.substring(with:r.nsRange);return .init(.init(.init(r.start-width,r.end+width),text),.init(r.start-width,r.end-width))
         }
         let text=r.length>0 ? ns.substring(with:r.nsRange):placeholder

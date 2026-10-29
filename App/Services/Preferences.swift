@@ -17,15 +17,18 @@ struct PreferenceValues:Codable {
     var mermaidEnabled=true,mermaidLive=true,mermaidFollowsTheme=true,mermaidSource=false,mermaidOutline=true,visualEditing=true,resizeDiagrams=true
     var diagramWidth=720.0,diagramHeight=420.0,diagramAlignment="Center"
     var exportFormat="HTML",imageStorage="Linked",titlePage=false,toc=false,pageNumbers=false,landscape=false,includeFrontMatter=false,embedImages=false,inlineCSS=true,htmlMermaidSource=false,docxMermaidSource=false,pageSize="Letter"
+    var customCSS="",customCSSBookmark=""
     var snippets=Snippet.builtins
 }
 @MainActor final class Preferences:ObservableObject {
     static let shared=Preferences()
     @Published var values:PreferenceValues {didSet{save()}}
-    private init(){if let data=UserDefaults.standard.data(forKey:"preferences.v3"),let decoded=try? JSONDecoder().decode(PreferenceValues.self,from:data){values=decoded}else{values=PreferenceValues()}}
+    private init(){if let data=UserDefaults.standard.data(forKey:"preferences.v3"),let defaults=try? JSONSerialization.jsonObject(with:JSONEncoder().encode(PreferenceValues())) as? [String:Any],let saved=try? JSONSerialization.jsonObject(with:data) as? [String:Any],let merged=try? JSONSerialization.data(withJSONObject:defaults.merging(saved,uniquingKeysWith:{$1})),let decoded=try? JSONDecoder().decode(PreferenceValues.self,from:merged){values=decoded}else{if let old=UserDefaults.standard.data(forKey:"preferences.v3"){UserDefaults.standard.set(old,forKey:"preferences.v3.corruptBackup.\(Int(Date().timeIntervalSince1970))")};values=PreferenceValues()}}
     func save(){if let data=try? JSONEncoder().encode(values){UserDefaults.standard.set(data,forKey:"preferences.v3")};applyTheme()}
-    func applyTheme(){switch values.theme {case "Paper":NSApp.appearance=NSAppearance(named:.aqua);case "Midnight":NSApp.appearance=NSAppearance(named:.darkAqua);default:NSApp.appearance=nil}}
-    var web:[String:Any]{guard let data=try? JSONEncoder().encode(values) else{return [:]};return (try? JSONSerialization.jsonObject(with:data)) as? [String:Any] ?? [:]}
+    func applyTheme(){switch values.theme {case "Paper":NSApp.appearance=NSAppearance(named:.aqua);case "Midnight","Graphite":NSApp.appearance=NSAppearance(named:.darkAqua);default:NSApp.appearance=nil}}
+    var web:[String:Any]{guard let data=try? JSONEncoder().encode(values) else{return [:]};var object=(try? JSONSerialization.jsonObject(with:data)) as? [String:Any] ?? [:];object.removeValue(forKey:"customCSSBookmark")
+        if let bookmark=Data(base64Encoded:values.customCSSBookmark),!bookmark.isEmpty{var stale=false;if let url=try? URL(resolvingBookmarkData:bookmark,options:.withSecurityScope,relativeTo:nil,bookmarkDataIsStale:&stale){let access=url.startAccessingSecurityScopedResource();defer{if access{url.stopAccessingSecurityScopedResource()}};if let css=try? String(contentsOf:url,encoding:.utf8),css.utf8.count<1_048_576{object["customCSS"]=css}}}
+        return object}
 }
 
 struct SettingsView:View {
@@ -88,6 +91,11 @@ struct SettingsView:View {
                     Picker("Paper size",selection:$preferences.values.pageSize){Text("Letter");Text("A4")}
                     Toggle("Landscape",isOn:$preferences.values.landscape);Toggle("Include front matter",isOn:$preferences.values.includeFrontMatter);Toggle("Embed images",isOn:$preferences.values.embedImages);Toggle("Inline CSS",isOn:$preferences.values.inlineCSS)
                     Toggle("Include Mermaid source in HTML",isOn:$preferences.values.htmlMermaidSource);Toggle("Include Mermaid source in DOCX",isOn:$preferences.values.docxMermaidSource)
+                    HStack{Button("Choose Custom CSS…"){
+                        let panel=NSOpenPanel();panel.allowedContentTypes=[.plainText];panel.allowsOtherFileTypes=true
+                        if panel.runModal() == .OK,let url=panel.url,let css=try? String(contentsOf:url,encoding:.utf8),css.utf8.count<1_048_576{preferences.values.customCSS=css;preferences.values.customCSSBookmark=(try? url.bookmarkData(options:.withSecurityScope,includingResourceValuesForKeys:nil,relativeTo:nil).base64EncodedString()) ?? ""}
+                    };Button("Clear CSS"){preferences.values.customCSS="";preferences.values.customCSSBookmark=""}.disabled(preferences.values.customCSS.isEmpty)}
+                    Text(preferences.values.customCSS.isEmpty ? "No custom stylesheet":"Custom stylesheet stored locally for HTML and slides.").font(.caption)
                 case "Snippets":
                     ForEach($preferences.values.snippets){$snippet in
                         VStack(alignment:.leading){HStack{TextField("Name",text:$snippet.name);TextField("Trigger",text:$snippet.trigger).frame(width:110);Button(role:.destructive){preferences.values.snippets.removeAll{$0.id==snippet.id}}label:{Image(systemName:"trash")}}

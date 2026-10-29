@@ -40,6 +40,16 @@ public actor HistoryStore {
         try JSONEncoder().encode(keep).write(to:directory.appendingPathComponent("index.json"),options:.atomic)
         for e in remove{try? fm.removeItem(at:directory.appendingPathComponent(e.id+".md"))}
     }
+    public func copyHistory(from oldKey:String,to newKey:String)throws{
+        guard oldKey != newKey else{return};let previous=try list(key:oldKey);guard !previous.isEmpty else{return}
+        var entries=try list(key:newKey);let existing=Set(entries.map(\.id)),destination=folder(newKey)
+        try fm.createDirectory(at:destination,withIntermediateDirectories:true)
+        for entry in previous where !existing.contains(entry.id){
+            let data=try Data(contentsOf:folder(oldKey).appendingPathComponent(entry.id+".md"))
+            try data.write(to:destination.appendingPathComponent(entry.id+".md"),options:.atomic);entries.append(entry)
+        }
+        try JSONEncoder().encode(entries.sorted{$0.date>$1.date}).write(to:destination.appendingPathComponent("index.json"),options:.atomic)
+    }
     public func text(key:String,id:String)throws->String{
         guard try list(key:key).contains(where:{$0.id==id}) else{throw CocoaError(.fileReadNoSuchFile)}
         return try SourceBuffer(data:Data(contentsOf:folder(key).appendingPathComponent(id+".md"))).text

@@ -27,8 +27,24 @@ struct WorkspaceHit:Identifiable {var note:WorkspaceNote;var line:Int;var excerp
     @Published var loading=false
     @Published var error:String?
     private var scan:Task<Void,Never>?
-    private init(){if let path=UserDefaults.standard.string(forKey:"workspace.path"),let root=FileGrants.shared.roots.first(where:{$0.path==path}){folder=root;refresh()}}
-    func choose(){guard let url=FileGrants.shared.chooseFolder(title:"Open Folder as Workspace") else{return};folder=url;UserDefaults.standard.set(url.path,forKey:"workspace.path");refresh()}
+    private var watch:WorkspaceWatcher?
+    private var refreshDelay:Task<Void,Never>?
+    private init(){if let path=UserDefaults.standard.string(forKey:"workspace.path"),let root=FileGrants.shared.roots.first(where:{$0.path==path}){folder=root;startWatching();refresh()}}
+    func choose(){guard let url=FileGrants.shared.chooseFolder(title:"Open Folder as Workspace") else{return};folder=url;UserDefaults.standard.set(url.path,forKey:"workspace.path");startWatching();refresh()}
+    private func startWatching(){
+        if let watch{NSFileCoordinator.removeFilePresenter(watch)}
+        guard let folder else{return};let watcher=WorkspaceWatcher(folder){[weak self] in Task{@MainActor in
+            self?.refreshDelay?.cancel();self?.refreshDelay=Task{try? await Task.sleep(for:.milliseconds(350));guard !Task.isCancelled else{return};self?.refresh()}
+        }};watch=watcher;NSFileCoordinator.addFilePresenter(watcher)
+    }
+    func currentNotes()->[WorkspaceNote]{
+        let open=Dictionary(uniqueKeysWithValues:NSDocumentController.shared.documents.compactMap{doc->(String,String)? in guard let doc=doc as? RemarqueDocument,let path=doc.fileURL?.path else{return nil};return(path,doc.session.source)})
+        return notes.map{note in var value=note;if let text=open[note.path]{value.text=text};return value}
+    }
+    func quickOpen(_ query:String)->[WorkspaceNote]{
+        guard !query.isEmpty else{return notes};let needle=Array(query.lowercased())
+        return notes.compactMap{note->(WorkspaceNote,Int)? in let hay=Array(note.relative.lowercased());var cursor=0,score=0;for c in needle{guard let index=hay[cursor...].firstIndex(of:c) else{return nil};score+=index-cursor;cursor=index+1};return (note,score+hay.count/8)}.sorted{$0.1<$1.1}.map{$0.0}
+    }
     func refresh(){
         guard let folder else{return};scan?.cancel();loading=true
         scan=Task{let entries=await Task.detached(priority:.utility){()->[WorkspaceNote] in
@@ -52,15 +68,15 @@ struct WorkspaceHit:Identifiable {var note:WorkspaceNote;var line:Int;var excerp
     func wiki(_ target:String){let name=target.components(separatedBy:"#")[0];let candidates=notes.filter{$0.name.caseInsensitiveCompare(name) == .orderedSame || $0.relative.lowercased()==name.lowercased() || ($0.relative as NSString).deletingPathExtension.lowercased()==name.lowercased()};if candidates.count==1 {open(candidates[0])}else{query=name;tab="Notes";AppWindows.shared.workspace()}}
     func search(_ query:String)->[WorkspaceHit]{
         guard !query.isEmpty else{return []};var hits:[WorkspaceHit]=[]
-        for note in notes {var offset=0;for (index,line) in note.text.components(separatedBy:"\n").enumerated(){if line.localizedCaseInsensitiveContains(query){hits.append(.init(note:note,line:index+1,excerpt:line,offset:offset));if hits.count>=1000{return hits}};offset+=line.utf16.count+1}}
+        for note in currentNotes() {var offset=0;for (index,line) in note.text.components(separatedBy:"\n").enumerated(){if line.localizedCaseInsensitiveContains(query){hits.append(.init(note:note,line:index+1,excerpt:line,offset:offset));if hits.count>=1000{return hits}};offset+=line.utf16.count+1}}
         return hits
     }
-    func backlinks(to url:URL?)->[WorkspaceNote]{guard let url else{return []};let name=url.deletingPathExtension().lastPathComponent.lowercased();return notes.filter{note in note.path != url.path && note.text.lowercased().range(of:"\\[\\["+NSRegularExpression.escapedPattern(for:name)+"(?:\\||#|\\]\\])",options:.regularExpression) != nil}}
+    func backlinks(to url:URL?)->[WorkspaceNote]{guard let url else{return []};let name=url.deletingPathExtension().lastPathComponent.lowercased();return currentNotes().filter{note in note.path != url.path && note.text.lowercased().range(of:"\\[\\["+NSRegularExpression.escapedPattern(for:name)+"(?:\\||#|\\]\\])",options:.regularExpression) != nil}}
 }
 struct WorkspaceView:View {
     @ObservedObject var model=WorkspaceModel.shared
     @State private var selected:String?
-    var filtered:[WorkspaceNote]{model.notes.filter{model.query.isEmpty || $0.relative.localizedCaseInsensitiveContains(model.query)}}
+    var filtered:[WorkspaceNote]{model.quickOpen(model.query)}
     var body:some View{
         VStack{
             HStack{Text(model.folder?.lastPathComponent ?? "Workspace").font(.title2);Spacer();if model.loading{ProgressView().controlSize(.small)};Button("Refresh"){model.refresh()};Button("Open Folder…"){model.choose()}}.padding(.horizontal)
@@ -73,4 +89,16 @@ struct WorkspaceView:View {
             }
         }.padding(.vertical).frame(width:760,height:600).alert("Workspace",isPresented:Binding(get:{model.error != nil},set:{if !$0{model.error=nil}})){Button("OK"){model.error=nil}}message:{Text(model.error ?? "")}
     }
+}
+
+private final class WorkspaceWatcher:NSObject,NSFilePresenter,@unchecked Sendable{
+    let presentedItemURL:URL?
+    let presentedItemOperationQueue=OperationQueue()
+    private let changed:@Sendable ()->Void
+    init(_ url:URL,_ changed:@escaping @Sendable ()->Void){presentedItemURL=url;self.changed=changed;super.init();presentedItemOperationQueue.maxConcurrentOperationCount=1}
+    func presentedItemDidChange(){changed()}
+    func presentedSubitemDidChange(at url:URL){changed()}
+    func presentedSubitemDidAppear(at url:URL){changed()}
+    func presentedSubitem(at oldURL:URL,didMoveTo newURL:URL){changed()}
+    func accommodatePresentedSubitemDeletion(at url:URL,completionHandler:@escaping ((any Error)?)->Void){changed();completionHandler(nil)}
 }

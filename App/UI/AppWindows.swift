@@ -26,7 +26,7 @@ struct StartView:View {
     let templates=["Blank Document","Guided Tour","Technical Spec","Meeting Notes","Diagram Doc","Product Plan"]
     var body:some View{
         HStack(spacing:0){
-            VStack(alignment:.leading,spacing:18){Image(nsImage:NSApp.applicationIconImage).resizable().frame(width:74,height:74);Text("Remarque").font(.system(size:32,weight:.bold));Text("Markdown. Beautifully refined.").foregroundStyle(.secondary);Text("3.0 · Development build").font(.caption).foregroundStyle(.secondary)
+            VStack(alignment:.leading,spacing:18){Image(nsImage:NSApp.applicationIconImage).resizable().frame(width:74,height:74);Text("Remarque").font(.system(size:32,weight:.bold));Text("Markdown. Beautifully refined.").foregroundStyle(.secondary);Text(BuildInfo.label).font(.caption).foregroundStyle(.secondary)
                 Button("Open Document…"){NSDocumentController.shared.openDocument(nil)}.keyboardShortcut("o");Button("Documentation"){AppWindows.shared.help()};Button("Settings…"){AppWindows.shared.settings()};Spacer()
                 Link("Forensic Intelligence",destination:URL(string:"https://forensicintelligence.ca")!)
             }.padding(30).frame(width:280).background(.quaternary.opacity(0.3))

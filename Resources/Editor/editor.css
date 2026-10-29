@@ -23,3 +23,4 @@ blockquote[data-callout]:before{content:attr(data-callout);display:block;font:70
 .hljs-keyword,.hljs-selector-tag,.hljs-literal{color:#a05bd0}.hljs-string,.hljs-attr{color:#328b58}.hljs-comment{color:var(--muted);font-style:italic}.hljs-number,.hljs-symbol,.hljs-variable{color:#b87b25}.hljs-title,.hljs-built_in{color:#398abf}
 body[data-mode=liveSource]{padding:22px}.live-source-block{display:block;width:100%;min-height:80px;resize:none;background:var(--code);color:var(--ink);border:1px solid var(--accent);border-radius:6px;padding:12px;font:15px/1.45 ui-monospace,monospace;outline:none}.live-source-block:focus{box-shadow:0 0 0 2px #3379bd33}
 .live-block-hidden{display:none!important}
+body.focus-mode .ProseMirror > *{opacity:.3;transition:opacity .12s}body.focus-mode .ProseMirror > .focused-block,body.focus-mode .ProseMirror > .selected,body.focus-mode .ProseMirror > *:focus-within{opacity:1}
