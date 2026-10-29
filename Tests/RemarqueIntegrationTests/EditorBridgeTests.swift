@@ -1,6 +1,7 @@
 import XCTest
 import WebKit
 import AppKit
+import PDFKit
 @testable import Remarque
 import RemarqueCore
 
@@ -54,5 +55,15 @@ import RemarqueCore
         doc.updateChangeCount(.changeAutosaved)
         XCTAssertTrue(doc.isDocumentEdited,"Recovery autosave must not mark an untitled document saved")
         doc.close()
+    }
+    func testNativePDFPagination()async throws{
+        let session=DocumentSession(),url=FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString+".pdf")
+        defer{try? FileManager.default.removeItem(at:url)}
+        let body=(1...160).map{"<p>Paragraph \($0): This is a pagination test of the locally rendered document.</p>"}.joined()
+        ExportService.shared.exportPDF("<!doctype html><html><head><style>body{font:14pt Arial}p{margin:18pt 0}</style></head><body><h1>Pagination test</h1>"+body+"</body></html>",to:url,session:session)
+        try await waitUntil{FileManager.default.fileExists(atPath:url.path) || session.error != nil}
+        XCTAssertNil(session.error)
+        let pdf=try XCTUnwrap(PDFDocument(url:url));XCTAssertGreaterThan(pdf.pageCount,2)
+        XCTAssertTrue(pdf.string?.contains("Paragraph 160") ?? false,"The final paragraph must survive pagination")
     }
 }

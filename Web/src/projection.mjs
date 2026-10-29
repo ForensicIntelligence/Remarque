@@ -8,9 +8,12 @@ import {frontmatterFromMarkdown} from 'mdast-util-frontmatter';
 import {decodeString} from 'micromark-util-decode-string';
 import emoji from 'emoji-dictionary';
 import {schema} from './schema.mjs';
+import {extendMarkdown} from './markdown-extensions.mjs';
 
 let nextIdentity = 1;
-export const parse = source => fromMarkdown(source, {extensions:[gfm(),math(),frontmatter(['yaml','toml'])], mdastExtensions:[gfmFromMarkdown(),mathFromMarkdown(),frontmatterFromMarkdown(['yaml','toml'])]});
+const baseParse = source => fromMarkdown(source, {extensions:[gfm(),math(),frontmatter(['yaml','toml'])], mdastExtensions:[gfmFromMarkdown(),mathFromMarkdown(),frontmatterFromMarkdown(['yaml','toml'])]});
+
+export const parse=source=>extendMarkdown(baseParse(source),source,baseParse);
 
 export function applyPatches(source, patches) {
   const sorted = [...patches].sort((a,b)=>a.range.start-b.range.start);
@@ -69,7 +72,7 @@ export function textBoundaries(raw, value, start) {
 export function project(source, previous=null, patches=[]) {
   const tree=parse(source), records=new Map(), leaves=[], refs=new Map(), reuse=new Map();
   if(previous)for(const r of previous.records.values()) {
-    const start=mapOffset(r.start,patches,-1),end=mapOffset(r.end,patches,1);
+    const start=mapOffset(r.mdast?.position?.start.offset??r.start,patches,-1),end=mapOffset(r.mdast?.position?.end.offset??r.end,patches,1);
     reuse.set(`${r.kind}:${start}:${end}`,r.id);
   }
   for(const n of tree.children)if(n.type==='definition')refs.set(n.identifier,n);
@@ -150,7 +153,17 @@ export function project(source, previous=null, patches=[]) {
     switch(n.type){
       case 'paragraph':return schema.nodes.paragraph.create(attrs,textChildren());
       case 'heading':return schema.nodes.heading.create({...attrs,level:n.depth},textChildren());
-      case 'blockquote':return schema.nodes.blockquote.create(attrs,children());
+      case 'blockquote':{
+        const first=n.children[0]?.children?.[0],match=first?.type==='text'&&first.value.match(/^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\](?:\r?\n|$)/i);
+        if(!match)return schema.nodes.blockquote.create(attrs,children());
+        const copy=structuredClone(n);copy.children[0].children[0].value=first.value.slice(match[0].length);copy.children[0].children[0].position.start.offset+=match[0].length;
+        return schema.nodes.blockquote.create({...attrs,callout:match[1].toUpperCase()},copy.children.map(block));
+      }
+      case 'footnoteDefinition':return schema.nodes.footnote_definition.create({...attrs,label:n.label||n.identifier},children());
+      case 'definitionList':return schema.nodes.definition_list.create(attrs,children());
+      case 'definitionTerm':return schema.nodes.definition_term.create(attrs,textChildren());
+      case 'definitionDescription':return schema.nodes.definition_description.create(attrs,children());
+      case 'details':return schema.nodes.details.create({...attrs,summary:n.summary},children().length?children():schema.nodes.paragraph.create());
       case 'list':return schema.nodes[n.ordered?'ordered_list':'bullet_list'].create({...attrs,order:n.start||1},children());
       case 'listItem':return schema.nodes.list_item.create({...attrs,checked:n.checked??null},children());
       case 'thematicBreak':return schema.nodes.horizontal_rule.create(attrs);
@@ -176,7 +189,9 @@ export function project(source, previous=null, patches=[]) {
     if(nodes[i].type.name==='opaque'&&/^<!--\s*(?:remarque|remarkable):mermaid\b/.test(nodes[i].attrs.raw)&&nodes[i+1].type.name==='mermaid'){
       const comment=nodes[i],diagram=nodes[i+1],r=records.get(diagram.attrs.origin),c=records.get(comment.attrs.origin);
       r.metadata=comment.attrs.raw;r.start=c.start;r.raw=source.slice(r.start,r.end);
-      nodes[i+1]=diagram.type.create({...diagram.attrs,metadata:comment.attrs.raw});nodes.splice(i,1);i--;
+      const old=previous&&[...previous.records.values()].find(pr=>pr.kind==='code'&&pr.pmNode?.type.name==='mermaid'&&mapOffset(pr.start,patches,-1)===r.start&&mapOffset(pr.end,patches,1)===r.end);
+      if(old&&old.id!==r.id){records.delete(r.id);r.id=old.id;records.set(r.id,r);}
+      nodes[i+1]=diagram.type.create({...diagram.attrs,origin:r.id,metadata:comment.attrs.raw});nodes.splice(i,1);i--;
     }
   }
   const doc=schema.nodes.doc.create(null,nodes.length?nodes:[schema.nodes.paragraph.create()]);
@@ -231,7 +246,12 @@ export function serialize(node) {
     case 'doc':return content.map(serialize).join('\n\n');
     case 'paragraph':return content.map(serializeInline).join('');
     case 'heading':return '#'.repeat(node.attrs.level)+' '+content.map(serializeInline).join('');
-    case 'blockquote':return content.map(serialize).join('\n\n').split('\n').map(l=>'> '+l).join('\n');
+    case 'blockquote':return (node.attrs.callout?'> [!'+node.attrs.callout+']\n':'')+content.map(serialize).join('\n\n').split('\n').map(l=>'> '+l).join('\n');
+    case 'footnote_definition':return '[^'+node.attrs.label+']: '+content.map(serialize).join('\n\n').replace(/\n/g,'\n    ');
+    case 'definition_list':return content.map(serialize).join('\n');
+    case 'definition_term':return content.map(serializeInline).join('');
+    case 'definition_description':return ': '+content.map(serialize).join('\n\n').replace(/\n/g,'\n  ');
+    case 'details':return '<details>\n<summary>'+node.attrs.summary.replace(/[<>]/g,'')+'</summary>\n\n'+content.map(serialize).join('\n\n')+'\n\n</details>';
     case 'bullet_list':case 'ordered_list':return content.map((n,i)=>{let body=serialize(n),prefix=node.type.name==='ordered_list'?`${node.attrs.order+i}. `:'- ';if(n.attrs.checked!==null)prefix+=n.attrs.checked?'[x] ':'[ ] ';const lines=body.split('\n');return prefix+lines[0]+(lines.length>1?'\n'+lines.slice(1).map(l=>' '.repeat(prefix.length)+l).join('\n'):'');}).join('\n');
     case 'list_item':return content.map(serialize).join('\n\n');
     case 'horizontal_rule':return '---';

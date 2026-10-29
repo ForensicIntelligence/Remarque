@@ -20,6 +20,9 @@ struct OutlineEntry: Identifiable, Codable {
     @Published var outline: [OutlineEntry] = []
     @Published var error: String?
     @Published var activeTab = "markdown"
+    @Published var activeMarks:Set<String>=[]
+    @Published var selectedKind="text"
+    @Published var selectionInTable=false
     @Published var showOutline = true
     @Published var showSource = true
     @Published var showPreview = true
@@ -36,16 +39,22 @@ struct OutlineEntry: Identifiable, Codable {
     @Published var missingMedia:String?
     private var recoveryTask:Task<Void,Never>?
     var onChange: (() -> Void)?
-    var sendWeb: (([String: Any]) -> Void)?
+    var webReceivers:[UUID:([String:Any])->Void]=[:]
+    var sendWeb: (([String: Any]) -> Void)? {{[weak self] message in self?.webReceivers.values.forEach{$0(message)}}}
     var revealSource: ((NSRange) -> Void)?
+    var scrollSource: ((Int)->Void)?
     var inputGroup: (String, String, Date)?
     init(_ source: String = "") { self.source = source; engine = DocumentEngine(source) }
     var dirty: Bool { engine.isDirty }
     func engineMarkInitialUnsaved(){engine.markSaved("");objectWillChange.send();onChange?();scheduleRecovery()}
-    func load(_ text: String) { engine = DocumentEngine(text); source = text; revision = 0; selection = .init(); broadcast() }
+    func load(_ text: String) {
+        if webReady || revision>0{engine.reload(text)}else{engine=DocumentEngine(text)}
+        source=text;revision=engine.revision;selection=engine.selection;broadcast()
+    }
     func select(_ range: SourceRange, surface: String, reveal: Bool = false) {
         engine.select(.init(range, surface: surface)); selection = engine.selection
         if surface == "rendered" || reveal { revealSource?(selection.range.nsRange) }
+        if surface == "rendered"{sendWeb?(["type":"selection","target":"liveSource","revision":revision,"start":range.start,"end":range.end,"reveal":true])}
         if surface != "rendered" { sendWeb?(["type":"selection", "documentID":id, "revision":revision, "start":range.start,"end":range.end,"reveal":reveal]) }
     }
     func group(for surface: String) -> String {
@@ -71,6 +80,9 @@ struct OutlineEntry: Identifiable, Codable {
         engine.markSaved(text);objectWillChange.send()
         Task{if let key=fileURL?.path{do{try await LocalStorage.history.capture(key:key,text:text,label:"Saved")}catch{self.error=error.localizedDescription}};try? await LocalStorage.history.removeRecovery(id)}
     }
+    func acceptExternalBaseline(_ text:String){
+        engine.markSaved(text);objectWillChange.send();scheduleRecovery()
+    }
     private func scheduleRecovery(){
         guard !readOnly else{return};recoveryTask?.cancel()
         recoveryTask=Task{[weak self] in
@@ -95,6 +107,8 @@ struct OutlineEntry: Identifiable, Codable {
         if name == "undo" { undo(); return }; if name == "redo" { redo(); return }
         if name == "image"{MediaStore.insertFile(in:self);return}
         if name == "printSource"{ExportService.shared.printSource(self);return}
+        if name == "importDocument"{ImportService.openDocument(self);return}
+        if name == "importMermaid"{ImportService.mermaid(self);return}
         inputGroup = nil
         if name == "formatDocument" {
             replaceSource(MarkdownCommands.format(source),selection:selection.range.nsRange);inputGroup=nil;return

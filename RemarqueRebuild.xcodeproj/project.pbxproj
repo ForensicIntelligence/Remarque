@@ -20,6 +20,7 @@
 		406C89E9AE534484F8C586C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE945BAED4C2A50018A54D0F /* AppDelegate.swift */; };
 		454CACB48F1218D652234E49 /* EditorBridgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77387125256BD12B11B0A1B0 /* EditorBridgeTests.swift */; };
 		57E4AFAC86798ED36405D6FD /* RemarqueDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328B223220219ACFA7ACB51F /* RemarqueDocument.swift */; };
+		5E90F21DEA60A0B32F220AA1 /* AppIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD61DF3A2767349CA8AA4188 /* AppIntents.swift */; };
 		6BA2E151E8AD850D8E742B7E /* EditorWorkspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425E733935516939F01FE50C /* EditorWorkspace.swift */; };
 		78C8D05FEEAA9996CE3BF943 /* MediaStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF6E4A63038F31417B95D7 /* MediaStore.swift */; };
 		86B57090D722D94B4D0BFB95 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB653EB923D71C0CCD563DE /* Preferences.swift */; };
@@ -28,6 +29,7 @@
 		8994C47A6E333DA750B56208 /* LocalHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83B4389FE21A7C5F6C470A /* LocalHistory.swift */; };
 		C09F04D0A03960CFB4CC3FA8 /* SourceEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BF324FD8B260F09D87ACA5 /* SourceEditor.swift */; };
 		CF48EE11EF3E4707BBBE3472 /* RemarqueCore in Frameworks */ = {isa = PBXBuildFile; productRef = 5E0D68F945584612D0017CFF /* RemarqueCore */; };
+		D38239E5C587648732968C1A /* ImportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099AF002332138F71D42A5B /* ImportService.swift */; };
 		E4AB747937655C5C195D5AF1 /* SourceEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D076B846284DBB351A2B688 /* SourceEditing.swift */; };
 		FD2CAB4B39AC147CC16BCA03 /* SearchAndPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210DAE90E4E0381704845466 /* SearchAndPalette.swift */; };
 /* End PBXBuildFile section */
@@ -62,8 +64,10 @@
 		BB26DB7DF6B4D4031D0F8B88 /* Editor */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Editor; path = Resources/Editor; sourceTree = SOURCE_ROOT; };
 		C0BF324FD8B260F09D87ACA5 /* SourceEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditor.swift; sourceTree = "<group>"; };
 		C2F8AB2F476E3409F8F840E4 /* DocumentSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentSession.swift; sourceTree = "<group>"; };
+		CD61DF3A2767349CA8AA4188 /* AppIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntents.swift; sourceTree = "<group>"; };
 		D2F3A31C45014C2DC02D896D /* ExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportService.swift; sourceTree = "<group>"; };
 		DE945BAED4C2A50018A54D0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E099AF002332138F71D42A5B /* ImportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportService.swift; sourceTree = "<group>"; };
 		EC33C0137B1F7E8ED947D323 /* Help */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Help; path = Resources/Help; sourceTree = SOURCE_ROOT; };
 		EE481DE4204CAF58D42D6FDE /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
 		F11F38B88953917A7D64DAEA /* AppWindows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindows.swift; sourceTree = "<group>"; };
@@ -170,7 +174,9 @@
 		F05428F0A7BB1753CCA72648 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CD61DF3A2767349CA8AA4188 /* AppIntents.swift */,
 				D2F3A31C45014C2DC02D896D /* ExportService.swift */,
+				E099AF002332138F71D42A5B /* ImportService.swift */,
 				9B83B4389FE21A7C5F6C470A /* LocalHistory.swift */,
 				FFCF6E4A63038F31417B95D7 /* MediaStore.swift */,
 				1BB653EB923D71C0CCD563DE /* Preferences.swift */,
@@ -294,10 +300,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				406C89E9AE534484F8C586C7 /* AppDelegate.swift in Sources */,
+				5E90F21DEA60A0B32F220AA1 /* AppIntents.swift in Sources */,
 				2D80F33D354DB669361CD6E3 /* AppWindows.swift in Sources */,
 				02AC404FF5164038CCE77296 /* DocumentSession.swift in Sources */,
 				6BA2E151E8AD850D8E742B7E /* EditorWorkspace.swift in Sources */,
 				307839DB98909DA31798E17E /* ExportService.swift in Sources */,
+				D38239E5C587648732968C1A /* ImportService.swift in Sources */,
 				8994C47A6E333DA750B56208 /* LocalHistory.swift in Sources */,
 				78C8D05FEEAA9996CE3BF943 /* MediaStore.swift in Sources */,
 				86B57090D722D94B4D0BFB95 /* Preferences.swift in Sources */,

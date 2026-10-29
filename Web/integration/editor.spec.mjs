@@ -110,3 +110,39 @@ test('block splitting and joining does not alter adjacent opaque source',async({
   await page.keyboard.press('Enter');await expect.poll(()=>source(page)).toBe(prefix+'One \n\ntwo\n\nTail');
   await page.keyboard.press('Backspace');await expect.poll(()=>source(page)).toBe(prefix+'One two\n\nTail');
 });
+test('Word import recovers headings, marks, tables and embedded graphics',async({page})=>{
+  await load(page,'# Imported Report\n\nA **bold** word.\n\n| A | B |\n| --- | --- |\n| One | Two |\n\n$$\nx^2\n$$');
+  await page.evaluate(()=>window.Remarque.receive({type:'command',name:'export:DOCX',surface:'rendered'}));
+  await expect.poll(()=>page.evaluate(()=>window.messages.some(m=>m.type==='export'))).toBe(true);
+  await page.evaluate(()=>{const output=window.messages.find(m=>m.type==='export');window.Remarque.receive({type:'command',name:'importDOCX',value:output.base64});});
+  await expect.poll(()=>page.evaluate(()=>window.messages.some(m=>m.type==='imported'))).toBe(true);
+  const result=await page.evaluate(()=>window.messages.find(m=>m.type==='imported'));expect(result.text).toContain('# Imported Report');expect(result.text).toContain('**bold**');expect(result.text).toContain('| One | Two |');expect(result.text).toContain('data:image/png;base64,');expect(result.warnings).toEqual([]);
+});
+test('visual editor cancels losslessly and preserves directives when applying',async({page})=>{
+  const text='Before\n\n```mermaid\nflowchart LR\nA[Alpha] --> B[Beta]\nclassDef red fill:red\nclass A red\n```\n\nAfter';await load(page,text);
+  await page.locator('.mermaid').click();await page.evaluate(()=>window.Remarque.receive({type:'command',name:'visualDiagram',surface:'rendered'}));
+  await page.getByRole('button',{name:'Node Alpha',exact:true}).click();await page.getByRole('textbox',{name:'Label',exact:true}).fill('Changed');
+  await page.getByRole('button',{name:'Cancel',exact:true}).click();expect(await source(page)).toBe(text);
+  await page.evaluate(()=>window.Remarque.receive({type:'command',name:'visualDiagram',surface:'rendered'}));await page.getByRole('button',{name:'Node Alpha',exact:true}).click();await page.getByRole('textbox',{name:'Label',exact:true}).fill('Changed');await page.getByRole('button',{name:'Apply',exact:true}).click();
+  await expect.poll(()=>source(page)).toContain('A["Changed"]');expect(await source(page)).toContain('B["Beta"]');expect(await source(page)).toContain('classDef red fill:red\nclass A red');expect(await source(page)).toMatch(/^Before\n\n[\s\S]*\n\nAfter$/);
+});
+test('diagram metadata and repeated source edits keep the same object identity',async({page})=>{
+  await load(page,'<!-- remarque:mermaid id="original" width="500" align="left" -->\n\n```mermaid\nflowchart LR\nA-->B\n```');
+  await page.locator('.mermaid .graphic').dblclick();const input=page.getByRole('textbox',{name:'Mermaid source',exact:true});await input.fill('flowchart LR\nA-->C');await input.fill('flowchart LR\nA-->D');
+  await expect.poll(()=>source(page)).toContain('A-->D');expect(await source(page)).toContain('id="original"');expect(await page.evaluate(()=>window.messages.filter(m=>m.type==='error'))).toEqual([]);
+});
+test('extended Markdown is rendered and editable without flattening its structure',async({page})=>{
+  const text='> [!NOTE]\n> Useful\n\nTerm\n: Definition\n\nA[^1]\n\n[^1]: Footnote\n\n<details>\n<summary>More</summary>\n\nHidden content\n\n</details>';await load(page,text);
+  await expect(page.locator('blockquote[data-callout=NOTE]')).toContainText('Useful');await expect(page.locator('dt')).toHaveText('Term');await expect(page.locator('.footnote-definition')).toContainText('Footnote');await expect(page.locator('.ProseMirror details summary')).toHaveText('More');
+  const at=text.indexOf('Definition')+'Definition'.length;await page.evaluate(at=>{window.Remarque.receive({type:'selection',revision:0,start:at,end:at});window.Remarque.view.focus()},at);await page.keyboard.type(' updated');await expect.poll(()=>source(page)).toBe(text.replace('Definition','Definition updated'));
+});
+test('consecutive formatting commands retain the selected text',async({page})=>{
+  await load(page,'One word here.');await page.evaluate(()=>window.Remarque.receive({type:'command',name:'bold',start:4,end:8,surface:'source'}));
+  await page.evaluate(()=>window.Remarque.receive({type:'command',name:'italic',surface:'rendered'}));
+  await expect(page.locator('strong em,em strong')).toHaveText('word');expect(await page.evaluate(()=>window.Remarque.view.state.selection.empty)).toBe(false);
+});
+test('live source mode reveals one block and commits Markdown without altering neighbors',async({page})=>{
+  await load(page,'# Title\n\nA **bold** word\n\nTail');await page.evaluate(()=>window.Remarque.receive({type:'state',documentID:'test',mode:'liveSource',revision:0,source:'# Title\n\nA **bold** word\n\nTail',start:12,end:12}));
+  await page.locator('.ProseMirror p').first().click();const area=page.getByRole('textbox',{name:'Edit Markdown block'});await expect(area).toHaveValue('A **bold** word');await area.fill('An *edited* word');
+  await expect.poll(()=>source(page)).toBe('# Title\n\nAn *edited* word\n\nTail');await area.press('Escape');await expect(page.locator('.ProseMirror em')).toHaveText('edited');expect(await page.evaluate(()=>window.messages.filter(m=>m.type==='error'))).toEqual([]);
+});

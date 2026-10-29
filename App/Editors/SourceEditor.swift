@@ -39,12 +39,21 @@ struct SourceEditor: NSViewRepresentable {
             guard let text, let coordinator, range.location+range.length <= (text.string as NSString).length else{return}
             coordinator.updating=true;text.setSelectedRange(range);text.scrollRangeToVisible(range);coordinator.updating=false
         }
+        session.scrollSource = { [weak text,weak scroll] offset in
+            guard let text,let scroll,text.window?.firstResponder !== text else{return}
+            let range=NSRange(location:offset,length:0);text.scrollRangeToVisible(range);scroll.verticalRulerView?.needsDisplay=true
+        }
+        scroll.contentView.postsBoundsChangedNotifications=true
+        NotificationCenter.default.addObserver(context.coordinator,selector:#selector(Coordinator.scrolled(_:)),name:NSView.boundsDidChangeNotification,object:scroll.contentView)
+        scroll.verticalRulerView=LineNumberRuler(scrollView:scroll,orientation:.verticalRuler)
+        scroll.hasVerticalRuler=true
         return scroll
     }
     func updateNSView(_ scroll: NSScrollView, context: Context) {
         guard let text=scroll.documentView as? SourceTextView else{return}
         let c=context.coordinator;c.updating=true;defer{c.updating=false}
         let prefs=preferences.values
+        scroll.rulersVisible=prefs.lineNumbers;scroll.verticalRulerView?.needsDisplay=true
         text.isAutomaticQuoteSubstitutionEnabled=prefs.smartQuotes;text.isAutomaticDashSubstitutionEnabled=prefs.smartDashes
         text.isContinuousSpellCheckingEnabled=prefs.spellcheck
         text.isHorizontallyResizable = !prefs.softWrap;scroll.hasHorizontalScroller = !prefs.softWrap
@@ -62,13 +71,44 @@ struct SourceEditor: NSViewRepresentable {
         weak var textView:SourceTextView?
         var updating=false
         init(_ session:DocumentSession){self.session=session}
+        @objc func scrolled(_ notification:Notification){
+            guard let t=textView,t.window?.firstResponder===t,Preferences.shared.values.scrollSync else{return}
+            let point=NSPoint(x:t.textContainerInset.width+4,y:t.visibleRect.minY+8)
+            let offset=t.characterIndexForInsertion(at:point)
+            session.sendWeb?(["type":"scroll","revision":session.revision,"start":offset])
+            t.enclosingScrollView?.verticalRulerView?.needsDisplay=true
+        }
         func textDidChange(_ notification:Notification){guard !updating,let t=textView,!t.hasMarkedText() else{return};session.replaceSource(t.string,selection:t.selectedRange());t.highlightSyntax()}
         func textViewDidChangeSelection(_ notification:Notification){
             guard !updating,let t=textView,t.window?.firstResponder===t else{return}
             DispatchQueue.main.async { [weak self,weak t] in
                 guard let self,let t,!self.updating,t.window?.firstResponder===t else{return}
-                let r=t.selectedRange();self.session.select(.init(r.location,r.location+r.length),surface:"source")
+                let r=t.selectedRange()
+                if Preferences.shared.values.typewriter,let layout=t.layoutManager,let container=t.textContainer,let scroll=t.enclosingScrollView,r.location<t.string.utf16.count{
+                    let glyph=layout.glyphRange(forCharacterRange:NSRange(location:r.location,length:0),actualCharacterRange:nil),rect=layout.boundingRect(forGlyphRange:glyph,in:container)
+                    let y=max(0,rect.midY+t.textContainerInset.height-scroll.contentView.bounds.height/2)
+                    scroll.contentView.scroll(to:NSPoint(x:scroll.contentView.bounds.minX,y:y));scroll.reflectScrolledClipView(scroll.contentView)
+                }
+                t.highlightSyntax();self.session.select(.init(r.location,r.location+r.length),surface:"source")
             }
+        }
+    }
+}
+
+@MainActor final class LineNumberRuler:NSRulerView {
+    override var isFlipped:Bool{true}
+    override func drawHashMarksAndLabels(in rect:NSRect){
+        guard let text=scrollView?.documentView as? NSTextView,let layout=text.layoutManager,let container=text.textContainer else{return}
+        ruleThickness=48;NSColor.windowBackgroundColor.setFill();bounds.fill()
+        let ns=text.string as NSString,visible=text.visibleRect,attributes:[NSAttributedString.Key:Any]=[.font:NSFont.monospacedDigitSystemFont(ofSize:10,weight:.regular),.foregroundColor:NSColor.secondaryLabelColor]
+        guard layout.numberOfGlyphs>0 else{return}
+        var offset=0,line=1
+        while offset<=ns.length{
+            let glyph=layout.glyphIndexForCharacter(at:min(offset,max(0,ns.length-1))),box=layout.lineFragmentRect(forGlyphAt:glyph,effectiveRange:nil)
+            let y=box.minY+text.textContainerInset.height-visible.minY
+            if y>visible.height{break}
+            if y>=(-box.height){let label=String(line) as NSString;label.draw(at:NSPoint(x:ruleThickness-label.size(withAttributes:attributes).width-8,y:y+2),withAttributes:attributes)}
+            if offset==ns.length{break};let next=NSMaxRange(ns.lineRange(for:NSRange(location:offset,length:0)));if next<=offset{break};offset=next;line+=1
         }
     }
 }

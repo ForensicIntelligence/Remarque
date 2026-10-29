@@ -132,6 +132,8 @@ public struct DocumentEngine: Sendable {
     public var redoLabel: String { redoUnits.last?.label ?? "" }
     public var isDirty: Bool { Self.digest(text) != savedDigest }
     public mutating func markSaved(_ savedText: String? = nil) { savedDigest = Self.digest(savedText ?? text) }
+    public func isSavedVersion(_ text:String)->Bool{Self.digest(text)==savedDigest}
+    public mutating func reload(_ text:String){buffer=SourceBuffer(text);revision+=1;savedDigest=Self.digest(text);undoUnits.removeAll();redoUnits.removeAll();select(selection)}
     public mutating func select(_ new: EditorSelection) {
         let lo = min(max(0, new.range.start), buffer.count), hi = min(max(0, new.range.end), buffer.count)
         selection = .init(.init(min(lo, hi), max(lo, hi)), surface: new.surface)

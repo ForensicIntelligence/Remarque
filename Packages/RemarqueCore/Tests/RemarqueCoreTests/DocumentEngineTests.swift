@@ -62,3 +62,16 @@ final class DocumentEngineTests: XCTestCase {
         for _ in 0..<200 { try d.redo() }; XCTAssertEqual(d.text, result)
     }
 }
+
+extension DocumentEngineTests {
+    func testReloadKeepsMonotonicRevisionAndSavedBaseline() throws {
+        var engine=DocumentEngine("Old")
+        try engine.apply([.init(.init(3,3)," draft")],baseRevision:0)
+        engine.reload("External")
+        XCTAssertEqual(engine.revision,2)
+        XCTAssertFalse(engine.isDirty)
+        XCTAssertTrue(engine.isSavedVersion("External"))
+        XCTAssertNil(try engine.undo())
+        XCTAssertThrowsError(try engine.apply([.init(.init(0,0),"Stale")],baseRevision:1))
+    }
+}

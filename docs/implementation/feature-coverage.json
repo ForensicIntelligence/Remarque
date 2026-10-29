@@ -2589,91 +2589,153 @@
   },
   {
     "requirement": "IO-01",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/exporters.mjs",
+      "Web/src/importers.mjs",
+      "App/Services/ExportService.swift",
+      "App/Services/ImportService.swift"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Sample document round trips and native PDF pagination pass; the complete format-by-feature export and print qualification matrix remains outstanding."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "IO-02",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/exporters.mjs",
+      "Web/src/importers.mjs",
+      "App/Services/ExportService.swift",
+      "App/Services/ImportService.swift"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Sample document round trips and native PDF pagination pass; the complete format-by-feature export and print qualification matrix remains outstanding."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "IO-03",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/exporters.mjs",
+      "Web/src/importers.mjs",
+      "App/Services/ExportService.swift",
+      "App/Services/ImportService.swift"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Sample document round trips and native PDF pagination pass; the complete format-by-feature export and print qualification matrix remains outstanding."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "IO-04",
     "status": "in_progress",
     "implementation": [
-      "Web/src/exporters.mjs"
+      "Web/src/exporters.mjs",
+      "Web/src/importers.mjs",
+      "App/Services/ExportService.swift",
+      "App/Services/ImportService.swift"
     ],
     "automated_tests": [
-      "Web/integration/editor.spec.mjs"
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
     ],
     "manual_evidence": [],
     "known_limitations": [
-      "Sample structures and graphics pass; full fixture/export fidelity matrix is outstanding."
+      "Sample document round trips and native PDF pagination pass; the complete format-by-feature export and print qualification matrix remains outstanding."
     ],
     "last_verified_revision": null
   },
   {
     "requirement": "IO-05",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/exporters.mjs",
+      "Web/src/importers.mjs",
+      "App/Services/ExportService.swift",
+      "App/Services/ImportService.swift"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Sample document round trips and native PDF pagination pass; the complete format-by-feature export and print qualification matrix remains outstanding."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "IO-06",
     "status": "in_progress",
     "implementation": [
-      "Web/src/exporters.mjs"
+      "Web/src/exporters.mjs",
+      "Web/src/importers.mjs",
+      "App/Services/ExportService.swift",
+      "App/Services/ImportService.swift"
     ],
     "automated_tests": [
-      "Web/integration/editor.spec.mjs"
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
     ],
     "manual_evidence": [],
     "known_limitations": [
-      "Sample structures and graphics pass; full fixture/export fidelity matrix is outstanding."
+      "Sample document round trips and native PDF pagination pass; the complete format-by-feature export and print qualification matrix remains outstanding."
     ],
     "last_verified_revision": null
   },
   {
     "requirement": "IO-07",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/exporters.mjs",
+      "Web/src/importers.mjs",
+      "App/Services/ExportService.swift",
+      "App/Services/ImportService.swift"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Sample document round trips and native PDF pagination pass; the complete format-by-feature export and print qualification matrix remains outstanding."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "IO-08",
     "status": "in_progress",
     "implementation": [
-      "Web/src/exporters.mjs"
+      "Web/src/exporters.mjs",
+      "Web/src/importers.mjs",
+      "App/Services/ExportService.swift",
+      "App/Services/ImportService.swift"
     ],
     "automated_tests": [
-      "Web/integration/editor.spec.mjs"
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
     ],
     "manual_evidence": [],
     "known_limitations": [
-      "Sample structures and graphics pass; full fixture/export fidelity matrix is outstanding."
+      "Sample document round trips and native PDF pagination pass; the complete format-by-feature export and print qualification matrix remains outstanding."
     ],
     "last_verified_revision": null
   },
@@ -2681,14 +2743,18 @@
     "requirement": "IO-09",
     "status": "in_progress",
     "implementation": [
-      "Web/src/exporters.mjs"
+      "Web/src/exporters.mjs",
+      "Web/src/importers.mjs",
+      "App/Services/ExportService.swift",
+      "App/Services/ImportService.swift"
     ],
     "automated_tests": [
-      "Web/integration/editor.spec.mjs"
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
     ],
     "manual_evidence": [],
     "known_limitations": [
-      "Sample structures and graphics pass; full fixture/export fidelity matrix is outstanding."
+      "Sample document round trips and native PDF pagination pass; the complete format-by-feature export and print qualification matrix remains outstanding."
     ],
     "last_verified_revision": null
   },
@@ -2696,14 +2762,18 @@
     "requirement": "IO-10",
     "status": "in_progress",
     "implementation": [
-      "Web/src/exporters.mjs"
+      "Web/src/exporters.mjs",
+      "Web/src/importers.mjs",
+      "App/Services/ExportService.swift",
+      "App/Services/ImportService.swift"
     ],
     "automated_tests": [
-      "Web/integration/editor.spec.mjs"
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
     ],
     "manual_evidence": [],
     "known_limitations": [
-      "Sample structures and graphics pass; full fixture/export fidelity matrix is outstanding."
+      "Sample document round trips and native PDF pagination pass; the complete format-by-feature export and print qualification matrix remains outstanding."
     ],
     "last_verified_revision": null
   },
@@ -2711,14 +2781,18 @@
     "requirement": "IO-11",
     "status": "in_progress",
     "implementation": [
-      "Web/src/exporters.mjs"
+      "Web/src/exporters.mjs",
+      "Web/src/importers.mjs",
+      "App/Services/ExportService.swift",
+      "App/Services/ImportService.swift"
     ],
     "automated_tests": [
-      "Web/integration/editor.spec.mjs"
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
     ],
     "manual_evidence": [],
     "known_limitations": [
-      "Sample structures and graphics pass; full fixture/export fidelity matrix is outstanding."
+      "Sample document round trips and native PDF pagination pass; the complete format-by-feature export and print qualification matrix remains outstanding."
     ],
     "last_verified_revision": null
   },
@@ -2726,51 +2800,95 @@
     "requirement": "IO-12",
     "status": "in_progress",
     "implementation": [
-      "Web/src/exporters.mjs"
+      "Web/src/exporters.mjs",
+      "Web/src/importers.mjs",
+      "App/Services/ExportService.swift",
+      "App/Services/ImportService.swift"
     ],
     "automated_tests": [
-      "Web/integration/editor.spec.mjs"
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
     ],
     "manual_evidence": [],
     "known_limitations": [
-      "Sample structures and graphics pass; full fixture/export fidelity matrix is outstanding."
+      "Sample document round trips and native PDF pagination pass; the complete format-by-feature export and print qualification matrix remains outstanding."
     ],
     "last_verified_revision": null
   },
   {
     "requirement": "IO-13",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/exporters.mjs",
+      "Web/src/importers.mjs",
+      "App/Services/ExportService.swift",
+      "App/Services/ImportService.swift"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Sample document round trips and native PDF pagination pass; the complete format-by-feature export and print qualification matrix remains outstanding."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "IO-14",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/exporters.mjs",
+      "Web/src/importers.mjs",
+      "App/Services/ExportService.swift",
+      "App/Services/ImportService.swift"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Sample document round trips and native PDF pagination pass; the complete format-by-feature export and print qualification matrix remains outstanding."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "IO-15",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/exporters.mjs",
+      "Web/src/importers.mjs",
+      "App/Services/ExportService.swift",
+      "App/Services/ImportService.swift"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Sample document round trips and native PDF pagination pass; the complete format-by-feature export and print qualification matrix remains outstanding."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "IO-16",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/exporters.mjs",
+      "Web/src/importers.mjs",
+      "App/Services/ExportService.swift",
+      "App/Services/ImportService.swift"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Sample document round trips and native PDF pagination pass; the complete format-by-feature export and print qualification matrix remains outstanding."
+    ],
     "last_verified_revision": null
   },
   {
@@ -2784,38 +2902,78 @@
   },
   {
     "requirement": "IO-18",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/exporters.mjs",
+      "Web/src/importers.mjs",
+      "App/Services/ExportService.swift",
+      "App/Services/ImportService.swift"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Sample document round trips and native PDF pagination pass; the complete format-by-feature export and print qualification matrix remains outstanding."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "IO-19",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/exporters.mjs",
+      "Web/src/importers.mjs",
+      "App/Services/ExportService.swift",
+      "App/Services/ImportService.swift"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Sample document round trips and native PDF pagination pass; the complete format-by-feature export and print qualification matrix remains outstanding."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "IO-20",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/exporters.mjs",
+      "Web/src/importers.mjs",
+      "App/Services/ExportService.swift",
+      "App/Services/ImportService.swift"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Sample document round trips and native PDF pagination pass; the complete format-by-feature export and print qualification matrix remains outstanding."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "IO-21",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/exporters.mjs",
+      "Web/src/importers.mjs",
+      "App/Services/ExportService.swift",
+      "App/Services/ImportService.swift"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Sample document round trips and native PDF pagination pass; the complete format-by-feature export and print qualification matrix remains outstanding."
+    ],
     "last_verified_revision": null
   },
   {
@@ -3544,300 +3702,465 @@
   },
   {
     "requirement": "MER-T01",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T02",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T03",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T04",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T05",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T06",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T07",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T08",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T09",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T10",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T11",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T12",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T13",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T14",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T15",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T16",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T17",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T18",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T19",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T20",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T21",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T22",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T23",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T24",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T25",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T26",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T27",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T28",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T29",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T30",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T31",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T32",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-T33",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs \u2014 all 41 templates from all 33 Mermaid families render"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-A01",

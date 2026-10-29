@@ -35,7 +35,7 @@ struct EditorWorkspace:View{
                     VStack(spacing:0){
                         HStack{Text("MARKDOWN SOURCE").font(.caption.weight(.semibold)).foregroundStyle(.secondary);Spacer();Text("UTF-8").font(.caption2).foregroundStyle(.tertiary)}.padding(.horizontal,18).frame(height:34)
                         if preferences.values.formatRibbon && !session.focusMode{SourceRibbon(session:session)}
-                        Divider();SourceEditor(session:session)
+                        Divider();if preferences.values.liveEditing{RenderedEditor(session:session,mode:"liveSource")}else{SourceEditor(session:session)}
                     }.frame(minWidth:240)
                 }
                 VStack(spacing:0){if session.showPreview && !session.focusMode{RightToolbar(session:session);Divider()};RenderedEditor(session:session)}.frame(minWidth:session.showPreview ? 300:0,maxWidth:session.showPreview ? .infinity:0).opacity(session.showPreview ? 1:0).accessibilityHidden(!session.showPreview)
@@ -81,18 +81,18 @@ struct RightToolbar:View{
                     }.fixedSize()
                 }else if session.activeTab=="Mermaid"{
                     Button("Insert Diagram…"){session.command("gallery")}.font(.caption)
-                    Button("Edit Source"){session.command("editObject")}.font(.caption)
-                    Button("Visual Editor"){session.command("visualDiagram")}.font(.caption)
-                    Button("Copy SVG"){session.command("copySVG")}.font(.caption)
+                    Button("Edit Source"){session.command("editObject")}.font(.caption).disabled(session.selectedKind != "mermaid")
+                    Button("Visual Editor"){session.command("visualDiagram")}.font(.caption).disabled(session.selectedKind != "mermaid" || !Preferences.shared.values.visualEditing)
+                    Button("Copy SVG"){session.command("copySVG")}.font(.caption).disabled(session.selectedKind != "mermaid")
                 }else{
                     Button("Insert Equation"){session.command("equation")}.font(.caption)
-                    Button("Edit LaTeX"){session.command("editObject")}.font(.caption)
-                    Button("Inline / Display"){session.command("mathMode")}.font(.caption)
+                    Button("Edit LaTeX"){session.command("editObject")}.font(.caption).disabled(!session.selectedKind.contains("math"))
+                    Button("Inline / Display"){session.command("mathMode")}.font(.caption).disabled(!session.selectedKind.contains("math"))
                 }
             }.buttonStyle(.borderless).padding(.horizontal,10).frame(height:38)}
         }.background(.bar)
     }
-    func tool(_ title:String,_ symbol:String,_ command:String)->some View{Button{session.command(command)}label:{Image(systemName:symbol).frame(width:25,height:26)}.help(title).accessibilityLabel(title)}
+    func tool(_ title:String,_ symbol:String,_ command:String)->some View{Button{session.command(command)}label:{Image(systemName:symbol).frame(width:25,height:26).background(session.activeMarks.contains(["bold":"strong","italic":"em"][command] ?? command) ? Color.accentColor.opacity(0.18):Color.clear,in:RoundedRectangle(cornerRadius:4))}.disabled(command=="undo" ? !session.engine.canUndo:command=="redo" ? !session.engine.canRedo:session.readOnly).help(title).accessibilityLabel(title)}
 }
 
 struct SourceRibbon:View{
