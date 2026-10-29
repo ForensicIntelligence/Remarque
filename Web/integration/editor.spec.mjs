@@ -16,6 +16,18 @@ async function load(page,source){
   await page.evaluate(source=>window.Remarque.receive({type:'state',documentID:'test',revision:0,source,start:0,end:0,surface:'source'}),source);
 }
 const source=page=>page.evaluate(()=>window.Remarque.getState().source);
+test('scroll preference applies immediately in both directions and preserves selection reveal',async({page})=>{
+ const text=Array.from({length:80},(_,i)=>`## Section ${i}\n\nParagraph ${i} with some content.`).join('\n\n');await load(page,text);
+ await expect(page.locator('.ProseMirror h2')).toHaveCount(80);
+ await page.evaluate(()=>window.Remarque.receive({type:'scroll',revision:0,start:2500}));await expect.poll(()=>page.evaluate(()=>scrollY)).toBeGreaterThan(100);
+ await page.evaluate(()=>{window.Remarque.receive({type:'preferences',values:{scrollSync:false}});window.scrollTo(0,0);window.messages=[];window.Remarque.receive({type:'scroll',revision:0,start:3500});});
+ await expect.poll(()=>page.evaluate(()=>scrollY)).toBe(0);
+ await page.mouse.wheel(0,550);await expect.poll(()=>page.evaluate(()=>scrollY)).toBeGreaterThan(100);
+ await page.waitForTimeout(150);expect(await page.evaluate(()=>window.messages.filter(m=>m.type==='scroll').length)).toBe(0);
+ await page.evaluate(()=>window.Remarque.receive({type:'selection',revision:0,start:3500,end:3505,reveal:true}));await expect.poll(()=>page.evaluate(()=>scrollY)).toBeGreaterThan(1000);
+ await page.evaluate(()=>{window.Remarque.receive({type:'preferences',values:{scrollSync:true}});window.messages=[];});await page.mouse.wheel(0,-400);
+ await expect.poll(()=>page.evaluate(()=>window.messages.filter(m=>m.type==='scroll').length)).toBeGreaterThan(0);
+});
 test('right typing maps to the second duplicate heading without changing first',async({page})=>{
   await load(page,'# Same\n\nAlpha\n\n# Same\n\nBeta\n');
   const heading=page.locator('.ProseMirror h1').nth(1);await heading.click();await page.keyboard.press('End');await page.keyboard.type(' revised');

@@ -147,6 +147,7 @@ function selectSource(start,end,reveal=false){
   muted=true;
   try{const object=[...projection.records.values()].find(r=>r.pmNode?.isAtom&&!r.pmNode.isText&&start>=r.start&&end<=r.end);let sel;if(object){sel=NodeSelection.create(view.state.doc,object.pmStart);selectedObject={origin:object.id,kind:object.pmNode.type.name,node:object.pmNode}}else{sel=TextSelection.create(view.state.doc,Math.min(from,to),Math.max(from,to));selectedObject=null;}let tr=view.state.tr.setSelection(sel);if(reveal)tr=tr.scrollIntoView();view.dispatch(tr);}catch{}
   muted=false;lastSelectedRange={start,end};publishFormatting();
+  if(reveal){const point=view.coordsAtPos(from);if(point.top<35||point.bottom>innerHeight-35){nativeScrollUntil=Date.now()+300;clearTimeout(scrollTimer);window.scrollBy({top:point.top-35,behavior:'instant'});}}
 }
 function insertMarkdown(markdown){
   const r=lastSelectedRange;
@@ -333,10 +334,11 @@ function flushPendingRender(){
 function redrawObjects(){view.setProps({nodeViews:{mermaid:(...args)=>objectView(...args),math_display:(...args)=>objectView(...args),inline_math:(...args)=>objectView(...args),opaque:objectView,image:imageView}});}
 document.querySelector('#previewNotice button').onclick=()=>{flushPendingRender();objectPreviews.clear();redrawObjects()};
 let nativeScrollUntil=0,scrollTimer;
-window.addEventListener('scroll',()=>{if(preferences.scrollSync===false||Date.now()<nativeScrollUntil)return;clearTimeout(scrollTimer);scrollTimer=setTimeout(()=>{const position=view.posAtCoords({left:view.dom.getBoundingClientRect().left+20,top:35});if(position)post({type:'scroll',revision,start:projection.sourceAt(position.pos)});},80)},{passive:true});
+for(const event of ['wheel','touchstart','pointerdown','keydown'])window.addEventListener(event,()=>{nativeScrollUntil=0},{passive:true});
+window.addEventListener('scroll',()=>{if(preferences.scrollSync===false||Date.now()<nativeScrollUntil)return;clearTimeout(scrollTimer);scrollTimer=setTimeout(()=>{if(preferences.scrollSync===false||Date.now()<nativeScrollUntil)return;const position=view.posAtCoords({left:view.dom.getBoundingClientRect().left+20,top:35});if(position)post({type:'scroll',revision,start:projection.sourceAt(position.pos)});},80)},{passive:true});
 window.Remarque={receive(message){
   if(message.mode){mode=message.mode;document.body.dataset.mode=mode;}
-  if(message.type==='scroll'){if(preferences.scrollSync!==false&&message.revision===revision){const position=projection.positionAt(message.start),point=view.coordsAtPos(position);nativeScrollUntil=Date.now()+250;window.scrollBy({top:point.top-35,behavior:'instant'});}return;}
+  if(message.type==='scroll'){if(preferences.scrollSync!==false&&message.revision===revision&&Number.isFinite(message.start)){flushPendingRender();const position=projection.positionAt(Math.max(0,Math.min(source.length,message.start))),point=view.coordsAtPos(position);nativeScrollUntil=Date.now()+300;clearTimeout(scrollTimer);window.scrollBy({top:point.top-35,behavior:'instant'});}return;}
   if(message.type==='state'){
     if(message.preferences)applyPreferences(message.preferences);readOnly=!!message.readOnly;view.setProps({editable:()=>!readOnly&&mode!=='liveSource'});
     if(message.rejected){post({type:'error',message:'A concurrent edit was rejected. The current editor text is preserved in the recovery field.'});document.querySelector('#recovery').value=source;document.querySelector('#recovery').hidden=false;pending.clear();}

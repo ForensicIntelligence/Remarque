@@ -2,7 +2,9 @@
 
 The first phase inventories the surviving **Remarque 2.1 (733)** application and specifies its rebuild. Prepared **29 October 2026**. Implementation is in progress on `codex/rebuild`; the application is a development build and has not passed the full release gates.
 
-**Build:** Remarque 3.0.0 (736), a signed universal development build. See the [build report and verification limits](docs/implementation/BUILD_REPORT.md). The original installed app is preserved.
+**Build:** Remarque 3.0.1 (737), a signed universal development build. See the [build report and verification limits](docs/implementation/BUILD_REPORT.md). The original installed app is preserved.
+
+**New in 3.0.1:** A clearer synchronized-scrolling toggle (on by default), scrolling in both editing modes, and illustrated offline documentation with diagrams, equations, and source/result examples. [Update notes](docs/implementation/UPDATE_3.0.1.md).
 
 **Primary handoff:** [Complete Codex build specification](REMARQUE_BUILD_SPECIFICATION.md). This single Markdown document includes the full 226-feature inventory, exact controls, synchronized editing requirements, architecture, implementation milestones, acceptance tests, fixtures, and comprehensive Mermaid support covering 33 families and at least 41 starter templates. The right-toolbar tabs are **`markdown`**, **`Mermaid`**, and **`LaTeX`**.
 
@@ -31,6 +33,6 @@ The archive is a local preservation copy on this machine. The independent privat
 
 Open `RemarqueRebuild.xcodeproj` and use the `RemarqueRebuild` scheme, or run `scripts/build.sh`. Web assets are bundled locally; `Web/package-lock.json` pins dependencies. `scripts/test.sh` runs the Swift core, browser, and hosted WebKit tests. The browser tests currently use Google Chrome’s standard macOS path.
 
-`VERSION.json` controls version **3.0.0**, development build **736**, and bundle identifier **ca.forensicintelligence.remarque**. `node scripts/version.mjs --next-build` advances a distributable build; regenerate the project with XcodeGen afterward. Developer ID signing uses FI Forensic Intelligence, Ltd. (PATM9DNCLA). `scripts/release.sh` creates the signed universal application and ZIP; notarization is separate. The installed original app is untouched.
+`VERSION.json` controls version **3.0.1**, development build **737**, and bundle identifier **ca.forensicintelligence.remarque**. `node scripts/version.mjs --next-build` advances a distributable build; regenerate the project with XcodeGen afterward. Developer ID signing uses FI Forensic Intelligence, Ltd. (PATM9DNCLA). `scripts/release.sh` creates the signed universal application and ZIP; notarization is separate. The installed original app is untouched.
 
 See [implementation checkpoints](docs/implementation/checkpoints/) and [feature coverage](docs/implementation/feature-coverage.json) for actual progress and outstanding verification.

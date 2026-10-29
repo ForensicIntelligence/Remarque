@@ -72,7 +72,7 @@ struct RenderedEditor: NSViewRepresentable {
                 guard body["revision"] as? Int == session.revision,let rows=body["items"],let data=try? JSONSerialization.data(withJSONObject:rows),let entries=try? JSONDecoder().decode([OutlineEntry].self,from:data) else{return}
                 session.outline=entries;session.wordCount=body["words"] as? Int ?? 0;session.diagramCount=entries.filter{$0.kind=="diagram"}.count
             case "scroll":
-                if Preferences.shared.values.scrollSync,body["revision"] as? Int==session.revision,let offset=body["start"] as? Int{session.scrollSource?(max(0,min(offset,session.source.utf16.count)))}
+                if let revision=body["revision"] as? Int,let offset=body["start"] as? Int{session.synchronizeScroll(from:mode,offset:offset,at:revision)}
             case "undo":session.undo()
             case "redo":session.redo()
             case "error":session.error=body["message"] as? String

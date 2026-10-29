@@ -66,7 +66,64 @@ import RemarqueCore
         XCTAssertEqual(try doc.data(ofType:"net.daringfireball.markdown"),bytes)
         XCTAssertEqual(Bundle.main.bundleIdentifier,"ca.forensicintelligence.remarque")
         XCTAssertGreaterThanOrEqual(Int(BuildInfo.build) ?? 0,734)
-        XCTAssertEqual(BuildInfo.version,"3.0.0")
+        XCTAssertEqual(BuildInfo.version,"3.0.1")
+    }
+    func testScrollPreferencePersistsAndRoutesBothModesWithoutBlockingSelection()throws{
+        XCTAssertTrue(PreferenceValues().scrollSync)
+        let old=Preferences.shared.values.scrollSync;defer{Preferences.shared.values.scrollSync=old}
+        let session=DocumentSession("# Title\n\nText"),receiver=UUID();var messages:[[String:Any]]=[];var scrolled:[Int]=[];var reveals:[NSRange]=[]
+        session.webReceivers[receiver]={messages.append($0)};session.scrollSource={scrolled.append($0)};session.revealSource={reveals.append($0)}
+        Preferences.shared.values.scrollSync=true
+        session.synchronizeScroll(from:"source",offset:9,at:0);XCTAssertEqual(messages.last?["target"] as? String,"rendered")
+        session.synchronizeScroll(from:"rendered",offset:9,at:0);XCTAssertEqual(messages.last?["target"] as? String,"liveSource");XCTAssertEqual(scrolled,[9])
+        session.synchronizeScroll(from:"liveSource",offset:9,at:0);XCTAssertEqual(messages.last?["target"] as? String,"rendered")
+        let count=messages.count;Preferences.shared.values.scrollSync=false
+        session.synchronizeScroll(from:"rendered",offset:1,at:0);session.synchronizeScroll(from:"source",offset:1,at:0);XCTAssertEqual(messages.count,count);XCTAssertEqual(scrolled,[9])
+        let saved=try XCTUnwrap(UserDefaults.standard.data(forKey:"preferences.v3"));XCTAssertFalse(try JSONDecoder().decode(PreferenceValues.self,from:saved).scrollSync)
+        session.select(.init(2,7),surface:"rendered");XCTAssertEqual(reveals.last,NSRange(location:2,length:5))
+        Preferences.shared.values.scrollSync=true
+        let beforeStale=messages.count;session.synchronizeScroll(from:"source",offset:1,at:99);XCTAssertEqual(messages.count,beforeStale)
+        session.synchronizeScroll(from:"source",offset:1,at:0);XCTAssertEqual(messages.count,beforeStale+1)
+    }
+    func testNativeHelpReaderRendersBundledGuide()async throws{
+        let coordinator=HelpReader.Coordinator(),web=HelpReader.makeView(coordinator:coordinator)
+        let window=NSWindow(contentRect:NSRect(x:0,y:0,width:900,height:700),styleMask:[.titled],backing:.buffered,defer:false);window.isReleasedWhenClosed=false;window.contentView=web;window.orderFront(nil)
+        defer{web.configuration.userContentController.removeScriptMessageHandler(forName:"remarqueHelp");window.close()}
+        coordinator.show(try XCTUnwrap(HelpLibrary.articles.first{$0.id=="Math and Equations"}),theme:"Paper",scale:1)
+        try await waitUntil{coordinator.ready}
+        var rendered=false
+        for _ in 0..<200{if (try? await js(web,"return document.querySelector('#help').dataset.ready;"))=="true"{rendered=true;break};try await Task.sleep(for:.milliseconds(50))}
+        XCTAssertTrue(rendered)
+        let result=try await js(web,"return document.querySelectorAll('.example-result svg').length;");XCTAssertEqual(result,"2")
+        let glyphs=try await js(web,"return String([...document.querySelectorAll('.example-result svg')].every(svg=>[...svg.querySelectorAll('path')].some(path=>!path.closest('defs'))));");XCTAssertEqual(glyphs,"true")
+        let editable=try await js(web,"return String(document.querySelector('[contenteditable=true]')===null);");XCTAssertEqual(editable,"true")
+    }
+    func testLivePaneScrollSynchronizationCanBeDisabled()async throws{
+        let oldLive=Preferences.shared.values.liveEditing,oldSync=Preferences.shared.values.scrollSync
+        Preferences.shared.values.liveEditing=true;Preferences.shared.values.scrollSync=true
+        let doc=RemarqueDocument();doc.session.load((0..<90).map{"## Section \($0)\n\nParagraph \($0) with enough text to scroll."}.joined(separator:"\n\n"))
+        doc.makeWindowControllers();doc.showWindows();defer{doc.close();Preferences.shared.values.liveEditing=oldLive;Preferences.shared.values.scrollSync=oldSync}
+        let root=try XCTUnwrap(doc.windowControllers.first?.window?.contentView)
+        func panes(_ v:NSView)->[WKWebView]{(v as? WKWebView).map{[$0]} ?? v.subviews.flatMap(panes)}
+        try await waitUntil{doc.session.webReady && panes(root).count==2}
+        let left=panes(root)[0],right=panes(root)[1]
+        for web in [left,right]{for _ in 0..<100{if (try? await js(web,"return document.querySelectorAll('.ProseMirror h2').length;"))=="90"{break};try await Task.sleep(for:.milliseconds(50))}}
+        _ = try await js(left,"window.scrollTo(0,1300);return true;")
+        var followed=false
+        for _ in 0..<100{if (Double(try await js(right,"return window.scrollY;")) ?? 0)>700{followed=true;break};try await Task.sleep(for:.milliseconds(50))}
+        XCTAssertTrue(followed,"Scrolling the live source pane must move the rendered pane")
+        Preferences.shared.values.scrollSync=false
+        try await Task.sleep(for:.milliseconds(350))
+        let before=try await js(left,"return window.scrollY;")
+        _ = try await js(right,"window.scrollTo(0,2800);return true;")
+        try await Task.sleep(for:.milliseconds(350))
+        let after=try await js(left,"return window.scrollY;");XCTAssertEqual(before,after)
+        Preferences.shared.values.scrollSync=true
+        try await Task.sleep(for:.milliseconds(350))
+        _ = try await js(right,"window.scrollTo(0,3900);return true;")
+        followed=false
+        for _ in 0..<100{if (Double(try await js(left,"return window.scrollY;")) ?? 0)>3000{followed=true;break};try await Task.sleep(for:.milliseconds(50))}
+        XCTAssertTrue(followed,"Re-enabling synchronization must take effect in the other direction")
     }
     func testUntitledAutosaveRemainsEdited(){
         let doc=RemarqueDocument();doc.session.load("Draft");doc.session.engineMarkInitialUnsaved()

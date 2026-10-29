@@ -356,16 +356,22 @@
   },
   {
     "requirement": "START-10",
-    "status": "in_progress",
+    "status": "verified",
     "implementation": [
-      "App/UI/AppWindows.swift"
+      "App/UI/HelpView.swift",
+      "Web/src/help.mjs",
+      "Web/help.css",
+      "Resources/Help"
     ],
-    "automated_tests": [],
-    "manual_evidence": [],
-    "known_limitations": [
-      "Grouped feature requires remaining control coverage and release verification."
+    "automated_tests": [
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift",
+      "Web/integration/help.spec.mjs"
     ],
-    "last_verified_revision": null
+    "manual_evidence": [
+      "Native settings switch verified on/off/on; native help window inspected; guide screenshots in docs/implementation/screenshots."
+    ],
+    "known_limitations": [],
+    "last_verified_revision": "3.0.1 development build 737"
   },
   {
     "requirement": "START-11",
@@ -590,16 +596,23 @@
   },
   {
     "requirement": "NAV-14",
-    "status": "in_progress",
+    "status": "verified",
     "implementation": [
-      "App/UI/EditorWorkspace.swift"
+      "App/Services/Preferences.swift",
+      "App/DocumentSession.swift",
+      "App/Editors/SourceEditor.swift",
+      "App/Editors/RenderedEditor.swift",
+      "Web/src/editor.mjs"
     ],
-    "automated_tests": [],
-    "manual_evidence": [],
-    "known_limitations": [
-      "Grouped feature requires remaining control coverage and release verification."
+    "automated_tests": [
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift",
+      "Web/integration/editor.spec.mjs"
     ],
-    "last_verified_revision": null
+    "manual_evidence": [
+      "Native settings switch verified on/off/on; native help window inspected; guide screenshots in docs/implementation/screenshots."
+    ],
+    "known_limitations": [],
+    "last_verified_revision": "3.0.1 development build 737"
   },
   {
     "requirement": "NAV-15",

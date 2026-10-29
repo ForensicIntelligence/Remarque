@@ -35,12 +35,17 @@ import RemarqueCore
     }
 }
 
+@MainActor final class SourceScrollView:NSScrollView {
+    var userScroll:(()->Void)?
+    override func scrollWheel(with event:NSEvent){userScroll?();super.scrollWheel(with:event)}
+}
 struct SourceEditor: NSViewRepresentable {
     @ObservedObject var session: DocumentSession
     @ObservedObject private var preferences=Preferences.shared
     func makeCoordinator() -> Coordinator { Coordinator(session) }
     func makeNSView(context: Context) -> NSScrollView {
-        let scroll=NSScrollView();scroll.hasVerticalScroller=true;scroll.autohidesScrollers=true;scroll.borderType = .noBorder
+        let scroll=SourceScrollView();scroll.hasVerticalScroller=true;scroll.autohidesScrollers=true;scroll.borderType = .noBorder
+        scroll.userScroll = { [weak coordinator=context.coordinator] in coordinator?.suppressScrollUntil=0 }
         let text=SourceTextView(frame:.zero);text.session=session;text.isRichText=false;text.importsGraphics=false;text.allowsUndo=false
         text.isVerticallyResizable=true;text.isHorizontallyResizable=false;text.autoresizingMask = [.width]
         text.textContainer?.widthTracksTextView=true;text.textContainer?.containerSize=NSSize(width:0,height:CGFloat.greatestFiniteMagnitude)
@@ -53,11 +58,19 @@ struct SourceEditor: NSViewRepresentable {
         context.coordinator.textView=text;scroll.documentView=text
         session.revealSource = { [weak text, weak coordinator=context.coordinator] range in
             guard let text, let coordinator, range.location+range.length <= (text.string as NSString).length else{return}
+            coordinator.suppressScrollUntil=Date.timeIntervalSinceReferenceDate+0.3
             coordinator.updating=true;text.setSelectedRange(range);text.scrollRangeToVisible(range);coordinator.updating=false
         }
-        session.scrollSource = { [weak text,weak scroll] offset in
-            guard let text,let scroll,text.window?.firstResponder !== text else{return}
-            let range=NSRange(location:offset,length:0);text.scrollRangeToVisible(range);scroll.verticalRulerView?.needsDisplay=true
+        session.scrollSource = { [weak text,weak scroll,weak coordinator=context.coordinator] offset in
+            guard let text,let scroll,let coordinator,let layout=text.layoutManager,let container=text.textContainer else{return}
+            coordinator.suppressScrollUntil=Date.timeIntervalSinceReferenceDate+0.3
+            layout.ensureLayout(for:container)
+            guard layout.numberOfGlyphs>0 else{return}
+            let glyph=layout.glyphIndexForCharacter(at:min(offset,max(0,(text.string as NSString).length-1)))
+            let rect=layout.lineFragmentRect(forGlyphAt:glyph,effectiveRange:nil)
+            let y=max(0,min(rect.minY+text.textContainerInset.height-22,text.bounds.height-scroll.contentView.bounds.height))
+            scroll.contentView.scroll(to:NSPoint(x:scroll.contentView.bounds.minX,y:y));scroll.reflectScrolledClipView(scroll.contentView)
+            scroll.verticalRulerView?.needsDisplay=true
         }
         scroll.contentView.postsBoundsChangedNotifications=true
         NotificationCenter.default.addObserver(context.coordinator,selector:#selector(Coordinator.scrolled(_:)),name:NSView.boundsDidChangeNotification,object:scroll.contentView)
@@ -87,13 +100,17 @@ struct SourceEditor: NSViewRepresentable {
         weak var textView:SourceTextView?
         var updating=false
         var compositionSource:String?
+        var suppressScrollUntil:TimeInterval=0
+        var lastScrollY:CGFloat=0
         init(_ session:DocumentSession){self.session=session}
         @objc func scrolled(_ notification:Notification){
-            guard let t=textView,t.window?.firstResponder===t,Preferences.shared.values.scrollSync else{return}
+            guard let t=textView else{return}
+            t.enclosingScrollView?.verticalRulerView?.needsDisplay=true
+            let y=t.visibleRect.minY;defer{lastScrollY=y}
+            guard !updating,abs(y-lastScrollY)>0.5,Date.timeIntervalSinceReferenceDate>suppressScrollUntil,Preferences.shared.values.scrollSync else{return}
             let point=NSPoint(x:t.textContainerInset.width+4,y:t.visibleRect.minY+8)
             let offset=t.characterIndexForInsertion(at:point)
-            session.sendWeb?(["type":"scroll","revision":session.revision,"start":offset])
-            t.enclosingScrollView?.verticalRulerView?.needsDisplay=true
+            session.synchronizeScroll(from:"source",offset:offset,at:session.revision)
         }
         func textDidChange(_ notification:Notification){
             guard !updating,let t=textView else{return}

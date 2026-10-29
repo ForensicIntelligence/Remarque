@@ -2,19 +2,25 @@ import mermaid from 'mermaid';
 import zenuml from '@mermaid-js/mermaid-zenuml';
 import tidyTree from '@mermaid-js/layout-tidy-tree';
 import elk from '@mermaid-js/layout-elk';
+import DOMPurify from 'dompurify';
 mermaid.registerExternalDiagrams([zenuml]);
 mermaid.registerLayoutLoaders(tidyTree);
 mermaid.registerLayoutLoaders(elk);
 let serial=Promise.resolve(),counter=0,cacheBytes=0;
 const cache=new Map(),inflight=new Map();
 function uniqueIDs(markup){
- const doc=new DOMParser().parseFromString(markup,'image/svg+xml'),prefix='remarque-copy-'+(++counter)+'-',ids=new Map();
- for(const el of doc.querySelectorAll('[id]')){ids.set(el.id,prefix+el.id);el.id=prefix+el.id;}
- for(const el of doc.querySelectorAll('*')){
-  for(const attr of [...el.attributes]){if(attr.name==='id')continue;let value=attr.value;for(const [old,id]of ids){value=value.split('url(#'+old+')').join('url(#'+id+')');if(value==='#'+old)value='#'+id;if(['aria-labelledby','aria-describedby'].includes(attr.name))value=value.split(' ').map(v=>v===old?id:v).join(' ')}el.setAttribute(attr.name,value);}
+ // Libraries may serialize SVG using HTML rules (including xlink without an
+ // explicit namespace). Normalize in an inert, sanitized fragment first.
+ const fragment=DOMPurify.sanitize(markup,{USE_PROFILES:{svg:true,svgFilters:true},ADD_TAGS:['foreignObject'],RETURN_DOM_FRAGMENT:true});
+ const svg=fragment.querySelector('svg'),prefix='remarque-copy-'+(++counter)+'-',ids=new Map();
+ if(!svg)throw Error('The renderer did not return a valid graphic. The original source is preserved.');
+ const elements=[svg,...svg.querySelectorAll('*')];
+ for(const el of elements.filter(e=>e.id)){ids.set(el.id,prefix+el.id);el.id=prefix+el.id;}
+ for(const el of elements){
+  for(const attr of [...el.attributes]){if(attr.name==='id')continue;let value=attr.value;for(const [old,id]of ids){value=value.split('url(#'+old+')').join('url(#'+id+')');if(value==='#'+old)value='#'+id;if(['aria-labelledby','aria-describedby'].includes(attr.name))value=value.split(' ').map(v=>v===old?id:v).join(' ')}attr.value=value;}
   if(el.tagName==='style'){let text=el.textContent;for(const [old,id]of ids)text=text.replace(new RegExp('#'+old.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?![\\w-])','g'),'#'+id);el.textContent=text;}
  }
- return new XMLSerializer().serializeToString(doc.documentElement);
+ return new XMLSerializer().serializeToString(svg);
 }
 export async function diagram(source,options={}){
  if(source.length>200000)throw Error('This diagram exceeds the 200,000-character rendering limit. Its source is preserved.');
@@ -31,5 +37,7 @@ export async function diagram(source,options={}){
 export async function equation(source,display){
  if(source.length>50000)throw Error('This equation exceeds the 50,000-character rendering limit. Its source is preserved.');
  await window.MathJax.startup.promise;
- const element=await window.MathJax.tex2svgPromise(source,{display});return uniqueIDs(element.innerHTML);
+ const element=await window.MathJax.tex2svgPromise(source,{display}),svg=element.querySelector('svg');
+ if(!svg)throw Error('The equation renderer did not return a graphic.');
+ return uniqueIDs(new XMLSerializer().serializeToString(svg));
 }

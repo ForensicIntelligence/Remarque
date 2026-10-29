@@ -31,15 +31,20 @@ struct PreferenceValues:Codable {
         return object}
 }
 
+@MainActor final class SettingsNavigation:ObservableObject {
+    static let shared=SettingsNavigation()
+    @Published var section="Appearance"
+}
+
 struct SettingsView:View {
     @ObservedObject private var preferences=Preferences.shared
-    @State private var section="Appearance"
+    @ObservedObject private var navigation=SettingsNavigation.shared
     private let sections=["Appearance","Editing","Preview","Mermaid","Export","Snippets","Keyboard","Privacy"]
     var body:some View{
         HSplitView{
-            List(sections,id:\.self,selection:$section){Text($0).padding(.vertical,6)}.frame(width:160)
+            List(sections,id:\.self,selection:$navigation.section){Text($0).padding(.vertical,6)}.frame(width:160)
             ScrollView{Form{
-                switch section{
+                switch navigation.section{
                 case "Appearance":
                     Picker("Theme",selection:$preferences.values.theme){ForEach(["System","Paper","Midnight","Graphite"],id:\.self){Text($0)}}
                     TextField("Editor font",text:$preferences.values.editorFont)
@@ -69,7 +74,10 @@ struct SettingsView:View {
                     Toggle("Live preview",isOn:$preferences.values.livePreview)
                     LabeledContent("Preview debounce",value:"\(Int(preferences.values.debounce*1000)) ms")
                     Slider(value:$preferences.values.debounce,in:0...0.5)
-                    Toggle("Scroll sync",isOn:$preferences.values.scrollSync)
+                    Toggle("Synchronize scrolling",isOn:$preferences.values.scrollSync)
+                        .accessibilityIdentifier("synchronizedScrolling")
+                    Text("Keep the source and rendered panes at the same section as you scroll either pane. On by default. Turn this off to browse each pane independently; selecting rendered content still reveals its source.")
+                        .font(.callout).foregroundStyle(.secondary)
                     Toggle("Hide front matter",isOn:$preferences.values.hideFrontMatter)
                     Toggle("Open links in default browser",isOn:$preferences.values.externalLinks)
                 case "Mermaid":

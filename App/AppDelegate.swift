@@ -13,6 +13,7 @@ import AppKit
     var activeSession:DocumentSession?{(NSDocumentController.shared.currentDocument as? RemarqueDocument)?.session}
     @objc func runCommand(_ sender:NSMenuItem){
         guard let command=sender.representedObject as? String else{return}
+        if command.hasPrefix("help:"){AppWindows.shared.help(String(command.dropFirst(5)));return}
         switch command{
         case "start":AppWindows.shared.start()
         case "settings":AppWindows.shared.settings()
@@ -40,6 +41,7 @@ import AppKit
     }
     func validateMenuItem(_ item:NSMenuItem)->Bool{
         guard let command=item.representedObject as? String else{return true}
+        if command.hasPrefix("help:"){return true}
         if ["start","settings","help","workspace","openWorkspace","typewriter","smartEditing","liveEditing","ribbon"].contains(command){return true}
         if command=="undo"{item.title="Undo"+(activeSession?.engine.undoLabel.isEmpty==false ? " "+activeSession!.engine.undoLabel:"");return activeSession?.engine.canUndo ?? false}
         if command=="redo"{item.title="Redo"+(activeSession?.engine.redoLabel.isEmpty==false ? " "+activeSession!.engine.redoLabel:"");return activeSession?.engine.canRedo ?? false}
@@ -75,6 +77,6 @@ import AppKit
         let format=menu("Format");command(format,"Bold","bold","b");command(format,"Italic","italic","i");command(format,"Inline Code","code");command(format,"Strikethrough","strike");command(format,"Highlight","highlight");command(format,"Insert Link…","link","k");command(format,"Insert Image…","image");command(format,"Bullet List","bullet");command(format,"Numbered List","ordered");command(format,"Task List","task");command(format,"Blockquote","quote");command(format,"Code Block","codeBlock","c",[.command,.option]);command(format,"Equation…","equation","e",[.command,.control]);command(format,"Superscript","sup");command(format,"Subscript","sub");command(format,"Callout","callout");command(format,"Footnote","footnote");command(format,"Collapsible Section","details");command(format,"Table Editor…","tableEditor");command(format,"Quick Table","table");command(format,"Horizontal Rule","rule");command(format,"Format Document","formatDocument","l",[.command,.option])
         let diagram=menu("Diagram");command(diagram,"Insert Diagram…","gallery","m",[.command,.option]);command(diagram,"Visual Editor…","visualDiagram","m",[.command,.shift]);command(diagram,"Edit Source…","editObject");command(diagram,"Copy Mermaid Source","copyDiagramSource");command(diagram,"Copy SVG","copySVG");command(diagram,"Export SVG…","exportDiagramSVG");command(diagram,"Export PNG…","exportDiagramPNG")
         let window=menu("Window");NSApp.windowsMenu=window;item(window,"Minimize",#selector(NSWindow.performMiniaturize(_:)),"m");item(window,"Zoom",#selector(NSWindow.performZoom(_:)));item(window,"Show Tab Bar",NSSelectorFromString("toggleTabBar:"));item(window,"Show All Tabs",NSSelectorFromString("toggleTabOverview:"));item(window,"Bring All to Front",#selector(NSApplication.arrangeInFront(_:)))
-        let help=menu("Help");NSApp.helpMenu=help;command(help,"Remarque Documentation","help","?");command(help,"Welcome to Remarque","start");command(help,"Markdown Guide","help");command(help,"Mermaid Guide","help");command(help,"Keyboard Shortcuts","help")
+        let help=menu("Help");NSApp.helpMenu=help;command(help,"Remarque Documentation","help","?");command(help,"Welcome to Remarque","start");command(help,"Markdown Guide","help:Markdown Reference");command(help,"Mermaid Guide","help:Mermaid Writing Diagrams");command(help,"Keyboard Shortcuts","help:Keyboard Shortcuts")
     }
 }

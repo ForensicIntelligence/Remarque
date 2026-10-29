@@ -1,9 +1,41 @@
-Command-N: new document. Command-O: open. Command-S: save. Command-Shift-S: save as. Command-Control-S: save version.
+Keep the actions you use most close at hand. Symbols: **⌘ Command · ⇧ Shift · ⌥ Option · ⌃ Control**.
 
-Command-B: bold. Command-I: italic. Command-K: link. Command-Option-C: code block. Command-Control-E: equation. Command-Option-M: diagram gallery. Command-Shift-M: visual diagram editor.
+## Documents and history
 
-Command-Z: shared undo. Command-Shift-Z: redo. Command-F: find and replace. Command-Shift-P: Command Palette.
+| Action | Shortcut |
+| --- | --- |
+| New / Open / Save | ⌘N / ⌘O / ⌘S |
+| Save As | ⇧⌘S |
+| Save version | ⌃⌘S |
+| Undo / Redo across both panes | ⌘Z / ⇧⌘Z |
 
-Command-Option-O: outline. Command-Option-P: preview. Command-Option-F: focus. Command-Option-T: typewriter. Command-Option-S: smart editing. Command-Option-W: live editing. Command-Control-R: source ribbon.
+## Write and insert
 
-Command-P: print document. Command-Shift-I: import document. Command-Option-I: import Mermaid. Command-Option-Return: presentation. Escape closes a presentation.
+| Action | Shortcut |
+| --- | --- |
+| Bold / Italic / Link | ⌘B / ⌘I / ⌘K |
+| Code block | ⌥⌘C |
+| Equation | ⌃⌘E |
+| Mermaid gallery | ⌥⌘M |
+| Visual diagram editor | ⇧⌘M |
+| Format document | ⌥⌘L |
+
+## Navigate and focus
+
+| Action | Shortcut |
+| --- | --- |
+| Find and replace | ⌘F |
+| Command Palette | ⇧⌘P |
+| Toggle outline / Preview | ⌥⌘O / ⌥⌘P |
+| Focus / Typewriter | ⌥⌘F / ⌥⌘T |
+| Smart editing / Live Editing | ⌥⌘S / ⌥⌘W |
+| Source formatting ribbon | ⌃⌘R |
+
+## Import, print, and present
+
+| Action | Shortcut |
+| --- | --- |
+| Print document | ⌘P |
+| Import document / Mermaid | ⇧⌘I / ⌥⌘I |
+| Start presentation | ⌥⌘Return |
+| Close presentation | Escape |

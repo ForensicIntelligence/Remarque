@@ -1,5 +1,22 @@
-The rendered pane is now editable and shares real-time source updates and undo history with the source editor. Selecting rendered content reveals the matching Markdown location.
+Remarque 3 brings an editable rendered page, shared undo, and a wider Mermaid catalogue to a native macOS workspace.
 
-The right toolbar has markdown, Mermaid, and LaTeX tabs. Mermaid coverage expands to 33 families and 41 starters, with local layouts and rendering.
+## In 3.0.1
 
-The rebuilt application uses bundle identifier ca.forensicintelligence.remarque and a versioned, private source repository. Development builds retain a visible development label until release qualification is complete.
+| Change | Where to find it |
+| --- | --- |
+| Clearly labelled **Synchronize scrolling**, on by default | [Settings → Preview](#settings:Preview) |
+| Scrolling in either pane, including Live Editing | [Live Preview](#topic:Live%20Preview) |
+| Illustrated help with rendered diagrams, equations, and source/result examples | This documentation window |
+| Direct guide links and adjustable help text size | Help menu and documentation toolbar |
+
+## The Remarque 3 workspace
+
+```remarque-map
+```
+
+- Edit the source or the rendered document; changes update the same Markdown.
+- Select rendered content to reveal the corresponding source.
+- Use **markdown**, **Mermaid**, and **LaTeX** toolbar tabs.
+- Choose from **33 Mermaid families and 41 starters**, with local rendering.
+
+Development builds keep their visible development label until release qualification is complete.

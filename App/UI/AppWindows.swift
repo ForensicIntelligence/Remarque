@@ -5,16 +5,16 @@ import RemarqueCore
 @MainActor final class AppWindows {
     static let shared=AppWindows()
     private var windows:[String:NSWindowController]=[:]
-    func show<Content:View>(_ key:String,title:String,content:()->Content){
+    func show<Content:View>(_ key:String,title:String,size:NSSize=NSSize(width:800,height:600),content:()->Content){
         if let controller=windows[key]{controller.showWindow(nil);controller.window?.makeKeyAndOrderFront(nil);return}
-        let view=NSHostingView(rootView:content());let window=NSWindow(contentRect:NSRect(x:0,y:0,width:800,height:600),styleMask:[.titled,.closable,.miniaturizable,.resizable],backing:.buffered,defer:false)
+        let view=NSHostingView(rootView:content());let window=NSWindow(contentRect:NSRect(origin:.zero,size:size),styleMask:[.titled,.closable,.miniaturizable,.resizable],backing:.buffered,defer:false)
         window.title=title;window.contentView=view;window.isReleasedWhenClosed=false;window.center();let controller=NSWindowController(window:window);windows[key]=controller;controller.showWindow(nil)
     }
-    func settings(){show("settings",title:"Remarque Settings"){SettingsView()}}
+    func settings(_ section:String?=nil){if let section{SettingsNavigation.shared.section=section};show("settings",title:"Remarque Settings"){SettingsView()}}
     func workspace(){show("workspace",title:"Workspace"){WorkspaceView()}}
     func history(_ session:DocumentSession){show("history-"+session.id,title:"Version History"){HistoryView(session:session)}}
     func start(){show("start",title:"Welcome to Remarque"){StartView()}}
-    func help(){show("help",title:"Remarque Documentation"){HelpView()}}
+    func help(_ article:String="Welcome"){HelpNavigation.shared.open(article);show("help",title:"Remarque Documentation",size:NSSize(width:1100,height:760)){HelpView()}}
     func newDocument(text:String=""){
         let doc=RemarqueDocument();doc.session.load(text)
         if !text.isEmpty{doc.session.engineMarkInitialUnsaved()}
@@ -41,18 +41,4 @@ struct StartView:View {
         }.frame(width:900,height:620).task{recoveries=(try? await LocalStorage.history.recoveries()) ?? []}
     }
     func template(_ name:String)->String{guard name != "Blank Document",let url=Bundle.main.url(forResource:name,withExtension:"md",subdirectory:"Templates") else{return ""};return (try? String(contentsOf:url,encoding:.utf8)) ?? ""}
-}
-struct HelpArticle:Identifiable {var id:String;var title:String;var body:String}
-struct HelpView:View {
-    @State private var query=""
-    @State private var selected:String?="Welcome"
-    var articles:[HelpArticle]{
-        let urls=(try? FileManager.default.contentsOfDirectory(at:Bundle.main.resourceURL!.appendingPathComponent("Help"),includingPropertiesForKeys:nil)) ?? []
-        return urls.filter{$0.pathExtension=="md"}.map{.init(id:$0.deletingPathExtension().lastPathComponent,title:$0.deletingPathExtension().lastPathComponent,body:(try? String(contentsOf:$0,encoding:.utf8)) ?? "")}.sorted{$0.title<$1.title}
-    }
-    var body:some View{
-        HSplitView{VStack{TextField("Search documentation",text:$query).textFieldStyle(.roundedBorder).padding(12);List(articles.filter{query.isEmpty || ($0.title+" "+$0.body).localizedCaseInsensitiveContains(query)},selection:$selected){article in Text(article.title).tag(article.id)}}.frame(width:230)
-            ScrollView{if let article=articles.first(where:{$0.id==selected}){VStack(alignment:.leading,spacing:18){Text(article.title).font(.largeTitle.bold());Text(LocalizedStringKey(article.body)).textSelection(.enabled).font(.body).lineSpacing(6)}.padding(32).frame(maxWidth:760,alignment:.leading)}}.frame(minWidth:490)
-        }.frame(width:950,height:650)
-    }
 }

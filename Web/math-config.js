@@ -1,1 +1,1 @@
-window.MathJax={startup:{typeset:false},svg:{fontCache:'local'},options:{enableMenu:false},tex:{packages:{'[+]':['ams']}};
+window.MathJax={startup:{typeset:false},svg:{fontCache:'none'},options:{enableMenu:false},tex:{packages:{'[+]':['ams']}}};

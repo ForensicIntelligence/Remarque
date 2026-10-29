@@ -1,4 +1,4 @@
-# Remarque 3.0.0 development build 736
+# Remarque 3.0.1 development build 737
 
 29 October 2026. Bundle identifier: `ca.forensicintelligence.remarque`. The original installed Remarque 2.1 application uses a different identifier and was not replaced.
 
@@ -8,13 +8,20 @@ The native macOS application has a shared Markdown source and undo history, an A
 
 Mermaid 12.2.0, ZenUML, ELK, and tidy-tree are pinned and bundled. The gallery has 33 families and 41 starters. Flowchart, sequence, and simple state diagrams have a visual editor; other families and unsupported constructs retain source editing. See [the generated support report](SHIPPED_MERMAID_SUPPORT.md).
 
+## Changes in 3.0.1
+
+Settings → Preview now clearly labels **Synchronize scrolling**, defaults to on, explains independent scrolling, and persists the choice. Both source modes route scrolling in both directions, including two WebKit panes in Live Editing. Explicit selection-to-source navigation remains enabled when synchronized scrolling is off.
+
+The documentation window now renders all 21 bundled guides as formatted articles, including a pane illustration, source/result examples, Mermaid diagrams, MathJax equations, reference tables, callouts, topic links, search, back navigation, and adjustable text size. Help menu shortcuts open their relevant topics. All content renders locally. The SVG normalization and MathJax configuration fixes keep actual equation glyphs visible after sanitization. See [update notes and screenshots](UPDATE_3.0.1.md).
+
 ## Verification evidence
 
-- Clean checkout: [GitHub Actions run 40965663715](https://github.com/ForensicIntelligence/Remarque/actions/runs/40965663715) passed the full suite and universal release compilation on the macOS 15 runner.
+- Previous 3.0.0 clean checkout: [GitHub Actions run 40965663715](https://github.com/ForensicIntelligence/Remarque/actions/runs/40965663715) passed the full suite and universal release compilation on the macOS 15 runner.
 - Swift core: 15 tests, including source bytes/BOM/mixed newlines, Unicode offsets, atomic patch rejection, grouped/shared undo, randomized edits, reload revisions, searching, formatting, and history.
 - Projection/visual-model tests: 13 tests, including exact duplicate mapping, incremental parse equivalence, fence/metadata preservation, directive protection, and formatting idempotence.
-- Browser integration: 23 tests, including right-side typing, formatting selection retention, table editing and placement, math palettes, visual Mermaid editing, live source mode, composition conflicts, source recovery, imports/exports, and script/network probes.
-- Native hosted WebKit: 7 tests, including both WebKit panes sharing one source, cross-pane editing and undo, untitled dirty state, RTF images, paginated PDF, and the full Mermaid catalogue in PDF.
+- Browser integration: 27 tests, including right-side typing, formatting selection retention, table editing and placement, math palettes, visual Mermaid editing, live source mode, composition conflicts, source recovery, imports/exports, and script/network probes.
+- Native hosted WebKit: 10 tests, including both WebKit panes sharing one source, cross-pane editing and undo, untitled dirty state, RTF images, paginated PDF, and the full Mermaid catalogue in PDF.
+- New regressions cover persisted/default scrolling preferences, disabled-scroll selection reveal, actual two-WebKit-pane scrolling, all 21 help guides in light/dark, offline requests, safe help content, copy/navigation, and visible math glyphs. The native help/settings windows and representative guide screenshots were inspected.
 - Every Mermaid starter renders and produces a graphic in Word export. The catalogue PDF spans 25 pages; sampled pages were rendered and visually inspected. A 160-paragraph PDF test retains its final paragraph.
 - RTF image output was independently opened by LibreOffice and converted to Word; the resulting document retains its embedded PNG and text.
 - A local projection benchmark on this Mac measured approximately 26 ms for a typical nonstructural edit in a 4,000-block, 104 KB document. This is an individual benchmark, not a complete p50/p95 application performance qualification.
@@ -35,9 +42,7 @@ Word/RTF/PDF import is conversion, with warnings for unsupported material. PDF i
 
 Some specification details also need implementation work: the complete named/filterable Mermaid flowchart shape catalogue, gallery synonym matching and per-item thumbnails, disabling every unsupported style combination in advance, and complete workspace alias/fragment navigation. The ledger records these separately from tests that simply have not been run.
 
-## First launch on this development Mac
-
-The signed app requests macOS approval to use the sandbox created by the earlier ad-hoc test build. macOS logs identify the transition to `PATM9DNCLA/ca.forensicintelligence.remarque`. This system approval requires the user; the computer-use tool blocks access to the system notification app. The original application has a different identifier and its archived installed files still match byte-for-byte.
+## Installing this development build
 
 The ZIP is created outside Desktop/iCloud and should be used for installation. Finder/File Provider may attach signing-incompatible metadata to the loose copy on Desktop. The archive is separately extracted and signature-verified before delivery.
 

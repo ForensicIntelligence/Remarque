@@ -59,6 +59,12 @@ struct OutlineEntry: Identifiable, Codable {
         if surface == "rendered"{sendWeb?(["type":"selection","target":"liveSource","revision":revision,"start":range.start,"end":range.end,"reveal":true])}
         if surface != "rendered" { sendWeb?(["type":"selection", "documentID":id, "revision":revision, "start":range.start,"end":range.end,"reveal":reveal]) }
     }
+    func synchronizeScroll(from surface:String,offset:Int,at revision:Int){
+        guard Preferences.shared.values.scrollSync,revision==self.revision else{return}
+        let start=max(0,min(offset,source.utf16.count))
+        if surface=="rendered"{scrollSource?(start)}
+        sendWeb?(["type":"scroll","target":surface=="rendered" ? "liveSource":"rendered","revision":revision,"start":start])
+    }
     func group(for surface: String) -> String {
         let now = Date()
         if let (name, previous, time) = inputGroup, previous == surface, now.timeIntervalSince(time) < 0.5 { inputGroup = (name, surface, now); return name }
