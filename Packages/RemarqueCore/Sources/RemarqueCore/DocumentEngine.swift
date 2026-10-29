@@ -40,11 +40,10 @@ public struct SourceBuffer: Sendable {
     public private(set) var count: Int
     public init(_ text: String = "") { pieces = [text]; count = text.utf16.count }
     public init(data: Data) throws {
-        // Foundation validates UTF-8 but consumes its BOM. Preserve it as source
-        // trivia so opening and saving a document cannot change its bytes.
-        guard let decoded = String(data: data, encoding: .utf8) else { throw DocumentError.invalidUTF8 }
-        let hasBOM = data.starts(with: [0xEF, 0xBB, 0xBF])
-        self.init(hasBOM ? "\u{FEFF}" + decoded : decoded)
+        // Decode scalars without Foundation's OS-dependent BOM handling. Every
+        // leading/interior BOM is source trivia and must survive byte-for-byte.
+        guard let decoded = String(validating: data, as: UTF8.self) else { throw DocumentError.invalidUTF8 }
+        self.init(decoded)
     }
     public var text: String { pieces.joined() }
     public var data: Data { Data(text.utf8) }

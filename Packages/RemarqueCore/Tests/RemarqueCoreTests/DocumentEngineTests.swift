@@ -7,6 +7,9 @@ final class DocumentEngineTests: XCTestCase {
         var d = try DocumentEngine(data: Data(text.utf8))
         XCTAssertEqual(d.buffer.data, Data(text.utf8)); XCTAssertFalse(d.isDirty)
         d.select(.init(.init(2, 2), surface: "rendered")); XCTAssertFalse(d.isDirty)
+        for sample in ["", "plain", "\u{FEFF}", "\u{FEFF}\u{FEFF}two", "a\u{FEFF}b", "\u{FEFF}\r\n"] {
+            XCTAssertEqual(try DocumentEngine(data: Data(sample.utf8)).buffer.data, Data(sample.utf8))
+        }
     }
     func testInvalidEncodingRejectedAndEmptyAccepted() throws {
         XCTAssertThrowsError(try DocumentEngine(data: Data([0xff, 0xfe])))

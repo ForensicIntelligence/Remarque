@@ -11,17 +11,27 @@ app="$derived/Build/Products/Release/Remarque.app"
 codesign --verify --deep --strict --verbose=2 "$app"
 version="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$app/Contents/Info.plist")"
 build="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleVersion' "$app/Contents/Info.plist")"
-mkdir -p dist
-ditto --norsrc "$app" dist/Remarque.app
-zip="dist/Remarque-${version}-${build}-development-macos-universal.zip"
-ditto --norsrc -c -k --keepParent dist/Remarque.app "$zip"
-shasum -a 256 "$zip" > "$zip.sha256"
+stage="$(mktemp -d /tmp/remarque-package.XXXXXX)"
+trap 'rm -rf "$stage"' EXIT
+ditto --norsrc "$app" "$stage/Remarque.app"
+codesign --verify --deep --strict --verbose=2 "$stage/Remarque.app"
+zip="$stage/Remarque-${version}-${build}-development-macos-universal.zip"
+ditto --norsrc -c -k --keepParent "$stage/Remarque.app" "$zip"
 # Set a stored notarytool keychain profile only when notarization is intended.
 if [[ -n "${REMARQUE_NOTARY_PROFILE:-}" ]]; then
   xcrun notarytool submit "$zip" --keychain-profile "$REMARQUE_NOTARY_PROFILE" --wait
-  xcrun stapler staple dist/Remarque.app
-  xcrun stapler validate dist/Remarque.app
-  ditto --norsrc -c -k --keepParent dist/Remarque.app "$zip"
-  shasum -a 256 "$zip" > "$zip.sha256"
+  xcrun stapler staple "$stage/Remarque.app"
+  xcrun stapler validate "$stage/Remarque.app"
+  ditto --norsrc -c -k --keepParent "$stage/Remarque.app" "$zip"
 fi
-printf '%s\n' "$zip"
+mkdir -p dist
+rm -rf dist/Remarque.app
+ditto --norsrc "$stage/Remarque.app" dist/Remarque.app
+# Desktop/iCloud may add Finder metadata while copying. Remove only signing-
+# incompatible metadata on this generated output; never touch user documents.
+xattr -dr com.apple.FinderInfo dist/Remarque.app 2>/dev/null || true
+xattr -dr com.apple.ResourceFork dist/Remarque.app 2>/dev/null || true
+codesign --verify --deep --strict --verbose=2 dist/Remarque.app
+cp "$zip" dist/
+(cd dist && shasum -a 256 "$(basename "$zip")" > "$(basename "$zip").sha256")
+printf '%s\n' "dist/$(basename "$zip")"

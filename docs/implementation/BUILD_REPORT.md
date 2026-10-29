@@ -1,4 +1,4 @@
-# Remarque 3.0.0 development build 735
+# Remarque 3.0.0 development build 736
 
 29 October 2026. Bundle identifier: `ca.forensicintelligence.remarque`. The original installed Remarque 2.1 application uses a different identifier and was not replaced.
 
@@ -17,6 +17,8 @@ Mermaid 12.2.0, ZenUML, ELK, and tidy-tree are pinned and bundled. The gallery h
 - Every Mermaid starter renders and produces a graphic in Word export. The catalogue PDF spans 25 pages; sampled pages were rendered and visually inspected. A 160-paragraph PDF test retains its final paragraph.
 - RTF image output was independently opened by LibreOffice and converted to Word; the resulting document retains its embedded PNG and text.
 - A local projection benchmark on this Mac measured approximately 26 ms for a typical nonstructural edit in a 4,000-block, 104 KB document. This is an individual benchmark, not a complete p50/p95 application performance qualification.
+
+The first GitHub run exposed OS-dependent Foundation UTF-8 BOM handling. Build 736 uses strict Swift UTF-8 decoding and includes empty, single, repeated, and interior BOM fixtures. Packaging stages signed artifacts outside Desktop/iCloud before creating the archive.
 
 ## Packaging and signing
 
