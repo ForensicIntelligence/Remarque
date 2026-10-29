@@ -1,0 +1,3 @@
+Resources/Editor/editor.js -diff -whitespace linguist-generated=true
+Resources/Editor/mathjax-tex-svg.js -diff -whitespace linguist-vendored=true
+Tests/RemarqueIntegrationTests/Fixtures/all-diagrams.html -diff -whitespace linguist-generated=true
