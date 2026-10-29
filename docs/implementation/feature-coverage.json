@@ -4471,74 +4471,146 @@
   },
   {
     "requirement": "MER-A02",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "All 41 starters render offline in tested light configuration; full light/dark matrix remains."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MER-A03",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative cross-pane editing/reveal/undo pass; all 41 save/reopen/edit combinations remain."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MER-A04",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "All starters produce DOCX graphics/native PDF content; full all-family/all-export matrix remains."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MER-A05",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative malformed/opaque fixtures covered; richer/Unicode/large fixtures for every family remain."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MER-A06",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Source preserved; full legacy-alias/baseline comparison remains."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MER-A07",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Theme/look/layout controls exist; full capability constraints and print-style verification remain."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MER-A08",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Pinned local modules/notices and strict native revision bridge implemented; full malicious/stale qualification remains."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MER-A09",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Labelled keyboard controls implemented; complete VoiceOver walkthrough remains."
+    ],
     "last_verified_revision": null
   },
   {
@@ -4555,29 +4627,52 @@
   },
   {
     "requirement": "R01",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
-    "manual_evidence": [],
+    "status": "verified",
+    "implementation": [
+      "scripts/build.sh",
+      "scripts/test.sh",
+      ".github/workflows/build.yml"
+    ],
+    "automated_tests": [
+      "Packages/RemarqueCore/Tests/RemarqueCoreTests/DocumentEngineTests.swift",
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
+    "manual_evidence": [
+      "GitHub Actions run 40965663715 passed from a clean checkout."
+    ],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 736"
   },
   {
     "requirement": "R02",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
-    "manual_evidence": [],
+    "status": "verified",
+    "implementation": [
+      "project.yml",
+      "recovery/preservation-manifest.json"
+    ],
+    "automated_tests": [
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
+    "manual_evidence": [
+      "Original archive SHA-256 unchanged; all 11 installed archived files compared equal, 2026-10-29."
+    ],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 736"
   },
   {
     "requirement": "R03",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "docs/feature-index.json",
+      "App",
+      "Web/src"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "All 226 baseline IDs are mapped; complete behavioral parity remains unqualified."
+    ],
     "last_verified_revision": null
   },
   {
@@ -4596,254 +4691,488 @@
   },
   {
     "requirement": "R05",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Packages/RemarqueCore/Sources/RemarqueCore/DocumentEngine.swift",
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Packages/RemarqueCore/Tests/RemarqueCoreTests/DocumentEngineTests.swift",
+      "Web/test/projection.test.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative byte/Unicode/trivia fixtures pass; exhaustive no-op matrix remains."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "R06",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Packages/RemarqueCore/Sources/RemarqueCore/DocumentEngine.swift"
+    ],
+    "automated_tests": [
+      "Packages/RemarqueCore/Tests/RemarqueCoreTests/DocumentEngineTests.swift",
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Seeded source edits and representative rich/shared undo pass; randomized cross-pane structure generation remains."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "R07",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/RemarqueDocument.swift"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Lifecycle/recovery implemented; exhaustive disk-full, permission, external-delete and crash injection remain."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "R08",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Services/MediaStore.swift"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative images/exports tested; complete grant, collision, reference and GIF/SVG matrix remains."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "R09",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Services/Workspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Search/backlinks overlay open edits and watcher refreshes indexes; moved roots, races, aliases/fragment cases remain incomplete or unqualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "R10",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Services/LocalHistory.swift"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "History/coordinated scratchpad implemented; system Shortcuts registration and multi-process stress remain."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "R11",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/exporters.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Representative nine-format tests pass; EPUBCheck and full downstream application matrix remain."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "R12",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Services/ExportService.swift"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Paginated PDF/catalogue tests pass; exhaustive print layout/slides navigation remains."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "R13",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/RenderedEditor.swift"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "CSP/request blocking/malicious fixtures pass; full archive and delayed-message fuzz matrix remains."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "R14",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Labelled controls implemented; full VoiceOver/contrast task walkthrough remains."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "R15",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Incremental projection and bounded render cache implemented; full application p50/p95 and delayed-render qualification remains."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "R16",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "scripts/release.sh"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Developer ID universal archive verifies; notarization and exhaustive help/feature parity review remain."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MER-01",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/gallery.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 736"
   },
   {
     "requirement": "MER-02",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/gallery.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 736"
   },
   {
     "requirement": "MER-03",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/gallery.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Pinned lockfiles/license manifest exist; complete per-resource hash/capability metadata remains."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MER-04",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/gallery.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Source preserved; exhaustive accepted legacy aliases remain unqualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MER-05",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/gallery.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Experimental starters labelled; all diagnostic failure cases remain unqualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MER-06",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/gallery.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Local bundled catalogue tested; complete icon/font and syntax variants remain unqualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MER-07",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/gallery.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Search/category gallery and selected preview implemented; synonym aliases and per-item thumbnails incomplete."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MER-08",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/gallery.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Explicit Insert and retained selection implemented; replacement workflow requires full coverage."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MER-09",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/gallery.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Source/card operations implemented; complete per-family matrix remains unqualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MER-10",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/gallery.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Restricted flowchart/sequence/state canvas and safe source fallback implemented; full baseline parity remains unqualified."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MER-11",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/gallery.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Restricted shape adapter implemented; complete named/filterable shape catalogue incomplete."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MER-12",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/gallery.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Shared catalogue feeds gallery/support report; additional capability/alias metadata incomplete."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MER-13",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/gallery.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Theme/style defaults implemented; legacy appearance/monochrome print comparison remains."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MER-14",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/gallery.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Metadata/configuration editing implemented; exhaustive unknown-front-matter preservation fixtures remain."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MER-15",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/gallery.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Strict rendering/sanitization implemented; unsupported style combinations report errors instead of all being disabled in advance."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MER-16",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs",
+      "Web/src/gallery.mjs",
+      "Web/src/renderers.mjs",
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Persisted changes use source transactions; full reduced-motion, print-animation/passive-theme matrix remains."
+    ],
     "last_verified_revision": null
   }
 ]

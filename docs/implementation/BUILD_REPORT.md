@@ -10,6 +10,7 @@ Mermaid 12.2.0, ZenUML, ELK, and tidy-tree are pinned and bundled. The gallery h
 
 ## Verification evidence
 
+- Clean checkout: [GitHub Actions run 40965663715](https://github.com/ForensicIntelligence/Remarque/actions/runs/40965663715) passed the full suite and universal release compilation on the macOS 15 runner.
 - Swift core: 15 tests, including source bytes/BOM/mixed newlines, Unicode offsets, atomic patch rejection, grouped/shared undo, randomized edits, reload revisions, searching, formatting, and history.
 - Projection/visual-model tests: 13 tests, including exact duplicate mapping, incremental parse equivalence, fence/metadata preservation, directive protection, and formatting idempotence.
 - Browser integration: 23 tests, including right-side typing, formatting selection retention, table editing and placement, math palettes, visual Mermaid editing, live source mode, composition conflicts, source recovery, imports/exports, and script/network probes.
@@ -31,6 +32,14 @@ The source is backed up in the private [ForensicIntelligence/Remarque repository
 This is a **signed development build**, not a fully qualified production release. Apple notarization has not been performed. Intel and macOS 14 execution have not been tested on physical machines; the universal build compiles both architectures. The broad VoiceOver workflow, exhaustive failure injection, larger-document performance matrix, all Mermaid syntax/style combinations, and complete downstream export conformance remain qualification work recorded in the [feature ledger](feature-coverage.json).
 
 Word/RTF/PDF import is conversion, with warnings for unsupported material. PDF import extracts selectable text and does not perform OCR. Visual Mermaid editing intentionally uses a bounded grammar and refuses destructive conversion. Complex Word formatting and uncommon RTF picture encodings require additional fixtures. EPUB structural packaging is tested; full EPUBCheck and multiple-reader validation are outstanding. These limits must not be described as fully verified parity.
+
+Some specification details also need implementation work: the complete named/filterable Mermaid flowchart shape catalogue, gallery synonym matching and per-item thumbnails, disabling every unsupported style combination in advance, and complete workspace alias/fragment navigation. The ledger records these separately from tests that simply have not been run.
+
+## First launch on this development Mac
+
+The signed app requests macOS approval to use the sandbox created by the earlier ad-hoc test build. macOS logs identify the transition to `PATM9DNCLA/ca.forensicintelligence.remarque`. This system approval requires the user; the computer-use tool blocks access to the system notification app. The original application has a different identifier and its archived installed files still match byte-for-byte.
+
+The ZIP is created outside Desktop/iCloud and should be used for installation. Finder/File Provider may attach signing-incompatible metadata to the loose copy on Desktop. The archive is separately extracted and signature-verified before delivery.
 
 ## Rebuild and backup
 
