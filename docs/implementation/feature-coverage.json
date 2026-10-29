@@ -1,1793 +1,2590 @@
 [
   {
     "requirement": "APP-01",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/RemarqueDocument.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "APP-02",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "App/RemarqueDocument.swift"
+    ],
+    "automated_tests": [
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "APP-03",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "App/RemarqueDocument.swift"
+    ],
+    "automated_tests": [
+      "Packages/RemarqueCore/Tests/RemarqueCoreTests/DocumentEngineTests.swift",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "APP-04",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/RemarqueDocument.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "APP-05",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/RemarqueDocument.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "APP-06",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/RemarqueDocument.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "APP-07",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/RemarqueDocument.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "APP-08",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/RemarqueDocument.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "APP-09",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/RemarqueDocument.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "APP-10",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/RemarqueDocument.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "APP-11",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/RemarqueDocument.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "APP-12",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/RemarqueDocument.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "APP-13",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/RemarqueDocument.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "APP-14",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/RemarqueDocument.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "APP-15",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/RemarqueDocument.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "APP-16",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/RemarqueDocument.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "APP-17",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/RemarqueDocument.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "APP-18",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/RemarqueDocument.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "START-01",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/AppWindows.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "START-02",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/AppWindows.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "START-03",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/AppWindows.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "START-04",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/AppWindows.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "START-05",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/AppWindows.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "START-06",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/AppWindows.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "START-07",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/AppWindows.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "START-08",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/AppWindows.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "START-09",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/AppWindows.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "START-10",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/AppWindows.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "START-11",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/AppWindows.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "START-12",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/AppWindows.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "START-13",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/AppWindows.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "START-14",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/AppWindows.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "NAV-01",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "NAV-02",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "NAV-03",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "NAV-04",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "NAV-05",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "NAV-06",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "NAV-07",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "NAV-08",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "NAV-09",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "NAV-10",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "NAV-11",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "NAV-12",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "NAV-13",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "NAV-14",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "NAV-15",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "NAV-16",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "NAV-17",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "NAV-18",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/EditorWorkspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-01",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-02",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-03",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-04",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-05",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-06",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-07",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-08",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-09",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-10",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-11",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-12",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-13",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-14",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-15",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-16",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-17",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-18",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-19",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-20",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-21",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-22",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-23",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-24",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDIT-25",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Editors/SourceEditing.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-01",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-02",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-03",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-04",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-05",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-06",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-07",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-08",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-09",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-10",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-11",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-12",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-13",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-14",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-15",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-16",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-17",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-18",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-19",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-20",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-21",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-22",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-23",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-24",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-25",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-26",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-27",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-28",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-29",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-30",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-31",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MD-32",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "PREV-01",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "PREV-02",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "PREV-03",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "PREV-04",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "PREV-05",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "PREV-06",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "PREV-07",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "PREV-08",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "PREV-09",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "PREV-10",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "PREV-11",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "PREV-12",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "PREV-13",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "TABLE-01",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/table-editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "TABLE-02",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/table-editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "TABLE-03",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/table-editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "TABLE-04",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/table-editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "TABLE-05",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/table-editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "TABLE-06",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/table-editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "TABLE-07",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/table-editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MATH-01",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/equation-editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MATH-02",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/equation-editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MATH-03",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/equation-editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MATH-04",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/equation-editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MATH-05",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/equation-editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MATH-06",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/equation-editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MATH-07",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/equation-editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MATH-08",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/equation-editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MATH-09",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/equation-editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MATH-10",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/equation-editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MATH-11",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/equation-editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "MATH-12",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/equation-editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-01",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-02",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-03",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-04",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-05",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-06",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-07",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-08",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-09",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-10",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-11",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-12",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-13",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-14",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-15",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-16",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-17",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-18",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-19",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-20",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-21",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-22",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-23",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-24",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-25",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-26",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-27",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-28",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-29",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-30",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-31",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-32",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "DIA-33",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/catalogue.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "SEARCH-01",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/SearchAndPalette.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "SEARCH-02",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/SearchAndPalette.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "SEARCH-03",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/SearchAndPalette.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "SEARCH-04",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/SearchAndPalette.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "SEARCH-05",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/SearchAndPalette.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "SEARCH-06",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/SearchAndPalette.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "SEARCH-07",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/SearchAndPalette.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "SEARCH-08",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/SearchAndPalette.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "SEARCH-09",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/UI/SearchAndPalette.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "WORK-01",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Services/Workspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "WORK-02",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Services/Workspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "WORK-03",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Services/Workspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "WORK-04",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Services/Workspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "WORK-05",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Services/Workspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "WORK-06",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Services/Workspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "WORK-07",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Services/Workspace.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "LOCAL-01",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Services/LocalHistory.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "LOCAL-02",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Services/LocalHistory.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "LOCAL-03",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Services/LocalHistory.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "LOCAL-04",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Services/LocalHistory.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "LOCAL-05",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Services/LocalHistory.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "LOCAL-06",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Services/LocalHistory.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "LOCAL-07",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Services/LocalHistory.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "LOCAL-08",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Services/LocalHistory.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "LOCAL-09",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Services/LocalHistory.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "LOCAL-10",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Services/LocalHistory.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "LOCAL-11",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "App/Services/LocalHistory.swift"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
@@ -1819,11 +2616,17 @@
   },
   {
     "requirement": "IO-04",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/exporters.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Sample structures and graphics pass; full fixture/export fidelity matrix is outstanding."
+    ],
     "last_verified_revision": null
   },
   {
@@ -1837,11 +2640,17 @@
   },
   {
     "requirement": "IO-06",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/exporters.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Sample structures and graphics pass; full fixture/export fidelity matrix is outstanding."
+    ],
     "last_verified_revision": null
   },
   {
@@ -1855,47 +2664,77 @@
   },
   {
     "requirement": "IO-08",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/exporters.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Sample structures and graphics pass; full fixture/export fidelity matrix is outstanding."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "IO-09",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/exporters.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Sample structures and graphics pass; full fixture/export fidelity matrix is outstanding."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "IO-10",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/exporters.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Sample structures and graphics pass; full fixture/export fidelity matrix is outstanding."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "IO-11",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/exporters.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Sample structures and graphics pass; full fixture/export fidelity matrix is outstanding."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "IO-12",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/exporters.mjs"
+    ],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs"
+    ],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Sample structures and graphics pass; full fixture/export fidelity matrix is outstanding."
+    ],
     "last_verified_revision": null
   },
   {
@@ -2035,290 +2874,420 @@
   },
   {
     "requirement": "SYNC-01",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "SYNC-02",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "SYNC-03",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "SYNC-04",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Web/test/projection.test.mjs",
+      "Web/integration/editor.spec.mjs"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "SYNC-05",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
+    "automated_tests": [
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "SYNC-06",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "SYNC-07",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "SYNC-08",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "SYNC-09",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "SYNC-10",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "SYNC-11",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "SYNC-12",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "SYNC-13",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "SYNC-14",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/projection.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDITNEW-01",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDITNEW-02",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "EDITNEW-03",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDITNEW-04",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDITNEW-05",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDITNEW-06",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDITNEW-07",
-    "status": "not_started",
-    "implementation": [],
-    "automated_tests": [],
+    "status": "verified",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
+    "automated_tests": [
+      "Packages/RemarqueCore/Tests/RemarqueCoreTests/DocumentEngineTests.swift",
+      "Tests/RemarqueIntegrationTests/EditorBridgeTests.swift"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "EDITNEW-08",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDITNEW-09",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDITNEW-10",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDITNEW-11",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDITNEW-12",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDITNEW-13",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDITNEW-14",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDITNEW-15",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDITNEW-16",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDITNEW-17",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
     "requirement": "EDITNEW-18",
-    "status": "not_started",
-    "implementation": [],
+    "status": "in_progress",
+    "implementation": [
+      "Web/src/editor.mjs"
+    ],
     "automated_tests": [],
     "manual_evidence": [],
-    "known_limitations": [],
+    "known_limitations": [
+      "Grouped feature requires remaining control coverage and release verification."
+    ],
     "last_verified_revision": null
   },
   {
@@ -2872,12 +3841,14 @@
   },
   {
     "requirement": "MER-A01",
-    "status": "not_started",
+    "status": "verified",
     "implementation": [],
-    "automated_tests": [],
+    "automated_tests": [
+      "Web/integration/editor.spec.mjs"
+    ],
     "manual_evidence": [],
     "known_limitations": [],
-    "last_verified_revision": null
+    "last_verified_revision": "development build 734, working tree 2026-10-29"
   },
   {
     "requirement": "MER-A02",

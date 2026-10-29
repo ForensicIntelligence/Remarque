@@ -5,6 +5,7 @@ import RemarqueCore
 
 struct RenderedEditor: NSViewRepresentable {
     @ObservedObject var session:DocumentSession
+    @ObservedObject private var preferences=Preferences.shared
     func makeCoordinator()->Coordinator{Coordinator(session)}
     func makeNSView(context:Context)->WKWebView{
         let config=WKWebViewConfiguration();config.websiteDataStore = .nonPersistent()
@@ -30,10 +31,14 @@ struct RenderedEditor: NSViewRepresentable {
         else{session.error="The bundled editor is missing. Rebuild the local editor resources."}
         return view
     }
-    func updateNSView(_ view:WKWebView,context:Context){}
+    func updateNSView(_ view:WKWebView,context:Context){
+        let data=try? JSONEncoder().encode(preferences.values)
+        if context.coordinator.lastPreferences != data{context.coordinator.lastPreferences=data;session.sendWeb?(["type":"preferences","values":preferences.web])}
+    }
     @MainActor final class Coordinator:NSObject,WKScriptMessageHandler,WKNavigationDelegate{
         let session:DocumentSession
         weak var webView:WKWebView?
+        var lastPreferences:Data?
         init(_ session:DocumentSession){self.session=session}
         func userContentController(_ userContentController:WKUserContentController,didReceive message:WKScriptMessage){
             guard message.frameInfo.isMainFrame, message.frameInfo.request.url?.isFileURL == true,
@@ -58,7 +63,22 @@ struct RenderedEditor: NSViewRepresentable {
             case "redo":session.redo()
             case "error":session.error=body["message"] as? String
             case "openLink":
-                if let value=body["url"] as? String,let url=URL(string:value),["https","http","mailto"].contains(url.scheme?.lowercased() ?? "") {NSWorkspace.shared.open(url)}
+                if let value=body["url"] as? String,let url=URL(string:value){
+                    if url.scheme=="remarque-note"{WorkspaceModel.shared.wiki(String(value.dropFirst("remarque-note:".count)).removingPercentEncoding ?? value)}
+                    else if Preferences.shared.values.externalLinks,["https","http","mailto"].contains(url.scheme?.lowercased() ?? ""){NSWorkspace.shared.open(url)}
+                }
+            case "copy":
+                if let text=body["text"] as? String{NSPasteboard.general.clearContents();NSPasteboard.general.setString(text,forType:body["format"] as? String == "html" ? .html:.string)}
+            case "asset":
+                if let path=body["path"] as? String,let token=body["token"] as? String{
+                    do{let (data,mime)=try MediaStore.read(path,document:session.fileURL);session.sendWeb?(["type":"asset","token":token,"mime":mime,"base64":data.base64EncodedString()])}
+                    catch{session.missingMedia=path;session.sendWeb?(["type":"asset","token":token,"error":"Image unavailable. Save the document or grant its folder access."])}
+                }
+            case "pasteImage":
+                if let raw=body["base64"] as? String,let data=Data(base64Encoded:raw),let ext=body["extension"] as? String{
+                    do{try MediaStore.insert(data,extension:ext,in:session)}catch{session.error=error.localizedDescription}
+                }
+            case "export":ExportService.shared.receive(body,session:session)
             default:break
             }
         }

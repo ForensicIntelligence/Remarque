@@ -28,12 +28,20 @@ struct OutlineEntry: Identifiable, Codable {
     @Published var wordCount = 0
     @Published var diagramCount = 0
     @Published var webReady = false
+    @Published var focusMode = false
+    @Published var showFind = false
+    @Published var showPalette = false
+    var readOnly = false
+    @Published var fileURL:URL?
+    @Published var missingMedia:String?
+    private var recoveryTask:Task<Void,Never>?
     var onChange: (() -> Void)?
     var sendWeb: (([String: Any]) -> Void)?
     var revealSource: ((NSRange) -> Void)?
     var inputGroup: (String, String, Date)?
     init(_ source: String = "") { self.source = source; engine = DocumentEngine(source) }
     var dirty: Bool { engine.isDirty }
+    func engineMarkInitialUnsaved(){engine.markSaved("");objectWillChange.send();onChange?();scheduleRecovery()}
     func load(_ text: String) { engine = DocumentEngine(text); source = text; revision = 0; selection = .init(); broadcast() }
     func select(_ range: SourceRange, surface: String, reveal: Bool = false) {
         engine.select(.init(range, surface: surface)); selection = engine.selection
@@ -49,7 +57,7 @@ struct OutlineEntry: Identifiable, Codable {
         do {
             try engine.apply(patches, baseRevision: base ?? revision, selection: next, label: label, group: group)
             source = engine.text; revision = engine.revision; selection = engine.selection
-            onChange?(); broadcast(transactionID: transactionID, patches: patches)
+            onChange?(); scheduleRecovery(); broadcast(transactionID: transactionID, patches: patches)
         } catch { self.error = error.localizedDescription; broadcast(rejected: transactionID) }
     }
     func replaceSource(_ text: String, selection range: NSRange) {
@@ -58,19 +66,59 @@ struct OutlineEntry: Identifiable, Codable {
     }
     func undo() { do { if try engine.undo() != nil { didUndo() } } catch { self.error = error.localizedDescription } }
     func redo() { do { if try engine.redo() != nil { didUndo() } } catch { self.error = error.localizedDescription } }
-    private func didUndo() { inputGroup = nil; source = engine.text; revision = engine.revision; selection = engine.selection; onChange?(); broadcast(); revealSource?(selection.range.nsRange) }
-    func markSaved(_ text: String) { engine.markSaved(text); objectWillChange.send() }
+    private func didUndo() { inputGroup = nil; source = engine.text; revision = engine.revision; selection = engine.selection; onChange?(); scheduleRecovery(); broadcast(); revealSource?(selection.range.nsRange) }
+    func markSaved(_ text: String) {
+        engine.markSaved(text);objectWillChange.send()
+        Task{if let key=fileURL?.path{do{try await LocalStorage.history.capture(key:key,text:text,label:"Saved")}catch{self.error=error.localizedDescription}};try? await LocalStorage.history.removeRecovery(id)}
+    }
+    private func scheduleRecovery(){
+        guard !readOnly else{return};recoveryTask?.cancel()
+        recoveryTask=Task{[weak self] in
+            do{try await Task.sleep(for:.seconds(2));guard let self else{return}
+                try await LocalStorage.history.journal(.init(id:self.id,filePath:self.fileURL?.path,source:self.source,selection:self.selection.range))
+                try await Task.sleep(for:.seconds(28));if let key=self.fileURL?.path{try await LocalStorage.history.capture(key:key,text:self.source)}
+            }catch is CancellationError{}catch{self?.error="Local recovery could not be saved: \(error.localizedDescription)"}
+        }
+    }
+    func captureVersion()async{
+        guard let key=fileURL?.path else{error="Save this document before capturing a version.";return}
+        do{try await LocalStorage.history.capture(key:key,text:source,manual:true,label:"Manual")}catch{self.error=error.localizedDescription}
+    }
+    func closed(){recoveryTask?.cancel();Task{try? await LocalStorage.history.removeRecovery(id)}}
     func broadcast(transactionID: String? = nil, patches: [SourcePatch] = [], rejected: String? = nil) {
         let encoded = (try? JSONSerialization.jsonObject(with: JSONEncoder().encode(patches))) ?? []
         sendWeb?(["type":"state", "documentID":id, "revision":revision, "source":source,
                   "start":selection.range.start,"end":selection.range.end,"surface":selection.surface,
-                  "transactionID":transactionID ?? "", "rejected":rejected ?? "", "patches":encoded])
+                  "transactionID":transactionID ?? "", "rejected":rejected ?? "", "patches":encoded,"readOnly":readOnly,"preferences":Preferences.shared.web])
     }
     func command(_ name: String, value: Any? = nil) {
         if name == "undo" { undo(); return }; if name == "redo" { redo(); return }
+        if name == "image"{MediaStore.insertFile(in:self);return}
+        if name == "printSource"{ExportService.shared.printSource(self);return}
         inputGroup = nil
+        if name == "formatDocument" {
+            replaceSource(MarkdownCommands.format(source),selection:selection.range.nsRange);inputGroup=nil;return
+        }
+        if selection.surface != "rendered",let edit=sourceCommand(name,value:value){
+            apply([edit.patch],selection:.init(edit.selection),label:name)
+            revealSource?(edit.selection.nsRange);return
+        }
         var message: [String:Any] = ["type":"command","name":name,"start":selection.range.start,"end":selection.range.end,"surface":selection.surface]
         if let value { message["value"] = value }
         sendWeb?(message)
+    }
+    func insertSnippet(_ snippet:Snippet,range:SourceRange?=nil){
+        let edit=MarkdownCommands.insert(snippet.body,at:range ?? selection.range)
+        apply([edit.patch],selection:.init(edit.selection),label:"Insert Snippet");revealSource?(edit.selection.nsRange)
+    }
+    private func sourceCommand(_ name:String,value:Any?)->CommandEdit?{
+        let r=selection.range
+        let markers=["bold":"**","italic":"*","strike":"~~","highlight":"==","code":"`","sup":"^","sub":"~"]
+        if let marker=markers[name]{return MarkdownCommands.wrap(source,selection:r,marker:marker)}
+        if name=="heading" {return MarkdownCommands.prefixLines(source,selection:r,prefix:String(repeating:"#",count:value as? Int ?? 0)+((value as? Int ?? 0)>0 ? " ":""))}
+        if let prefix=["quote":"> ","bullet":"- ","ordered":"1. ","task":"- [ ] "][name]{return MarkdownCommands.prefixLines(source,selection:r,prefix:prefix)}
+        let templates=["codeBlock":"```\n$0\n```","table":"| $0 | Header |\n| --- | --- |\n| Cell | Cell |\n| Cell | Cell |","rule":"\n---\n","callout":"> [!NOTE]\n> $0","details":"<details>\n<summary>Details</summary>\n\n$0\n\n</details>","footnote":"[^note]\n\n[^note]: $0"]
+        if let text=templates[name]{return MarkdownCommands.insert(text,at:r)}
+        return nil
     }
 }

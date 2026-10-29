@@ -646,6 +646,15 @@
     ]
   },
   {
+    "name": "@types/node",
+    "version": "26.6.6",
+    "license": "MIT",
+    "source": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+    "licenseFiles": [
+      "@types_node-LICENSE"
+    ]
+  },
+  {
     "name": "@types/trusted-types",
     "version": "2.0.7",
     "license": "MIT",
@@ -1211,6 +1220,15 @@
     ]
   },
   {
+    "name": "docx",
+    "version": "9.15.0",
+    "license": "MIT",
+    "source": "git+https://github.com/dolanmiu/docx.git",
+    "licenseFiles": [
+      "docx-LICENSE"
+    ]
+  },
+  {
     "name": "dompurify",
     "version": "3.4.17",
     "license": "(MPL-2.0 OR Apache-2.0)",
@@ -1308,6 +1326,15 @@
     "source": "wooorm/fault",
     "licenseFiles": [
       "fault-license"
+    ]
+  },
+  {
+    "name": "fflate",
+    "version": "0.8.3",
+    "license": "MIT",
+    "source": "https://github.com/101arrowz/fflate",
+    "licenseFiles": [
+      "fflate-LICENSE"
     ]
   },
   {
@@ -1910,6 +1937,15 @@
     ]
   },
   {
+    "name": "nanoid",
+    "version": "6.0.2",
+    "license": "MIT",
+    "source": "ai/nanoid",
+    "licenseFiles": [
+      "nanoid-LICENSE"
+    ]
+  },
+  {
     "name": "orderedmap",
     "version": "2.1.1",
     "license": "MIT",
@@ -2186,6 +2222,15 @@
     "source": "https://github.com/domchristie/turndown-plugin-gfm.git",
     "licenseFiles": [
       "turndown-plugin-gfm-LICENSE"
+    ]
+  },
+  {
+    "name": "undici-types",
+    "version": "8.9.0",
+    "license": "MIT",
+    "source": "git+https://github.com/nodejs/undici.git",
+    "licenseFiles": [
+      "undici-types-LICENSE"
     ]
   },
   {

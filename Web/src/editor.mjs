@@ -3,7 +3,9 @@ import {EditorView} from 'prosemirror-view';
 import {keymap} from 'prosemirror-keymap';
 import {baseKeymap,toggleMark,setBlockType,wrapIn,lift,chainCommands,exitCode} from 'prosemirror-commands';
 import {wrapInList,splitListItem,sinkListItem,liftListItem} from 'prosemirror-schema-list';
-import {tableEditing,goToNextCell,addRowAfter,addColumnAfter,deleteRow,deleteColumn} from 'prosemirror-tables';
+import {tableEditing,goToNextCell,addRowAfter,addColumnAfter,deleteRow,deleteColumn,setCellAttr} from 'prosemirror-tables';
+import {equationEditor} from './equation-editor.mjs';
+import {tableEditor} from './table-editor.mjs';
 import {schema} from './schema.mjs';
 import {project,transactionPatches,applyPatches,mapOffset} from './projection.mjs';
 import DOMPurify from 'dompurify';
@@ -12,7 +14,9 @@ import {gfm as turndownGFM} from 'turndown-plugin-gfm';
 
 let source='',revision=0,documentID='',projection=project(''),muted=false,compositionBase=null,compositionTimer=null;
 let typingGroup=null,typingTime=0,selectedObject=null,lastSelectedRange={start:0,end:0},rendererModule=null;
+let preferences={},readOnly=false;
 const pending=new Map();
+const assetRequests=new Map(),assetCache=new Map();
 const post=message=>window.webkit?.messageHandlers?.remarque?.postMessage({documentID,...message});
 const editable=document.querySelector('#editor');
 const turndown=new TurndownService({headingStyle:'atx',codeBlockStyle:'fenced'});turndown.use(turndownGFM);
@@ -50,12 +54,23 @@ const view=new EditorView(editable,{
     return false;
   },
   handlePaste(_view,event){
+    const file=[...(event.clipboardData?.files||[])].find(f=>f.type.startsWith('image/'));
+    if(file){event.preventDefault();sendImage(file);return true;}
     const html=event.clipboardData?.getData('text/html');
     if(html){event.preventDefault();const md=turndown.turndown(DOMPurify.sanitize(html));insertMarkdown(md);return true;}
     return false;
   },
-  nodeViews:{mermaid:objectView,math_display:objectView,inline_math:objectView,opaque:objectView}
+  handleDrop(_view,event){const file=[...(event.dataTransfer?.files||[])].find(f=>f.type.startsWith('image/'));if(file){event.preventDefault();sendImage(file);return true;}return false;},
+  nodeViews:{mermaid:objectView,math_display:objectView,inline_math:objectView,opaque:objectView,image:imageView}
 });
+function sendImage(file){if(file.size>20*1024*1024){post({type:'error',message:'Images must be 20 MB or smaller.'});return;}const reader=new FileReader();reader.onload=()=>post({type:'pasteImage',base64:reader.result.split(',')[1],extension:({'image/jpeg':'jpg','image/svg+xml':'svg','image/gif':'gif'})[file.type]||'png'});reader.readAsDataURL(file);}
+function imageView(node){
+  const dom=document.createElement('img');dom.alt=node.attrs.alt;dom.title=node.attrs.title;dom.setAttribute('data-source',node.attrs.src);const token=crypto.randomUUID();
+  if(/^data:image\/(png|jpeg|gif|webp|svg\+xml|tiff);base64,/i.test(node.attrs.src))dom.src=node.attrs.src;
+  else if(assetCache.has(node.attrs.src))dom.src=assetCache.get(node.attrs.src);
+  else{assetRequests.set(token,{element:dom,path:node.attrs.src});post({type:'asset',token,path:node.attrs.src});}
+  return {dom,destroy(){assetRequests.delete(token);}};
+}
 
 function commitTransaction(tr,next,label='Edit'){
   if(!tr.docChanged){view.updateState(next);return;}
@@ -108,7 +123,7 @@ function insertMarkdown(markdown){
   patchSource([{range:r,text}],'Insert',{start:r.start+prefix.length,end:r.start+prefix.length+markdown.length});
 }
 function objectView(node,_view,getPos){
-  const inline=node.isInline,dom=document.createElement(inline?'span':'div');dom.className=`object ${node.type.name}`;dom.contentEditable='false';dom.tabIndex=0;dom.setAttribute('role','button');
+  const inline=node.isInline,dom=document.createElement(inline?'span':'div');dom.className=`object ${node.type.name}`;dom.dataset.kind=node.attrs.kind||node.type.name;dom.contentEditable='false';dom.tabIndex=0;dom.setAttribute('role','button');
   const label=node.type.name==='mermaid'?'Mermaid diagram':node.type.name.includes('math')?'LaTeX equation':`${node.attrs.kind} source`;
   dom.setAttribute('aria-label',label);const graphic=document.createElement('span');graphic.className='graphic';dom.append(graphic);
   if(node.type.name==='opaque'){
@@ -134,6 +149,13 @@ function dialog(title,body){
 }
 function editObject(){
   const node=selectedObject?.node,r=projection.records.get(selectedObject?.origin);if(!node||!r){return;}
+  if(node.type.name.includes('math')){
+    const id=r.id;equationEditor({dialog,value:node.attrs.value,display:node.type.name==='math_display',onChange:(value,display)=>{
+      const current=projection.records.get(id);if(!current){post({type:'error',message:'This equation changed elsewhere. Close this panel and select it again.'});return;}
+      const text=display?'$$\n'+value+'\n$$':'$'+value+'$';if(text===source.slice(current.start,current.end))return;
+      patchSource([{range:{start:current.start,end:current.end},text}],'Edit Equation',{start:current.start,end:current.start+text.length});
+    }});return;
+  }
   const body=document.createElement('div'),textarea=document.createElement('textarea');textarea.spellcheck=false;textarea.value=node.attrs.value??node.attrs.raw;textarea.setAttribute('aria-label',node.type.name==='mermaid'?'Mermaid source':'LaTeX or block source');body.append(textarea);
   const hint=document.createElement('p');hint.className='hint';hint.textContent='Changes update your Markdown immediately. Use Undo to reverse them.';body.append(hint);
   let currentStart=r.start,currentEnd=r.end;let handle;
@@ -157,12 +179,17 @@ function promptInsert(title,fields,callback){
   form.onsubmit=e=>{e.preventDefault();callback(Object.fromEntries(new FormData(form)));d.close();d.remove();view.focus();};form.querySelector('input')?.focus();
 }
 function runCommand(name,value){
+  if(name.startsWith('export:')||name==='print'||name==='printCombined'||name==='present'){
+    const exportedRevision=revision,format=name.startsWith('export:')?name.slice(7):name;
+    import('./exporters.mjs').then(m=>m.exportDocument({format,source,projection,view,preferences})).then(result=>{if(exportedRevision!==revision)throw Error('The document changed while preparing the export. Please export again.');post({type:'export',...result});}).catch(e=>post({type:'error',message:'Export failed: '+e.message}));return;
+  }
   let command;
   const mark={bold:'strong',italic:'em',strike:'strike',highlight:'highlight',code:'code',sup:'sup',sub:'sub'}[name];
   if(mark)command=toggleMark(schema.marks[mark]);
   else if(name==='heading')command=setBlockType(value?schema.nodes.heading:schema.nodes.paragraph,value?{level:value}:null);
   else if(name==='quote')command=wrapIn(schema.nodes.blockquote);
-  else if(name==='bullet'||name==='task')command=wrapInList(schema.nodes.bullet_list);
+  else if(name==='bullet')command=wrapInList(schema.nodes.bullet_list);
+  else if(name==='task')command=(state,dispatch)=>wrapInList(schema.nodes.bullet_list)(state,tr=>{tr.doc.nodesBetween(tr.selection.from,tr.selection.to,(node,pos)=>{if(node.type.name==='list_item')tr.setNodeMarkup(pos,null,{...node.attrs,checked:false});});dispatch(tr);});
   else if(name==='ordered')command=wrapInList(schema.nodes.ordered_list);
   else if(name==='codeBlock')command=setBlockType(schema.nodes.code_block,{language:''});
   else if(name==='indent')command=sinkListItem(schema.nodes.list_item);
@@ -171,13 +198,21 @@ function runCommand(name,value){
   else if(name==='addColumn')command=addColumnAfter;
   else if(name==='deleteRow')command=deleteRow;
   else if(name==='deleteColumn')command=deleteColumn;
+  else if(name.startsWith('align:'))command=setCellAttr('alignment',name.split(':')[1]);
   if(command){command(view.state,tr=>view.dispatch(tr));view.focus();return;}
   if(name==='table')insertMarkdown('| Header | Header |\n| --- | --- |\n| Cell | Cell |\n| Cell | Cell |');
   if(name==='rule')insertMarkdown('---');
   if(name==='callout')insertMarkdown('> [!NOTE]\n> Your note');
   if(name==='details')insertMarkdown('<details>\n<summary>Details</summary>\n\nContent\n\n</details>');
   if(name==='footnote')insertMarkdown('[^note]\n\n[^note]: Footnote text.');
-  if(name==='equation')insertMarkdown('$$\nE=mc^2\n$$');
+  if(name==='equation')equationEditor({dialog,value:'',onInsert:(value,display)=>{if(display)insertMarkdown('$$\n'+value+'\n$$');else patchSource([{range:lastSelectedRange,text:'$'+value+'$'}],'Insert Equation');}});
+  if(name==='mathMode'&&selectedObject?.kind.includes('math')){const r=projection.records.get(selectedObject.origin),value=selectedObject.node.attrs.value;if(r)patchSource([{range:{start:r.start,end:r.end},text:selectedObject.kind==='inline_math'?'$$\n'+value+'\n$$':'$'+value+'$'}],'Change Equation Mode');}
+  if(name==='tableEditor'){
+    const table=[...projection.records.values()].find(r=>r.kind==='table'&&lastSelectedRange.start>=r.start&&lastSelectedRange.start<=r.end);
+    const rows=table?.mdast.children.map(r=>r.children.map(c=>source.slice(c.position.start.offset,c.position.end.offset).trim())),align=table?.mdast.align;
+    tableEditor({dialog,rows,align,onApply:markdown=>{if(table){const current=projection.records.get(table.id);if(current)patchSource([{range:{start:current.start,end:current.end},text:markdown}],'Edit Table');}else insertMarkdown(markdown);}});
+  }
+  if(name==='pasteHTML')insertMarkdown(turndown.turndown(DOMPurify.sanitize(value)));
   if(name==='gallery')import('./gallery.mjs').then(m=>m.showGallery({dialog,insertMarkdown}));
   if(name==='editObject')editObject();
   if(name==='link')promptInsert('Insert Link',[['Label','Link'],['URL','https://']],f=>patchSource([{range:lastSelectedRange,text:`[${f.Label}](${f.URL})`}],'Insert Link'));
@@ -185,17 +220,23 @@ function runCommand(name,value){
   if(name==='copySVG'){
     const svg=document.querySelector('.object.selected svg');if(svg){post({type:'copy',format:'svg',text:svg.outerHTML});navigator.clipboard?.writeText(svg.outerHTML).catch(()=>{});}
   }
+  if(name==='copyDiagramSource'&&selectedObject)post({type:'copy',text:selectedObject.node.attrs.value});
+  if(name==='copyHTML'){const copy=view.dom.cloneNode(true);copy.querySelectorAll('[contenteditable],[tabindex]').forEach(n=>{n.removeAttribute('contenteditable');n.removeAttribute('tabindex')});post({type:'copy',format:'html',text:copy.innerHTML});}
 }
 
 window.Remarque={receive(message){
   if(message.type==='state'){
+    if(message.preferences)applyPreferences(message.preferences);readOnly=!!message.readOnly;view.setProps({editable:()=>!readOnly});
     if(message.rejected){post({type:'error',message:'A concurrent edit was rejected. The current editor text is preserved in the recovery field.'});document.querySelector('#recovery').value=source;document.querySelector('#recovery').hidden=false;pending.clear();}
     if(message.transactionID&&pending.has(message.transactionID)){pending.delete(message.transactionID);return;}
-    if(message.documentID===documentID&&message.revision<revision)return;
+    if(!message.rejected&&message.documentID===documentID&&message.revision<revision)return;
     if(compositionBase){document.querySelector('#recovery').value=view.state.doc.textContent;document.querySelector('#recovery').hidden=false;compositionBase=null;}
     documentID=message.documentID;revision=message.revision;source=message.source;projection=project(source,projection,message.patches||[]);
     muted=true;view.updateState(freshState(projection.doc,projection.positionAt(message.start)));muted=false;
     lastSelectedRange={start:message.start,end:message.end};publishOutline();
+  }else if(message.type==='asset'){
+    const request=assetRequests.get(message.token);if(request){if(message.error){request.element.title=message.error;request.element.classList.add('missing-image');}else{let data=message.base64;if(message.mime==='image/svg+xml'){const raw=new TextDecoder().decode(Uint8Array.from(atob(data),c=>c.charCodeAt(0)));const safe=DOMPurify.sanitize(raw,{USE_PROFILES:{svg:true,svgFilters:true}});data=btoa(Array.from(new TextEncoder().encode(safe),b=>String.fromCharCode(b)).join(''));}const src='data:'+message.mime+';base64,'+data;assetCache.set(request.path,src);request.element.src=src;}assetRequests.delete(message.token);}
+  }else if(message.type==='preferences'){applyPreferences(message.values);
   }else if(message.type==='selection'){
     if(message.revision===revision)selectSource(message.start,message.end,message.reveal);
   }else if(message.type==='command'){
@@ -203,6 +244,7 @@ window.Remarque={receive(message){
     runCommand(message.name,message.value);
   }
 },getState(){return {source,revision,documentID,selection:lastSelectedRange,doc:view.state.doc.toJSON()};},view};
+function applyPreferences(values){preferences=values;document.documentElement.style.fontSize=(values.previewSize||17)+'px';document.body.style.fontSize=(values.previewSize||17)+'px';view.setProps({attributes:{'aria-label':'Rendered document editor',spellcheck:String(values.spellcheck!==false),'data-testid':'richEditor'}});document.body.dataset.theme=values.theme||'System';document.body.classList.toggle('hide-frontmatter',values.hideFrontMatter!==false);}
 window.addEventListener('error',event=>post({type:'error',message:event.message}));
 window.addEventListener('unhandledrejection',event=>post({type:'error',message:String(event.reason)}));
 post({type:'ready',protocol:1});

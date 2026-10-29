@@ -2,7 +2,7 @@ import {Schema} from 'prosemirror-model';
 import {tableNodes} from 'prosemirror-tables';
 
 const origin = {origin: {default: null}};
-const tables = tableNodes({tableGroup: 'block', cellContent: 'block+'});
+const tables = tableNodes({tableGroup: 'block', cellContent: 'block+',cellAttributes:{alignment:{default:null,getFromDOM:dom=>dom.style.textAlign||null,setDOMAttr:(value,attrs)=>{if(value)attrs.style=`text-align:${value}`;}}}});
 for (const spec of Object.values(tables)) spec.attrs = {...spec.attrs, ...origin};
 
 export const schema = new Schema({

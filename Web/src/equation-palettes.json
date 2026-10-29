@@ -1,0 +1,468 @@
+{
+  "Structures": [
+    {
+      "label": "x²",
+      "tex": "^{}"
+    },
+    {
+      "label": "xₙ",
+      "tex": "_{}"
+    },
+    {
+      "label": "a∕b",
+      "tex": "\\frac{}{}"
+    },
+    {
+      "label": "√",
+      "tex": "\\sqrt{}"
+    },
+    {
+      "label": "ⁿ√",
+      "tex": "\\sqrt[]{}"
+    },
+    {
+      "label": "∑",
+      "tex": "\\sum_{}^{}"
+    },
+    {
+      "label": "∏",
+      "tex": "\\prod_{}^{}"
+    },
+    {
+      "label": "∫",
+      "tex": "\\int_{}^{}"
+    },
+    {
+      "label": "∮",
+      "tex": "\\oint"
+    },
+    {
+      "label": "lim",
+      "tex": "\\lim_{ \\to }"
+    },
+    {
+      "label": "(ⁿₖ)",
+      "tex": "\\binom{}{}"
+    },
+    {
+      "label": "x⃗",
+      "tex": "\\vec{}"
+    },
+    {
+      "label": "x̂",
+      "tex": "\\hat{}"
+    },
+    {
+      "label": "x̄",
+      "tex": "\\bar{}"
+    },
+    {
+      "label": "[matrix]",
+      "tex": "\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}"
+    },
+    {
+      "label": "{cases}",
+      "tex": "\\begin{cases} a & x>0 \\\\ b & x\\le 0 \\end{cases}"
+    }
+  ],
+  "Greek": [
+    {
+      "label": "α",
+      "tex": "\\alpha"
+    },
+    {
+      "label": "β",
+      "tex": "\\beta"
+    },
+    {
+      "label": "γ",
+      "tex": "\\gamma"
+    },
+    {
+      "label": "δ",
+      "tex": "\\delta"
+    },
+    {
+      "label": "ε",
+      "tex": "\\varepsilon"
+    },
+    {
+      "label": "ζ",
+      "tex": "\\zeta"
+    },
+    {
+      "label": "η",
+      "tex": "\\eta"
+    },
+    {
+      "label": "θ",
+      "tex": "\\theta"
+    },
+    {
+      "label": "κ",
+      "tex": "\\kappa"
+    },
+    {
+      "label": "λ",
+      "tex": "\\lambda"
+    },
+    {
+      "label": "μ",
+      "tex": "\\mu"
+    },
+    {
+      "label": "ν",
+      "tex": "\\nu"
+    },
+    {
+      "label": "ξ",
+      "tex": "\\xi"
+    },
+    {
+      "label": "π",
+      "tex": "\\pi"
+    },
+    {
+      "label": "ρ",
+      "tex": "\\rho"
+    },
+    {
+      "label": "σ",
+      "tex": "\\sigma"
+    },
+    {
+      "label": "τ",
+      "tex": "\\tau"
+    },
+    {
+      "label": "φ",
+      "tex": "\\phi"
+    },
+    {
+      "label": "χ",
+      "tex": "\\chi"
+    },
+    {
+      "label": "ψ",
+      "tex": "\\psi"
+    },
+    {
+      "label": "ω",
+      "tex": "\\omega"
+    },
+    {
+      "label": "Γ",
+      "tex": "\\Gamma"
+    },
+    {
+      "label": "Δ",
+      "tex": "\\Delta"
+    },
+    {
+      "label": "Θ",
+      "tex": "\\Theta"
+    },
+    {
+      "label": "Λ",
+      "tex": "\\Lambda"
+    },
+    {
+      "label": "Π",
+      "tex": "\\Pi"
+    },
+    {
+      "label": "Σ",
+      "tex": "\\Sigma"
+    },
+    {
+      "label": "Φ",
+      "tex": "\\Phi"
+    },
+    {
+      "label": "Ψ",
+      "tex": "\\Psi"
+    },
+    {
+      "label": "Ω",
+      "tex": "\\Omega"
+    }
+  ],
+  "Operators": [
+    {
+      "label": "×",
+      "tex": "\\times"
+    },
+    {
+      "label": "÷",
+      "tex": "\\div"
+    },
+    {
+      "label": "±",
+      "tex": "\\pm"
+    },
+    {
+      "label": "∓",
+      "tex": "\\mp"
+    },
+    {
+      "label": "·",
+      "tex": "\\cdot"
+    },
+    {
+      "label": "∗",
+      "tex": "\\ast"
+    },
+    {
+      "label": "⋆",
+      "tex": "\\star"
+    },
+    {
+      "label": "∘",
+      "tex": "\\circ"
+    },
+    {
+      "label": "⊕",
+      "tex": "\\oplus"
+    },
+    {
+      "label": "⊗",
+      "tex": "\\otimes"
+    },
+    {
+      "label": "∇",
+      "tex": "\\nabla"
+    },
+    {
+      "label": "∂",
+      "tex": "\\partial"
+    },
+    {
+      "label": "√",
+      "tex": "\\surd"
+    },
+    {
+      "label": "%",
+      "tex": "\\%"
+    }
+  ],
+  "Relations": [
+    {
+      "label": "=",
+      "tex": "="
+    },
+    {
+      "label": "≠",
+      "tex": "\\neq"
+    },
+    {
+      "label": "≤",
+      "tex": "\\leq"
+    },
+    {
+      "label": "≥",
+      "tex": "\\geq"
+    },
+    {
+      "label": "≈",
+      "tex": "\\approx"
+    },
+    {
+      "label": "≡",
+      "tex": "\\equiv"
+    },
+    {
+      "label": "∼",
+      "tex": "\\sim"
+    },
+    {
+      "label": "∝",
+      "tex": "\\propto"
+    },
+    {
+      "label": "≅",
+      "tex": "\\cong"
+    },
+    {
+      "label": "⊂",
+      "tex": "\\subset"
+    },
+    {
+      "label": "⊆",
+      "tex": "\\subseteq"
+    },
+    {
+      "label": "⊃",
+      "tex": "\\supset"
+    },
+    {
+      "label": "∈",
+      "tex": "\\in"
+    },
+    {
+      "label": "∉",
+      "tex": "\\notin"
+    },
+    {
+      "label": "∪",
+      "tex": "\\cup"
+    },
+    {
+      "label": "∩",
+      "tex": "\\cap"
+    }
+  ],
+  "Arrows": [
+    {
+      "label": "→",
+      "tex": "\\to"
+    },
+    {
+      "label": "←",
+      "tex": "\\leftarrow"
+    },
+    {
+      "label": "↔",
+      "tex": "\\leftrightarrow"
+    },
+    {
+      "label": "⇒",
+      "tex": "\\Rightarrow"
+    },
+    {
+      "label": "⇐",
+      "tex": "\\Leftarrow"
+    },
+    {
+      "label": "⇔",
+      "tex": "\\Leftrightarrow"
+    },
+    {
+      "label": "↦",
+      "tex": "\\mapsto"
+    },
+    {
+      "label": "↑",
+      "tex": "\\uparrow"
+    },
+    {
+      "label": "↓",
+      "tex": "\\downarrow"
+    }
+  ],
+  "Symbols": [
+    {
+      "label": "∞",
+      "tex": "\\infty"
+    },
+    {
+      "label": "∀",
+      "tex": "\\forall"
+    },
+    {
+      "label": "∃",
+      "tex": "\\exists"
+    },
+    {
+      "label": "∄",
+      "tex": "\\nexists"
+    },
+    {
+      "label": "∅",
+      "tex": "\\emptyset"
+    },
+    {
+      "label": "ℝ",
+      "tex": "\\mathbb{R}"
+    },
+    {
+      "label": "ℕ",
+      "tex": "\\mathbb{N}"
+    },
+    {
+      "label": "ℤ",
+      "tex": "\\mathbb{Z}"
+    },
+    {
+      "label": "ℚ",
+      "tex": "\\mathbb{Q}"
+    },
+    {
+      "label": "ℂ",
+      "tex": "\\mathbb{C}"
+    },
+    {
+      "label": "⋯",
+      "tex": "\\cdots"
+    },
+    {
+      "label": "…",
+      "tex": "\\ldots"
+    },
+    {
+      "label": "∠",
+      "tex": "\\angle"
+    },
+    {
+      "label": "°",
+      "tex": "^{\\circ}"
+    },
+    {
+      "label": "⊥",
+      "tex": "\\perp"
+    },
+    {
+      "label": "∥",
+      "tex": "\\parallel"
+    }
+  ],
+  "Functions": [
+    {
+      "label": "sin",
+      "tex": "\\sin"
+    },
+    {
+      "label": "cos",
+      "tex": "\\cos"
+    },
+    {
+      "label": "tan",
+      "tex": "\\tan"
+    },
+    {
+      "label": "log",
+      "tex": "\\log"
+    },
+    {
+      "label": "ln",
+      "tex": "\\ln"
+    },
+    {
+      "label": "exp",
+      "tex": "\\exp"
+    },
+    {
+      "label": "max",
+      "tex": "\\max"
+    },
+    {
+      "label": "min",
+      "tex": "\\min"
+    },
+    {
+      "label": "det",
+      "tex": "\\det"
+    },
+    {
+      "label": "dim",
+      "tex": "\\dim"
+    },
+    {
+      "label": "gcd",
+      "tex": "\\gcd"
+    },
+    {
+      "label": "mod",
+      "tex": "\\bmod"
+    }
+  ]
+}

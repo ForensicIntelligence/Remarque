@@ -49,4 +49,10 @@ import RemarqueCore
         XCTAssertEqual(Bundle.main.bundleIdentifier,"ca.forensicintelligence.remarque")
         XCTAssertEqual(Bundle.main.object(forInfoDictionaryKey:"CFBundleVersion") as? String,"734")
     }
+    func testUntitledAutosaveRemainsEdited(){
+        let doc=RemarqueDocument();doc.session.load("Draft");doc.session.engineMarkInitialUnsaved()
+        doc.updateChangeCount(.changeAutosaved)
+        XCTAssertTrue(doc.isDocumentEdited,"Recovery autosave must not mark an untitled document saved")
+        doc.close()
+    }
 }

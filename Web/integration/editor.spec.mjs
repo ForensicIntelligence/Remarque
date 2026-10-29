@@ -58,3 +58,55 @@ test('all 41 templates from all 33 Mermaid families render',async({page})=>{
   const errors=await page.locator('.render-error').allTextContents();expect(errors).toEqual([]);
   await expect(page.locator('.mermaid:has(svg)')).toHaveCount(41);
 });
+test('equation palettes insert TeX and live edits preserve surrounding source',async({page})=>{
+  await load(page,'Before\n\n$$\r\nE=mc^2\r\n$$\n\nAfter');
+  await page.locator('.math_display').dblclick();await expect(page.getByRole('textbox',{name:'LaTeX source'})).toBeVisible();
+  expect(await source(page)).toBe('Before\n\n$$\r\nE=mc^2\r\n$$\n\nAfter');
+  await page.getByRole('textbox',{name:'LaTeX source'}).fill('x+y');
+  await expect.poll(()=>source(page)).toBe('Before\n\n$$\nx+y\n$$\n\nAfter');
+  await page.getByRole('button',{name:'Greek',exact:true}).click();await page.getByRole('button',{name:'α \\alpha',exact:true}).click();
+  await expect.poll(()=>source(page)).toContain('x+y\\alpha');
+});
+test('table builder edits the existing table and cancel is lossless',async({page})=>{
+  const original='Intro\n\n| A | B |\n| :--- | ---: |\n| a\\|b | c |\n\nTail';await load(page,original);
+  await page.evaluate(()=>window.Remarque.receive({type:'command',name:'tableEditor',start:11,end:11,surface:'source'}));
+  await page.getByRole('textbox',{name:'Row 1, column 2',exact:true}).fill('changed');await page.getByRole('button',{name:'Cancel',exact:true}).click();expect(await source(page)).toBe(original);
+  await page.evaluate(()=>window.Remarque.receive({type:'command',name:'tableEditor',start:11,end:11,surface:'source'}));
+  await page.getByRole('textbox',{name:'Row 1, column 2',exact:true}).fill('changed');await page.getByRole('button',{name:'Apply',exact:true}).click();
+  await expect.poll(()=>source(page)).toContain('| a\\|b | changed |');expect(await source(page)).toMatch(/^Intro\n\n[\s\S]*\n\nTail$/);
+});
+test('exports create structured Word, EPUB, HTML, LaTeX and Markdown packages',async({page})=>{
+  test.setTimeout(60000);
+  await load(page,'# Report\n\nA **bold** word and $x^2$.\n\n| Name | Value |\n| --- | ---: |\n| A | 2 |\n\n```mermaid\nflowchart LR\nA-->B\n```\n\n$$\nE=mc^2\n$$\n');
+  const results={};for(const format of ['HTML','DOCX','EPUB','LaTeX','Remarque','Embedded Markdown','Slides']){
+    await page.evaluate(format=>window.Remarque.receive({type:'command',name:'export:'+format,surface:'rendered'}),format);
+    await expect.poll(()=>page.evaluate(format=>window.messages.some(m=>m.type==='export'&&m.format===format)||window.messages.some(m=>m.type==='error'),format),{timeout:20000}).toBe(true);
+    const errors=await page.evaluate(()=>window.messages.filter(m=>m.type==='error'));expect(errors).toEqual([]);
+    results[format]=await page.evaluate(format=>window.messages.find(m=>m.type==='export'&&m.format===format),format);
+  }
+  const {unzipSync,strFromU8}=await import('fflate');
+  expect(results.HTML.text).toContain('<svg');expect(results.HTML.text).not.toContain('<script');
+  const word=unzipSync(Buffer.from(results.DOCX.base64,'base64'));expect(Object.keys(word).filter(k=>k.startsWith('word/media/')&&k.endsWith('.png'))).toHaveLength(3);expect(strFromU8(word['word/document.xml'])).toContain('<w:tbl>');expect(results.DOCX.warnings).toEqual([]);
+  const book=unzipSync(Buffer.from(results.EPUB.base64,'base64'));expect(strFromU8(book.mimetype)).toBe('application/epub+zip');expect(strFromU8(book['OEBPS/content.opf'])).toContain('version="3.0"');
+  expect(results.LaTeX.extension).toBe('tex');expect(results.LaTeX.text).toContain('\\textbf{bold}');expect(results.LaTeX.text).toContain('E=mc^2');
+  const bundle=unzipSync(Buffer.from(results.Remarque.base64,'base64'));expect(strFromU8(bundle['document.md'])).toContain('# Report');expect(results['Embedded Markdown'].text).toContain('# Report');expect(results.Slides.text).toContain('class="slide"');
+});
+test('composition is committed once and keeps Unicode source intact',async({page})=>{
+  await load(page,'Before \n');
+  await page.evaluate(()=>{const api=window.Remarque;api.receive({type:'selection',revision:0,start:7,end:7});api.view.focus();api.view.dom.dispatchEvent(new CompositionEvent('compositionstart',{bubbles:true}));api.view.dispatch(api.view.state.tr.insertText('日本語'));});
+  expect(await source(page)).toBe('Before \n');
+  await page.evaluate(()=>window.Remarque.view.dom.dispatchEvent(new CompositionEvent('compositionend',{bubbles:true,data:'日本語'})));
+  await expect.poll(()=>source(page)).toBe('Before 日本語\n');
+  expect(await page.evaluate(()=>window.messages.filter(m=>m.type==='edit').length)).toBe(1);
+});
+test('a rejected optimistic edit restores the native revision and retains recovery text',async({page})=>{
+  await load(page,'Original');
+  await page.evaluate(()=>{const api=window.Remarque;api.receive({type:'selection',revision:0,start:8,end:8});api.view.dispatch(api.view.state.tr.insertText(' local'));api.receive({type:'state',documentID:'test',revision:0,source:'Native truth',start:0,end:0,rejected:'rejected-edit'});});
+  expect(await source(page)).toBe('Native truth');await expect(page.getByRole('textbox',{name:'Recovered uncommitted editor content'})).toHaveValue('Original local');
+});
+test('block splitting and joining does not alter adjacent opaque source',async({page})=>{
+  const prefix='---\ntitle: Keep me\n---\n\n<!-- untouched -->\n\n';await load(page,prefix+'One two\n\nTail');
+  await page.evaluate(start=>{window.Remarque.receive({type:'selection',revision:0,start,end:start});window.Remarque.view.focus();},prefix.length+4);
+  await page.keyboard.press('Enter');await expect.poll(()=>source(page)).toBe(prefix+'One \n\ntwo\n\nTail');
+  await page.keyboard.press('Backspace');await expect.poll(()=>source(page)).toBe(prefix+'One two\n\nTail');
+});

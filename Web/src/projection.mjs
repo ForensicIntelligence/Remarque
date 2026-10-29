@@ -158,7 +158,7 @@ export function project(source, previous=null, patches=[]) {
         if(n.lang?.toLowerCase()==='mermaid')return schema.nodes.mermaid.create({...attrs,value:n.value});
         return schema.nodes.code_block.create({...attrs,language:n.lang||''},n.value?schema.text(n.value):null);
       case 'math':return schema.nodes.math_display.create({...attrs,value:n.value});
-      case 'table':return schema.nodes.table.create(attrs,n.children.map((row,i)=>schema.nodes.table_row.create({origin:record(row)},row.children.map((cell,j)=>schema.nodes[i===0?'table_header':'table_cell'].create({origin:record(cell)},schema.nodes.paragraph.create(null,cell.children.flatMap(c=>inline(c))))))));
+      case 'table':return schema.nodes.table.create(attrs,n.children.map((row,i)=>schema.nodes.table_row.create({origin:record(row)},row.children.map((cell,j)=>schema.nodes[i===0?'table_header':'table_cell'].create({origin:record(cell),alignment:n.align[j]},schema.nodes.paragraph.create(null,cell.children.flatMap(c=>inline(c))))))));
       default:return schema.nodes.opaque.create({...attrs,raw:source.slice(n.position.start.offset,n.position.end.offset),kind:n.type});
     }
   };
@@ -239,7 +239,7 @@ export function serialize(node) {
     case 'math_display':return `$$\n${node.attrs.value}\n$$`;
     case 'mermaid':return `${node.attrs.metadata?node.attrs.metadata+'\n':''}\`\`\`mermaid\n${node.attrs.value}\n\`\`\``;
     case 'opaque':return node.attrs.raw;
-    case 'table':{const rows=content.map(r=>{const cells=[];r.forEach(c=>cells.push(serialize(c).replace(/(?<!\\)\|/g,'\\|').replace(/\n+/g,'<br>')));return '| '+cells.join(' | ')+' |';});const count=content[0]?.childCount||1;return [rows[0],'| '+Array(count).fill('---').join(' | ')+' |',...rows.slice(1)].join('\n');}
+    case 'table':{const rows=content.map(r=>{const cells=[];r.forEach(c=>cells.push(serialize(c).replace(/(?<!\\)\|/g,'\\|').replace(/\n+/g,'<br>')));return '| '+cells.join(' | ')+' |';});const alignment=[];content[0]?.forEach(c=>alignment.push(({left:':---',center:':---:',right:'---:'})[c.attrs.alignment]||'---'));return [rows[0],'| '+alignment.join(' | ')+' |',...rows.slice(1)].join('\n');}
     case 'table_cell':case 'table_header':return content.map(serialize).join('\n');
     default:return node.textContent;
   }
