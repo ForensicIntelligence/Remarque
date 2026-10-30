@@ -50,6 +50,8 @@ The source is backed up in the private [ForensicIntelligence/Remarque repository
 
 ## Release status and practical limits
 
+Build 741 was submitted to Apple App Review on 29 October 2026 at 5:39 PM America/Vancouver. App Store Connect confirms **Waiting for Review**. The existing manual-release setting is retained. This submission does not establish that Apple has approved the update or that the remaining qualification work below is complete. See the [submission record](../releases/APP_STORE_3.0.3.md).
+
 This is a **signed development build**, not a fully qualified production release. Apple notarization has not been performed. Intel and macOS 14 execution have not been tested on physical machines; the universal build compiles both architectures. The broad VoiceOver workflow, exhaustive failure injection, larger-document performance matrix, all Mermaid syntax/style combinations, and complete downstream export conformance remain qualification work recorded in the [feature ledger](feature-coverage.json).
 
 Word/RTF/PDF import is conversion, with warnings for unsupported material. PDF import extracts selectable text and does not perform OCR. Visual Mermaid editing intentionally uses a bounded grammar and refuses destructive conversion. Complex Word formatting and uncommon RTF picture encodings require additional fixtures. EPUB structural packaging is tested; full EPUBCheck and multiple-reader validation are outstanding. These limits must not be described as fully verified parity.
