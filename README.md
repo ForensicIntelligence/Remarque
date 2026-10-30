@@ -4,7 +4,7 @@ The first phase inventories the surviving **Remarque 2.1 (733)** application and
 
 **Build:** Remarque 3.0.3 (741), a universal Xcode archive that passed Apple’s App Store validation on 29 October 2026. The previous signed app ZIP is build 739. See the [build report and verification limits](docs/implementation/BUILD_REPORT.md). The original installed app is preserved.
 
-**App Store:** Version 3.0.3 (741) was submitted on 29 October 2026 and is waiting for review. Manual release after approval is selected. [Submission record](docs/releases/APP_STORE_3.0.3.md).
+**App Store:** Version 3.0.3 (741) was submitted on 29 October 2026 and is waiting for review. Automatic release after Apple approval is selected. [Submission record](docs/releases/APP_STORE_3.0.3.md).
 
 **New in 3.0.3:** Product name **Remarque**, with the corrected signing/bundle identifier **ca.forensicintelligence.remarkable**. [Identity update](docs/implementation/UPDATE_3.0.3.md).
 

@@ -12,11 +12,13 @@
 - Submitted: 29 October 2026 at 5:39 PM America/Vancouver
 - Submission ID: `a6e116f8-d898-4c14-8986-52a75e5bb368`
 - [App Review record](https://appstoreconnect.apple.com/apps/6775993323/distribution/reviewsubmissions/details/a6e116f8-d898-4c14-8986-52a75e5bb368)
-- Release mode: manual release after Apple approval (existing setting retained)
+- Release mode: **automatically release this version** after Apple approval; changed at the account owner’s request on 29 October 2026 and verified after reloading App Store Connect.
 
 ![App Store Connect review receipt](APP_STORE_3.0.3_REVIEW.jpg)
 
 The exact submitted English (U.S.) description, promotional text, release notes, and review instructions are preserved in [the metadata record](APP_STORE_3.0.3_METADATA.json). Reviewer phone and email details are stored only in App Store Connect.
+
+![Automatic release saved](APP_STORE_3.0.3_AUTO_RELEASE.jpg)
 
 ## What’s New
 
@@ -66,7 +68,7 @@ Supported document imports are conversions. PDF import extracts selectable text 
 - Selected uploaded build 741 and answered the encryption algorithm question “None of the algorithms mentioned above”; the Missing Compliance status cleared.
 - Completed the required updated age-rating questionnaire. Social media and social media for under-13 users are absent. Other content and capability answers remain None/No. Apple calculated a 4+ rating. No age override or Made for Kids designation was applied.
 - The account owner confirmed accepting Apple’s updated Developer Program License Agreement.
-- Existing screenshots, keywords, support and marketing URLs, copyright, rating history, and manual release mode were retained.
+- Existing screenshots, keywords, support and marketing URLs, copyright, and rating history were retained. The account owner subsequently requested automatic release after approval; this setting is now saved.
 
 ## Technical evidence for required forms
 
