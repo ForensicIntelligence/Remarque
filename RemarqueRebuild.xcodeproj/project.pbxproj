@@ -263,6 +263,10 @@
 						DevelopmentTeam = PATM9DNCLA;
 						ProvisioningStyle = Manual;
 					};
+					CE1BE621F7079D41D6DD5A0E = {
+						DevelopmentTeam = PATM9DNCLA;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = E3908E14FABD09F1D2BA0EF4 /* Build configuration list for PBXProject "RemarqueRebuild" */;
@@ -452,7 +456,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 740;
+				CURRENT_PROJECT_VERSION = 741;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = PATM9DNCLA;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -516,7 +520,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 740;
+				CURRENT_PROJECT_VERSION = 741;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = PATM9DNCLA;
 				ENABLE_HARDENED_RUNTIME = YES;

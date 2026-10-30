@@ -1,4 +1,4 @@
-# Remarque 3.0.3 development build 740
+# Remarque 3.0.3 development build 741
 
 29 October 2026. Product name: **Remarque**. Bundle/signing identifier: `ca.forensicintelligence.remarkable`. This intentionally matches the original application identity, as corrected by the user. The installed Remarque 2.1 application binary was not replaced.
 
@@ -8,9 +8,9 @@ The native macOS application has a shared Markdown source and undo history, an A
 
 Mermaid 12.2.0, ZenUML, ELK, and tidy-tree are pinned and bundled. The gallery has 33 families and 41 starters. Flowchart, sequence, and simple state diagrams have a visual editor; other families and unsupported constructs retain source editing. See [the generated support report](SHIPPED_MERMAID_SUPPORT.md).
 
-## Archive follow-up, build 740
+## Archive follow-up, builds 740–741
 
-A fresh universal Xcode archive succeeds with the corrected application identity and an explicit Utilities category in the app plist. App Store validation of the previous archive failed on the revoked Mac Installer Distribution certificate while resolving Remarque.pkg; the Apple Distribution app identity was accepted. [Archive signing details](ARCHIVE_SIGNING.md). Build 739 remains the previous Developer ID ZIP.
+A fresh universal Xcode archive succeeds with the corrected application identity and an explicit Utilities category in the app plist. App Store validation of the previous archive failed on the revoked Mac Installer Distribution certificate while resolving Remarque.pkg; the Apple Distribution app identity was accepted. [Archive signing details](ARCHIVE_SIGNING.md). The replacement installer identity was created in Xcode with the account owner’s approval on 29 October 2026 and is valid locally. Xcode completed signing with the replacement identity. Apple then reported that build 740 lacked the required 1024-pixel app icon. Build 741 restores all ten original icon renditions from the surviving app’s asset catalogue and repackages the standalone ICNS; the original artwork was preserved without enlargement. **Build 741 passed Apple’s App Store validation at 5:27 PM America/Vancouver on 29 October 2026.** Xcode Organizer shows “Validation succeeded.” Build 739 remains the previous Developer ID ZIP.
 
 ## Changes in 3.0.3
 
@@ -27,6 +27,8 @@ Settings → Preview now clearly labels **Synchronize scrolling**, defaults to o
 The documentation window now renders all 21 bundled guides as formatted articles, including a pane illustration, source/result examples, Mermaid diagrams, MathJax equations, reference tables, callouts, topic links, search, back navigation, and adjustable text size. Help menu shortcuts open their relevant topics. All content renders locally. The SVG normalization and MathJax configuration fixes keep actual equation glyphs visible after sanitization. See [update notes and screenshots](UPDATE_3.0.1.md).
 
 ## Verification evidence
+
+- Build 740: [GitHub Actions run 40978594157](https://github.com/ForensicIntelligence/Remarque/actions/runs/40978594157) passed the full 65-test suite and universal release compilation for commit `746d53baecdea7d8cb6085b9917cc9293a24c309`.
 
 - Previous 3.0.0 clean checkout: [GitHub Actions run 40965663715](https://github.com/ForensicIntelligence/Remarque/actions/runs/40965663715) passed the full suite and universal release compilation on the macOS 15 runner.
 - Swift core: 15 tests, including source bytes/BOM/mixed newlines, Unicode offsets, atomic patch rejection, grouped/shared undo, randomized edits, reload revisions, searching, formatting, and history.
