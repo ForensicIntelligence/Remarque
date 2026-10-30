@@ -85,7 +85,7 @@
 		</dict>
 	</array>
 	<key>RemarqueReleaseChannel</key>
-	<string>development</string>
+	<string>release</string>
 	<key>UTImportedTypeDeclarations</key>
 	<array>
 		<dict>

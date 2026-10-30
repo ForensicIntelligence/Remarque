@@ -1,12 +1,20 @@
-# Remarque 3.0.3 development build 741
+# Remarque 3.0.4 · build 742
 
-29 October 2026. Product name: **Remarque**. Bundle/signing identifier: `ca.forensicintelligence.remarkable`. This intentionally matches the original application identity, as corrected by the user. The installed Remarque 2.1 application binary was not replaced.
+30 October 2026. Product name: **Remarque**. Bundle/signing identifier: `ca.forensicintelligence.remarkable`. This intentionally matches the original application identity, as corrected by the user. The source rebuild preserved the original binary. The owner reports that the App Store update 3.0.3 is now live.
 
 ## Delivered implementation
 
 The native macOS application has a shared Markdown source and undo history, an AppKit source editor, an editable rendered pane, source reveal from rendered selections, and one formatting toolbar with Mermaid and LaTeX insertion buttons immediately after Table. It includes the restored writing tools, outline, workspace/search/backlinks, local history/recovery, templates/help, snippets, media insertion, table/equation editors, document imports/exports, printing, presentations, and settings.
 
 Mermaid 12.2.0, ZenUML, ELK, and tidy-tree are pinned and bundled. The gallery has 33 families and 41 starters. Flowchart, sequence, and simple state diagrams have a visual editor; other families and unsupported constructs retain source editing. See [the generated support report](SHIPPED_MERMAID_SUPPORT.md).
+
+## Changes in 3.0.4
+
+The welcome window and editor no longer display the hard-coded “Development” label. `VERSION.json`, the plist, web package version, and Xcode project use release 3.0.4 (742); version validation checks the release channel and generated Xcode versions. Stable ZIP names no longer contain “development”.
+
+A custom About window features three gently bobbing, blinking Remarque icon companions. Motion stops when the window is inactive or closed and respects macOS Reduce Motion. It includes the version, publisher, documentation, and website links.
+
+The welcome screen shows five recent documents with one-line filenames and paths; the full list remains in File → Open Recent. Its flexible layout starts at 900 × 660 points, fits the available screen, and keeps a scrolling fallback for small windows or recovery entries. Utility windows stay separate from document tabs. See [update notes and screenshots](UPDATE_3.0.4.md).
 
 ## Archive follow-up, builds 740–741
 
@@ -27,6 +35,8 @@ Settings → Preview now clearly labels **Synchronize scrolling**, defaults to o
 The documentation window now renders all 21 bundled guides as formatted articles, including a pane illustration, source/result examples, Mermaid diagrams, MathJax equations, reference tables, callouts, topic links, search, back navigation, and adjustable text size. Help menu shortcuts open their relevant topics. All content renders locally. The SVG normalization and MathJax configuration fixes keep actual equation glyphs visible after sanitization. See [update notes and screenshots](UPDATE_3.0.1.md).
 
 ## Verification evidence
+
+- Build 742: all 65 tests passed locally, followed by another successful native-suite run after the utility-window adjustment. The universal Xcode archive passed Apple validation on 30 October 2026 at 2:11 PM America/Vancouver.
 
 - Build 740: [GitHub Actions run 40978594157](https://github.com/ForensicIntelligence/Remarque/actions/runs/40978594157) passed the full 65-test suite and universal release compilation for commit `746d53baecdea7d8cb6085b9917cc9293a24c309`.
 
@@ -50,15 +60,15 @@ The source is backed up in the private [ForensicIntelligence/Remarque repository
 
 ## Release status and practical limits
 
-Build 741 was submitted to Apple App Review on 29 October 2026 at 5:39 PM America/Vancouver. App Store Connect confirms **Waiting for Review**. At the account owner’s request, the release setting was changed to automatic release after Apple approval and verified after reloading App Store Connect. This submission does not establish that Apple has approved the update or that the remaining qualification work below is complete. See the [submission record](../releases/APP_STORE_3.0.3.md).
+Version 3.0.3 (741) was submitted on 29 October 2026 with automatic release after Apple approval. The owner reports it is live on 30 October. Version 3.0.4 (742) is prepared as the next update; submission is tracked separately. See the [previous submission record](../releases/APP_STORE_3.0.3.md).
 
-This is a **signed development build**, not a fully qualified production release. Apple notarization has not been performed. Intel and macOS 14 execution have not been tested on physical machines; the universal build compiles both architectures. The broad VoiceOver workflow, exhaustive failure injection, larger-document performance matrix, all Mermaid syntax/style combinations, and complete downstream export conformance remain qualification work recorded in the [feature ledger](feature-coverage.json).
+The Mac App Store build is a release build. A separate Developer ID ZIP is not notarized unless notarization is explicitly recorded. Broader qualification limits remain: Intel and macOS 14 execution have not been tested on physical machines; the universal build compiles both architectures. The broad VoiceOver workflow, exhaustive failure injection, larger-document performance matrix, all Mermaid syntax/style combinations, and complete downstream export conformance remain qualification work recorded in the [feature ledger](feature-coverage.json).
 
 Word/RTF/PDF import is conversion, with warnings for unsupported material. PDF import extracts selectable text and does not perform OCR. Visual Mermaid editing intentionally uses a bounded grammar and refuses destructive conversion. Complex Word formatting and uncommon RTF picture encodings require additional fixtures. EPUB structural packaging is tested; full EPUBCheck and multiple-reader validation are outstanding. These limits must not be described as fully verified parity.
 
 Some specification details also need implementation work: the complete named/filterable Mermaid flowchart shape catalogue, gallery synonym matching and per-item thumbnails, disabling every unsupported style combination in advance, and complete workspace alias/fragment navigation. The ledger records these separately from tests that simply have not been run.
 
-## Installing this development build
+## Installing a standalone build
 
 The ZIP is created outside Desktop/iCloud and should be used for installation. Finder/File Provider may attach signing-incompatible metadata to the loose copy on Desktop. The archive is separately extracted and signature-verified before delivery.
 

@@ -1,5 +1,16 @@
 Remarque 3 brings an editable rendered page, shared undo, and a wider Mermaid catalogue to a native macOS workspace.
 
+## In 3.0.4
+
+| Change | Where to find it |
+| --- | --- |
+| A clean version label for the App Store release | Welcome window, editor, and About |
+| Three gently animated Remarque companions | **Remarque → About Remarque** |
+| The five most recent documents in a window that fits your screen | **File → Show Start Window** |
+| Your full recent-document history | **File → Open Recent** |
+
+The About characters rest when the window is inactive. They stay still when macOS **Reduce Motion** is enabled.
+
 ## In 3.0.2
 
 One compact toolbar now holds the writing tools. **Mermaid** and **LaTeX** are insertion buttons immediately to the right of **Table**; their arrows reveal actions for selected diagrams and equations. Selecting an object keeps the same toolbar visible.
@@ -22,5 +33,3 @@ One compact toolbar now holds the writing tools. **Mermaid** and **LaTeX** are i
 - Select rendered content to reveal the corresponding source.
 - Use one formatting toolbar, with **Table**, **Mermaid**, and **LaTeX** together.
 - Choose from **33 Mermaid families and 41 starters**, with local rendering.
-
-Development builds keep their visible development label until release qualification is complete.

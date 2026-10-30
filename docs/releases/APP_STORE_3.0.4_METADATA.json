@@ -1,0 +1,8 @@
+{
+  "version": "3.0.4",
+  "build": 742,
+  "locale": "en-US",
+  "releaseType": "AFTER_APPROVAL",
+  "whatsNew": "A little polish, a little personality.\n\n• Removed the incorrect “Development” label from the welcome window and editor.\n• Added a redesigned About window with gently animated Remarque characters, clear version information, and quick links to the guide and website. Animations respect Reduce Motion and pause when the window is inactive.\n• Tidied the welcome window to show your five most recent documents. Your full history remains available in File → Open Recent.\n• Improved window sizing, long-filename handling, and the separation of utility windows from document tabs.",
+  "reviewNotes": "Remarque 3.0.4 is a visual polish and bug-fix update. No account or sign-in is required to use the app.\n\nReview steps:\n1. Open Remarque → About Remarque to see the new About window and animated icon characters. macOS Reduce Motion makes the characters stationary.\n2. Open File → Show Start Window. The app shows up to five recent documents; File → Open Recent retains the complete history.\n3. Confirm that the welcome window, editor, and About display version 3.0.4 (742) without the incorrect Development label.\n\nThe app's bundle identifier, privacy behavior, file access, editing functionality, and bundled offline rendering are unchanged. App Review contact details remain the same as the previous version."
+}

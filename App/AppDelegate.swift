@@ -15,6 +15,7 @@ import AppKit
         guard let command=sender.representedObject as? String else{return}
         if command.hasPrefix("help:"){AppWindows.shared.help(String(command.dropFirst(5)));return}
         switch command{
+        case "about":AppWindows.shared.about()
         case "start":AppWindows.shared.start()
         case "settings":AppWindows.shared.settings()
         case "help":AppWindows.shared.help()
@@ -42,7 +43,7 @@ import AppKit
     func validateMenuItem(_ item:NSMenuItem)->Bool{
         guard let command=item.representedObject as? String else{return true}
         if command.hasPrefix("help:"){return true}
-        if ["start","settings","help","workspace","openWorkspace","typewriter","smartEditing","liveEditing","ribbon"].contains(command){return true}
+        if ["about","start","settings","help","workspace","openWorkspace","typewriter","smartEditing","liveEditing","ribbon"].contains(command){return true}
         if command=="undo"{item.title="Undo"+(activeSession?.engine.undoLabel.isEmpty==false ? " "+activeSession!.engine.undoLabel:"");return activeSession?.engine.canUndo ?? false}
         if command=="redo"{item.title="Redo"+(activeSession?.engine.redoLabel.isEmpty==false ? " "+activeSession!.engine.redoLabel:"");return activeSession?.engine.canRedo ?? false}
         return activeSession != nil
@@ -59,7 +60,7 @@ import AppKit
         func menu(_ title:String)->NSMenu{let root=NSMenuItem();root.title=title;let m=NSMenu(title:title);root.submenu=m;main.addItem(root);return m}
         func item(_ m:NSMenu,_ title:String,_ action:Selector?,_ key:String="",_ modifiers:NSEvent.ModifierFlags = .command,_ target:AnyObject?=nil){let i=NSMenuItem(title:title,action:action,keyEquivalent:key);i.keyEquivalentModifierMask=modifiers;i.target=target;m.addItem(i)}
         func command(_ m:NSMenu,_ title:String,_ name:String,_ key:String="",_ mods:NSEvent.ModifierFlags = .command){let i=NSMenuItem(title:title,action:#selector(runCommand(_:)),keyEquivalent:key);i.target=self;i.keyEquivalentModifierMask=mods;i.representedObject=name;m.addItem(i)}
-        let app=menu("Remarque");item(app,"About Remarque",#selector(NSApplication.orderFrontStandardAboutPanel(_:)),"",[],NSApp);command(app,"Settings…","settings",",");app.addItem(.separator())
+        let app=menu("Remarque");command(app,"About Remarque","about");command(app,"Settings…","settings",",");app.addItem(.separator())
         let services=NSMenu(title:"Services"),servicesItem=NSMenuItem(title:"Services",action:nil,keyEquivalent:"");servicesItem.submenu=services;app.addItem(servicesItem);NSApp.servicesMenu=services
         app.addItem(.separator());item(app,"Hide Remarque",#selector(NSApplication.hide(_:)),"h");item(app,"Hide Others",#selector(NSApplication.hideOtherApplications(_:)),"h",[.command,.option]);item(app,"Show All",#selector(NSApplication.unhideAllApplications(_:)));app.addItem(.separator());item(app,"Quit Remarque",#selector(NSApplication.terminate(_:)),"q")
         let file=menu("File");item(file,"New",#selector(newDocument(_:)),"n",.command,self);command(file,"Show Start Window","start","n",[.command,.option,.shift]);item(file,"Open…",#selector(NSDocumentController.openDocument(_:)),"o",.command,NSDocumentController.shared)

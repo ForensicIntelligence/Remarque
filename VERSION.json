@@ -1,7 +1,7 @@
 {
-  "version": "3.0.3",
-  "build": 741,
-  "channel": "development",
+  "version": "3.0.4",
+  "build": 742,
+  "channel": "release",
   "bundleIdentifier": "ca.forensicintelligence.remarkable",
   "developmentTeam": "PATM9DNCLA"
 }

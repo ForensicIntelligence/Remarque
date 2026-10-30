@@ -15,7 +15,10 @@ stage="$(mktemp -d /tmp/remarque-package.XXXXXX)"
 trap 'rm -rf "$stage"' EXIT
 ditto --norsrc "$app" "$stage/Remarque.app"
 codesign --verify --deep --strict --verbose=2 "$stage/Remarque.app"
-zip="$stage/Remarque-${version}-${build}-development-macos-universal.zip"
+channel="$(/usr/libexec/PlistBuddy -c 'Print :RemarqueReleaseChannel' "$app/Contents/Info.plist")"
+suffix=""
+if [[ "$channel" != "release" ]]; then suffix="-${channel}"; fi
+zip="$stage/Remarque-${version}-${build}${suffix}-macos-universal.zip"
 ditto --norsrc -c -k --keepParent "$stage/Remarque.app" "$zip"
 # Set a stored notarytool keychain profile only when notarization is intended.
 if [[ -n "${REMARQUE_NOTARY_PROFILE:-}" ]]; then

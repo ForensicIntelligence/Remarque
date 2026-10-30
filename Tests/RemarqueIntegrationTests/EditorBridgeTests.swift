@@ -68,7 +68,9 @@ import RemarqueCore
         XCTAssertEqual(Bundle.main.object(forInfoDictionaryKey:"CFBundleName") as? String,"Remarque")
         XCTAssertEqual(Bundle.main.object(forInfoDictionaryKey:"CFBundleDisplayName") as? String,"Remarque")
         XCTAssertGreaterThanOrEqual(Int(BuildInfo.build) ?? 0,734)
-        XCTAssertEqual(BuildInfo.version,"3.0.3")
+        XCTAssertEqual(BuildInfo.version,"3.0.4")
+        XCTAssertEqual(BuildInfo.label,"3.0.4 (742)")
+        XCTAssertEqual(Bundle.main.object(forInfoDictionaryKey:"RemarqueReleaseChannel") as? String,"release")
     }
     func testScrollPreferencePersistsAndRoutesBothModesWithoutBlockingSelection()throws{
         XCTAssertTrue(PreferenceValues().scrollSync)

@@ -1,6 +1,6 @@
 # Shipped Mermaid support
 
-Generated from the application catalogue for Remarque 3.0.3 (741). Engine: Mermaid 12.2.0, ZenUML 1.0.1, ELK 1.0.1, tidy-tree 1.0.1. Runtime resources are bundled locally.
+Generated from the application catalogue for Remarque 3.0.4 (742). Engine: Mermaid 12.2.0, ZenUML 1.0.1, ELK 1.0.1, tidy-tree 1.0.1. Runtime resources are bundled locally.
 
 33 families and 41 starters. The automated catalogue test renders every starter and verifies a Word graphic for each; the native PDF test checks the complete catalogue document. Richer syntax, every possible layout/look combination, and downstream accessibility remain separate qualification tasks.
 

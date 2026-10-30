@@ -1,12 +1,12 @@
 # Remarque
 
-The first phase inventories the surviving **Remarque 2.1 (733)** application and specifies its rebuild. Prepared **29 October 2026**. Implementation is in progress on `codex/rebuild`; the application is a development build and has not passed the full release gates.
+Remarque is a native macOS Markdown editor rebuilt from the surviving **Remarque 2.1 (733)** application. The original inventory and rebuild specification are preserved below. Source and release work are backed up in this private repository.
 
-**Build:** Remarque 3.0.3 (741), a universal Xcode archive that passed Apple’s App Store validation on 29 October 2026. The previous signed app ZIP is build 739. See the [build report and verification limits](docs/implementation/BUILD_REPORT.md). The original installed app is preserved.
+**Current update:** Remarque **3.0.4 (742)**. Clean version labels, a custom animated About window, and a welcome screen showing five recent documents. [Update notes](docs/implementation/UPDATE_3.0.4.md). See the [build report and verification limits](docs/implementation/BUILD_REPORT.md).
 
-**App Store:** Version 3.0.3 (741) was submitted on 29 October 2026 and is waiting for review. Automatic release after Apple approval is selected. [Submission record](docs/releases/APP_STORE_3.0.3.md).
+**App Store:** Version 3.0.3 (741) is live, as reported by the owner on 30 October 2026. Version 3.0.4 is being prepared for App Review. The release preference is automatic release after Apple approval. [Previous submission record](docs/releases/APP_STORE_3.0.3.md).
 
-**New in 3.0.3:** Product name **Remarque**, with the corrected signing/bundle identifier **ca.forensicintelligence.remarkable**. [Identity update](docs/implementation/UPDATE_3.0.3.md).
+**Identity:** Product name **Remarque**, signing/bundle identifier **ca.forensicintelligence.remarkable**. [Identity update](docs/implementation/UPDATE_3.0.3.md).
 
 **Included from 3.0.2:** One formatting toolbar, with Mermaid and LaTeX insertion buttons immediately after Table. [Update notes](docs/implementation/UPDATE_3.0.2.md).
 
@@ -39,7 +39,7 @@ The archive is a local preservation copy on this machine. The independent privat
 
 Open `RemarqueRebuild.xcodeproj` and use the `RemarqueRebuild` scheme, or run `scripts/build.sh`. Web assets are bundled locally; `Web/package-lock.json` pins dependencies. `scripts/test.sh` runs the Swift core, browser, and hosted WebKit tests. The browser tests currently use Google Chrome’s standard macOS path.
 
-`VERSION.json` controls version **3.0.3**, development build **741**, and bundle identifier **ca.forensicintelligence.remarkable**. `node scripts/version.mjs --next-build` advances a distributable build; regenerate the project with XcodeGen afterward. Developer ID signing uses FI Forensic Intelligence, Ltd. (PATM9DNCLA). `scripts/release.sh` creates the signed universal application and ZIP; notarization is separate. The installed original app is untouched.
+`VERSION.json` controls version **3.0.4**, build **742**, release channel **release**, and bundle identifier **ca.forensicintelligence.remarkable**. `node scripts/version.mjs --next-build` advances a distributable build; regenerate the project with XcodeGen afterward. Developer ID signing uses FI Forensic Intelligence, Ltd. (PATM9DNCLA). `scripts/release.sh` creates the signed universal application and ZIP; notarization is separate. The installed original app is untouched.
 
 For Product → Archive and Mac App Store validation, see [archive signing](docs/implementation/ARCHIVE_SIGNING.md). `scripts/archive.sh` creates a universal archive; installer-certificate validity is checked by Xcode during distribution.
 
