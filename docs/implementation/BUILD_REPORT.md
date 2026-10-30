@@ -36,7 +36,7 @@ The documentation window now renders all 21 bundled guides as formatted articles
 
 ## Verification evidence
 
-- Build 742: all 65 tests passed locally, followed by another successful native-suite run after the utility-window adjustment. The universal Xcode archive passed Apple validation on 30 October 2026 at 2:11 PM America/Vancouver.
+- Build 742: [GitHub Actions run 41129499435](https://github.com/ForensicIntelligence/Remarque/actions/runs/41129499435) passed all 65 tests and universal release compilation for `32f8e6e76504caaf8cb35a4022d1407c7e162cd7`. All 65 tests also passed locally, followed by another successful native-suite run after the utility-window adjustment. The universal Xcode archive passed Apple validation on 30 October 2026 at 2:11 PM America/Vancouver.
 
 - Build 740: [GitHub Actions run 40978594157](https://github.com/ForensicIntelligence/Remarque/actions/runs/40978594157) passed the full 65-test suite and universal release compilation for commit `746d53baecdea7d8cb6085b9917cc9293a24c309`.
 
@@ -60,7 +60,7 @@ The source is backed up in the private [ForensicIntelligence/Remarque repository
 
 ## Release status and practical limits
 
-Version 3.0.3 (741) was submitted on 29 October 2026 with automatic release after Apple approval. The owner reports it is live on 30 October. Version 3.0.4 (742) is prepared as the next update; submission is tracked separately. See the [previous submission record](../releases/APP_STORE_3.0.3.md).
+Version 3.0.3 (741) was submitted on 29 October 2026 with automatic release after Apple approval. The owner reports it is live on 30 October. Version **3.0.4 (742)** was submitted on **30 October 2026 at 2:20 PM America/Vancouver**. App Store Connect confirms **Waiting for Review**. Automatic release after approval and immediate release to all users are selected. See the [3.0.4 submission record](../releases/APP_STORE_3.0.4.md).
 
 The Mac App Store build is a release build. A separate Developer ID ZIP is not notarized unless notarization is explicitly recorded. Broader qualification limits remain: Intel and macOS 14 execution have not been tested on physical machines; the universal build compiles both architectures. The broad VoiceOver workflow, exhaustive failure injection, larger-document performance matrix, all Mermaid syntax/style combinations, and complete downstream export conformance remain qualification work recorded in the [feature ledger](feature-coverage.json).
 

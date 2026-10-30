@@ -4,7 +4,7 @@ Remarque is a native macOS Markdown editor rebuilt from the surviving **Remarque
 
 **Current update:** Remarque **3.0.4 (742)**. Clean version labels, a custom animated About window, and a welcome screen showing five recent documents. [Update notes](docs/implementation/UPDATE_3.0.4.md). See the [build report and verification limits](docs/implementation/BUILD_REPORT.md).
 
-**App Store:** Version 3.0.3 (741) is live, as reported by the owner on 30 October 2026. Version 3.0.4 is being prepared for App Review. The release preference is automatic release after Apple approval. [Previous submission record](docs/releases/APP_STORE_3.0.3.md).
+**App Store:** Version **3.0.4 (742)** was submitted on **30 October 2026 at 2:20 PM America/Vancouver** and is **Waiting for Review**. It will release automatically after Apple approval. Version 3.0.3 remains the live version until then. [Submission record](docs/releases/APP_STORE_3.0.4.md).
 
 **Identity:** Product name **Remarque**, signing/bundle identifier **ca.forensicintelligence.remarkable**. [Identity update](docs/implementation/UPDATE_3.0.3.md).
 

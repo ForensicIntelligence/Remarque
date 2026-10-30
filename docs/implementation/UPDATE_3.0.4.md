@@ -19,7 +19,7 @@
 
 ## Verification
 
-- All 65 existing tests passed locally: 15 Swift core, 13 web model, 27 browser, and 10 native hosted tests.
+- All 65 existing tests passed locally: 15 Swift core, 13 web model, 27 browser, and 10 native hosted tests. [GitHub Actions run 41129499435](https://github.com/ForensicIntelligence/Remarque/actions/runs/41129499435) independently passed the full suite and universal release compilation for commit `32f8e6e76504caaf8cb35a4022d1407c7e162cd7`.
 - The native suite passed again after the utility-window adjustment. The identity test now checks version 3.0.4 (742), the exact clean label, and the release channel.
 - Visually inspected the About window and the welcome screen populated with six temporary documents. Exactly five recent documents were displayed, with the full-history hint, all fitting the default window.
 - Built and signature-verified a universal Xcode archive for Apple silicon and Intel. Apple confirmed that the archive passed all validation checks.
@@ -30,6 +30,6 @@
 
 Archive: `~/Library/Developer/Xcode/Archives/2026-10-30/Remarque 3.0.4 (742).xcarchive`.
 
-[Prepared App Store metadata](../releases/APP_STORE_3.0.4_METADATA.json). Apple validation succeeded on 30 October 2026 at 2:11 PM America/Vancouver. Upload and review submission are in progress; no submission is claimed until confirmed by Apple.
+[Prepared App Store metadata](../releases/APP_STORE_3.0.4_METADATA.json). Apple validation succeeded on 30 October 2026 at 2:11 PM America/Vancouver. Xcode confirmed upload at 2:14 PM. The update was submitted at **2:20 PM**, and App Store Connect confirms **Waiting for Review**. Automatic release after approval is selected, with immediate availability to all users. [Submission record](../releases/APP_STORE_3.0.4.md).
 
 The installed App Store version has not been overwritten. The historical 3.0.3 archive remains available. See [the build report](BUILD_REPORT.md) for broader verification limits.
