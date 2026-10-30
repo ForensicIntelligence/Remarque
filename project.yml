@@ -9,7 +9,7 @@ settings:
     MACOSX_DEPLOYMENT_TARGET: '14.0'
     PRODUCT_BUNDLE_IDENTIFIER: ca.forensicintelligence.remarkable
     MARKETING_VERSION: '3.0.3'
-    CURRENT_PROJECT_VERSION: '739'
+    CURRENT_PROJECT_VERSION: '740'
     CODE_SIGN_STYLE: Manual
     CODE_SIGN_IDENTITY: '-'
     DEVELOPMENT_TEAM: PATM9DNCLA
@@ -44,6 +44,11 @@ targets:
         PRODUCT_NAME: Remarque
         PRODUCT_BUNDLE_IDENTIFIER: ca.forensicintelligence.remarkable
         INFOPLIST_KEY_CFBundleDisplayName: Remarque
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
+        CODE_SIGN_STYLE: Automatic
+        CODE_SIGN_IDENTITY: Apple Development
+        DEVELOPMENT_TEAM: PATM9DNCLA
+        PROVISIONING_PROFILE_SPECIFIER: ''
         INFOPLIST_FILE: App/Info.plist
         CODE_SIGN_ENTITLEMENTS: App/Remarque.entitlements
         GENERATE_INFOPLIST_FILE: NO
